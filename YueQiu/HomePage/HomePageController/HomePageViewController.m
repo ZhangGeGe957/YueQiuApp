@@ -24,6 +24,7 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     HomePageUIView* homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H)];
+    [self.view addSubview:homePageView];
     
     
 }
