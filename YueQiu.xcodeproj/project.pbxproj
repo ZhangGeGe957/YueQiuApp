@@ -155,8 +155,6 @@
 		83C798632789BDFE000F68C1 /* YueQiu */ = {
 			isa = PBXGroup;
 			children = (
-				83C7989E2789BF74000F68C1 /* Register */,
-				83C7989D2789BF6D000F68C1 /* Land */,
 				83C7989C2789BF62000F68C1 /* Train */,
 				83C7989B2789BF5B000F68C1 /* News */,
 				83C7989A2789BF51000F68C1 /* My */,
@@ -206,8 +204,6 @@
 		83C7989A2789BF51000F68C1 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				83C798A42789BFD3000F68C1 /* MyModel */,
-				83C798A32789BFCA000F68C1 /* MyView */,
 				83C798A22789BFBB000F68C1 /* MyController */,
 			);
 			path = My;
@@ -216,8 +212,6 @@
 		83C7989B2789BF5B000F68C1 /* News */ = {
 			isa = PBXGroup;
 			children = (
-				83C798A82789C007000F68C1 /* NewsModel */,
-				83C798A72789C000000F68C1 /* NewsView */,
 				83C798A52789BFE4000F68C1 /* NewsController */,
 			);
 			path = News;
@@ -231,26 +225,6 @@
 				83C798A92789C011000F68C1 /* TrainController */,
 			);
 			path = Train;
-			sourceTree = "<group>";
-		};
-		83C7989D2789BF6D000F68C1 /* Land */ = {
-			isa = PBXGroup;
-			children = (
-				83C798AE2789C048000F68C1 /* LandModel */,
-				83C798AD2789C040000F68C1 /* LandVIew */,
-				83C798AC2789C037000F68C1 /* LandController */,
-			);
-			path = Land;
-			sourceTree = "<group>";
-		};
-		83C7989E2789BF74000F68C1 /* Register */ = {
-			isa = PBXGroup;
-			children = (
-				83C798B12789C069000F68C1 /* RegisterModel */,
-				83C798B02789C060000F68C1 /* RegisterView */,
-				83C798AF2789C052000F68C1 /* RegisterController */,
-			);
-			path = Register;
 			sourceTree = "<group>";
 		};
 		83C7989F2789BF97000F68C1 /* HomePageController */ = {
@@ -289,20 +263,6 @@
 			path = MyController;
 			sourceTree = "<group>";
 		};
-		83C798A32789BFCA000F68C1 /* MyView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyView;
-			sourceTree = "<group>";
-		};
-		83C798A42789BFD3000F68C1 /* MyModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyModel;
-			sourceTree = "<group>";
-		};
 		83C798A52789BFE4000F68C1 /* NewsController */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,20 +270,6 @@
 				83C798BE2789C0D9000F68C1 /* NewsViewController.m */,
 			);
 			path = NewsController;
-			sourceTree = "<group>";
-		};
-		83C798A72789C000000F68C1 /* NewsView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NewsView;
-			sourceTree = "<group>";
-		};
-		83C798A82789C007000F68C1 /* NewsModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NewsModel;
 			sourceTree = "<group>";
 		};
 		83C798A92789C011000F68C1 /* TrainController */ = {
@@ -351,48 +297,6 @@
 				83C798C42789C0F9000F68C1 /* ShowProjectTableViewCell.m */,
 			);
 			path = TrainModel;
-			sourceTree = "<group>";
-		};
-		83C798AC2789C037000F68C1 /* LandController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LandController;
-			sourceTree = "<group>";
-		};
-		83C798AD2789C040000F68C1 /* LandVIew */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LandVIew;
-			sourceTree = "<group>";
-		};
-		83C798AE2789C048000F68C1 /* LandModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LandModel;
-			sourceTree = "<group>";
-		};
-		83C798AF2789C052000F68C1 /* RegisterController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RegisterController;
-			sourceTree = "<group>";
-		};
-		83C798B02789C060000F68C1 /* RegisterView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RegisterView;
-			sourceTree = "<group>";
-		};
-		83C798B12789C069000F68C1 /* RegisterModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RegisterModel;
 			sourceTree = "<group>";
 		};
 		83C798CA2789C179000F68C1 /* 图库 */ = {
