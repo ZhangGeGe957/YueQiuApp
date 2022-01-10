@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
 #import "ShowProjectTableViewCell.h"
+#import "CourseTableViewCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,6 +27,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ShowProjectTableViewCell *projectCell;
 @property (nonatomic, strong) NSArray *projectArray;
 @property BOOL projectIsShow;  //用于判断选择项目栏是否展开
+
+@property (nonatomic, strong) UITableView *courseTableView;
+@property (nonatomic, strong) NSArray *coursePhotosArray;
+@property (nonatomic, strong) NSArray *courseNameArray;
+@property (nonatomic, strong) NSArray *courseTeacherArray;
+@property (nonatomic, strong) NSArray *courseTimeArray;
 
 @end
 
