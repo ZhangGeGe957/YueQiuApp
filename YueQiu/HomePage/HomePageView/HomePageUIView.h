@@ -12,11 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HomePageUIView : UIView
 <UITableViewDelegate,
 UITableViewDataSource>
-//UISearchControllerDelegate>
-//UISearchResultsUpdating>
+@property (nonatomic, strong) NSMutableArray* dataArray;
+@property (nonatomic, strong) NSMutableArray* searchArray;
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) UISearchController* searchController;
-@property (nonatomic, strong) NSMutableArray* dataArray;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
