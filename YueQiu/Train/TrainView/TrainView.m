@@ -97,6 +97,16 @@
         make.height.equalTo(@1);
         make.width.equalTo(@(myWidth));
     }];
+    self.bottomLine = [[UILabel alloc] init];
+    self.bottomLine.backgroundColor = [UIColor systemGrayColor];
+    self.bottomLine.text = @"";
+    [self addSubview:self.bottomLine];
+    [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.mas_bottom).offset(-myWidth / 5.21);
+        make.left.equalTo(@0);
+        make.height.equalTo(@1);
+        make.width.equalTo(@(myWidth));
+    }];
     
     //项目选择按钮初始化
     self.choiceButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -116,10 +126,10 @@
     }];
     
     //课程栏数据初始化
-    self.coursePhotosArray = [[NSArray alloc] initWithObjects:@"2-1.png", nil];
-    self.courseNameArray = [[NSArray alloc] initWithObjects:@"篮球基础练习", nil];
-    self.courseTeacherArray = [[NSArray alloc] initWithObjects:@"陈柏赫", nil];
-    self.courseTimeArray = [[NSArray alloc] initWithObjects:@"18h", nil];
+    self.coursePhotosArray = [[NSArray alloc] initWithObjects:@"2-1.png", @"2-1.png", @"2-1.png", nil];
+    self.courseNameArray = [[NSArray alloc] initWithObjects:@"篮球基础练习", @"足球基础练习", @"排球基础练习", nil];
+    self.courseTeacherArray = [[NSArray alloc] initWithObjects:@"陈柏赫", @"闫老师", @"坤坤", nil];
+    self.courseTimeArray = [[NSArray alloc] initWithObjects:@"18h", @"18h", @"18h", nil];
     
     //课程栏
     self.courseTableView = [[UITableView alloc] init];
@@ -159,10 +169,15 @@
         projectCell.projectLabel.text = self.projectArray[indexPath.row];
         return projectCell;
     } else {
-        CourseTableViewCell *courseCell = [self.courseTableView dequeueReusableCellWithIdentifier:@"Course" forIndexPath:indexPath];
-        courseCell.showImageView.image = [UIImage imageNamed:self.coursePhotosArray[indexPath.row]];
-        
-        return courseCell;
+        self.courseCell = [self.courseTableView dequeueReusableCellWithIdentifier:@"Course" forIndexPath:indexPath];
+        self.courseCell.selectionStyle = UITableViewCellAccessoryNone;
+        self.courseCell.showImageView.image = [UIImage imageNamed:self.coursePhotosArray[indexPath.row]];
+        self.courseCell.courseName.text = self.courseNameArray[indexPath.row];
+        self.courseCell.teacherName.text = self.courseTeacherArray[indexPath.row];
+        self.courseCell.timeName.text = self.courseTimeArray[indexPath.row];
+        self.courseCell.joinButton.tag = indexPath.row;
+        [self.courseCell.joinButton addTarget:self action:@selector(joinCourse:) forControlEvents:UIControlEventTouchUpInside];
+        return self.courseCell;
     }
 }
 
@@ -182,7 +197,7 @@
     if (tableView.tag == 957) {
         return myHeight / 17;
     } else {
-        return myHeight / 5;
+        return (myHeight / 4 + myHeight / 30 + myHeight / 88 + myHeight / 100);
     }
 }
 
@@ -220,6 +235,10 @@
     }
     self.projectIsShow = !self.projectIsShow;
     return;
+}
+
+- (void)joinCourse:(UIButton *)button {
+    NSLog(@"sadad");
 }
 
 /*

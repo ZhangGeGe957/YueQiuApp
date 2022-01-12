@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *courseName;
 @property (nonatomic, strong) UILabel *teacherName;
 @property (nonatomic, strong) UILabel *timeName;
+@property (nonatomic, strong) UILabel *bottomLine;
 
 @end
 

@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *coachLabel;
 @property (nonatomic, strong) UILabel *rankingLabel;
 @property (nonatomic, strong) UILabel *topLine;
+@property (nonatomic, strong) UILabel *bottomLine;
 
 @property (nonatomic, strong) UIButton *choiceButton;
 @property (nonatomic, strong) UITableView *projectTableView;
@@ -29,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL projectIsShow;  //用于判断选择项目栏是否展开
 
 @property (nonatomic, strong) UITableView *courseTableView;
+@property (nonatomic, strong) CourseTableViewCell *courseCell;
 @property (nonatomic, strong) NSArray *coursePhotosArray;
 @property (nonatomic, strong) NSArray *courseNameArray;
 @property (nonatomic, strong) NSArray *courseTeacherArray;
