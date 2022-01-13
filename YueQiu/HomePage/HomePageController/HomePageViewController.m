@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor orangeColor];
+//    self.view.backgroundColor = [UIColor orangeColor];
     self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H)];
     [self addSearch];
     
