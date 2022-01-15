@@ -125,11 +125,18 @@
         make.height.equalTo(@(myHeight / 17));
     }];
     
-    //课程栏数据初始化
-    self.coursePhotosArray = [[NSArray alloc] initWithObjects:@"2-1.png", @"2-1.png", @"2-1.png", nil];
-    self.courseNameArray = [[NSArray alloc] initWithObjects:@"篮球基础练习", @"足球基础练习", @"排球基础练习", nil];
-    self.courseTeacherArray = [[NSArray alloc] initWithObjects:@"陈柏赫", @"闫老师", @"坤坤", nil];
-    self.courseTimeArray = [[NSArray alloc] initWithObjects:@"18h", @"18h", @"18h", nil];
+    //课程栏总数据初始化
+    self.courseDataArray = [[CourseDataModel alloc] init];
+    self.tempCourseDataArray = [[NSArray alloc] initWithObjects:@"篮球基础练习", @"篮球", @"陈柏赫", @"18h", @"2-1.png", nil];
+    [self.courseDataArray addNewCourseData:self.tempCourseDataArray];
+    self.tempCourseDataArray = [[NSArray alloc] initWithObjects:@"足球基础练习", @"足球", @"闫老师", @"8h", @"2-1.png", nil];
+    [self.courseDataArray addNewCourseData:self.tempCourseDataArray];
+    self.tempCourseDataArray = [[NSArray alloc] initWithObjects:@"排球基础练习", @"排球", @"坤坤", @"1h", @"2-1.png", nil];
+    [self.courseDataArray addNewCourseData:self.tempCourseDataArray];
+    
+    //课程栏选择数据初始化,用于展示选择出来的课程数据
+    self.showCourseDataArray = [[CourseDataModel alloc] init];
+    self.showCourseDataArray = self.courseDataArray;
     
     //课程栏
     self.courseTableView = [[UITableView alloc] init];
@@ -146,7 +153,7 @@
     [self.courseTableView registerClass:[CourseTableViewCell class] forCellReuseIdentifier:@"Course"];
     
     //项目栏数据初始化
-    self.projectArray = [[NSArray alloc] initWithObjects:@"全部", @"篮球", @"足球", @"乒乓球", @"羽毛球", nil];
+    self.projectArray = [[NSArray alloc] initWithObjects:@"全部", @"篮球", @"足球", @"乒乓球", @"羽毛球", @"排球", nil];
     self.projectIsShow = 0;
     
     //项目栏
@@ -171,10 +178,10 @@
     } else {
         self.courseCell = [self.courseTableView dequeueReusableCellWithIdentifier:@"Course" forIndexPath:indexPath];
         self.courseCell.selectionStyle = UITableViewCellAccessoryNone;
-        self.courseCell.showImageView.image = [UIImage imageNamed:self.coursePhotosArray[indexPath.row]];
-        self.courseCell.courseName.text = self.courseNameArray[indexPath.row];
-        self.courseCell.teacherName.text = self.courseTeacherArray[indexPath.row];
-        self.courseCell.timeName.text = self.courseTimeArray[indexPath.row];
+        self.courseCell.showImageView.image = [UIImage imageNamed:self.showCourseDataArray.photosArray[indexPath.row]];
+        self.courseCell.courseName.text = self.showCourseDataArray.nameArray[indexPath.row];
+        self.courseCell.teacherName.text = self.showCourseDataArray.teacherArray[indexPath.row];
+        self.courseCell.timeName.text = self.showCourseDataArray.timeArray[indexPath.row];
         self.courseCell.joinButton.tag = indexPath.row;
         [self.courseCell.joinButton addTarget:self action:@selector(joinCourse:) forControlEvents:UIControlEventTouchUpInside];
         return self.courseCell;
@@ -189,7 +196,7 @@
     if (tableView.tag == 957) {
         return self.projectArray.count;
     } else {
-        return self.coursePhotosArray.count;
+        return self.showCourseDataArray.nameArray.count;
     }
 }
 
@@ -203,6 +210,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.tag == 957) {
+        //显示或者隐藏选项栏
         ShowProjectTableViewCell *nowCell = [self.projectTableView cellForRowAtIndexPath:indexPath];
         [self.choiceButton setTitle:nowCell.projectLabel.text forState:UIControlStateNormal];
         [self.projectTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -212,6 +220,23 @@
             make.height.equalTo(@0);
         }];
         self.projectIsShow = !self.projectIsShow;
+        
+        //更新选项类型的课程
+        self.showCourseDataArray = [[CourseDataModel alloc] init];
+        if ([nowCell.projectLabel.text isEqualToString:@"全部"]) {
+            self.showCourseDataArray = self.courseDataArray;
+        } else {
+            for (int i = 0; i < self.courseDataArray.nameArray.count; i++) {
+                if ([self.courseDataArray.typeArray[i] isEqualToString:nowCell.projectLabel.text]) {
+                    [self.showCourseDataArray.nameArray addObject:self.courseDataArray.nameArray[i]];
+                    [self.showCourseDataArray.typeArray addObject:self.courseDataArray.typeArray[i]];
+                    [self.showCourseDataArray.teacherArray addObject:self.courseDataArray.teacherArray[i]];
+                    [self.showCourseDataArray.timeArray addObject:self.courseDataArray.timeArray[i]];
+                    [self.showCourseDataArray.photosArray addObject:self.courseDataArray.photosArray[i]];
+                }
+            }
+        }
+        [self.courseTableView reloadData];
     } else {
         NSLog(@"course");
     }

@@ -10,6 +10,7 @@
 		0F706DC9AB39106428BE3804 /* libPods-YueQiu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */; };
 		8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8347BCBA278C2FD300466606 /* CourseTableViewCell.m */; };
 		8347BCBD278C35BB00466606 /* 2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8347BCBC278C35BB00466606 /* 2-1.png */; };
+		8384B4AA2792C34D00282E66 /* CourseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384B4A92792C34D00282E66 /* CourseDataModel.m */; };
 		83C798662789BDFE000F68C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C798652789BDFE000F68C1 /* AppDelegate.m */; };
 		83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C798682789BDFE000F68C1 /* SceneDelegate.m */; };
 		83C7986C2789BDFE000F68C1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C7986B2789BDFE000F68C1 /* ViewController.m */; };
@@ -56,6 +57,8 @@
 		8347BCB9278C2FD300466606 /* CourseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
 		8347BCBA278C2FD300466606 /* CourseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
 		8347BCBC278C35BB00466606 /* 2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-1.png"; sourceTree = "<group>"; };
+		8384B4A82792C34D00282E66 /* CourseDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseDataModel.h; sourceTree = "<group>"; };
+		8384B4A92792C34D00282E66 /* CourseDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseDataModel.m; sourceTree = "<group>"; };
 		83C798612789BDFE000F68C1 /* YueQiu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YueQiu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C798642789BDFE000F68C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83C798652789BDFE000F68C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -307,6 +310,8 @@
 				83C798C42789C0F9000F68C1 /* ShowProjectTableViewCell.m */,
 				8347BCB9278C2FD300466606 /* CourseTableViewCell.h */,
 				8347BCBA278C2FD300466606 /* CourseTableViewCell.m */,
+				8384B4A82792C34D00282E66 /* CourseDataModel.h */,
+				8384B4A92792C34D00282E66 /* CourseDataModel.m */,
 			);
 			path = TrainModel;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
 				83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */,
 				83C798B72789C0A9000F68C1 /* HomePageMModel.m in Sources */,
+				8384B4AA2792C34D00282E66 /* CourseDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
