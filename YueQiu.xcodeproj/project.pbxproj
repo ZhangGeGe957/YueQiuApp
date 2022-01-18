@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0F706DC9AB39106428BE3804 /* libPods-YueQiu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */; };
+		8325A65E2796572A0060E916 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A65D2796572A0060E916 /* LandViewController.m */; };
+		8325A6612796573C0060E916 /* LandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A6602796573C0060E916 /* LandView.m */; };
+		8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325A6632796C2F50060E916 /* lanqiu-copy.png */; };
+		8325A6662796C6C50060E916 /* startUP.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325A6652796C6C50060E916 /* startUP.png */; };
 		8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8347BCBA278C2FD300466606 /* CourseTableViewCell.m */; };
 		8347BCBD278C35BB00466606 /* 2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8347BCBC278C35BB00466606 /* 2-1.png */; };
 		8384B4AA2792C34D00282E66 /* CourseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384B4A92792C34D00282E66 /* CourseDataModel.m */; };
@@ -54,6 +58,12 @@
 		00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YueQiu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		345100254D96E374567F3D9D /* Pods-YueQiu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.release.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.release.xcconfig"; sourceTree = "<group>"; };
 		5EC636371D8C5092569DC7A8 /* Pods-YueQiu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.debug.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.debug.xcconfig"; sourceTree = "<group>"; };
+		8325A65C2796572A0060E916 /* LandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandViewController.h; sourceTree = "<group>"; };
+		8325A65D2796572A0060E916 /* LandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandViewController.m; sourceTree = "<group>"; };
+		8325A65F2796573C0060E916 /* LandView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandView.h; sourceTree = "<group>"; };
+		8325A6602796573C0060E916 /* LandView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandView.m; sourceTree = "<group>"; };
+		8325A6632796C2F50060E916 /* lanqiu-copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanqiu-copy.png"; sourceTree = "<group>"; };
+		8325A6652796C6C50060E916 /* startUP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startUP.png; sourceTree = "<group>"; };
 		8347BCB9278C2FD300466606 /* CourseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
 		8347BCBA278C2FD300466606 /* CourseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
 		8347BCBC278C35BB00466606 /* 2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-1.png"; sourceTree = "<group>"; };
@@ -140,6 +150,42 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8325A658279656D80060E916 /* Land */ = {
+			isa = PBXGroup;
+			children = (
+				8325A65A279656FD0060E916 /* LandView */,
+				8325A659279656F00060E916 /* LandViewController */,
+			);
+			path = Land;
+			sourceTree = "<group>";
+		};
+		8325A659279656F00060E916 /* LandViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8325A65C2796572A0060E916 /* LandViewController.h */,
+				8325A65D2796572A0060E916 /* LandViewController.m */,
+			);
+			path = LandViewController;
+			sourceTree = "<group>";
+		};
+		8325A65A279656FD0060E916 /* LandView */ = {
+			isa = PBXGroup;
+			children = (
+				8325A65F2796573C0060E916 /* LandView.h */,
+				8325A6602796573C0060E916 /* LandView.m */,
+			);
+			path = LandView;
+			sourceTree = "<group>";
+		};
+		8325A6622796C2D50060E916 /* LandPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				8325A6652796C6C50060E916 /* startUP.png */,
+				8325A6632796C2F50060E916 /* lanqiu-copy.png */,
+			);
+			path = LandPhotos;
+			sourceTree = "<group>";
+		};
 		83C798582789BDFE000F68C1 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +212,7 @@
 		83C798632789BDFE000F68C1 /* YueQiu */ = {
 			isa = PBXGroup;
 			children = (
+				8325A658279656D80060E916 /* Land */,
 				83C7989C2789BF62000F68C1 /* Train */,
 				83C7989B2789BF5B000F68C1 /* News */,
 				83C7989A2789BF51000F68C1 /* My */,
@@ -319,6 +366,7 @@
 		83C798CA2789C179000F68C1 /* 图库 */ = {
 			isa = PBXGroup;
 			children = (
+				8325A6622796C2D50060E916 /* LandPhotos */,
 				83C798CB2789C188000F68C1 /* TrainPhotos */,
 			);
 			path = "图库";
@@ -437,8 +485,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8325A6662796C6C50060E916 /* startUP.png in Resources */,
 				83C798742789BE00000F68C1 /* LaunchScreen.storyboard in Resources */,
 				83C798712789BE00000F68C1 /* Assets.xcassets in Resources */,
+				8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */,
 				8347BCBD278C35BB00466606 /* 2-1.png in Resources */,
 				83C7986F2789BDFE000F68C1 /* Main.storyboard in Resources */,
 				83C798CD2789C1A6000F68C1 /* 3.jpg in Resources */,
@@ -491,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8325A6612796573C0060E916 /* LandView.m in Sources */,
 				83C7986C2789BDFE000F68C1 /* ViewController.m in Sources */,
 				CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */,
 				83C798BA2789C0B1000F68C1 /* HomePageUIView.m in Sources */,
@@ -504,6 +555,7 @@
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
 				83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */,
+				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
 				83C798B72789C0A9000F68C1 /* HomePageMModel.m in Sources */,
 				8384B4AA2792C34D00282E66 /* CourseDataModel.m in Sources */,
 			);

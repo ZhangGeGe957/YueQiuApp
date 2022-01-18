@@ -6,12 +6,15 @@
 //
 
 #import "SceneDelegate.h"
+#import "LandViewController.h"
 #import "HomePage/HomePageController/HomePageViewController.h"
 #import "Train/TrainController/TrainViewController.h"
 #import "News/NewsController/NewsViewController.h"
 #import "My/MyController/MyViewController.h"
 
 @interface SceneDelegate ()
+
+@property (nonatomic, strong) LandViewController *landView;
 
 @end
 
@@ -24,30 +27,8 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     self.window = [[UIWindow alloc] initWithWindowScene:scene];
     
-    HomePageViewController *homePageView = [[HomePageViewController alloc] init];
-    TrainViewController *trainView = [[TrainViewController alloc] init];
-    NewsViewController *newsView = [[NewsViewController alloc] init];
-    MyViewController *myView = [[MyViewController alloc] init];
-    
-    homePageView.title = @"首页";
-    trainView.title = @"训练";
-    newsView.title = @"消息";
-    myView.title = @"我的";
-    
-    UINavigationController *homePage = [[UINavigationController alloc] initWithRootViewController:homePageView];
-    UINavigationController *train = [[UINavigationController alloc] initWithRootViewController:trainView];
-    UINavigationController *news = [[UINavigationController alloc] initWithRootViewController:newsView];
-    UINavigationController *my = [[UINavigationController alloc] initWithRootViewController:myView];
-    
-    NSArray *viewArray = [[NSArray alloc] initWithObjects:homePage, train, news, my, nil];
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.tabBar.tintColor = [UIColor orangeColor];
-    tabBarController.viewControllers = viewArray;
-    tabBarController.tabBar.translucent = NO;
-    tabBarController.view.backgroundColor = [UIColor whiteColor];
-    
-    self.window.rootViewController = tabBarController;
+    self.landView = [[LandViewController alloc] init];
+    self.window.rootViewController = self.landView;
     
     [self.window makeKeyWindow];
 }
