@@ -88,7 +88,7 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     self.myView = [[MyViewController alloc] init];
     self.homePageView.title = @"首页";
     self.trainView.title = @"训练";
-    self.newsView.title = @"消息";
+    self.newsView.title = @"球局";
     self.myView.title = @"我的";
     
     //初始化导航控制器
