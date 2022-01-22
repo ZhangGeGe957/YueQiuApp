@@ -60,6 +60,31 @@
         self.contentLabel.textColor = [UIColor blackColor];
         [self.contentLabel setFont:[UIFont systemFontOfSize:18]];
         [self.contentView addSubview:self.contentLabel];
+        
+        self.replyButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.replyButton setImage:[UIImage imageNamed:@"huifu.png"] forState:UIControlStateNormal];
+        [self.contentView addSubview:self.replyButton];
+        
+        //预约按钮
+        self.reserveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [self.reserveButton setTitle:@"抢" forState:UIControlStateNormal];
+        self.reserveButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-BoldOblique" size:22];
+        self.reserveButton.layer.masksToBounds = YES;
+        self.reserveButton.layer.cornerRadius = 15;
+        self.reserveButton.backgroundColor = [UIColor orangeColor];
+        self.reserveButton.tintColor = [UIColor whiteColor];
+        [self.contentView addSubview:self.reserveButton];
+        
+        //分割线
+        self.bottomLine = [[UILabel alloc] init];
+        self.bottomLine.backgroundColor = [UIColor systemGrayColor];
+        self.bottomLine.text = @"";
+        [self.contentView addSubview:self.bottomLine];
+        
+        //会员图标
+        self.VIPImageView = [[UIImageView alloc] init];
+        self.VIPImageView.image = [UIImage imageNamed:@"renzheng1-copy.png"];
+        [self.contentView addSubview:self.VIPImageView];
     }
     
     return self;
@@ -80,8 +105,12 @@
         [self.titleNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.headButton.mas_right).offset(10);
             make.top.equalTo(self.headButton.mas_top);
-            make.right.equalTo(self.moreButton.mas_left).offset(10);
             make.height.equalTo(@50);
+        }];
+        [self.VIPImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.titleNameLabel.mas_right).offset(10);
+            make.top.equalTo(self.moreButton.mas_top);
+            make.size.equalTo(@20);
         }];
         
         //四个固定的图像
@@ -104,6 +133,21 @@
             make.top.equalTo(self.teamImageView.mas_bottom).offset(10);
             make.left.equalTo(self.headButton.mas_left);
             make.size.equalTo(@30);
+        }];
+        
+        //回复按钮
+        [self.replyButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.mas_bottom).offset(-10);
+            make.left.equalTo(self.headButton.mas_left).offset(10);
+            make.size.equalTo(@40);
+        }];
+        
+        //预约按钮
+        [self.reserveButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.moreButton.mas_right);
+            make.bottom.equalTo(self.replyButton.mas_bottom);
+            make.width.equalTo(@88);
+            make.height.equalTo(@40);
         }];
         
         //四个可变的
@@ -129,7 +173,15 @@
             make.top.equalTo(self.contentImageView.mas_top);
             make.left.equalTo(self.contentImageView.mas_right).offset(10);
             make.right.equalTo(self.moreButton.mas_left).offset(10);
-            make.height.equalTo(@30);
+            make.bottom.equalTo(self.replyButton.mas_top).offset(-10);
+        }];
+        
+        //分割线
+        [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.mas_bottom).offset(0);
+            make.left.equalTo(@(myWidth / 44));
+            make.right.equalTo(@(-myWidth / 44));
+            make.height.equalTo(@0.5);
         }];
     }
 }

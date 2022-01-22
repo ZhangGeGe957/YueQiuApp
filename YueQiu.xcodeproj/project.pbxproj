@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F706DC9AB39106428BE3804 /* libPods-YueQiu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */; };
+		8315BF11279BFE24007CBAD8 /* huifu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8315BF10279BFE24007CBAD8 /* huifu.png */; };
 		8325A65E2796572A0060E916 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A65D2796572A0060E916 /* LandViewController.m */; };
 		8325A6612796573C0060E916 /* LandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A6602796573C0060E916 /* LandView.m */; };
 		8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325A6632796C2F50060E916 /* lanqiu-copy.png */; };
@@ -68,6 +69,7 @@
 		00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YueQiu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		345100254D96E374567F3D9D /* Pods-YueQiu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.release.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.release.xcconfig"; sourceTree = "<group>"; };
 		5EC636371D8C5092569DC7A8 /* Pods-YueQiu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.debug.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.debug.xcconfig"; sourceTree = "<group>"; };
+		8315BF10279BFE24007CBAD8 /* huifu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huifu.png; sourceTree = "<group>"; };
 		8325A65C2796572A0060E916 /* LandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandViewController.h; sourceTree = "<group>"; };
 		8325A65D2796572A0060E916 /* LandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandViewController.m; sourceTree = "<group>"; };
 		8325A65F2796573C0060E916 /* LandView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandView.h; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		837B7132279A661B00DBD856 /* NewsPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				8315BF10279BFE24007CBAD8 /* huifu.png */,
 				837B7147279AB3E500DBD856 /* gengduo.png */,
 				837B7138279A66BB00DBD856 /* didian.png */,
 				837B7136279A66BB00DBD856 /* naozhong-copy.png */,
@@ -555,6 +558,7 @@
 				8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */,
 				837B713C279A66BB00DBD856 /* didian.png in Resources */,
 				837B7139279A66BB00DBD856 /* renzheng1-copy.png in Resources */,
+				8315BF11279BFE24007CBAD8 /* huifu.png in Resources */,
 				8347BCBD278C35BB00466606 /* 2-1.png in Resources */,
 				83C7986F2789BDFE000F68C1 /* Main.storyboard in Resources */,
 				837B7134279A667100DBD856 /* jia.png in Resources */,

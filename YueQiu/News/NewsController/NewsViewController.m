@@ -60,7 +60,7 @@
     //分栏控制器初始化
     self.selectControl = [[UISegmentedControl alloc] init];
     [self.selectControl insertSegmentWithTitle:@"精选" atIndex:0 animated:YES];
-    [self.selectControl insertSegmentWithTitle:@"关注" atIndex:0 animated:YES];
+    [self.selectControl insertSegmentWithTitle:@"关注" atIndex:1 animated:YES];
     self.selectControl.selectedSegmentIndex = 0;
     [self.selectControl addTarget:self action:@selector(switchView:) forControlEvents:UIControlEventValueChanged];
     [self.falseView addSubview:self.selectControl];
