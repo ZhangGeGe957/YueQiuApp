@@ -8,7 +8,7 @@
 #import "HomePageViewController.h"
 
 #import "Masonry.h"
-
+#import "HQBSearchViewController.h"
 
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
@@ -21,40 +21,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBarHidden = NO;
     
-//    self.view.backgroundColor = [UIColor orangeColor];
-    self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H)];
-    [self addSearch];
+    UIBarButtonItem* search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sousuo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSearch)];
+    search.tintColor = [UIColor blackColor];
+    self.navigationItem.rightBarButtonItem = search;
     
-}
-- (void) addSearch {
-    self.homePageView.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    self.homePageView.searchController.delegate = self;
-    self.homePageView.searchController.searchResultsUpdater = self;
-    self.homePageView.searchController.searchBar.frame = CGRectMake(self.homePageView.searchController.searchBar.frame.origin.x, self.homePageView.tableView.frame.origin.y, W, 55.0f);
-    self.homePageView.searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
     
-    self.homePageView.tableView.tableHeaderView = self.homePageView.searchController.searchBar;
-    
-    self.homePageView.searchController.searchBar.barTintColor = [UIColor yellowColor];
+    self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H - [self hGetTabHeight] - [self hGetStatusbarHeight])];
 
-    self.homePageView.searchController.obscuresBackgroundDuringPresentation = YES;
     [self.view addSubview:self.homePageView];
 }
 
-
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSString* searchString = [self.homePageView.searchController.searchBar text];
-    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
-    if (self.homePageView.searchArray != nil) {
-        [self.homePageView.searchArray removeAllObjects];
-    }
-    
-    //过滤数据
-    self.homePageView.searchArray = [NSMutableArray arrayWithArray:[self.homePageView.dataArray filteredArrayUsingPredicate:preicate]];
-    //刷新表格
-    [self.homePageView.tableView reloadData];
+- (float)hGetStatusbarHeight {
+    NSSet *set = [[UIApplication sharedApplication] connectedScenes];
+    UIWindowScene *windowScene = [set anyObject];
+    UIStatusBarManager *hStatusBarManager =  windowScene.statusBarManager;
+    return hStatusBarManager.statusBarFrame.size.height;
 }
 
+//获取导航栏高度
+- (float)hGetNavigationbarHeight {
+    return self.navigationController.navigationBar.frame.size.height;
+}
+//获取tabBar的高度
+- (float)hGetTabHeight {
+    return self.tabBarController.tabBar.frame.size.height;
+}
 
+- (void)touchSearch {
+    HQBSearchViewController* searchController = [[HQBSearchViewController alloc] init];
+    [self.navigationController pushViewController:searchController animated:YES];
+}
 @end

@@ -48,7 +48,6 @@
     tabBarController.view.backgroundColor = [UIColor whiteColor];
     
     self.window.rootViewController = tabBarController;
-    
     [self.window makeKeyWindow];
 }
 
