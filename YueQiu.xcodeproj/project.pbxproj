@@ -46,6 +46,9 @@
 		83C798C92789C100000F68C1 /* TrainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C798C72789C100000F68C1 /* TrainView.m */; };
 		83C798CD2789C1A6000F68C1 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83C798CC2789C1A6000F68C1 /* 3.jpg */; };
 		CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */; };
+		CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */; };
+		CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */; };
+		CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +133,11 @@
 		83C798CC2789C1A6000F68C1 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		CC1A7B2B2789C86C0040B39D /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		CCFA4B9227AAF3BB00F2BB18 /* HQBSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchView.h; sourceTree = "<group>"; };
+		CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQBSearchView.m; sourceTree = "<group>"; };
+		CCFA4B9527AAF49700F2BB18 /* HQBSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchViewController.h; sourceTree = "<group>"; };
+		CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQBSearchViewController.m; sourceTree = "<group>"; };
+		CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sousuo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +360,8 @@
 			children = (
 				83C798B22789C094000F68C1 /* HomePageViewController.h */,
 				83C798B32789C094000F68C1 /* HomePageViewController.m */,
+				CCFA4B9527AAF49700F2BB18 /* HQBSearchViewController.h */,
+				CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */,
 			);
 			path = HomePageController;
 			sourceTree = "<group>";
@@ -363,6 +373,8 @@
 				83C798B82789C0B1000F68C1 /* HomePageUIView.m */,
 				CC1A7B2B2789C86C0040B39D /* HomePageTableViewCell.h */,
 				CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */,
+				CCFA4B9227AAF3BB00F2BB18 /* HQBSearchView.h */,
+				CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */,
 			);
 			path = HomePageView;
 			sourceTree = "<group>";
@@ -428,6 +440,7 @@
 		83C798CA2789C179000F68C1 /* 图库 */ = {
 			isa = PBXGroup;
 			children = (
+				CCFA4B9827AAF50C00F2BB18 /* HomePagePhotos */,
 				837B7132279A661B00DBD856 /* NewsPhotos */,
 				8325A6622796C2D50060E916 /* LandPhotos */,
 				83C798CB2789C188000F68C1 /* TrainPhotos */,
@@ -442,6 +455,14 @@
 				8347BCBC278C35BB00466606 /* 2-1.png */,
 			);
 			path = TrainPhotos;
+			sourceTree = "<group>";
+		};
+		CCFA4B9827AAF50C00F2BB18 /* HomePagePhotos */ = {
+			isa = PBXGroup;
+			children = (
+				CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */,
+			);
+			path = HomePagePhotos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,6 +580,7 @@
 				837B713C279A66BB00DBD856 /* didian.png in Resources */,
 				837B7139279A66BB00DBD856 /* renzheng1-copy.png in Resources */,
 				8315BF11279BFE24007CBAD8 /* huifu.png in Resources */,
+				CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */,
 				8347BCBD278C35BB00466606 /* 2-1.png in Resources */,
 				83C7986F2789BDFE000F68C1 /* Main.storyboard in Resources */,
 				837B7134279A667100DBD856 /* jia.png in Resources */,
@@ -620,6 +642,7 @@
 				83C798662789BDFE000F68C1 /* AppDelegate.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
 				837B713F279AAAAB00DBD856 /* BoutiqueView.m in Sources */,
+				CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */,
 				83C798B42789C094000F68C1 /* HomePageViewController.m in Sources */,
 				8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */,
 				83C798772789BE00000F68C1 /* main.m in Sources */,
@@ -628,6 +651,7 @@
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
 				83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */,
+				CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */,
 				837B7142279AAAD000DBD856 /* FollowView.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
 				83C798B72789C0A9000F68C1 /* HomePageMModel.m in Sources */,

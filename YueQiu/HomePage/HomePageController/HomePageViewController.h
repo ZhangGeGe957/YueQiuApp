@@ -10,9 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomePageViewController : UIViewController
-<UISearchControllerDelegate,
-UISearchResultsUpdating>
+
 @property (nonatomic, strong) HomePageUIView* homePageView;
 @end
 
 NS_ASSUME_NONNULL_END
+
