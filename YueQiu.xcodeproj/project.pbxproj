@@ -49,6 +49,12 @@
 		CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */; };
 		CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */; };
 		CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */; };
+		CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4BA027ABB98100F2BB18 /* MyView.m */; };
+		CCFA4BA427ABB9EF00F2BB18 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */; };
+		CCFA4BA927AE5C5B00F2BB18 /* beijing.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4BA827AE5C5B00F2BB18 /* beijing.jpeg */; };
+		CCFA4BAB27AE664200F2BB18 /* head.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4BAA27AE664200F2BB18 /* head.jpeg */; };
+		CCFA4BB127AE809F00F2BB18 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4BB027AE809F00F2BB18 /* more.png */; };
+		CCFA4BB327AEBD3600F2BB18 /* dingwei.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4BB227AEBD3600F2BB18 /* dingwei.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +144,14 @@
 		CCFA4B9527AAF49700F2BB18 /* HQBSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchViewController.h; sourceTree = "<group>"; };
 		CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQBSearchViewController.m; sourceTree = "<group>"; };
 		CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sousuo.png; sourceTree = "<group>"; };
+		CCFA4B9F27ABB98100F2BB18 /* MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		CCFA4BA027ABB98100F2BB18 /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		CCFA4BA227ABB9EF00F2BB18 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		CCFA4BA827AE5C5B00F2BB18 /* beijing.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beijing.jpeg; sourceTree = "<group>"; };
+		CCFA4BAA27AE664200F2BB18 /* head.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpeg; sourceTree = "<group>"; };
+		CCFA4BB027AE809F00F2BB18 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		CCFA4BB227AEBD3600F2BB18 /* dingwei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dingwei.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +344,8 @@
 		83C7989A2789BF51000F68C1 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				CCFA4B9E27AB8F6700F2BB18 /* MyModel */,
+				CCFA4B9D27AB8F5600F2BB18 /* MyView */,
 				83C798A22789BFBB000F68C1 /* MyController */,
 			);
 			path = My;
@@ -440,6 +456,7 @@
 		83C798CA2789C179000F68C1 /* 图库 */ = {
 			isa = PBXGroup;
 			children = (
+				CCFA4BA527AE5BB000F2BB18 /* MyPhotos */,
 				CCFA4B9827AAF50C00F2BB18 /* HomePagePhotos */,
 				837B7132279A661B00DBD856 /* NewsPhotos */,
 				8325A6622796C2D50060E916 /* LandPhotos */,
@@ -463,6 +480,35 @@
 				CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */,
 			);
 			path = HomePagePhotos;
+			sourceTree = "<group>";
+		};
+		CCFA4B9D27AB8F5600F2BB18 /* MyView */ = {
+			isa = PBXGroup;
+			children = (
+				CCFA4B9F27ABB98100F2BB18 /* MyView.h */,
+				CCFA4BA027ABB98100F2BB18 /* MyView.m */,
+				CCFA4BA227ABB9EF00F2BB18 /* MyTableViewCell.h */,
+				CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */,
+			);
+			path = MyView;
+			sourceTree = "<group>";
+		};
+		CCFA4B9E27AB8F6700F2BB18 /* MyModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyModel;
+			sourceTree = "<group>";
+		};
+		CCFA4BA527AE5BB000F2BB18 /* MyPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				CCFA4BB227AEBD3600F2BB18 /* dingwei.png */,
+				CCFA4BA827AE5C5B00F2BB18 /* beijing.jpeg */,
+				CCFA4BAA27AE664200F2BB18 /* head.jpeg */,
+				CCFA4BB027AE809F00F2BB18 /* more.png */,
+			);
+			path = MyPhotos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8325A6662796C6C50060E916 /* startUP.png in Resources */,
+				CCFA4BAB27AE664200F2BB18 /* head.jpeg in Resources */,
 				837B7148279AB3E500DBD856 /* gengduo.png in Resources */,
 				83C798742789BE00000F68C1 /* LaunchScreen.storyboard in Resources */,
 				837B713B279A66BB00DBD856 /* yonghu.png in Resources */,
@@ -577,12 +624,15 @@
 				83C798712789BE00000F68C1 /* Assets.xcassets in Resources */,
 				837B714A279AB8C600DBD856 /* neirong.png in Resources */,
 				8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */,
+				CCFA4BA927AE5C5B00F2BB18 /* beijing.jpeg in Resources */,
 				837B713C279A66BB00DBD856 /* didian.png in Resources */,
 				837B7139279A66BB00DBD856 /* renzheng1-copy.png in Resources */,
+				CCFA4BB127AE809F00F2BB18 /* more.png in Resources */,
 				8315BF11279BFE24007CBAD8 /* huifu.png in Resources */,
 				CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */,
 				8347BCBD278C35BB00466606 /* 2-1.png in Resources */,
 				83C7986F2789BDFE000F68C1 /* Main.storyboard in Resources */,
+				CCFA4BB327AEBD3600F2BB18 /* dingwei.png in Resources */,
 				837B7134279A667100DBD856 /* jia.png in Resources */,
 				83C798CD2789C1A6000F68C1 /* 3.jpg in Resources */,
 			);
@@ -640,6 +690,7 @@
 				83C798BA2789C0B1000F68C1 /* HomePageUIView.m in Sources */,
 				83C798BD2789C0CC000F68C1 /* MyViewController.m in Sources */,
 				83C798662789BDFE000F68C1 /* AppDelegate.m in Sources */,
+				CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
 				837B713F279AAAAB00DBD856 /* BoutiqueView.m in Sources */,
 				CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */,
@@ -654,6 +705,7 @@
 				CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */,
 				837B7142279AAAD000DBD856 /* FollowView.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
+				CCFA4BA427ABB9EF00F2BB18 /* MyTableViewCell.m in Sources */,
 				83C798B72789C0A9000F68C1 /* HomePageMModel.m in Sources */,
 				8384B4AA2792C34D00282E66 /* CourseDataModel.m in Sources */,
 			);

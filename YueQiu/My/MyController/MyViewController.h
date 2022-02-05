@@ -6,11 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyViewController : UIViewController
-
+@property (nonatomic, strong) MyView* myView;
 @end
 
 NS_ASSUME_NONNULL_END
