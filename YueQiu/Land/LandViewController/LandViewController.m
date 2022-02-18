@@ -10,6 +10,9 @@
 #import "TrainViewController.h"
 #import "NewsViewController.h"
 #import "MyViewController.h"
+#import "RegisterViewController.h"
+#import "ForgetViewController.h"
+#import "SetPasswordViewController.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -23,6 +26,9 @@ NSString *const identityAuthentication = @"ZhangGeGe";
 @property (nonatomic, strong) TrainViewController *trainView;
 @property (nonatomic, strong) NewsViewController *newsView;
 @property (nonatomic, strong) MyViewController *myView;
+@property (nonatomic, strong) RegisterViewController *registerView;
+@property (nonatomic, strong) ForgetViewController *forgetView;
+@property (nonatomic, strong) SetPasswordViewController *setPasswordView;
 //初始化导航控制器
 @property (nonatomic, strong) UINavigationController *homePageNavigationController;
 @property (nonatomic, strong) UINavigationController *trainNavigationController;
@@ -60,27 +66,40 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     
     //初始化view
     self.landView = [[LandView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight)];
+    [self.landView.landButton addTarget:self action:@selector(p_presentMainView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.landView.registerButton addTarget:self action:@selector(p_presentRegisterView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.landView.forgetButton addTarget:self action:@selector(p_presentForgetView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.landView];
 }
 
 //注册通知
 - (void)p_addNotification {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_judgeNotification:) name:eventNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(p_backMassage:) name:backMassage object:nil];
 }
 
 //判断通知
-- (void)p_judgeNotification:(NSNotification *)sender {
-    if ([sender.userInfo[@"event"] isEqualToString:@"main"]) {
-        [self p_presentMainView];
-    } else if ([sender.userInfo[@"event"] isEqualToString:@"register"]) {
-        NSLog(@"注册");
-    } else if ([sender.userInfo[@"event"] isEqualToString:@"forget"]) {
-        NSLog(@"忘记");
-    }
+- (void)p_backMassage:(NSNotification *)sender {
+    self.setPasswordView = [[SetPasswordViewController alloc] init];
+    self.setPasswordView.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:self.setPasswordView animated:YES completion:nil];
+}
+
+//推出注册页面
+- (void)p_presentRegisterView:(UIButton *)button {
+    self.registerView = [[RegisterViewController alloc] init];
+    self.registerView.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:self.registerView animated:YES completion:nil];
+}
+
+//推出忘记页面
+- (void)p_presentForgetView:(UIButton *)button {
+    self.forgetView = [[ForgetViewController alloc] init];
+    self.forgetView.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:self.forgetView animated:YES completion:nil];
 }
 
 //推出主界面
-- (void)p_presentMainView {
+- (void)p_presentMainView:(UIButton *)button {
     //初始化视图
     self.homePageView = [[HomePageViewController alloc] init];
     self.trainView = [[TrainViewController alloc] init];

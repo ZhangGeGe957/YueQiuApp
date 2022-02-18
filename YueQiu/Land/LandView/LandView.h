@@ -8,8 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "Masonry.h"
 
-extern NSString *const eventNotification;
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LandView : UIView

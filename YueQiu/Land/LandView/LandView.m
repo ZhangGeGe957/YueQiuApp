@@ -10,8 +10,6 @@
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
-NSString *const eventNotification = @"eventNotification";
-
 @implementation LandView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -78,7 +76,6 @@ NSString *const eventNotification = @"eventNotification";
     //登陆按钮
     self.landButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.landButton setTitle:@"登陆" forState:UIControlStateNormal];
-    [self.landButton addTarget:self action:@selector(pushMainView:) forControlEvents:UIControlEventTouchUpInside];
     self.landButton.backgroundColor = [UIColor orangeColor];
     self.landButton.tintColor = [UIColor whiteColor];
     self.landButton.layer.masksToBounds = YES;
@@ -95,7 +92,6 @@ NSString *const eventNotification = @"eventNotification";
     //注册按钮
     self.registerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.registerButton setTitle:@"注册账号" forState:UIControlStateNormal];
-    [self.registerButton addTarget:self action:@selector(pushRegisterView:) forControlEvents:UIControlEventTouchUpInside];
     self.registerButton.tintColor = [UIColor blackColor];
     [self addSubview:self.registerButton];
     [self.registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -108,7 +104,6 @@ NSString *const eventNotification = @"eventNotification";
     //忘记密码按钮
     self.forgetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.forgetButton setTitle:@"忘记密码" forState:UIControlStateNormal];
-    [self.forgetButton addTarget:self action:@selector(pushForgetView:) forControlEvents:UIControlEventTouchUpInside];
     self.forgetButton.tintColor = [UIColor blackColor];
     [self addSubview:self.forgetButton];
     [self.forgetButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -117,26 +112,6 @@ NSString *const eventNotification = @"eventNotification";
         make.width.equalTo(@100);
         make.height.equalTo(@25);
     }];
-}
-
-//登陆按钮事件
-- (void)pushMainView:(UIButton *)button {
-    [[NSNotificationCenter defaultCenter] postNotificationName:eventNotification object:nil userInfo:@{@"event": @"main"}];
-}
-
-//注册账号按钮事件
-- (void)pushRegisterView:(UIButton *)button {
-    [[NSNotificationCenter defaultCenter] postNotificationName:eventNotification object:nil userInfo:@{@"event": @"register"}];
-}
-
-//忘记密码按钮事件
-- (void)pushForgetView:(UIButton *)button {
-    [[NSNotificationCenter defaultCenter] postNotificationName:eventNotification object:nil userInfo:@{@"event": @"forget"}];
-}
-
-//移除通知
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:eventNotification object:nil];
 }
 
 /*

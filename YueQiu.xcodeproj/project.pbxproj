@@ -13,6 +13,18 @@
 		8325A6612796573C0060E916 /* LandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A6602796573C0060E916 /* LandView.m */; };
 		8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325A6632796C2F50060E916 /* lanqiu-copy.png */; };
 		8325A6662796C6C50060E916 /* startUP.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325A6652796C6C50060E916 /* startUP.png */; };
+		83370A8327BF71D000A1889D /* yanzhengma.png in Resources */ = {isa = PBXBuildFile; fileRef = 83370A8227BF71CF00A1889D /* yanzhengma.png */; };
+		83370A8627BF726D00A1889D /* yuechi.png in Resources */ = {isa = PBXBuildFile; fileRef = 83370A8427BF726D00A1889D /* yuechi.png */; };
+		83370A8727BF726D00A1889D /* tubiao202.png in Resources */ = {isa = PBXBuildFile; fileRef = 83370A8527BF726D00A1889D /* tubiao202.png */; };
+		83370A8A27BF7ABC00A1889D /* xuanzeweixuanze.png in Resources */ = {isa = PBXBuildFile; fileRef = 83370A8827BF7ABC00A1889D /* xuanzeweixuanze.png */; };
+		83370A8B27BF7ABC00A1889D /* xuanzeyixuanze.png in Resources */ = {isa = PBXBuildFile; fileRef = 83370A8927BF7ABC00A1889D /* xuanzeyixuanze.png */; };
+		83370A9127BF8E3200A1889D /* SetPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83370A9027BF8E3200A1889D /* SetPasswordView.m */; };
+		83370A9827BF8E6300A1889D /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83370A9727BF8E6300A1889D /* SetPasswordViewController.m */; };
+		8344FC8A27BE1DD000C534D5 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8344FC8927BE1DD000C534D5 /* RegisterView.m */; };
+		8344FC8D27BE1DE900C534D5 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8344FC8C27BE1DE900C534D5 /* RegisterViewController.m */; };
+		8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8344FC9227BE207E00C534D5 /* ForgetView.m */; };
+		8344FC9627BE208C00C534D5 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8344FC9527BE208C00C534D5 /* ForgetViewController.m */; };
+		8344FC9C27BE269D00C534D5 /* fanhui2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344FC9B27BE269D00C534D5 /* fanhui2.png */; };
 		8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8347BCBA278C2FD300466606 /* CourseTableViewCell.m */; };
 		8347BCBD278C35BB00466606 /* 2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8347BCBC278C35BB00466606 /* 2-1.png */; };
 		837B7134279A667100DBD856 /* jia.png in Resources */ = {isa = PBXBuildFile; fileRef = 837B7133279A667100DBD856 /* jia.png */; };
@@ -85,6 +97,24 @@
 		8325A6602796573C0060E916 /* LandView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandView.m; sourceTree = "<group>"; };
 		8325A6632796C2F50060E916 /* lanqiu-copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanqiu-copy.png"; sourceTree = "<group>"; };
 		8325A6652796C6C50060E916 /* startUP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startUP.png; sourceTree = "<group>"; };
+		83370A8227BF71CF00A1889D /* yanzhengma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yanzhengma.png; sourceTree = "<group>"; };
+		83370A8427BF726D00A1889D /* yuechi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuechi.png; sourceTree = "<group>"; };
+		83370A8527BF726D00A1889D /* tubiao202.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tubiao202.png; sourceTree = "<group>"; };
+		83370A8827BF7ABC00A1889D /* xuanzeweixuanze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xuanzeweixuanze.png; sourceTree = "<group>"; };
+		83370A8927BF7ABC00A1889D /* xuanzeyixuanze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xuanzeyixuanze.png; sourceTree = "<group>"; };
+		83370A8F27BF8E3200A1889D /* SetPasswordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordView.h; sourceTree = "<group>"; };
+		83370A9027BF8E3200A1889D /* SetPasswordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordView.m; sourceTree = "<group>"; };
+		83370A9627BF8E6300A1889D /* SetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
+		83370A9727BF8E6300A1889D /* SetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
+		8344FC8827BE1DD000C534D5 /* RegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		8344FC8927BE1DD000C534D5 /* RegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
+		8344FC8B27BE1DE900C534D5 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		8344FC8C27BE1DE900C534D5 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		8344FC9127BE207E00C534D5 /* ForgetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetView.h; sourceTree = "<group>"; };
+		8344FC9227BE207E00C534D5 /* ForgetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetView.m; sourceTree = "<group>"; };
+		8344FC9427BE208C00C534D5 /* ForgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetViewController.h; sourceTree = "<group>"; };
+		8344FC9527BE208C00C534D5 /* ForgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
+		8344FC9B27BE269D00C534D5 /* fanhui2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui2.png; sourceTree = "<group>"; };
 		8347BCB9278C2FD300466606 /* CourseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
 		8347BCBA278C2FD300466606 /* CourseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
 		8347BCBC278C35BB00466606 /* 2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-1.png"; sourceTree = "<group>"; };
@@ -233,6 +263,100 @@
 			path = LandPhotos;
 			sourceTree = "<group>";
 		};
+		83370A8C27BF8DFF00A1889D /* SetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				83370A8E27BF8E1A00A1889D /* SetPasswordView */,
+				83370A8D27BF8E1000A1889D /* SetPasswordViewController */,
+			);
+			path = SetPassword;
+			sourceTree = "<group>";
+		};
+		83370A8D27BF8E1000A1889D /* SetPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				83370A9627BF8E6300A1889D /* SetPasswordViewController.h */,
+				83370A9727BF8E6300A1889D /* SetPasswordViewController.m */,
+			);
+			path = SetPasswordViewController;
+			sourceTree = "<group>";
+		};
+		83370A8E27BF8E1A00A1889D /* SetPasswordView */ = {
+			isa = PBXGroup;
+			children = (
+				83370A8F27BF8E3200A1889D /* SetPasswordView.h */,
+				83370A9027BF8E3200A1889D /* SetPasswordView.m */,
+			);
+			path = SetPasswordView;
+			sourceTree = "<group>";
+		};
+		8344FC8527BE1D6100C534D5 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8344FC8627BE1D6A00C534D5 /* RegisterView */,
+				8344FC8727BE1D8F00C534D5 /* RegisterViewController */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		8344FC8627BE1D6A00C534D5 /* RegisterView */ = {
+			isa = PBXGroup;
+			children = (
+				8344FC8827BE1DD000C534D5 /* RegisterView.h */,
+				8344FC8927BE1DD000C534D5 /* RegisterView.m */,
+			);
+			path = RegisterView;
+			sourceTree = "<group>";
+		};
+		8344FC8727BE1D8F00C534D5 /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8344FC8B27BE1DE900C534D5 /* RegisterViewController.h */,
+				8344FC8C27BE1DE900C534D5 /* RegisterViewController.m */,
+			);
+			path = RegisterViewController;
+			sourceTree = "<group>";
+		};
+		8344FC8E27BE203C00C534D5 /* Forget */ = {
+			isa = PBXGroup;
+			children = (
+				8344FC9027BE206100C534D5 /* ForgetView */,
+				8344FC8F27BE205500C534D5 /* ForgetViewController */,
+			);
+			path = Forget;
+			sourceTree = "<group>";
+		};
+		8344FC8F27BE205500C534D5 /* ForgetViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8344FC9427BE208C00C534D5 /* ForgetViewController.h */,
+				8344FC9527BE208C00C534D5 /* ForgetViewController.m */,
+			);
+			path = ForgetViewController;
+			sourceTree = "<group>";
+		};
+		8344FC9027BE206100C534D5 /* ForgetView */ = {
+			isa = PBXGroup;
+			children = (
+				8344FC9127BE207E00C534D5 /* ForgetView.h */,
+				8344FC9227BE207E00C534D5 /* ForgetView.m */,
+			);
+			path = ForgetView;
+			sourceTree = "<group>";
+		};
+		8344FC9A27BE268600C534D5 /* RegisterPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				83370A8827BF7ABC00A1889D /* xuanzeweixuanze.png */,
+				83370A8927BF7ABC00A1889D /* xuanzeyixuanze.png */,
+				8344FC9B27BE269D00C534D5 /* fanhui2.png */,
+				83370A8227BF71CF00A1889D /* yanzhengma.png */,
+				83370A8527BF726D00A1889D /* tubiao202.png */,
+				83370A8427BF726D00A1889D /* yuechi.png */,
+			);
+			path = RegisterPhotos;
+			sourceTree = "<group>";
+		};
 		837B712E279A5BF700DBD856 /* NewsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +418,9 @@
 		83C798632789BDFE000F68C1 /* YueQiu */ = {
 			isa = PBXGroup;
 			children = (
+				83370A8C27BF8DFF00A1889D /* SetPassword */,
+				8344FC8E27BE203C00C534D5 /* Forget */,
+				8344FC8527BE1D6100C534D5 /* Register */,
 				8325A658279656D80060E916 /* Land */,
 				83C7989C2789BF62000F68C1 /* Train */,
 				83C7989B2789BF5B000F68C1 /* News */,
@@ -456,6 +583,7 @@
 		83C798CA2789C179000F68C1 /* 图库 */ = {
 			isa = PBXGroup;
 			children = (
+				8344FC9A27BE268600C534D5 /* RegisterPhotos */,
 				CCFA4BA527AE5BB000F2BB18 /* MyPhotos */,
 				CCFA4B9827AAF50C00F2BB18 /* HomePagePhotos */,
 				837B7132279A661B00DBD856 /* NewsPhotos */,
@@ -615,8 +743,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83370A8727BF726D00A1889D /* tubiao202.png in Resources */,
+				8344FC9C27BE269D00C534D5 /* fanhui2.png in Resources */,
 				8325A6662796C6C50060E916 /* startUP.png in Resources */,
 				CCFA4BAB27AE664200F2BB18 /* head.jpeg in Resources */,
+				83370A8627BF726D00A1889D /* yuechi.png in Resources */,
+				83370A8B27BF7ABC00A1889D /* xuanzeyixuanze.png in Resources */,
+				83370A8327BF71D000A1889D /* yanzhengma.png in Resources */,
 				837B7148279AB3E500DBD856 /* gengduo.png in Resources */,
 				83C798742789BE00000F68C1 /* LaunchScreen.storyboard in Resources */,
 				837B713B279A66BB00DBD856 /* yonghu.png in Resources */,
@@ -630,6 +763,7 @@
 				CCFA4BB127AE809F00F2BB18 /* more.png in Resources */,
 				8315BF11279BFE24007CBAD8 /* huifu.png in Resources */,
 				CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */,
+				83370A8A27BF7ABC00A1889D /* xuanzeweixuanze.png in Resources */,
 				8347BCBD278C35BB00466606 /* 2-1.png in Resources */,
 				83C7986F2789BDFE000F68C1 /* Main.storyboard in Resources */,
 				CCFA4BB327AEBD3600F2BB18 /* dingwei.png in Resources */,
@@ -693,6 +827,8 @@
 				CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
 				837B713F279AAAAB00DBD856 /* BoutiqueView.m in Sources */,
+				8344FC8D27BE1DE900C534D5 /* RegisterViewController.m in Sources */,
+				8344FC8A27BE1DD000C534D5 /* RegisterView.m in Sources */,
 				CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */,
 				83C798B42789C094000F68C1 /* HomePageViewController.m in Sources */,
 				8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */,
@@ -701,10 +837,14 @@
 				83C798C92789C100000F68C1 /* TrainView.m in Sources */,
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
+				8344FC9627BE208C00C534D5 /* ForgetViewController.m in Sources */,
+				83370A9827BF8E6300A1889D /* SetPasswordViewController.m in Sources */,
 				83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */,
 				CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */,
 				837B7142279AAAD000DBD856 /* FollowView.m in Sources */,
+				8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
+				83370A9127BF8E3200A1889D /* SetPasswordView.m in Sources */,
 				CCFA4BA427ABB9EF00F2BB18 /* MyTableViewCell.m in Sources */,
 				83C798B72789C0A9000F68C1 /* HomePageMModel.m in Sources */,
 				8384B4AA2792C34D00282E66 /* CourseDataModel.m in Sources */,
