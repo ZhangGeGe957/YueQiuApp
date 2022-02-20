@@ -14,66 +14,68 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
-    if ([reuseIdentifier isEqualToString:@"course"]) {
-        self.courseLabel = [[UILabel alloc] init];
-        [self.contentView addSubview:self.courseLabel];
-        [self.courseLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(self.contentView.mas_top).offset(10);
-                    make.left.equalTo(self.contentView.mas_left).offset(10);
-                    make.size.mas_equalTo(CGSizeMake(W / 3, 40));
+
+    if ([reuseIdentifier isEqualToString:@"background"]) {
+        UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"beijing.jpeg"]];
+        [self.contentView addSubview:imageView];
+        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.contentView.mas_top).offset(0);
+            make.left.equalTo(self.contentView.mas_left).offset(0);
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(0);
+            make.width.mas_equalTo(W);
         }];
-        
-        self.progressView = [[UIProgressView alloc] init];
-        [self.contentView addSubview:self.progressView];
-        [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.courseLabel.mas_top).offset(15);
-            make.left.equalTo(self.courseLabel.mas_right).offset(10);
-            make.size.mas_equalTo(CGSizeMake(W / 3, 10));
-        }];
-        self.progressView.progressTintColor = [UIColor blueColor];
-        
-        UIButton* buttonStudy = [UIButton buttonWithType:UIButtonTypeSystem];
-        [buttonStudy setTitle:@"学习" forState:UIControlStateNormal];
-        [self.contentView addSubview:buttonStudy];
-        [buttonStudy mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.courseLabel.mas_top).offset(0);
-            make.left.equalTo(self.progressView.mas_right).offset(10);
-            make.size.mas_equalTo(CGSizeMake(W / 5, 40));
-        }];
-        buttonStudy.titleLabel.font = [UIFont systemFontOfSize:20];
-    } else if ([reuseIdentifier isEqualToString:@"stadium"]) {
-        self.stadiumLabel = [[UILabel alloc] init];
-        [self.contentView addSubview:self.stadiumLabel];
-        [self.stadiumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(self.contentView.mas_top).offset(10);
-                    make.left.equalTo(self.contentView.mas_left).offset(10);
-                    make.size.mas_equalTo(CGSizeMake(W / 3, 40));
-        }];
-        self.stadiumLabel.textAlignment = NSTextAlignmentLeft;
-        
-        self.stadiumPlaceLabel = [[UILabel alloc] init];
-        [self.contentView addSubview:self.stadiumPlaceLabel];
-        [self.stadiumPlaceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(self.stadiumLabel.mas_top).offset(10);
-                    make.left.equalTo(self.stadiumLabel.mas_right).offset(10);
-                    make.size.mas_equalTo(CGSizeMake(W / 2, 40));
-        }];
-        self.buttonGPS = [UIButton buttonWithType:UIButtonTypeSystem];
-        [self.contentView addSubview:self.buttonGPS];
-        [self.buttonGPS setImage:[UIImage imageNamed:@"dingwei.png"] forState:UIControlStateNormal];
-        [self.buttonGPS addTarget:self action:@selector(touchGPS) forControlEvents:UIControlEventTouchUpInside];
-        [self.buttonGPS mas_makeConstraints:^(MASConstraintMaker *make) {
+    } else if([reuseIdentifier isEqualToString:@"MyMessage"]) {
+        self.buttonHead = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.contentView addSubview:self.buttonHead];
+        [self.buttonHead setImage:[UIImage imageNamed:@"head.jpeg"] forState:UIControlStateNormal];
+        [self.buttonHead mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(20);
-            make.left.equalTo(self.contentView.mas_right).offset(-50);
-            make.size.mas_equalTo(CGSizeMake(30, 30));
+            make.left.equalTo(self.contentView.mas_left).offset(20);
+            make.size.mas_equalTo(CGSizeMake(100, 100));
         }];
+        self.buttonHead.layer.cornerRadius = 50;
+        self.buttonHead.layer.masksToBounds = YES;
+//        [self.buttonHead addTarget:self action:@selector(touchToChangeHead:) forControlEvents:UIControlEventTouchUpInside];  
+        
+        self.labelName = [[UILabel alloc] init];
+        [self.contentView addSubview:self.labelName];
+        self.labelName.text = @"Fahaxiki";
+        [self.labelName mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.buttonHead.mas_top).offset(10);
+            make.left.equalTo(self.buttonHead.mas_right).offset(20);
+            make.size.mas_equalTo(CGSizeMake(W / 3, 30));
+        }];
+        self.labelName.textAlignment = NSTextAlignmentLeft;
+        self.labelName.font = [UIFont systemFontOfSize:23];
+        
+        self.labelUID = [[UILabel alloc] init];
+        [self.contentView addSubview:_labelUID];
+        [_labelUID mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(_labelName.mas_top).offset(0);
+            make.left.equalTo(_labelName.mas_right).offset(10);
+            make.size.mas_equalTo(CGSizeMake(W / 3, 30));
+        }];
+        _labelUID.text = @"UID:000001";
+        _labelUID.textAlignment = NSTextAlignmentLeft;
+        
+        self.labelPersonalSignature = [[UILabel alloc] init];
+        [self.contentView addSubview:self.labelPersonalSignature];
+        [self.labelPersonalSignature mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.labelName.mas_bottom).offset(10);
+            make.left.equalTo(self.labelName.mas_left).offset(0);
+            make.size.mas_equalTo(CGSizeMake(W * 2 / 3, 30));
+        }];
+        self.labelPersonalSignature.numberOfLines = 1;
+        self.labelPersonalSignature.text = @"年龄永远不是衡量一个人的刻度,只有责任的叠加才会让人逐渐成长。";
+        self.labelPersonalSignature.font = [UIFont systemFontOfSize:15];
+    } else {
+        
     }
-    
     
     return self;
 }
 
-- (void)touchGPS {
-    
-}
+
+
+
 @end

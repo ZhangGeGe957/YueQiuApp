@@ -27,6 +27,12 @@
     search.tintColor = [UIColor blackColor];
     self.navigationItem.rightBarButtonItem = search;
     
+    UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.layer.cornerRadius = 25;
+    leftButton.layer.masksToBounds = YES;
+    [leftButton setImage:[UIImage imageNamed:@"head的副本.jpeg"] forState:UIControlStateNormal];
+    UIBarButtonItem* leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
     
     self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H - [self hGetTabHeight] - [self hGetStatusbarHeight])];
 
@@ -52,5 +58,8 @@
 - (void)touchSearch {
     HQBSearchViewController* searchController = [[HQBSearchViewController alloc] init];
     [self.navigationController pushViewController:searchController animated:YES];
+}
+- (void)touchHead{
+    
 }
 @end
