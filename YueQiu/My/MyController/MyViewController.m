@@ -26,6 +26,7 @@
     
     self.myView = [[MyView alloc] initWithFrame:CGRectMake(0, [self hGetStatusbarHeight] + [self hGetNavigationbarHeight], W, H - [self hGetStatusbarHeight] - [self hGetNavigationbarHeight] - [self hGetTabHeight])];
     [self.view addSubview:self.myView];
+    
 }
 
 - (float)hGetStatusbarHeight {
