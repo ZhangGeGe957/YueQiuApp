@@ -10,11 +10,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyTableViewCell : UITableViewCell
-@property (nonatomic, strong) UIProgressView* progressView;
-@property (nonatomic, strong) UILabel* courseLabel;
-@property (nonatomic, strong) UILabel* stadiumLabel;
-@property (nonatomic, strong) UILabel* stadiumPlaceLabel;
-@property (nonatomic, strong) UIButton* buttonGPS;
+
+@property (nonatomic, strong) UIButton* buttonHead;
+@property (nonatomic, strong) UILabel* labelName;
+@property (nonatomic, strong) UILabel* labelUID;
+@property (nonatomic, strong) UILabel* labelPersonalSignature;
 @end
 
 NS_ASSUME_NONNULL_END
