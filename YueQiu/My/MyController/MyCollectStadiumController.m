@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"我收藏的球馆";
-    MyCollectStadiumView* myCollectView = [[MyCollectStadiumView alloc] initWithFrame:CGRectMake(0,  [self hGetStatusbarHeight] + [self hGetNavigationbarHeight], W, H - [self hGetStatusbarHeight])];
+    MyCollectStadiumView* myCollectView = [[MyCollectStadiumView alloc] initWithFrame:CGRectMake(0,  [self hGetStatusbarHeight], W, H - [self hGetStatusbarHeight])];
     
     [self.view addSubview:myCollectView];
 }

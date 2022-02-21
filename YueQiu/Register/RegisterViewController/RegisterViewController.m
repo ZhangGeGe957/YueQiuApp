@@ -36,21 +36,7 @@
 
 //验证码
 - (void)pressSend:(UIButton *)button {
-    self.sendButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
-    [self.registerView.sendButton setEnabled:NO];
-    self.allTime = 60;
-}
-- (void)countDown:(NSTimer *)timer {
-    if (self.allTime == 0) {
-        [self.sendButtonTimer invalidate];
-        self.sendButtonTimer = nil;
-        [self.registerView.sendButton setTitle:@"发送验证码" forState:UIControlStateNormal];
-        [self.registerView.sendButton setEnabled:YES];
-    } else {
-        NSString *tempString = [[NSString alloc] initWithFormat:@"%ld", self.allTime];
-        [self.registerView.sendButton setTitle:tempString forState:UIControlStateNormal];
-        self.allTime = self.allTime - 1;
-    }
+    NSLog(@"验证码");
 }
 
 //返回按钮事件

@@ -6,6 +6,7 @@
 //
 
 #import "MyViewController.h"
+#import "SettingController.h"
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
 @interface MyViewController ()
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     self.view.backgroundColor = [UIColor whiteColor];
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchMore)];
     rightButton.tintColor = [UIColor blackColor];
@@ -25,9 +26,11 @@
     
     
     self.myView = [[MyView alloc] initWithFrame:CGRectMake(0, [self hGetStatusbarHeight] + [self hGetNavigationbarHeight], W, H - [self hGetStatusbarHeight] - [self hGetNavigationbarHeight] - [self hGetTabHeight])];
+
     [self.view addSubview:self.myView];
     
 }
+
 
 - (float)hGetStatusbarHeight {
     NSSet *set = [[UIApplication sharedApplication] connectedScenes];
@@ -45,6 +48,9 @@
     return self.tabBarController.tabBar.frame.size.height;
 }
 - (void)touchMore{
-    
+    self.hidesBottomBarWhenPushed = YES;
+    SettingController* settingController = [[SettingController alloc] init];
+    [self.navigationController pushViewController:settingController animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 @end

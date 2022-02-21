@@ -25,7 +25,7 @@
     
 
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 80, W, self.frame.size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, W, self.frame.size.height) style:UITableViewStylePlain];
     [self addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

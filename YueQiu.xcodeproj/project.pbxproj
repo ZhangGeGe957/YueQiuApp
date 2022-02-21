@@ -64,6 +64,17 @@
 		CC89C28327C251770096C12D /* MyCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28227C251770096C12D /* MyCourseView.m */; };
 		CC89C28627C2518C0096C12D /* MyCollectStadiumView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */; };
 		CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */; };
+		CC89C28C27C374710096C12D /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28B27C374710096C12D /* SettingController.m */; };
+		CC89C28F27C3749B0096C12D /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28E27C3749B0096C12D /* SettingView.m */; };
+		CC89C29527C375180096C12D /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C29427C375180096C12D /* SettingCell.m */; };
+		CC89C29F27C3B84E0096C12D /* fankui.png in Resources */ = {isa = PBXBuildFile; fileRef = CC89C29727C3B84E0096C12D /* fankui.png */; };
+		CC89C2A027C3B84E0096C12D /* zhanghaoyuanquan.png in Resources */ = {isa = PBXBuildFile; fileRef = CC89C29827C3B84E0096C12D /* zhanghaoyuanquan.png */; };
+		CC89C2A127C3B84E0096C12D /* shanchu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC89C29927C3B84E0096C12D /* shanchu.png */; };
+		CC89C2A227C3B84E0096C12D /* tongzhi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC89C29A27C3B84E0096C12D /* tongzhi.png */; };
+		CC89C2A327C3B84E0096C12D /* yinsi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC89C29B27C3B84E0096C12D /* yinsi.png */; };
+		CC89C2A427C3B84E0096C12D /* qiehuanzhanghao.png in Resources */ = {isa = PBXBuildFile; fileRef = CC89C29C27C3B84E0096C12D /* qiehuanzhanghao.png */; };
+		CC89C2A527C3B84E0096C12D /* tuichudenglu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC89C29D27C3B84E0096C12D /* tuichudenglu.png */; };
+		CC89C2A627C3B84E0096C12D /* yejianmoshi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC89C29E27C3B84E0096C12D /* yejianmoshi.png */; };
 		CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */; };
 		CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */; };
 		CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */; };
@@ -186,6 +197,20 @@
 		CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectStadiumView.m; sourceTree = "<group>"; };
 		CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseAndStadiumCell.h; sourceTree = "<group>"; };
 		CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseAndStadiumCell.m; sourceTree = "<group>"; };
+		CC89C28A27C374710096C12D /* SettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		CC89C28B27C374710096C12D /* SettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		CC89C28D27C3749B0096C12D /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
+		CC89C28E27C3749B0096C12D /* SettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
+		CC89C29327C375180096C12D /* SettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
+		CC89C29427C375180096C12D /* SettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
+		CC89C29727C3B84E0096C12D /* fankui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fankui.png; sourceTree = "<group>"; };
+		CC89C29827C3B84E0096C12D /* zhanghaoyuanquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhanghaoyuanquan.png; sourceTree = "<group>"; };
+		CC89C29927C3B84E0096C12D /* shanchu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shanchu.png; sourceTree = "<group>"; };
+		CC89C29A27C3B84E0096C12D /* tongzhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tongzhi.png; sourceTree = "<group>"; };
+		CC89C29B27C3B84E0096C12D /* yinsi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yinsi.png; sourceTree = "<group>"; };
+		CC89C29C27C3B84E0096C12D /* qiehuanzhanghao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qiehuanzhanghao.png; sourceTree = "<group>"; };
+		CC89C29D27C3B84E0096C12D /* tuichudenglu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuichudenglu.png; sourceTree = "<group>"; };
+		CC89C29E27C3B84E0096C12D /* yejianmoshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yejianmoshi.png; sourceTree = "<group>"; };
 		CCFA4B9227AAF3BB00F2BB18 /* HQBSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchView.h; sourceTree = "<group>"; };
 		CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQBSearchView.m; sourceTree = "<group>"; };
 		CCFA4B9527AAF49700F2BB18 /* HQBSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchViewController.h; sourceTree = "<group>"; };
@@ -557,6 +582,8 @@
 				CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */,
 				CC89C27E27C2515D0096C12D /* MyCourseViewController.h */,
 				CC89C27F27C2515D0096C12D /* MyCourseViewController.m */,
+				CC89C28A27C374710096C12D /* SettingController.h */,
+				CC89C28B27C374710096C12D /* SettingController.m */,
 			);
 			path = MyController;
 			sourceTree = "<group>";
@@ -604,6 +631,7 @@
 		83C798CA2789C179000F68C1 /* 图库 */ = {
 			isa = PBXGroup;
 			children = (
+				CC89C29627C3B7F60096C12D /* SettingPhotos */,
 				8344FC9A27BE268600C534D5 /* RegisterPhotos */,
 				CCFA4BA527AE5BB000F2BB18 /* MyPhotos */,
 				CCFA4B9827AAF50C00F2BB18 /* HomePagePhotos */,
@@ -623,6 +651,56 @@
 			path = TrainPhotos;
 			sourceTree = "<group>";
 		};
+		CC89C29027C374AC0096C12D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CC89C28D27C3749B0096C12D /* SettingView.h */,
+				CC89C28E27C3749B0096C12D /* SettingView.m */,
+				CC89C29327C375180096C12D /* SettingCell.h */,
+				CC89C29427C375180096C12D /* SettingCell.m */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CC89C29127C374CA0096C12D /* My */ = {
+			isa = PBXGroup;
+			children = (
+				CCFA4B9F27ABB98100F2BB18 /* MyView.h */,
+				CCFA4BA027ABB98100F2BB18 /* MyView.m */,
+				CCFA4BA227ABB9EF00F2BB18 /* MyTableViewCell.h */,
+				CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		CC89C29227C374DE0096C12D /* CourseAndStadium */ = {
+			isa = PBXGroup;
+			children = (
+				CC89C28127C251770096C12D /* MyCourseView.h */,
+				CC89C28227C251770096C12D /* MyCourseView.m */,
+				CC89C28427C2518C0096C12D /* MyCollectStadiumView.h */,
+				CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */,
+				CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */,
+				CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */,
+			);
+			path = CourseAndStadium;
+			sourceTree = "<group>";
+		};
+		CC89C29627C3B7F60096C12D /* SettingPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				CC89C29727C3B84E0096C12D /* fankui.png */,
+				CC89C29C27C3B84E0096C12D /* qiehuanzhanghao.png */,
+				CC89C29927C3B84E0096C12D /* shanchu.png */,
+				CC89C29A27C3B84E0096C12D /* tongzhi.png */,
+				CC89C29D27C3B84E0096C12D /* tuichudenglu.png */,
+				CC89C29E27C3B84E0096C12D /* yejianmoshi.png */,
+				CC89C29B27C3B84E0096C12D /* yinsi.png */,
+				CC89C29827C3B84E0096C12D /* zhanghaoyuanquan.png */,
+			);
+			path = SettingPhotos;
+			sourceTree = "<group>";
+		};
 		CCFA4B9827AAF50C00F2BB18 /* HomePagePhotos */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,16 +713,9 @@
 		CCFA4B9D27AB8F5600F2BB18 /* MyView */ = {
 			isa = PBXGroup;
 			children = (
-				CCFA4B9F27ABB98100F2BB18 /* MyView.h */,
-				CCFA4BA027ABB98100F2BB18 /* MyView.m */,
-				CCFA4BA227ABB9EF00F2BB18 /* MyTableViewCell.h */,
-				CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */,
-				CC89C28127C251770096C12D /* MyCourseView.h */,
-				CC89C28227C251770096C12D /* MyCourseView.m */,
-				CC89C28427C2518C0096C12D /* MyCollectStadiumView.h */,
-				CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */,
-				CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */,
-				CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */,
+				CC89C29227C374DE0096C12D /* CourseAndStadium */,
+				CC89C29127C374CA0096C12D /* My */,
+				CC89C29027C374AC0096C12D /* Setting */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -771,13 +842,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC89C2A527C3B84E0096C12D /* tuichudenglu.png in Resources */,
 				83370A8727BF726D00A1889D /* tubiao202.png in Resources */,
 				8344FC9C27BE269D00C534D5 /* fanhui2.png in Resources */,
 				8325A6662796C6C50060E916 /* startUP.png in Resources */,
 				CCFA4BAB27AE664200F2BB18 /* head.jpeg in Resources */,
+				CC89C2A427C3B84E0096C12D /* qiehuanzhanghao.png in Resources */,
 				83370A8627BF726D00A1889D /* yuechi.png in Resources */,
+				CC89C2A027C3B84E0096C12D /* zhanghaoyuanquan.png in Resources */,
+				CC89C2A627C3B84E0096C12D /* yejianmoshi.png in Resources */,
 				83370A8B27BF7ABC00A1889D /* xuanzeyixuanze.png in Resources */,
 				83370A8327BF71D000A1889D /* yanzhengma.png in Resources */,
+				CC89C2A327C3B84E0096C12D /* yinsi.png in Resources */,
+				CC89C2A127C3B84E0096C12D /* shanchu.png in Resources */,
 				837B7148279AB3E500DBD856 /* gengduo.png in Resources */,
 				83C798742789BE00000F68C1 /* LaunchScreen.storyboard in Resources */,
 				837B713B279A66BB00DBD856 /* yonghu.png in Resources */,
@@ -787,6 +864,7 @@
 				8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */,
 				CCFA4BA927AE5C5B00F2BB18 /* beijing.jpeg in Resources */,
 				837B713C279A66BB00DBD856 /* didian.png in Resources */,
+				CC89C2A227C3B84E0096C12D /* tongzhi.png in Resources */,
 				837B7139279A66BB00DBD856 /* renzheng1-copy.png in Resources */,
 				CC89C27A27C250A40096C12D /* head的副本.jpeg in Resources */,
 				CCFA4BB127AE809F00F2BB18 /* more.png in Resources */,
@@ -798,6 +876,7 @@
 				CCFA4BB327AEBD3600F2BB18 /* dingwei.png in Resources */,
 				837B7134279A667100DBD856 /* jia.png in Resources */,
 				83C798CD2789C1A6000F68C1 /* 3.jpg in Resources */,
+				CC89C29F27C3B84E0096C12D /* fankui.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -856,6 +935,7 @@
 				CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */,
 				CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
+				CC89C28F27C3749B0096C12D /* SettingView.m in Sources */,
 				837B713F279AAAAB00DBD856 /* BoutiqueView.m in Sources */,
 				CC89C28627C2518C0096C12D /* MyCollectStadiumView.m in Sources */,
 				CC89C28027C2515D0096C12D /* MyCourseViewController.m in Sources */,
@@ -868,6 +948,7 @@
 				83C798772789BE00000F68C1 /* main.m in Sources */,
 				83C798C02789C0D9000F68C1 /* NewsViewController.m in Sources */,
 				CC89C27D27C2513C0096C12D /* MyCollectStadiumController.m in Sources */,
+				CC89C29527C375180096C12D /* SettingCell.m in Sources */,
 				83C798C92789C100000F68C1 /* TrainView.m in Sources */,
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
@@ -875,6 +956,7 @@
 				83370A9827BF8E6300A1889D /* SetPasswordViewController.m in Sources */,
 				83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */,
 				CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */,
+				CC89C28C27C374710096C12D /* SettingController.m in Sources */,
 				837B7142279AAAD000DBD856 /* FollowView.m in Sources */,
 				8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,

@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyViewController : UIViewController
+
 @property (nonatomic, strong) MyView* myView;
 @end
 

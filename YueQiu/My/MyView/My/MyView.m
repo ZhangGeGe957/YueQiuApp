@@ -19,12 +19,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
-    
-    
-    
     self.menuArray = [NSArray arrayWithObjects:@"我的课程列表", @"我收藏的球馆", @"退出",nil];
-    
-    
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, W, H) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -45,7 +40,7 @@
     } else if (indexPath.row == 1) {
         return 150;
     } else {
-        return 50;
+        return 60;
     }
 }
 
@@ -54,6 +49,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 5;
 }
+
+
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 0) {
@@ -77,11 +74,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.controller = [self viewController];
     if (indexPath.row == 2) {
+        
         MyCourseViewController* myCourseController = [[MyCourseViewController alloc] init];
         [self.controller.navigationController pushViewController:myCourseController animated:YES];
+        self.controller.hidesBottomBarWhenPushed = NO;
+
     } else if (indexPath.row == 3) {
+        self.controller.hidesBottomBarWhenPushed = YES;
         MyCollectStadiumController* collectStadiumController = [[MyCollectStadiumController alloc] init];
         [self.controller.navigationController pushViewController:collectStadiumController animated:YES];
+        self.controller.hidesBottomBarWhenPushed = NO;
     } else if (indexPath.row == 4) {
         UIAlertController *alertSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *exitLogin = [UIAlertAction actionWithTitle:@"退出登陆" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -108,4 +110,6 @@
     }
     return nil;
 }
+
+
 @end
