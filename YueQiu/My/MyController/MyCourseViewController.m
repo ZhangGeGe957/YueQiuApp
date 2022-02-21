@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    self.tabBarController.tabBar.hidden = YES;
     self.title = @"我的课程";
     MyCourseView* courseView = [[MyCourseView alloc] initWithFrame:CGRectMake(0, [self hGetStatusbarHeight] + [self hGetNavigationbarHeight], W, H - [self hGetStatusbarHeight])];
     [self.view addSubview:courseView];

@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RegisterViewController : UIViewController
 
 @property (nonatomic, strong) RegisterView *registerView;
-@property (nonatomic, weak) NSTimer *sendButtonTimer;
-@property NSInteger allTime;
 
 @end
 

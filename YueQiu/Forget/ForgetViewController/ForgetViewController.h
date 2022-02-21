@@ -15,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ForgetViewController : UIViewController
 
 @property (nonatomic, strong) ForgetView *forgetView;
-@property (nonatomic, weak) NSTimer *sendButtonTimer;
-@property NSInteger allTime;
 
 @end
 

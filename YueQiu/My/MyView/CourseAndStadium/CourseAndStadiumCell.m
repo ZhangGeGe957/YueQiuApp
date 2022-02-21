@@ -59,7 +59,6 @@
         self.buttonGPS = [UIButton buttonWithType:UIButtonTypeSystem];
         [self.contentView addSubview:self.buttonGPS];
         [self.buttonGPS setImage:[UIImage imageNamed:@"dingwei.png"] forState:UIControlStateNormal];
-        [self.buttonGPS addTarget:self action:@selector(touchGPS) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonGPS mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(20);
             make.left.equalTo(self.contentView.mas_right).offset(-50);

@@ -75,4 +75,11 @@
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CGRect tempFrame = self.textLabel.frame;
+    tempFrame.origin.x = 30;
+    self.textLabel.frame = tempFrame;
+}
+
 @end
