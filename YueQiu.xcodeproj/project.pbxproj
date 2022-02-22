@@ -64,6 +64,17 @@
 		83C798C92789C100000F68C1 /* TrainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C798C72789C100000F68C1 /* TrainView.m */; };
 		83C798CD2789C1A6000F68C1 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83C798CC2789C1A6000F68C1 /* 3.jpg */; };
 		CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */; };
+		CC5ABFE927C4D15F00D548CB /* shanchu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE127C4D15F00D548CB /* shanchu.png */; };
+		CC5ABFEA27C4D15F00D548CB /* yinsi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE227C4D15F00D548CB /* yinsi.png */; };
+		CC5ABFEB27C4D15F00D548CB /* yejianmoshi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE327C4D15F00D548CB /* yejianmoshi.png */; };
+		CC5ABFEC27C4D15F00D548CB /* qiehuanzhanghao.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE427C4D15F00D548CB /* qiehuanzhanghao.png */; };
+		CC5ABFED27C4D15F00D548CB /* fankui.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE527C4D15F00D548CB /* fankui.png */; };
+		CC5ABFEE27C4D15F00D548CB /* tongzhi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE627C4D15F00D548CB /* tongzhi.png */; };
+		CC5ABFEF27C4D15F00D548CB /* tuichudenglu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE727C4D15F00D548CB /* tuichudenglu.png */; };
+		CC5ABFF027C4D15F00D548CB /* zhanghaoyuanquan.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE827C4D15F00D548CB /* zhanghaoyuanquan.png */; };
+		CC5ABFF327C4D17E00D548CB /* SettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5ABFF227C4D17E00D548CB /* SettingView.m */; };
+		CC5ABFF627C4D19700D548CB /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5ABFF527C4D19700D548CB /* SettingCell.m */; };
+		CC5ABFF927C4D1E000D548CB /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5ABFF827C4D1E000D548CB /* SettingController.m */; };
 		CC89C27A27C250A40096C12D /* head的副本.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CC89C27927C250A40096C12D /* head的副本.jpeg */; };
 		CC89C27D27C2513C0096C12D /* MyCollectStadiumController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */; };
 		CC89C28027C2515D0096C12D /* MyCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C27F27C2515D0096C12D /* MyCourseViewController.m */; };
@@ -189,6 +200,20 @@
 		83C798CC2789C1A6000F68C1 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		CC1A7B2B2789C86C0040B39D /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		CC5ABFE127C4D15F00D548CB /* shanchu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shanchu.png; path = SettingPhotos/shanchu.png; sourceTree = "<group>"; };
+		CC5ABFE227C4D15F00D548CB /* yinsi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yinsi.png; path = SettingPhotos/yinsi.png; sourceTree = "<group>"; };
+		CC5ABFE327C4D15F00D548CB /* yejianmoshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yejianmoshi.png; path = SettingPhotos/yejianmoshi.png; sourceTree = "<group>"; };
+		CC5ABFE427C4D15F00D548CB /* qiehuanzhanghao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qiehuanzhanghao.png; path = SettingPhotos/qiehuanzhanghao.png; sourceTree = "<group>"; };
+		CC5ABFE527C4D15F00D548CB /* fankui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fankui.png; path = SettingPhotos/fankui.png; sourceTree = "<group>"; };
+		CC5ABFE627C4D15F00D548CB /* tongzhi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tongzhi.png; path = SettingPhotos/tongzhi.png; sourceTree = "<group>"; };
+		CC5ABFE727C4D15F00D548CB /* tuichudenglu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tuichudenglu.png; path = SettingPhotos/tuichudenglu.png; sourceTree = "<group>"; };
+		CC5ABFE827C4D15F00D548CB /* zhanghaoyuanquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zhanghaoyuanquan.png; path = SettingPhotos/zhanghaoyuanquan.png; sourceTree = "<group>"; };
+		CC5ABFF127C4D17E00D548CB /* SettingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingView.h; sourceTree = "<group>"; };
+		CC5ABFF227C4D17E00D548CB /* SettingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingView.m; sourceTree = "<group>"; };
+		CC5ABFF427C4D19700D548CB /* SettingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
+		CC5ABFF527C4D19700D548CB /* SettingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
+		CC5ABFF727C4D1E000D548CB /* SettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		CC5ABFF827C4D1E000D548CB /* SettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
 		CC89C27927C250A40096C12D /* head的副本.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "head的副本.jpeg"; sourceTree = "<group>"; };
 		CC89C27B27C2513C0096C12D /* MyCollectStadiumController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectStadiumController.h; sourceTree = "<group>"; };
 		CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectStadiumController.m; sourceTree = "<group>"; };
@@ -610,6 +635,8 @@
 				CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */,
 				CC89C27E27C2515D0096C12D /* MyCourseViewController.h */,
 				CC89C27F27C2515D0096C12D /* MyCourseViewController.m */,
+				CC5ABFF727C4D1E000D548CB /* SettingController.h */,
+				CC5ABFF827C4D1E000D548CB /* SettingController.m */,
 			);
 			path = MyController;
 			sourceTree = "<group>";
@@ -657,6 +684,15 @@
 		83C798CA2789C179000F68C1 /* 图库 */ = {
 			isa = PBXGroup;
 			children = (
+				CC5ABFE527C4D15F00D548CB /* fankui.png */,
+				CC5ABFE427C4D15F00D548CB /* qiehuanzhanghao.png */,
+				CC5ABFE127C4D15F00D548CB /* shanchu.png */,
+				CC5ABFE627C4D15F00D548CB /* tongzhi.png */,
+				CC5ABFE727C4D15F00D548CB /* tuichudenglu.png */,
+				CC5ABFE327C4D15F00D548CB /* yejianmoshi.png */,
+				CC5ABFE227C4D15F00D548CB /* yinsi.png */,
+				CC5ABFE827C4D15F00D548CB /* zhanghaoyuanquan.png */,
+				CC5ABFE027C4D10600D548CB /* SettingPhotos */,
 				833639C727C4B74C0020D864 /* ReservePhotos */,
 				8344FC9A27BE268600C534D5 /* RegisterPhotos */,
 				CCFA4BA527AE5BB000F2BB18 /* MyPhotos */,
@@ -675,6 +711,13 @@
 				8347BCBC278C35BB00466606 /* 2-1.png */,
 			);
 			path = TrainPhotos;
+			sourceTree = "<group>";
+		};
+		CC5ABFE027C4D10600D548CB /* SettingPhotos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingPhotos;
 			sourceTree = "<group>";
 		};
 		CCFA4B9827AAF50C00F2BB18 /* HomePagePhotos */ = {
@@ -699,6 +742,10 @@
 				CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */,
 				CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */,
 				CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */,
+				CC5ABFF127C4D17E00D548CB /* SettingView.h */,
+				CC5ABFF227C4D17E00D548CB /* SettingView.m */,
+				CC5ABFF427C4D19700D548CB /* SettingCell.h */,
+				CC5ABFF527C4D19700D548CB /* SettingCell.m */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -832,24 +879,32 @@
 				83370A8627BF726D00A1889D /* yuechi.png in Resources */,
 				83370A8B27BF7ABC00A1889D /* xuanzeyixuanze.png in Resources */,
 				833639CD27C4B76A0020D864 /* qian.png in Resources */,
+				CC5ABFED27C4D15F00D548CB /* fankui.png in Resources */,
 				83370A8327BF71D000A1889D /* yanzhengma.png in Resources */,
+				CC5ABFEE27C4D15F00D548CB /* tongzhi.png in Resources */,
+				CC5ABFE927C4D15F00D548CB /* shanchu.png in Resources */,
 				837B7148279AB3E500DBD856 /* gengduo.png in Resources */,
 				83C798742789BE00000F68C1 /* LaunchScreen.storyboard in Resources */,
 				837B713B279A66BB00DBD856 /* yonghu.png in Resources */,
 				837B713A279A66BB00DBD856 /* naozhong-copy.png in Resources */,
 				83C798712789BE00000F68C1 /* Assets.xcassets in Resources */,
+				CC5ABFF027C4D15F00D548CB /* zhanghaoyuanquan.png in Resources */,
 				837B714A279AB8C600DBD856 /* neirong.png in Resources */,
 				833639CE27C4B76A0020D864 /* shijian.png in Resources */,
+				CC5ABFEB27C4D15F00D548CB /* yejianmoshi.png in Resources */,
 				8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */,
 				833639CF27C4B76A0020D864 /* dianhua.png in Resources */,
+				CC5ABFEA27C4D15F00D548CB /* yinsi.png in Resources */,
 				CCFA4BA927AE5C5B00F2BB18 /* beijing.jpeg in Resources */,
 				837B713C279A66BB00DBD856 /* didian.png in Resources */,
 				837B7139279A66BB00DBD856 /* renzheng1-copy.png in Resources */,
 				CC89C27A27C250A40096C12D /* head的副本.jpeg in Resources */,
+				CC5ABFEF27C4D15F00D548CB /* tuichudenglu.png in Resources */,
 				CCFA4BB127AE809F00F2BB18 /* more.png in Resources */,
 				8315BF11279BFE24007CBAD8 /* huifu.png in Resources */,
 				CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */,
 				83370A8A27BF7ABC00A1889D /* xuanzeweixuanze.png in Resources */,
+				CC5ABFEC27C4D15F00D548CB /* qiehuanzhanghao.png in Resources */,
 				8347BCBD278C35BB00466606 /* 2-1.png in Resources */,
 				83C7986F2789BDFE000F68C1 /* Main.storyboard in Resources */,
 				CCFA4BB327AEBD3600F2BB18 /* dingwei.png in Resources */,
@@ -926,7 +981,9 @@
 				83C798B42789C094000F68C1 /* HomePageViewController.m in Sources */,
 				8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */,
 				83C798772789BE00000F68C1 /* main.m in Sources */,
+				CC5ABFF327C4D17E00D548CB /* SettingView.m in Sources */,
 				83C798C02789C0D9000F68C1 /* NewsViewController.m in Sources */,
+				CC5ABFF627C4D19700D548CB /* SettingCell.m in Sources */,
 				CC89C27D27C2513C0096C12D /* MyCollectStadiumController.m in Sources */,
 				83C798C92789C100000F68C1 /* TrainView.m in Sources */,
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
@@ -935,6 +992,7 @@
 				83370A9827BF8E6300A1889D /* SetPasswordViewController.m in Sources */,
 				83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */,
 				CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */,
+				CC5ABFF927C4D1E000D548CB /* SettingController.m in Sources */,
 				837B7142279AAAD000DBD856 /* FollowView.m in Sources */,
 				8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
