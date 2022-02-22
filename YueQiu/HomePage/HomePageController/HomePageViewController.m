@@ -6,13 +6,18 @@
 //
 
 #import "HomePageViewController.h"
-
 #import "Masonry.h"
 #import "HQBSearchViewController.h"
+#import "ReserveViewController.h"
 
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
+
+NSString *const identityHomePageControllerNotice = @"homePage";
+
 @interface HomePageViewController ()
+
+@property (nonatomic, strong) ReserveViewController *reserveView;
 
 @end
 
@@ -34,8 +39,10 @@
     UIBarButtonItem* leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
     self.navigationItem.leftBarButtonItem = leftItem;
     
+    //注册通知
+    [self registrationNotice];
+    
     self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H - [self hGetTabHeight] - [self hGetStatusbarHeight])];
-
     [self.view addSubview:self.homePageView];
 }
 
@@ -59,7 +66,18 @@
     HQBSearchViewController* searchController = [[HQBSearchViewController alloc] init];
     [self.navigationController pushViewController:searchController animated:YES];
 }
-- (void)touchHead{
+- (void)touchHead {
     
 }
+
+//注册通知
+- (void)registrationNotice {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homePageNoticeEvent:) name:identityHomePageControllerNotice object:nil];
+}
+- (void)homePageNoticeEvent:(NSNotification *)sender {
+    self.reserveView = [[ReserveViewController alloc] init];
+    self.reserveView.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:self.reserveView animated:YES completion:nil];
+}
+
 @end

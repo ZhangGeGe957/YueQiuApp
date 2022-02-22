@@ -13,6 +13,8 @@
 		8325A6612796573C0060E916 /* LandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A6602796573C0060E916 /* LandView.m */; };
 		8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325A6632796C2F50060E916 /* lanqiu-copy.png */; };
 		8325A6662796C6C50060E916 /* startUP.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325A6652796C6C50060E916 /* startUP.png */; };
+		8333B12427C3244200858A48 /* ReserveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333B12327C3244200858A48 /* ReserveView.m */; };
+		8333B12727C3245300858A48 /* ReserveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8333B12627C3245300858A48 /* ReserveViewController.m */; };
 		83370A8327BF71D000A1889D /* yanzhengma.png in Resources */ = {isa = PBXBuildFile; fileRef = 83370A8227BF71CF00A1889D /* yanzhengma.png */; };
 		83370A8627BF726D00A1889D /* yuechi.png in Resources */ = {isa = PBXBuildFile; fileRef = 83370A8427BF726D00A1889D /* yuechi.png */; };
 		83370A8727BF726D00A1889D /* tubiao202.png in Resources */ = {isa = PBXBuildFile; fileRef = 83370A8527BF726D00A1889D /* tubiao202.png */; };
@@ -103,6 +105,10 @@
 		8325A6602796573C0060E916 /* LandView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandView.m; sourceTree = "<group>"; };
 		8325A6632796C2F50060E916 /* lanqiu-copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanqiu-copy.png"; sourceTree = "<group>"; };
 		8325A6652796C6C50060E916 /* startUP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startUP.png; sourceTree = "<group>"; };
+		8333B12227C3244200858A48 /* ReserveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReserveView.h; sourceTree = "<group>"; };
+		8333B12327C3244200858A48 /* ReserveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReserveView.m; sourceTree = "<group>"; };
+		8333B12527C3245300858A48 /* ReserveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReserveViewController.h; sourceTree = "<group>"; };
+		8333B12627C3245300858A48 /* ReserveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReserveViewController.m; sourceTree = "<group>"; };
 		83370A8227BF71CF00A1889D /* yanzhengma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yanzhengma.png; sourceTree = "<group>"; };
 		83370A8427BF726D00A1889D /* yuechi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuechi.png; sourceTree = "<group>"; };
 		83370A8527BF726D00A1889D /* tubiao202.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tubiao202.png; sourceTree = "<group>"; };
@@ -280,6 +286,33 @@
 			path = LandPhotos;
 			sourceTree = "<group>";
 		};
+		8333B11F27C3240900858A48 /* Reserve */ = {
+			isa = PBXGroup;
+			children = (
+				8333B12127C3242300858A48 /* ReserveView */,
+				8333B12027C3241300858A48 /* ReserveController */,
+			);
+			path = Reserve;
+			sourceTree = "<group>";
+		};
+		8333B12027C3241300858A48 /* ReserveController */ = {
+			isa = PBXGroup;
+			children = (
+				8333B12527C3245300858A48 /* ReserveViewController.h */,
+				8333B12627C3245300858A48 /* ReserveViewController.m */,
+			);
+			path = ReserveController;
+			sourceTree = "<group>";
+		};
+		8333B12127C3242300858A48 /* ReserveView */ = {
+			isa = PBXGroup;
+			children = (
+				8333B12227C3244200858A48 /* ReserveView.h */,
+				8333B12327C3244200858A48 /* ReserveView.m */,
+			);
+			path = ReserveView;
+			sourceTree = "<group>";
+		};
 		83370A8C27BF8DFF00A1889D /* SetPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +468,7 @@
 		83C798632789BDFE000F68C1 /* YueQiu */ = {
 			isa = PBXGroup;
 			children = (
+				8333B11F27C3240900858A48 /* Reserve */,
 				83370A8C27BF8DFF00A1889D /* SetPassword */,
 				8344FC8E27BE203C00C534D5 /* Forget */,
 				8344FC8527BE1D6100C534D5 /* Register */,
@@ -851,6 +885,7 @@
 				83C7986C2789BDFE000F68C1 /* ViewController.m in Sources */,
 				CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */,
 				83C798BA2789C0B1000F68C1 /* HomePageUIView.m in Sources */,
+				8333B12727C3245300858A48 /* ReserveViewController.m in Sources */,
 				83C798BD2789C0CC000F68C1 /* MyViewController.m in Sources */,
 				83C798662789BDFE000F68C1 /* AppDelegate.m in Sources */,
 				CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */,
@@ -862,6 +897,7 @@
 				8344FC8D27BE1DE900C534D5 /* RegisterViewController.m in Sources */,
 				8344FC8A27BE1DD000C534D5 /* RegisterView.m in Sources */,
 				CC89C28327C251770096C12D /* MyCourseView.m in Sources */,
+				8333B12427C3244200858A48 /* ReserveView.m in Sources */,
 				CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */,
 				83C798B42789C094000F68C1 /* HomePageViewController.m in Sources */,
 				8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */,

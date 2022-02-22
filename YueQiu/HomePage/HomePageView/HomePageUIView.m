@@ -6,12 +6,14 @@
 //
 
 #import "HomePageUIView.h"
-#import "HomePageTableViewCell.h"
 #import "Masonry.h"
 #import "HQBSearchViewController.h"
 
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
+
+NSString *const identityHomePageViewNotice = @"homePage";
+
 @implementation HomePageUIView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -59,22 +61,31 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
-        HomePageTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"stadium"];
-        [cell.nameButton setTitle:self.nameArray[indexPath.row] forState:UIControlStateNormal];
-        cell.nameButton.tag = 101 + indexPath.row * 3;
-        [cell.nameButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.placeButton setTitle:self.placeArray[indexPath.row] forState:UIControlStateNormal];
-        cell.placeButton.tag = 101 + indexPath.row * 3 + 1;
-        [cell.placeButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.distanceButton setTitle:self.distanceArray[indexPath.row] forState:UIControlStateNormal];
-        cell.distanceButton.tag = 101 + indexPath.row * 3 + 2;
-        [cell.distanceButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.typeButton setTitle:self.typeArray[indexPath.row] forState:UIControlStateNormal];
-        [cell.priceButton setTitle:self.priceArray[indexPath.row] forState:UIControlStateNormal];
-        cell.scheduleButton.tag = 201 + indexPath.row;
-        [cell.scheduleButton addTarget:self action:@selector(touchToSchedule:) forControlEvents:UIControlEventTouchUpInside];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
+        self.homeCell = [self.tableView dequeueReusableCellWithIdentifier:@"stadium"];
+        
+        [self.homeCell.nameButton setTitle:self.nameArray[indexPath.row] forState:UIControlStateNormal];
+        self.homeCell.nameButton.tag = indexPath.row;
+        [self.homeCell.nameButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.homeCell.placeButton setTitle:self.placeArray[indexPath.row] forState:UIControlStateNormal];
+        self.homeCell.placeButton.tag = indexPath.row;
+        [self.homeCell.placeButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.homeCell.distanceButton setTitle:self.distanceArray[indexPath.row] forState:UIControlStateNormal];
+        self.homeCell.distanceButton.tag = indexPath.row;
+        [self.homeCell.distanceButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.homeCell.typeButton setTitle:self.typeArray[indexPath.row] forState:UIControlStateNormal];
+        self.homeCell.typeButton.tag = indexPath.row;
+        
+        [self.homeCell.priceButton setTitle:self.priceArray[indexPath.row] forState:UIControlStateNormal];
+        self.homeCell.priceButton.tag = indexPath.row;
+        
+        self.homeCell.scheduleButton.tag = indexPath.row;
+        [self.homeCell.scheduleButton addTarget:self action:@selector(touchToSchedule:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.homeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return self.homeCell;
     } else {
         HomePageTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"imageView"];
         return cell;
@@ -90,8 +101,16 @@
 }
 
 - (void)touchToSchedule:(UIButton*)button {
+    self.transDataDictionary = [[NSMutableDictionary alloc] init];
+    [self.transDataDictionary setValue:self.nameArray[button.tag] forKey:@"name"];
+    [self.transDataDictionary setValue:self.placeArray[button.tag] forKey:@"place"];
+    [self.transDataDictionary setValue:self.distanceArray[button.tag] forKey:@"distance"];
+    [self.transDataDictionary setValue:self.typeArray[button.tag] forKey:@"type"];
+    [self.transDataDictionary setValue:self.priceArray[button.tag] forKey:@"price"];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:identityHomePageViewNotice object:nil userInfo:self.transDataDictionary];
 }
+
 - (UIViewController *)viewController {
     for (UIView* next = [self superview]; next; next = next.superview) {
         UIResponder *nextResponder = [next nextResponder];

@@ -7,6 +7,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HomePageUIView.h"
+
+extern NSString *const identityHomePageControllerNotice;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomePageViewController : UIViewController

@@ -6,6 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomePageTableViewCell.h"
+
+extern NSString *const identityHomePageViewNotice;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,6 +27,9 @@ UITableViewDataSource>
 @property (nonatomic, copy) NSArray* distanceArray;
 @property (nonatomic, copy) NSArray* typeArray;
 @property (nonatomic, copy) NSArray* priceArray;
+
+@property (nonatomic, strong) HomePageTableViewCell *homeCell;
+@property (nonatomic, strong) NSMutableDictionary *transDataDictionary;
 
 @end
 
