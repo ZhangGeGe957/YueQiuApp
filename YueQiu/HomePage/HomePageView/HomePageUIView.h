@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomePageTableViewCell.h"
+#import <CoreLocation/CoreLocation.h>
 
 extern NSString *const identityHomePageViewNotice;
 
@@ -14,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomePageUIView : UIView
 <UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) UIImageView* imageView;
@@ -30,6 +31,9 @@ UITableViewDataSource>
 
 @property (nonatomic, strong) HomePageTableViewCell *homeCell;
 @property (nonatomic, strong) NSMutableDictionary *transDataDictionary;
+
+@property (nonatomic, retain) CLLocationManager *getLocation;  //获取位置信息
+@property (nonatomic, strong) CLGeocoder *geoCoder;  //地理信息
 
 @end
 

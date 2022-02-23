@@ -18,6 +18,9 @@ NSString *const identityHomePageViewNotice = @"homePage";
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
+    
+    [self getMoreInformation];
+    
     self.nameArray = [NSArray arrayWithObjects:@"韦曲球馆", @"万科球馆", @"GOGO球馆", nil];
     self.placeArray = [NSArray arrayWithObjects:@"韦曲南街", @"万科广场", @"GOGO商场", nil];
     self.distanceArray = [NSArray arrayWithObjects:@"<5km", @"<1km", @"<2km", nil];
@@ -121,6 +124,74 @@ NSString *const identityHomePageViewNotice = @"homePage";
     return nil;
 }
 
+//一个获取位置信息函数
+- (void)getMoreInformation {
+    self.getLocation = [[CLLocationManager alloc] init];
+    if ([CLLocationManager locationServicesEnabled]) {
+        self.getLocation.delegate = self;
+        //精确度获取到米
+        self.getLocation.desiredAccuracy = kCLLocationAccuracyBest;
+        //设置过滤器为无
+        self.getLocation.distanceFilter = kCLDistanceFilterNone;
+        // 取得定位权限，有两个方法，取决于你的定位使用情况
+        //一个是requestAlwaysAuthorization，一个是requestWhenInUseAuthorization
+        // 这句话ios8以上版本使用。
+        [self.getLocation requestWhenInUseAuthorization];
+        //开始获取定位
+        [self.getLocation startUpdatingLocation];
+        //地理信息
+        self.geoCoder = [[CLGeocoder alloc] init];
+    } else {
+        NSLog(@"error");
+    }
+}
+//设置获取位置信息的代理方法
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    NSLog(@"%lu",(unsigned long)locations.count);
+    CLLocation * location = locations.lastObject;
+    // 纬度
+    CLLocationDegrees latitude = location.coordinate.latitude;
+    // 经度
+    CLLocationDegrees longitude = location.coordinate.longitude;
+    NSLog(@"经度：%f 纬度：%f", longitude, latitude);
+    
+    [self.geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if (placemarks.count > 0) {
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            NSLog(@"%@", placemark.name);
+            //获取城市
+            NSString *city = placemark.locality;
+            if (!city) {
+                //四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
+                city = placemark.administrativeArea;
+            }
+            // 位置名
+            NSLog(@"name, %@", placemark.name);
+            // 街道
+            NSLog(@"thoroughfare, %@", placemark.thoroughfare);
+            // 子街道
+            NSLog(@"subThoroughfare, %@", placemark.subThoroughfare);
+            // 市
+            NSLog(@"locality, %@", placemark.locality);
+            // 区
+            NSLog(@"subLocality, %@", placemark.subLocality);
+            // 国家
+            NSLog(@"country, %@", placemark.country);
+        } else if (error == nil && [placemarks count] == 0) {
+            NSLog(@"No results were returned.");
+        } else if (error != nil){
+            NSLog(@"An error occurred = %@", error);
+        }
+    }];
+    //不用的时候关闭更新位置服务，不关闭的话这个 delegate 隔一定的时间间隔就会有回调
+    [self.getLocation stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    if (error) {
+        NSLog(@"%ld", (long)error.code);
+    }
+}
 
 @end
 
