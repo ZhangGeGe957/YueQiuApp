@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomePageUIView : UIView
 <UITableViewDelegate,
-UITableViewDataSource, CLLocationManagerDelegate>
+UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) UIImageView* imageView;
@@ -31,9 +31,6 @@ UITableViewDataSource, CLLocationManagerDelegate>
 
 @property (nonatomic, strong) HomePageTableViewCell *homeCell;
 @property (nonatomic, strong) NSMutableDictionary *transDataDictionary;
-
-@property (nonatomic, retain) CLLocationManager *getLocation;  //获取位置信息
-@property (nonatomic, strong) CLGeocoder *geoCoder;  //地理信息
 
 @end
 

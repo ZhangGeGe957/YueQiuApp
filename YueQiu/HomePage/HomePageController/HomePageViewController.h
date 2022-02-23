@@ -12,9 +12,13 @@ extern NSString *const identityHomePageControllerNotice;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomePageViewController : UIViewController
+@interface HomePageViewController : UIViewController<CLLocationManagerDelegate>
 
 @property (nonatomic, strong) HomePageUIView* homePageView;
+@property (nonatomic, retain) CLLocationManager *getLocation;  //获取位置信息
+@property (nonatomic, strong) CLGeocoder *geoCoder;  //地理信息
+@property (nonatomic, retain) CLLocation *myLocation;  //我的位置
+
 @end
 
 NS_ASSUME_NONNULL_END

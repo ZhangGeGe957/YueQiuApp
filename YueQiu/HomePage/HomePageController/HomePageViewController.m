@@ -42,6 +42,10 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     //注册通知
     [self registrationNotice];
     
+    //获取用户位置
+    [self getMoreInformation];
+    
+    //初始化界面
     self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H - [self hGetTabHeight] - [self hGetStatusbarHeight])];
     [self.view addSubview:self.homePageView];
 }
@@ -78,6 +82,76 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     self.reserveView = [[ReserveViewController alloc] init];
     self.reserveView.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:self.reserveView animated:YES completion:nil];
+}
+
+//一个获取位置信息函数
+- (void)getMoreInformation {
+    self.getLocation = [[CLLocationManager alloc] init];
+    if ([CLLocationManager locationServicesEnabled]) {
+        self.getLocation.delegate = self;
+        //精确度获取到米
+        self.getLocation.desiredAccuracy = kCLLocationAccuracyBest;
+        //设置过滤器为无
+        self.getLocation.distanceFilter = kCLDistanceFilterNone;
+        // 取得定位权限，有两个方法，取决于你的定位使用情况
+        //一个是requestAlwaysAuthorization，一个是requestWhenInUseAuthorization
+        // 这句话ios8以上版本使用。
+        [self.getLocation requestWhenInUseAuthorization];
+        //开始获取定位
+        [self.getLocation startUpdatingLocation];
+        //地理信息
+        self.geoCoder = [[CLGeocoder alloc] init];
+    } else {
+        NSLog(@"error");
+    }
+}
+//设置获取位置信息的代理方法
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    NSLog(@"%lu", (unsigned long)locations.count);
+    self.myLocation = locations.lastObject;
+    NSLog(@"经度：%f 纬度：%f", _myLocation.coordinate.longitude, _myLocation.coordinate.latitude);
+    
+    //计算距离
+    CLLocation *before = [[CLLocation alloc] initWithLatitude:39.91667 longitude:116.41667];
+    CLLocationDistance meters = [self.myLocation distanceFromLocation:before];
+    NSLog(@"相距：%f", meters);
+    
+    [self.geoCoder reverseGeocodeLocation:self.myLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if (placemarks.count > 0) {
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            NSLog(@"%@", placemark.name);
+            //获取城市
+            NSString *city = placemark.locality;
+            if (!city) {
+                //四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
+                city = placemark.administrativeArea;
+            }
+            // 位置名
+            NSLog(@"name, %@", placemark.name);
+            // 街道
+            NSLog(@"thoroughfare, %@", placemark.thoroughfare);
+            // 子街道
+            NSLog(@"subThoroughfare, %@", placemark.subThoroughfare);
+            // 市
+            NSLog(@"locality, %@", placemark.locality);
+            // 区
+            NSLog(@"subLocality, %@", placemark.subLocality);
+            // 国家
+            NSLog(@"country, %@", placemark.country);
+        } else if (error == nil && [placemarks count] == 0) {
+            NSLog(@"No results were returned.");
+        } else if (error != nil) {
+            NSLog(@"An error occurred = %@", error);
+        }
+    }];
+    //不用的时候关闭更新位置服务，不关闭的话这个 delegate 隔一定的时间间隔就会有回调
+    [self.getLocation stopUpdatingLocation];
+}
+//问题函数
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    if (error) {
+        NSLog(@"%ld", (long)error.code);
+    }
 }
 
 @end
