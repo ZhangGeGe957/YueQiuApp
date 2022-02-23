@@ -15,6 +15,8 @@ UITableViewDataSource>
 @property (nonatomic, strong) UITableView* stadiumTableView;
 @property (nonatomic, strong) NSArray* stadiumArray;
 @property (nonatomic, strong) NSArray* stadiumPlaceArray;
+@property (nonatomic, strong) NSString* appName;
+@property (nonatomic, strong) UIViewController* controller;
 @end
 
 NS_ASSUME_NONNULL_END
