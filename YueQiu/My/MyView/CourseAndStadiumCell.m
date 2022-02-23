@@ -45,21 +45,25 @@
         [self.stadiumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.top.equalTo(self.contentView.mas_top).offset(10);
                     make.left.equalTo(self.contentView.mas_left).offset(10);
-                    make.size.mas_equalTo(CGSizeMake(W / 3, 40));
+                    make.size.mas_equalTo(CGSizeMake(W / 2, 20));
         }];
         self.stadiumLabel.textAlignment = NSTextAlignmentLeft;
+        self.stadiumLabel.font = [UIFont systemFontOfSize:15];
 
         self.stadiumPlaceLabel = [[UILabel alloc] init];
         [self.contentView addSubview:self.stadiumPlaceLabel];
         [self.stadiumPlaceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(self.stadiumLabel.mas_top).offset(10);
-                    make.left.equalTo(self.stadiumLabel.mas_right).offset(10);
-                    make.size.mas_equalTo(CGSizeMake(W / 2, 40));
+                    make.top.equalTo(self.stadiumLabel.mas_bottom).offset(0);
+                    make.left.equalTo(self.stadiumLabel.mas_left).offset(0);
+                    make.size.mas_equalTo(CGSizeMake(W * 0.75, 40));
         }];
+        self.stadiumPlaceLabel.font = [UIFont systemFontOfSize:15];
+        self.stadiumPlaceLabel.textColor = [UIColor grayColor];
+        self.stadiumPlaceLabel.numberOfLines = 0;
+        
         self.buttonGPS = [UIButton buttonWithType:UIButtonTypeSystem];
         [self.contentView addSubview:self.buttonGPS];
         [self.buttonGPS setImage:[UIImage imageNamed:@"dingwei.png"] forState:UIControlStateNormal];
-        [self.buttonGPS addTarget:self action:@selector(touchGPS) forControlEvents:UIControlEventTouchUpInside];
         [self.buttonGPS mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(20);
             make.left.equalTo(self.contentView.mas_right).offset(-50);
