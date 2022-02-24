@@ -26,6 +26,10 @@ NSString *const identityHomePageControllerNotice = @"homePage";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //初始化数据
+    [self p_initAllData];
+    
     self.navigationController.navigationBarHidden = NO;
     
     UIBarButtonItem* search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sousuo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSearch)];
@@ -115,6 +119,13 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     CLLocation *before = [[CLLocation alloc] initWithLatitude:39.91667 longitude:116.41667];
     CLLocationDistance meters = [self.myLocation distanceFromLocation:before];
     NSLog(@"相距：%f", meters);
+    for (int i = 0; i < self.locationArray.count; i++) {
+        CLLocationDistance tempDistance = [self.myLocation distanceFromLocation:self.locationArray[i]];
+        NSString *tempString = [[NSString alloc] initWithFormat:@"<%.0fkm", tempDistance / 1000 + 1];
+        [self.distanceArray addObject:tempString];
+    }
+    self.homePageView.distanceArray = [self.distanceArray mutableCopy];
+    [self.homePageView.tableView reloadData];
     
     [self.geoCoder reverseGeocodeLocation:self.myLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (placemarks.count > 0) {
@@ -152,6 +163,21 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     if (error) {
         NSLog(@"%ld", (long)error.code);
     }
+}
+
+//初始化数据
+- (void)p_initAllData {
+    //获取到的球馆位置
+    self.locationArray = [[NSMutableArray alloc] init];
+    CLLocation *oneLocation = [[CLLocation alloc] initWithLatitude:34.213528 longitude:108.94883];
+    CLLocation *twoLocation = [[CLLocation alloc] initWithLatitude:34.153885 longitude:108.89072];
+    CLLocation *threeLocation = [[CLLocation alloc] initWithLatitude:34.386534 longitude:109.28537];
+    [self.locationArray addObject:oneLocation];
+    [self.locationArray addObject:twoLocation];
+    [self.locationArray addObject:threeLocation];
+    
+    //存储距离数组
+    self.distanceArray = [[NSMutableArray alloc] init];
 }
 
 @end

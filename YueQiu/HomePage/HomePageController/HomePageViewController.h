@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, retain) CLLocationManager *getLocation;  //获取位置信息
 @property (nonatomic, strong) CLGeocoder *geoCoder;  //地理信息
 @property (nonatomic, retain) CLLocation *myLocation;  //我的位置
+@property (nonatomic, strong) NSMutableArray *locationArray;  //地点位置
+@property (nonatomic, strong) NSMutableArray *distanceArray;
 
 @end
 

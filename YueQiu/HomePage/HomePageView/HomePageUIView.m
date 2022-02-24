@@ -19,21 +19,13 @@ NSString *const identityHomePageViewNotice = @"homePage";
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
-    self.nameArray = [NSArray arrayWithObjects:@"韦曲球馆", @"万科球馆", @"GOGO球馆", nil];
-    self.placeArray = [NSArray arrayWithObjects:@"韦曲南街", @"万科广场", @"GOGO商场", nil];
-    self.distanceArray = [NSArray arrayWithObjects:@"<5km", @"<1km", @"<2km", nil];
-
-    self.priceArray = [NSArray arrayWithObjects:@"10元/h", @"20元/h", @"15元/h", nil];
-    self.typeArray = [NSArray arrayWithObjects:@"篮球", @"乒乓球", @"羽毛球", nil];
-    
-
+    //初始化数据
+    [self p_initAllData];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 80, W, self.frame.size.height) style:UITableViewStylePlain];
     [self addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-
-
     
     [self.tableView registerClass:[HomePageTableViewCell class] forCellReuseIdentifier:@"imageView"];
     [self.tableView registerClass:[HomePageTableViewCell class] forCellReuseIdentifier:@"stadium"];
@@ -72,7 +64,12 @@ NSString *const identityHomePageViewNotice = @"homePage";
         self.homeCell.placeButton.tag = indexPath.row;
         [self.homeCell.placeButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
         
-        [self.homeCell.distanceButton setTitle:self.distanceArray[indexPath.row] forState:UIControlStateNormal];
+        //没有数据就弄默认值
+        if (self.distanceArray.count == 0) {
+            [self.homeCell.distanceButton setTitle:@"nil" forState:UIControlStateNormal];
+        } else {  //数据传过来了再进行复制
+            [self.homeCell.distanceButton setTitle:self.distanceArray[indexPath.row] forState:UIControlStateNormal];
+        }
         self.homeCell.distanceButton.tag = indexPath.row;
         [self.homeCell.distanceButton addTarget:self action:@selector(touchButton:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -102,6 +99,7 @@ NSString *const identityHomePageViewNotice = @"homePage";
 }
 
 - (void)touchToSchedule:(UIButton*)button {
+    //传递的数据
     self.transDataDictionary = [[NSMutableDictionary alloc] init];
     [self.transDataDictionary setValue:self.nameArray[button.tag] forKey:@"name"];
     [self.transDataDictionary setValue:self.placeArray[button.tag] forKey:@"place"];
@@ -109,6 +107,7 @@ NSString *const identityHomePageViewNotice = @"homePage";
     [self.transDataDictionary setValue:self.typeArray[button.tag] forKey:@"type"];
     [self.transDataDictionary setValue:self.priceArray[button.tag] forKey:@"price"];
     
+    //通知调回
     [[NSNotificationCenter defaultCenter] postNotificationName:identityHomePageViewNotice object:nil userInfo:self.transDataDictionary];
 }
 
@@ -120,6 +119,15 @@ NSString *const identityHomePageViewNotice = @"homePage";
         }
     }
     return nil;
+}
+
+//初始化数据
+- (void)p_initAllData {
+    self.nameArray = [NSArray arrayWithObjects:@"韦曲球馆", @"万科球馆", @"GOGO球馆", nil];
+    self.placeArray = [NSArray arrayWithObjects:@"韦曲南街", @"万科广场", @"GOGO商场", nil];
+    self.distanceArray = [[NSMutableArray alloc] init];
+    self.priceArray = [NSArray arrayWithObjects:@"10元/h", @"20元/h", @"15元/h", nil];
+    self.typeArray = [NSArray arrayWithObjects:@"篮球", @"乒乓球", @"羽毛球", nil];
 }
 
 @end

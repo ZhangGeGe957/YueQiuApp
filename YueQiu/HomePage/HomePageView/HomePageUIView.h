@@ -25,7 +25,7 @@ UITableViewDataSource>
 
 @property (nonatomic, copy) NSArray* nameArray;
 @property (nonatomic, copy) NSArray* placeArray;
-@property (nonatomic, copy) NSArray* distanceArray;
+@property (nonatomic, copy) NSMutableArray* distanceArray;
 @property (nonatomic, copy) NSArray* typeArray;
 @property (nonatomic, copy) NSArray* priceArray;
 
