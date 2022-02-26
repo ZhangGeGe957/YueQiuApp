@@ -63,6 +63,8 @@
 		83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C798C42789C0F9000F68C1 /* ShowProjectTableViewCell.m */; };
 		83C798C92789C100000F68C1 /* TrainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C798C72789C100000F68C1 /* TrainView.m */; };
 		83C798CD2789C1A6000F68C1 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83C798CC2789C1A6000F68C1 /* 3.jpg */; };
+		83FB1A5627CA294B005D6292 /* ReleaseGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5527CA294B005D6292 /* ReleaseGameView.m */; };
+		83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */; };
 		CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */; };
 		CC5ABFE927C4D15F00D548CB /* shanchu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE127C4D15F00D548CB /* shanchu.png */; };
 		CC5ABFEA27C4D15F00D548CB /* yinsi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE227C4D15F00D548CB /* yinsi.png */; };
@@ -198,6 +200,10 @@
 		83C798C72789C100000F68C1 /* TrainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainView.m; sourceTree = "<group>"; };
 		83C798C82789C100000F68C1 /* TrainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainView.h; sourceTree = "<group>"; };
 		83C798CC2789C1A6000F68C1 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		83FB1A5427CA294B005D6292 /* ReleaseGameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseGameView.h; sourceTree = "<group>"; };
+		83FB1A5527CA294B005D6292 /* ReleaseGameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseGameView.m; sourceTree = "<group>"; };
+		83FB1A5727CA2959005D6292 /* ReleaseGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseGameViewController.h; sourceTree = "<group>"; };
+		83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseGameViewController.m; sourceTree = "<group>"; };
 		CC1A7B2B2789C86C0040B39D /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
 		CC5ABFE127C4D15F00D548CB /* shanchu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shanchu.png; path = SettingPhotos/shanchu.png; sourceTree = "<group>"; };
@@ -512,6 +518,7 @@
 		83C798632789BDFE000F68C1 /* YueQiu */ = {
 			isa = PBXGroup;
 			children = (
+				83FB1A5127CA28CE005D6292 /* ReleaseGame */,
 				8333B11F27C3240900858A48 /* Reserve */,
 				83370A8C27BF8DFF00A1889D /* SetPassword */,
 				8344FC8E27BE203C00C534D5 /* Forget */,
@@ -711,6 +718,33 @@
 				8347BCBC278C35BB00466606 /* 2-1.png */,
 			);
 			path = TrainPhotos;
+			sourceTree = "<group>";
+		};
+		83FB1A5127CA28CE005D6292 /* ReleaseGame */ = {
+			isa = PBXGroup;
+			children = (
+				83FB1A5227CA28E2005D6292 /* ReleaseGameView */,
+				83FB1A5327CA28EF005D6292 /* ReleaseGameController */,
+			);
+			path = ReleaseGame;
+			sourceTree = "<group>";
+		};
+		83FB1A5227CA28E2005D6292 /* ReleaseGameView */ = {
+			isa = PBXGroup;
+			children = (
+				83FB1A5427CA294B005D6292 /* ReleaseGameView.h */,
+				83FB1A5527CA294B005D6292 /* ReleaseGameView.m */,
+			);
+			path = ReleaseGameView;
+			sourceTree = "<group>";
+		};
+		83FB1A5327CA28EF005D6292 /* ReleaseGameController */ = {
+			isa = PBXGroup;
+			children = (
+				83FB1A5727CA2959005D6292 /* ReleaseGameViewController.h */,
+				83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */,
+			);
+			path = ReleaseGameController;
 			sourceTree = "<group>";
 		};
 		CC5ABFE027C4D10600D548CB /* SettingPhotos */ = {
@@ -971,6 +1005,7 @@
 				CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
 				837B713F279AAAAB00DBD856 /* BoutiqueView.m in Sources */,
+				83FB1A5627CA294B005D6292 /* ReleaseGameView.m in Sources */,
 				CC89C28627C2518C0096C12D /* MyCollectStadiumView.m in Sources */,
 				CC89C28027C2515D0096C12D /* MyCourseViewController.m in Sources */,
 				8344FC8D27BE1DE900C534D5 /* RegisterViewController.m in Sources */,
@@ -997,6 +1032,7 @@
 				8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
 				83370A9127BF8E3200A1889D /* SetPasswordView.m in Sources */,
+				83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */,
 				CCFA4BA427ABB9EF00F2BB18 /* MyTableViewCell.m in Sources */,
 				83C798B72789C0A9000F68C1 /* HomePageMModel.m in Sources */,
 				8384B4AA2792C34D00282E66 /* CourseDataModel.m in Sources */,

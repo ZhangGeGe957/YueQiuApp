@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) CLGeocoder *geoCoder;  //地理信息
 @property (nonatomic, retain) CLLocation *myLocation;  //我的位置
 @property (nonatomic, strong) NSMutableArray *locationArray;  //地点位置
-@property (nonatomic, strong) NSMutableArray *distanceArray;
+@property (nonatomic, strong) NSMutableArray *distanceArray;  //计算距离
 
 @end
 

@@ -6,15 +6,30 @@
 //
 
 #import "NewsViewController.h"
+#import "ReleaseGameViewController.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
 @interface NewsViewController ()
 
+@property (nonatomic, strong) ReleaseGameViewController *releaseView;
+
 @end
 
 @implementation NewsViewController
+
+//使用动画的方式隐藏导航栏
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,11 +45,12 @@
     //初始化导航栏
     self.falseView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, myWidth, self.navHeight)];
     self.falseView.backgroundColor = [UIColor whiteColor];
-    [self.navigationController.view addSubview:self.falseView];
+    [self.view addSubview:self.falseView];
     
     //右按钮初始化
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.rightButton setImage:[UIImage imageNamed:@"jia.png"] forState:UIControlStateNormal];
+    [self.rightButton addTarget:self action:@selector(pushView:) forControlEvents:UIControlEventTouchUpInside];
     [self.falseView addSubview:self.rightButton];
     [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.falseView).offset(-myWidth / 20);
@@ -83,6 +99,12 @@
 //分栏控制器事件
 - (void)switchView:(UISegmentedControl *)segControl {
     [self.differentScrollView setContentOffset:CGPointMake(myWidth * segControl.selectedSegmentIndex, 0)];
+}
+
+//推出发布球局界面
+- (void)pushView:(UIButton *)button {
+    self.releaseView = [[ReleaseGameViewController alloc] init];
+    [self.navigationController pushViewController:self.releaseView animated:YES];
 }
 /*
 #pragma mark - Navigation

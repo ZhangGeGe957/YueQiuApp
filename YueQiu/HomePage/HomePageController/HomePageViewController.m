@@ -116,9 +116,6 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     NSLog(@"经度：%f 纬度：%f", _myLocation.coordinate.longitude, _myLocation.coordinate.latitude);
     
     //计算距离
-    CLLocation *before = [[CLLocation alloc] initWithLatitude:39.91667 longitude:116.41667];
-    CLLocationDistance meters = [self.myLocation distanceFromLocation:before];
-    NSLog(@"相距：%f", meters);
     for (int i = 0; i < self.locationArray.count; i++) {
         CLLocationDistance tempDistance = [self.myLocation distanceFromLocation:self.locationArray[i]];
         NSString *tempString = [[NSString alloc] initWithFormat:@"<%.0fkm", tempDistance / 1000 + 1];

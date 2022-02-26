@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UIButton *rightButton;
+@property (nonatomic, strong) UIButton *rightButton;  //发布球局按钮
 @property CGFloat navHeight;  //获取到的导航栏高度
 @property (nonatomic, strong) UIView *falseView; //一个自己的假导航栏
 @property (nonatomic, strong) UISegmentedControl *selectControl;  //分栏控制器

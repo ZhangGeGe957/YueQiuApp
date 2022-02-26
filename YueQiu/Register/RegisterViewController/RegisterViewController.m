@@ -79,6 +79,14 @@
     }
 }
 
+//回收键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.registerView.phoneTextField resignFirstResponder];
+    [self.registerView.passwordTextField resignFirstResponder];
+    [self.registerView.codeTextField resignFirstResponder];
+    [self.registerView.againTextField resignFirstResponder];
+}
+
 /*
 #pragma mark - Navigation
 

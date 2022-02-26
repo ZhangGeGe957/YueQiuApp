@@ -43,6 +43,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+//回收键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.setPasswordView.passwordTextField resignFirstResponder];
+    [self.setPasswordView.againTextField resignFirstResponder];
+}
+
 /*
 #pragma mark - Navigation
 

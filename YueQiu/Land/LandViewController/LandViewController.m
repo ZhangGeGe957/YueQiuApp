@@ -61,6 +61,11 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     for (UIView *view in [self.view subviews]) {
         [view removeFromSuperview];
     }
+    
+    //注销定时器
+    [self.startShowImageViewTimer invalidate];
+    self.startShowImageViewTimer = nil;
+    
     //注册通知
     [self p_addNotification];
     
@@ -129,6 +134,12 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     //推出视图
     self.tabBarController.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:self.tabBarController animated:YES completion:nil];
+}
+
+//回收键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.landView.accountTextField resignFirstResponder];
+    [self.landView.passwordTextField resignFirstResponder];
 }
 
 /*

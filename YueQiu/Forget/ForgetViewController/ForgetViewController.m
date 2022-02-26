@@ -71,6 +71,12 @@ NSString *const backMassage = @"backMassage";
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+//回收键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.forgetView.phoneTextField resignFirstResponder];
+    [self.forgetView.codeTextField resignFirstResponder];
+}
 /*
 #pragma mark - Navigation
 
