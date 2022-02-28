@@ -77,6 +77,13 @@
     self.selectControl = [[UISegmentedControl alloc] init];
     [self.selectControl insertSegmentWithTitle:@"精选" atIndex:0 animated:YES];
     [self.selectControl insertSegmentWithTitle:@"关注" atIndex:1 animated:YES];
+    [self.selectControl setTintColor:[UIColor blueColor]];
+    [self.selectControl setBackgroundImage:[UIImage imageNamed:@"kongbai.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.selectControl setBackgroundImage:[UIImage imageNamed:@"charuhengxian-line-currency-Inserthorizontalline.png"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    //设置普通状态下(未选中)状态下的文字颜色和字体
+    [self.selectControl setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20], NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateNormal];
+    //设置选中状态下的文字颜色和字体
+    [self.selectControl setTitleTextAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:20], NSForegroundColorAttributeName:[UIColor blackColor]} forState:UIControlStateSelected];
     self.selectControl.selectedSegmentIndex = 0;
     [self.selectControl addTarget:self action:@selector(switchView:) forControlEvents:UIControlEventValueChanged];
     [self.falseView addSubview:self.selectControl];

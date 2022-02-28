@@ -63,6 +63,9 @@
 		83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C798C42789C0F9000F68C1 /* ShowProjectTableViewCell.m */; };
 		83C798C92789C100000F68C1 /* TrainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C798C72789C100000F68C1 /* TrainView.m */; };
 		83C798CD2789C1A6000F68C1 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 83C798CC2789C1A6000F68C1 /* 3.jpg */; };
+		83EA825D27CCB33A00B19CF3 /* charuhengxian-line-currency-Inserthorizontalline.png in Resources */ = {isa = PBXBuildFile; fileRef = 83EA825C27CCB33A00B19CF3 /* charuhengxian-line-currency-Inserthorizontalline.png */; };
+		83EA825F27CCB3C800B19CF3 /* kongbai.png in Resources */ = {isa = PBXBuildFile; fileRef = 83EA825E27CCB3C800B19CF3 /* kongbai.png */; };
+		83EA826227CCB9A000B19CF3 /* Releasefanhui.png in Resources */ = {isa = PBXBuildFile; fileRef = 83EA826127CCB9A000B19CF3 /* Releasefanhui.png */; };
 		83FB1A5627CA294B005D6292 /* ReleaseGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5527CA294B005D6292 /* ReleaseGameView.m */; };
 		83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */; };
 		CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */; };
@@ -200,6 +203,9 @@
 		83C798C72789C100000F68C1 /* TrainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainView.m; sourceTree = "<group>"; };
 		83C798C82789C100000F68C1 /* TrainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainView.h; sourceTree = "<group>"; };
 		83C798CC2789C1A6000F68C1 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		83EA825C27CCB33A00B19CF3 /* charuhengxian-line-currency-Inserthorizontalline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "charuhengxian-line-currency-Inserthorizontalline.png"; sourceTree = "<group>"; };
+		83EA825E27CCB3C800B19CF3 /* kongbai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kongbai.png; sourceTree = "<group>"; };
+		83EA826127CCB9A000B19CF3 /* Releasefanhui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Releasefanhui.png; sourceTree = "<group>"; };
 		83FB1A5427CA294B005D6292 /* ReleaseGameView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseGameView.h; sourceTree = "<group>"; };
 		83FB1A5527CA294B005D6292 /* ReleaseGameView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseGameView.m; sourceTree = "<group>"; };
 		83FB1A5727CA2959005D6292 /* ReleaseGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseGameViewController.h; sourceTree = "<group>"; };
@@ -471,6 +477,8 @@
 		837B7132279A661B00DBD856 /* NewsPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				83EA825E27CCB3C800B19CF3 /* kongbai.png */,
+				83EA825C27CCB33A00B19CF3 /* charuhengxian-line-currency-Inserthorizontalline.png */,
 				8315BF10279BFE24007CBAD8 /* huifu.png */,
 				837B7147279AB3E500DBD856 /* gengduo.png */,
 				837B7138279A66BB00DBD856 /* didian.png */,
@@ -691,6 +699,7 @@
 		83C798CA2789C179000F68C1 /* 图库 */ = {
 			isa = PBXGroup;
 			children = (
+				83EA826027CCB98500B19CF3 /* ReleaseGamePhotos */,
 				CC5ABFE527C4D15F00D548CB /* fankui.png */,
 				CC5ABFE427C4D15F00D548CB /* qiehuanzhanghao.png */,
 				CC5ABFE127C4D15F00D548CB /* shanchu.png */,
@@ -718,6 +727,14 @@
 				8347BCBC278C35BB00466606 /* 2-1.png */,
 			);
 			path = TrainPhotos;
+			sourceTree = "<group>";
+		};
+		83EA826027CCB98500B19CF3 /* ReleaseGamePhotos */ = {
+			isa = PBXGroup;
+			children = (
+				83EA826127CCB9A000B19CF3 /* Releasefanhui.png */,
+			);
+			path = ReleaseGamePhotos;
 			sourceTree = "<group>";
 		};
 		83FB1A5127CA28CE005D6292 /* ReleaseGame */ = {
@@ -922,11 +939,13 @@
 				837B713B279A66BB00DBD856 /* yonghu.png in Resources */,
 				837B713A279A66BB00DBD856 /* naozhong-copy.png in Resources */,
 				83C798712789BE00000F68C1 /* Assets.xcassets in Resources */,
+				83EA826227CCB9A000B19CF3 /* Releasefanhui.png in Resources */,
 				CC5ABFF027C4D15F00D548CB /* zhanghaoyuanquan.png in Resources */,
 				837B714A279AB8C600DBD856 /* neirong.png in Resources */,
 				833639CE27C4B76A0020D864 /* shijian.png in Resources */,
 				CC5ABFEB27C4D15F00D548CB /* yejianmoshi.png in Resources */,
 				8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */,
+				83EA825F27CCB3C800B19CF3 /* kongbai.png in Resources */,
 				833639CF27C4B76A0020D864 /* dianhua.png in Resources */,
 				CC5ABFEA27C4D15F00D548CB /* yinsi.png in Resources */,
 				CCFA4BA927AE5C5B00F2BB18 /* beijing.jpeg in Resources */,
@@ -935,6 +954,7 @@
 				CC89C27A27C250A40096C12D /* head的副本.jpeg in Resources */,
 				CC5ABFEF27C4D15F00D548CB /* tuichudenglu.png in Resources */,
 				CCFA4BB127AE809F00F2BB18 /* more.png in Resources */,
+				83EA825D27CCB33A00B19CF3 /* charuhengxian-line-currency-Inserthorizontalline.png in Resources */,
 				8315BF11279BFE24007CBAD8 /* huifu.png in Resources */,
 				CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */,
 				83370A8A27BF7ABC00A1889D /* xuanzeweixuanze.png in Resources */,

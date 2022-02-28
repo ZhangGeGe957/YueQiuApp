@@ -13,6 +13,9 @@
 
 @interface ReleaseGameViewController ()
 
+//导航栏返回按钮
+@property (nonatomic, strong) UIBarButtonItem *backBarButton;
+
 @end
 
 @implementation ReleaseGameViewController
@@ -21,7 +24,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = @"发表";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    //自定义导航栏返回按钮
+    self.backBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Releasefanhui.png"] style:UIBarButtonItemStyleDone target:self action:@selector(backView:)];
+    self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
+    self.navigationItem.leftBarButtonItem = self.backBarButton;
     
     //初始化视图
     [self initReleaseGameView];
@@ -36,6 +45,11 @@
 //回收键盘
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.releaseGameView.contentTextField resignFirstResponder];
+}
+
+//返回
+- (void)backView:(UIBarButtonItem *)barButton {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*
