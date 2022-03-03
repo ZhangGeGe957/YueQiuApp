@@ -7,13 +7,20 @@
 
 #import <UIKit/UIKit.h>
 #import "HomePageUIView.h"
+#import <CoreLocation/CoreLocation.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 extern NSString *const identityHomePageControllerNotice;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomePageViewController : UIViewController<CLLocationManagerDelegate>
+@interface HomePageViewController : UIViewController
+<CLLocationManagerDelegate,
+AMapSearchDelegate>
 
+@property (strong, nonatomic) CLLocationManager *locManager;
+@property (nonatomic) AMapSearchAPI* search;
 @property (nonatomic, strong) HomePageUIView* homePageView;
 @property (nonatomic, retain) CLLocationManager *getLocation;  //获取位置信息
 @property (nonatomic, strong) CLGeocoder *geoCoder;  //地理信息
@@ -24,4 +31,3 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
-

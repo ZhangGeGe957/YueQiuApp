@@ -28,21 +28,14 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     // Do any additional setup after loading the view.
     
     //初始化数据
-    [self p_initAllData];
+    
     
     self.navigationController.navigationBarHidden = NO;
     
-    UIBarButtonItem* search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sousuo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSearch)];
-    search.tintColor = [UIColor blackColor];
-    self.navigationItem.rightBarButtonItem = search;
-    
-    UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftButton.layer.cornerRadius = 20;
-    leftButton.layer.masksToBounds = YES;
-    [leftButton setImage:[UIImage imageNamed:@"head的副本.jpeg"] forState:UIControlStateNormal];
-    UIBarButtonItem* leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
-    self.navigationItem.leftBarButtonItem = leftItem;
-    
+//    UIBarButtonItem* search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sousuo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSearch)];
+//    search.tintColor = [UIColor blackColor];
+//    self.navigationItem.rightBarButtonItem = search;
+
     //注册通知
     [self registrationNotice];
     
@@ -50,8 +43,17 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     [self getMoreInformation];
     
     //初始化界面
-    self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H - [self hGetTabHeight] - [self hGetStatusbarHeight])];
+    self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H - [self hGetTabHeight])];
+    
     [self.view addSubview:self.homePageView];
+    [self p_initAllData];
+    self.locManager = [[CLLocationManager alloc] init];
+    self.locManager.delegate = self;
+    self.locManager.distanceFilter = 10.0f;
+    self.locManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    [self.locManager startUpdatingLocation];
+    
+    
 }
 
 - (float)hGetStatusbarHeight {
@@ -111,18 +113,11 @@ NSString *const identityHomePageControllerNotice = @"homePage";
 }
 //设置获取位置信息的代理方法
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    NSLog(@"%lu", (unsigned long)locations.count);
+//    NSLog(@"%lu", (unsigned long)locations.count);
     self.myLocation = locations.lastObject;
-    NSLog(@"经度：%f 纬度：%f", _myLocation.coordinate.longitude, _myLocation.coordinate.latitude);
+//    NSLog(@"经度：%f 纬度：%f", _myLocation.coordinate.longitude, _myLocation.coordinate.latitude);
     
-    //计算距离
-    for (int i = 0; i < self.locationArray.count; i++) {
-        CLLocationDistance tempDistance = [self.myLocation distanceFromLocation:self.locationArray[i]];
-        NSString *tempString = [[NSString alloc] initWithFormat:@"<%.0fkm", tempDistance / 1000 + 1];
-        [self.distanceArray addObject:tempString];
-    }
-    self.homePageView.distanceArray = [self.distanceArray mutableCopy];
-    [self.homePageView.tableView reloadData];
+
     
     [self.geoCoder reverseGeocodeLocation:self.myLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         if (placemarks.count > 0) {
@@ -134,18 +129,28 @@ NSString *const identityHomePageControllerNotice = @"homePage";
                 //四大直辖市的城市信息无法通过locality获得，只能通过获取省份的方法来获得（如果city为空，则可知为直辖市）
                 city = placemark.administrativeArea;
             }
+            //设置左上角定位按钮
+            UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            leftButton.frame = CGRectMake(0, 0, 30, 30);
+            [leftButton setImage:[UIImage imageNamed:@"city.png"] forState:UIControlStateNormal];
+            [leftButton setTitle:city forState:UIControlStateNormal];
+            [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            UIBarButtonItem* leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
+
+            self.navigationItem.leftBarButtonItem = leftItem;
+            [self searchPOI:city];
             // 位置名
-            NSLog(@"name, %@", placemark.name);
-            // 街道
-            NSLog(@"thoroughfare, %@", placemark.thoroughfare);
-            // 子街道
-            NSLog(@"subThoroughfare, %@", placemark.subThoroughfare);
-            // 市
-            NSLog(@"locality, %@", placemark.locality);
-            // 区
-            NSLog(@"subLocality, %@", placemark.subLocality);
-            // 国家
-            NSLog(@"country, %@", placemark.country);
+//            NSLog(@"name, %@", placemark.name);
+//            // 街道
+//            NSLog(@"thoroughfare, %@", placemark.thoroughfare);
+//            // 子街道
+//            NSLog(@"subThoroughfare, %@", placemark.subThoroughfare);
+//            // 市
+//            NSLog(@"locality, %@", placemark.locality);
+//            // 区
+//            NSLog(@"subLocality, %@", placemark.subLocality);
+//            // 国家
+//            NSLog(@"country, %@", placemark.country);
         } else if (error == nil && [placemarks count] == 0) {
             NSLog(@"No results were returned.");
         } else if (error != nil) {
@@ -165,16 +170,57 @@ NSString *const identityHomePageControllerNotice = @"homePage";
 //初始化数据
 - (void)p_initAllData {
     //获取到的球馆位置
+    self.homePageView.locationArray = [[NSMutableArray alloc] init];
+    self.homePageView.nameArray = [[NSMutableArray alloc] init];
+    self.homePageView.typeArray = [[NSMutableArray alloc] init];
+    self.homePageView.placeArray = [[NSMutableArray alloc] init];;
     self.locationArray = [[NSMutableArray alloc] init];
-    CLLocation *oneLocation = [[CLLocation alloc] initWithLatitude:34.213528 longitude:108.94883];
-    CLLocation *twoLocation = [[CLLocation alloc] initWithLatitude:34.153885 longitude:108.89072];
-    CLLocation *threeLocation = [[CLLocation alloc] initWithLatitude:34.386534 longitude:109.28537];
-    [self.locationArray addObject:oneLocation];
-    [self.locationArray addObject:twoLocation];
-    [self.locationArray addObject:threeLocation];
-    
     //存储距离数组
     self.distanceArray = [[NSMutableArray alloc] init];
 }
 
+- (void)searchPOI:(NSString*)city {
+    
+    self.search = [[AMapSearchAPI alloc] init];
+    self.search.delegate = self;
+    AMapPOIKeywordsSearchRequest *request = [[AMapPOIKeywordsSearchRequest alloc] init];
+    request.keywords = @"电影院";
+    request.city = city;
+    request.types = @"电影院";
+    request.requireExtension = YES;
+    request.cityLimit  = YES;
+    request.requireSubPOIs = YES;
+    [self.search AMapPOIKeywordsSearch:request];
+}
+
+- (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response
+{
+
+    if (response.pois.count == 0)
+    {
+        NSLog(@"没有查询到相关场所");
+    } else {
+        [response.pois enumerateObjectsUsingBlock:^(AMapPOI *obj, NSUInteger idx, BOOL *stop) {
+            [self.homePageView.locationArray addObject:[obj location]];
+            [self.homePageView.nameArray addObject:obj.name];
+            [self.homePageView.typeArray addObject:obj.type];
+            [self.homePageView.placeArray addObject:obj.address];
+            CLLocation *location = [[CLLocation alloc] initWithLatitude:obj.location.latitude longitude:obj.location.longitude];
+            [self.locationArray addObject:location];
+        }];
+        
+        //计算距离
+        for (int i = 0; i < self.locationArray.count; i++) {
+            CLLocationDistance tempDistance = [self.myLocation distanceFromLocation:self.locationArray[i]];
+            NSString *tempString = [[NSString alloc] initWithFormat:@"<%.0fkm", tempDistance / 1000 + 1];
+            [self.distanceArray addObject:tempString];
+        }
+        self.homePageView.distanceArray = [self.distanceArray mutableCopy];
+        [self.homePageView.tableView reloadData];
+    }
+}
+- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error
+{
+    NSLog(@"Error: %@", error);
+}
 @end

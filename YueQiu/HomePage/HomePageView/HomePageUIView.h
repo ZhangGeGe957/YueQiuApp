@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomePageTableViewCell.h"
-#import <CoreLocation/CoreLocation.h>
+
 
 extern NSString *const identityHomePageViewNotice;
 
@@ -15,19 +15,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomePageUIView : UIView
 <UITableViewDelegate,
-UITableViewDataSource>
+UITableViewDataSource,
+MAMapViewDelegate>
+
 
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) UIImageView* imageView;
 @property (nonatomic, strong) UIViewController* controller;
 @property (nonatomic, strong) UILabel* titleLabel;
 
-
-@property (nonatomic, copy) NSArray* nameArray;
-@property (nonatomic, copy) NSArray* placeArray;
-@property (nonatomic, copy) NSMutableArray* distanceArray;
-@property (nonatomic, copy) NSArray* typeArray;
-@property (nonatomic, copy) NSArray* priceArray;
+@property (nonatomic, strong) NSMutableArray* locationArray;
+@property (nonatomic, strong) NSMutableArray* nameArray;
+@property (nonatomic, strong) NSMutableArray* placeArray;
+@property (nonatomic, strong) NSMutableArray* distanceArray;
+@property (nonatomic, strong) NSMutableArray* typeArray;
+@property (nonatomic, strong) NSMutableArray* priceArray;
 
 @property (nonatomic, strong) HomePageTableViewCell *homeCell;
 @property (nonatomic, strong) NSMutableDictionary *transDataDictionary;
@@ -35,5 +37,3 @@ UITableViewDataSource>
 @end
 
 NS_ASSUME_NONNULL_END
-
-
