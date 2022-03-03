@@ -44,9 +44,10 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     
     //初始化界面
     self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H - [self hGetTabHeight])];
-    
     [self.view addSubview:self.homePageView];
+    
     [self p_initAllData];
+    
     self.locManager = [[CLLocationManager alloc] init];
     self.locManager.delegate = self;
     self.locManager.distanceFilter = 10.0f;
@@ -193,11 +194,9 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     [self.search AMapPOIKeywordsSearch:request];
 }
 
-- (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response
-{
+- (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response {
 
-    if (response.pois.count == 0)
-    {
+    if (response.pois.count == 0) {
         NSLog(@"没有查询到相关场所");
     } else {
         [response.pois enumerateObjectsUsingBlock:^(AMapPOI *obj, NSUInteger idx, BOOL *stop) {
@@ -219,8 +218,7 @@ NSString *const identityHomePageControllerNotice = @"homePage";
         [self.homePageView.tableView reloadData];
     }
 }
-- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error
-{
+- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error {
     NSLog(@"Error: %@", error);
 }
 @end

@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyPickerView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,7 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *locationLabel;  //位置
 @property (nonatomic, strong) UILabel *phoneLabel;  //电话
 @property (nonatomic, strong) UILabel *moneyLabel;  //价格
-@property (nonatomic, strong) UILabel *timeLabel;  //时间
+@property (nonatomic, strong) UIButton *timeSelectButton;  //时间选择器按钮
+@property (nonatomic, strong) MyPickerView *timeSelectView;  //时间选择器视图
 
 @property (nonatomic, strong) UIView *littleView;  //小view
 @property (nonatomic, strong) UILabel *havePeopleShowLittleLabel;  //已有人数showlabel

@@ -66,7 +66,7 @@ NSString *const identityHomePageViewNotice = @"homePage";
         //没有数据就弄默认值
         if (self.distanceArray.count == 0) {
             self.homeCell.distanceLabel.text = @"";
-        } else {  //数据传过来了再进行复制
+        } else {  //数据传过来了再进行赋值
             self.homeCell.distanceLabel.text = self.distanceArray[indexPath.row];
         }
         

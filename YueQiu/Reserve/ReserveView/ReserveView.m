@@ -133,6 +133,25 @@
         make.top.equalTo(self.phoneImageView.mas_top);
         make.height.equalTo(@30);
     }];
+    //时间选择器按钮
+    self.timeSelectButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.timeSelectButton setTitle:@"00:00-00:00" forState:UIControlStateNormal];
+    self.timeSelectButton.layer.borderWidth = 0.5;
+    self.timeSelectButton.layer.cornerRadius = 10;
+    self.timeSelectButton.layer.masksToBounds = YES;
+    [self.timeSelectButton setTintColor:[UIColor blackColor]];
+    [self.timeSelectButton addTarget:self action:@selector(pressSelect:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.timeSelectButton];
+    [self.timeSelectButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.timeImageView.mas_right).offset(10);
+        make.right.equalTo(self.mas_right).offset(-30);
+        make.top.equalTo(self.timeImageView.mas_top);
+        make.height.equalTo(@30);
+    }];
+    //时间选择器初始化
+    self.timeSelectView = [[MyPickerView alloc] initWithFrame:CGRectZero];
+    [self.timeSelectView.sureButton addTarget:self action:@selector(pressSure:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.timeSelectView];
     self.moneyLabel = [[UILabel alloc] init];
     self.moneyLabel.text = @"30/h";
     self.moneyLabel.layer.borderWidth = 0.5;
@@ -146,20 +165,6 @@
         make.top.equalTo(self.moneyImageView.mas_top);
         make.height.equalTo(@30);
         make.width.equalTo(@100);
-    }];
-    self.timeLabel = [[UILabel alloc] init];
-    self.timeLabel.text = @"pangguanzhenluxi";
-    self.timeLabel.layer.borderWidth = 0.5;
-    self.timeLabel.layer.cornerRadius = 10;
-    self.timeLabel.layer.masksToBounds = YES;
-    self.timeLabel.textAlignment = NSTextAlignmentCenter;
-    [self.timeLabel setFont:[UIFont systemFontOfSize:20]];
-    [self addSubview:self.timeLabel];
-    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.timeImageView.mas_right).offset(10);
-        make.right.equalTo(self.mas_right).offset(-30);
-        make.top.equalTo(self.timeImageView.mas_top);
-        make.height.equalTo(@30);
     }];
     
     //小view
@@ -269,6 +274,26 @@
         make.height.equalTo(@50);
         make.width.equalTo(@100);
     }];
+}
+
+//确定按钮事件
+- (void)pressSure:(UIButton *)button {
+    self.timeSelectView.frame = CGRectZero;
+    [self.timeSelectView isShowOnView:NO];
+    if (![self.timeSelectView.timeString isEqualToString:@""]) {
+        [self.timeSelectButton setTitle:self.timeSelectView.timeString forState:UIControlStateNormal];
+    }
+}
+
+//按钮事件
+- (void)pressSelect:(UIButton *)button {
+    [self.timeSelectView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.timeSelectButton.mas_bottom).offset(0);
+        make.left.equalTo(self).offset(0);
+        make.width.equalTo(@(myWidth));
+        make.height.equalTo(@(330));
+    }];
+    [self.timeSelectView isShowOnView:YES];
 }
 
 /*
