@@ -1,4 +1,7 @@
 platform :ios, '14.0'
 target 'YueQiu' do
 pod 'Masonry'
+pod 'AMap3DMap'
+pod 'AMapLocation'
+pod 'AMapSearch'
 end
