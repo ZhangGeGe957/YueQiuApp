@@ -159,7 +159,7 @@ NSString *const identityHomePageControllerNotice = @"homePage";
         }
     }];
     //不用的时候关闭更新位置服务，不关闭的话这个 delegate 隔一定的时间间隔就会有回调
-    [self.getLocation stopUpdatingLocation];
+    [manager stopUpdatingLocation];
 }
 //问题函数
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
