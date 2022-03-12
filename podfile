@@ -4,4 +4,5 @@ pod 'Masonry'
 pod 'AMap3DMap'
 pod 'AMapLocation'
 pod 'AMapSearch'
+pod 'SDWebImage'
 end

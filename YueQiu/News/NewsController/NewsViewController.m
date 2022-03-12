@@ -54,7 +54,7 @@
     [self.falseView addSubview:self.rightButton];
     [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.falseView).offset(-myWidth / 20);
-        make.top.equalTo(self.falseView).offset(myHeight / 20);
+        make.top.equalTo(self.falseView).offset(myHeight / 25);
         make.size.equalTo(@30);
     }];
     

@@ -7,12 +7,16 @@ PODS:
   - AMapSearch (8.1.0):
     - AMapFoundation (~> 1.6.9)
   - Masonry (1.1.0)
+  - SDWebImage (5.12.3):
+    - SDWebImage/Core (= 5.12.3)
+  - SDWebImage/Core (5.12.3)
 
 DEPENDENCIES:
   - AMap3DMap
   - AMapLocation
   - AMapSearch
   - Masonry
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
@@ -21,6 +25,7 @@ SPEC REPOS:
     - AMapLocation
     - AMapSearch
     - Masonry
+    - SDWebImage
 
 SPEC CHECKSUMS:
   AMap3DMap: 135eaaf64a29aeb2f0bca07670db26fbf3271245
@@ -28,7 +33,8 @@ SPEC CHECKSUMS:
   AMapLocation: 5ef44a1117be7dc541cb7a7d43d03c5ee91e4387
   AMapSearch: 5c1cc07429f04b9cc76438fcb2411c66fdbbb178
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
 
-PODFILE CHECKSUM: a09fc96cfc28f4eb075267a026e48b7654775da5
+PODFILE CHECKSUM: 7c240a23f98ae1b5b0d85f44cb075fe3491a3471
 
 COCOAPODS: 1.11.0.rc.1

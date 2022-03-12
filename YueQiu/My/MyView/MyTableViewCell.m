@@ -7,8 +7,12 @@
 
 #import "MyTableViewCell.h"
 #import "Masonry.h"
+#import <SDWebImage/UIButton+WebCache.h>
+#import "UIImageView+WebCache.h"
+
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
+
 @implementation MyTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -16,9 +20,10 @@
     
 
     if ([reuseIdentifier isEqualToString:@"background"]) {
-        UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"beijing.jpeg"]];
-        [self.contentView addSubview:imageView];
-        [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        self.backImageView = [[UIImageView alloc] init];
+        [self.backImageView sd_setImageWithURL:[NSURL URLWithString:@"https://lijiaxuan.oss-cn-shanghai.aliyuncs.com/default/background.jpg"] placeholderImage:[UIImage imageNamed:@"beijing.jpeg"]];
+        [self.contentView addSubview:self.backImageView];
+        [self.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(0);
             make.left.equalTo(self.contentView.mas_left).offset(0);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(0);
@@ -26,8 +31,8 @@
         }];
     } else if([reuseIdentifier isEqualToString:@"MyMessage"]) {
         self.buttonHead = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.buttonHead sd_setBackgroundImageWithURL:[NSURL URLWithString:@"https://lijiaxuan.oss-cn-shanghai.aliyuncs.com/default/head_portrait.jpg"] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"head.jpeg"]];
         [self.contentView addSubview:self.buttonHead];
-        [self.buttonHead setImage:[UIImage imageNamed:@"head.jpeg"] forState:UIControlStateNormal];
         [self.buttonHead mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(20);
             make.left.equalTo(self.contentView.mas_left).offset(20);
