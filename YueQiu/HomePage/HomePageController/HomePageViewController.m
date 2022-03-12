@@ -185,6 +185,7 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     self.search = [[AMapSearchAPI alloc] init];
     self.search.delegate = self;
     AMapPOIKeywordsSearchRequest *request = [[AMapPOIKeywordsSearchRequest alloc] init];
+    request.location = [AMapGeoPoint locationWithLatitude:_myLocation.coordinate.latitude longitude:_myLocation.coordinate.longitude];
     request.keywords = @"电影院";
     request.city = city;
     request.types = @"电影院";

@@ -6,7 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyPickerView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,8 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView *timeImageView;  //时间图标
 
 @property (nonatomic, strong) UILabel *locationLabel;  //位置
-@property (nonatomic, strong) UIButton *timeSelectButton;  //时间选择器按钮
-@property (nonatomic, strong) MyPickerView *timeSelectView;  //时间选择器视图
+@property (nonatomic, strong) UIDatePicker *showDatePicker;  //时间选择器
 
 @property (nonatomic, strong) UITextField *contentTextField;  //内容框
 

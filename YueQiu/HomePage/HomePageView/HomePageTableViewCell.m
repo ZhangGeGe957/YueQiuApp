@@ -7,8 +7,10 @@
 
 #import "HomePageTableViewCell.h"
 #import "Masonry.h"
+
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
+
 @implementation HomePageTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -17,7 +19,7 @@
         
         [MAMapView updatePrivacyShow:AMapPrivacyShowStatusDidShow privacyInfo:AMapPrivacyInfoStatusDidContain];
         [MAMapView updatePrivacyAgree:AMapPrivacyAgreeStatusDidAgree];
-
+        
         _mapView = [[MAMapView alloc] init];
         [self.contentView addSubview:_mapView];
         
@@ -33,7 +35,7 @@
         MAUserLocationRepresentation *r = [[MAUserLocationRepresentation alloc] init];
         r.showsHeadingIndicator = YES;
         r.image = [UIImage imageNamed:@"daohang.png"];
-        [_mapView updateUserLocationRepresentation:r];
+        [self.mapView updateUserLocationRepresentation:r];
         
         
         
@@ -97,6 +99,8 @@
 //        self.priceLabel.font = [UIFont systemFontOfSize:12];
         
         self.scheduleButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        self.scheduleButton.layer.masksToBounds = YES;
+        self.scheduleButton.layer.cornerRadius = 10;
         [self.contentView addSubview:self.scheduleButton];
         [self.scheduleButton mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.top.equalTo(self.placeLabel.mas_top).offset(H / 50);
