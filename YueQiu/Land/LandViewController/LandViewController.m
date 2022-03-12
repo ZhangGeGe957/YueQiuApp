@@ -47,6 +47,12 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //设备唯一标识
+    self.identificationString = [[UUIDStrengthen alloc] getDeviceIDInKeychain];
+    NSLog(@"--------------------------");
+    NSLog(@"%@", self.identificationString);
+    NSLog(@"--------------------------");
+    
     //启动页
     self.startUpImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight)];
     self.startUpImageView.image = [UIImage imageNamed:@"startUP.png"];

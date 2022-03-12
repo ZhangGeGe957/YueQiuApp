@@ -132,7 +132,7 @@ NSString *const identityHomePageControllerNotice = @"homePage";
             }
             //设置左上角定位按钮
             UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            leftButton.frame = CGRectMake(0, 0, 30, 30);
+            leftButton.frame = CGRectMake(0, 0, 20, 20);
             [leftButton setImage:[UIImage imageNamed:@"city.png"] forState:UIControlStateNormal];
             [leftButton setTitle:city forState:UIControlStateNormal];
             [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

@@ -10,6 +10,7 @@
 		0F706DC9AB39106428BE3804 /* libPods-YueQiu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */; };
 		8315BF11279BFE24007CBAD8 /* huifu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8315BF10279BFE24007CBAD8 /* huifu.png */; };
 		83255A4527DC2C7400A37C5F /* daohang.png in Resources */ = {isa = PBXBuildFile; fileRef = 83255A4427DC2C7400A37C5F /* daohang.png */; };
+		83255A4C27DC9D7400A37C5F /* UUIDStrengthen.m in Sources */ = {isa = PBXBuildFile; fileRef = 83255A4B27DC9D7400A37C5F /* UUIDStrengthen.m */; };
 		8325A65E2796572A0060E916 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A65D2796572A0060E916 /* LandViewController.m */; };
 		8325A6612796573C0060E916 /* LandView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A6602796573C0060E916 /* LandView.m */; };
 		8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8325A6632796C2F50060E916 /* lanqiu-copy.png */; };
@@ -121,6 +122,8 @@
 		5EC636371D8C5092569DC7A8 /* Pods-YueQiu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.debug.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.debug.xcconfig"; sourceTree = "<group>"; };
 		8315BF10279BFE24007CBAD8 /* huifu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huifu.png; sourceTree = "<group>"; };
 		83255A4427DC2C7400A37C5F /* daohang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daohang.png; sourceTree = "<group>"; };
+		83255A4A27DC9D7400A37C5F /* UUIDStrengthen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UUIDStrengthen.h; sourceTree = "<group>"; };
+		83255A4B27DC9D7400A37C5F /* UUIDStrengthen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UUIDStrengthen.m; sourceTree = "<group>"; };
 		8325A65C2796572A0060E916 /* LandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandViewController.h; sourceTree = "<group>"; };
 		8325A65D2796572A0060E916 /* LandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandViewController.m; sourceTree = "<group>"; };
 		8325A65F2796573C0060E916 /* LandView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandView.h; sourceTree = "<group>"; };
@@ -297,9 +300,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		83255A4927DC9B6800A37C5F /* LandModel */ = {
+			isa = PBXGroup;
+			children = (
+				83255A4A27DC9D7400A37C5F /* UUIDStrengthen.h */,
+				83255A4B27DC9D7400A37C5F /* UUIDStrengthen.m */,
+			);
+			path = LandModel;
+			sourceTree = "<group>";
+		};
 		8325A658279656D80060E916 /* Land */ = {
 			isa = PBXGroup;
 			children = (
+				83255A4927DC9B6800A37C5F /* LandModel */,
 				8325A65A279656FD0060E916 /* LandView */,
 				8325A659279656F00060E916 /* LandViewController */,
 			);
@@ -1052,6 +1065,7 @@
 				83C798BD2789C0CC000F68C1 /* MyViewController.m in Sources */,
 				83C798662789BDFE000F68C1 /* AppDelegate.m in Sources */,
 				CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */,
+				83255A4C27DC9D7400A37C5F /* UUIDStrengthen.m in Sources */,
 				CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
 				837B713F279AAAAB00DBD856 /* BoutiqueView.m in Sources */,
