@@ -48,6 +48,7 @@
     self.phoneTextField = [[UITextField alloc] init];
     self.phoneTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.phoneTextField.placeholder = @"手机号";
+    self.phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.phoneTextField.layer.masksToBounds = YES;
     self.phoneTextField.layer.cornerRadius = 20;
     self.phoneTextField.layer.borderWidth = 0.5;
@@ -61,6 +62,7 @@
     self.codeTextField = [[UITextField alloc] init];
     self.codeTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.codeTextField.placeholder = @"验证码";
+    self.codeTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.codeTextField.layer.masksToBounds = YES;
     self.codeTextField.layer.cornerRadius = 20;
     self.codeTextField.layer.borderWidth = 0.5;
@@ -74,6 +76,7 @@
     self.passwordTextField = [[UITextField alloc] init];
     self.passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordTextField.placeholder = @"密码";
+    self.passwordTextField.secureTextEntry = YES;
     self.passwordTextField.layer.masksToBounds = YES;
     self.passwordTextField.layer.cornerRadius = 20;
     self.passwordTextField.layer.borderWidth = 0.5;
@@ -87,6 +90,7 @@
     self.againTextField = [[UITextField alloc] init];
     self.againTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.againTextField.placeholder = @"请再次输入密码";
+    self.againTextField.secureTextEntry = YES;
     self.againTextField.layer.masksToBounds = YES;
     self.againTextField.layer.cornerRadius = 20;
     self.againTextField.layer.borderWidth = 0.5;

@@ -6,6 +6,7 @@
 //
 
 #import "ForgetViewController.h"
+#import "SendMessageManager.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -45,9 +46,18 @@ NSString *const backMassage = @"backMassage";
 
 //验证码
 - (void)pressSend:(UIButton *)button {
-    self.sendButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
-    [self.forgetView.sendButton setEnabled:NO];
-    self.allTime = 60;
+    if (self.forgetView.phoneTextField.text.length != 11) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确的手机号！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else {
+        self.sendButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+        [self.forgetView.sendButton setEnabled:NO];
+        self.allTime = 60;
+        
+        //发送短信验证网络请求
+        [self sendMessageCode];
+    }
 }
 - (void)countDown:(NSTimer *)timer {
     if (self.allTime == 0) {
@@ -76,6 +86,20 @@ NSString *const backMassage = @"backMassage";
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.forgetView.phoneTextField resignFirstResponder];
     [self.forgetView.codeTextField resignFirstResponder];
+}
+
+//发送短信验证网络请求
+- (void)sendMessageCode {
+    
+    SendMessageManager *manager = [SendMessageManager shareManager];
+    manager.userNumber = [self.forgetView.phoneTextField.text copy];
+    
+    [[SendMessageManager shareManager] SendMessageWithData:^(SendMessageJSONModel * _Nullable sendMessageModel) {
+        NSLog(@"%@ %ld", sendMessageModel.msg, sendMessageModel.code);
+        NSLog(@"获取成功");
+    } andError:^(NSError * _Nullable error) {
+        NSLog(@"请求失败");
+    }];
 }
 /*
 #pragma mark - Navigation

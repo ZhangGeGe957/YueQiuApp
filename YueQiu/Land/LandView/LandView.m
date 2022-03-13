@@ -46,6 +46,7 @@
     //账号框
     self.accountTextField = [[UITextField alloc] init];
     self.accountTextField.placeholder = @"请输入账号/手机号";
+    self.accountTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.accountTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.accountTextField.layer.cornerRadius = 25;
     self.accountTextField.layer.masksToBounds = YES;
@@ -61,6 +62,7 @@
     //密码框
     self.passwordTextField = [[UITextField alloc] init];
     self.passwordTextField.placeholder = @"请输入密码";
+    self.passwordTextField.secureTextEntry = YES;
     self.passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordTextField.layer.cornerRadius = 25;
     self.passwordTextField.layer.masksToBounds = YES;

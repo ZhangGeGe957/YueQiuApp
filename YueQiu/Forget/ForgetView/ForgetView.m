@@ -48,6 +48,7 @@
     self.phoneTextField = [[UITextField alloc] init];
     self.phoneTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.phoneTextField.placeholder = @"手机号";
+    self.phoneTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.phoneTextField.layer.masksToBounds = YES;
     self.phoneTextField.layer.cornerRadius = 20;
     self.phoneTextField.layer.borderWidth = 0.5;
@@ -61,6 +62,7 @@
     self.codeTextField = [[UITextField alloc] init];
     self.codeTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.codeTextField.placeholder = @"验证码";
+    self.codeTextField.keyboardType = UIKeyboardTypeNumberPad;
     self.codeTextField.layer.masksToBounds = YES;
     self.codeTextField.layer.cornerRadius = 20;
     self.codeTextField.layer.borderWidth = 0.5;

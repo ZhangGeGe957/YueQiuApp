@@ -48,6 +48,7 @@
     self.passwordTextField = [[UITextField alloc] init];
     self.passwordTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.passwordTextField.placeholder = @"密码";
+    self.passwordTextField.secureTextEntry = YES;
     self.passwordTextField.layer.masksToBounds = YES;
     self.passwordTextField.layer.cornerRadius = 20;
     self.passwordTextField.layer.borderWidth = 0.5;
@@ -61,6 +62,7 @@
     self.againTextField = [[UITextField alloc] init];
     self.againTextField.borderStyle = UITextBorderStyleRoundedRect;
     self.againTextField.placeholder = @"请再次输入密码";
+    self.againTextField.secureTextEntry = YES;
     self.againTextField.layer.masksToBounds = YES;
     self.againTextField.layer.cornerRadius = 20;
     self.againTextField.layer.borderWidth = 0.5;

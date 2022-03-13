@@ -6,6 +6,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "SendMessageManager.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -36,9 +37,18 @@
 
 //验证码
 - (void)pressSend:(UIButton *)button {
-    self.sendButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
-    [self.registerView.sendButton setEnabled:NO];
-    self.allTime = 60;
+    if (self.registerView.phoneTextField.text.length != 11) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确的手机号！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else {
+        self.sendButtonTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(countDown:) userInfo:nil repeats:YES];
+        [self.registerView.sendButton setEnabled:NO];
+        self.allTime = 60;
+        
+        //发送短信验证网络请求
+        [self sendMessageCode];
+    }
 }
 - (void)countDown:(NSTimer *)timer {
     if (self.allTime == 0) {
@@ -47,7 +57,7 @@
         [self.registerView.sendButton setTitle:@"发送验证码" forState:UIControlStateNormal];
         [self.registerView.sendButton setEnabled:YES];
     } else {
-        NSString *tempString = [[NSString alloc] initWithFormat:@"%ld", self.allTime];
+        NSString *tempString = [[NSString alloc] initWithFormat:@"%lds", self.allTime];
         [self.registerView.sendButton setTitle:tempString forState:UIControlStateNormal];
         self.allTime = self.allTime - 1;
     }
@@ -85,6 +95,20 @@
     [self.registerView.passwordTextField resignFirstResponder];
     [self.registerView.codeTextField resignFirstResponder];
     [self.registerView.againTextField resignFirstResponder];
+}
+
+//发送短信验证网络请求
+- (void)sendMessageCode {
+    
+    SendMessageManager *manager = [SendMessageManager shareManager];
+    manager.userNumber = [self.registerView.phoneTextField.text copy];
+    
+    [[SendMessageManager shareManager] SendMessageWithData:^(SendMessageJSONModel * _Nullable sendMessageModel) {
+        NSLog(@"%@ %ld", sendMessageModel.msg, sendMessageModel.code);
+        NSLog(@"获取成功");
+    } andError:^(NSError * _Nullable error) {
+        NSLog(@"请求失败");
+    }];
 }
 
 /*
