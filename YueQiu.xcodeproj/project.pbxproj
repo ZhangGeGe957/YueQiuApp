@@ -33,6 +33,7 @@
 		8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8344FC9227BE207E00C534D5 /* ForgetView.m */; };
 		8344FC9627BE208C00C534D5 /* ForgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8344FC9527BE208C00C534D5 /* ForgetViewController.m */; };
 		8344FC9C27BE269D00C534D5 /* fanhui2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8344FC9B27BE269D00C534D5 /* fanhui2.png */; };
+		8346A8C227DDB59E00D99BD7 /* RegisterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8346A8C127DDB59E00D99BD7 /* RegisterManager.m */; };
 		8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8347BCBA278C2FD300466606 /* CourseTableViewCell.m */; };
 		8347BCBD278C35BB00466606 /* 2-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8347BCBC278C35BB00466606 /* 2-1.png */; };
 		837B7134279A667100DBD856 /* jia.png in Resources */ = {isa = PBXBuildFile; fileRef = 837B7133279A667100DBD856 /* jia.png */; };
@@ -156,6 +157,8 @@
 		8344FC9427BE208C00C534D5 /* ForgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetViewController.h; sourceTree = "<group>"; };
 		8344FC9527BE208C00C534D5 /* ForgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetViewController.m; sourceTree = "<group>"; };
 		8344FC9B27BE269D00C534D5 /* fanhui2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fanhui2.png; sourceTree = "<group>"; };
+		8346A8C027DDB59E00D99BD7 /* RegisterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterManager.h; sourceTree = "<group>"; };
+		8346A8C127DDB59E00D99BD7 /* RegisterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterManager.m; sourceTree = "<group>"; };
 		8347BCB9278C2FD300466606 /* CourseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
 		8347BCBA278C2FD300466606 /* CourseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
 		8347BCBC278C35BB00466606 /* 2-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2-1.png"; sourceTree = "<group>"; };
@@ -421,6 +424,7 @@
 		8344FC8527BE1D6100C534D5 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				8346A8BF27DDB55700D99BD7 /* RegisterModel */,
 				8344FC8627BE1D6A00C534D5 /* RegisterView */,
 				8344FC8727BE1D8F00C534D5 /* RegisterViewController */,
 			);
@@ -483,6 +487,15 @@
 				83370A8427BF726D00A1889D /* yuechi.png */,
 			);
 			path = RegisterPhotos;
+			sourceTree = "<group>";
+		};
+		8346A8BF27DDB55700D99BD7 /* RegisterModel */ = {
+			isa = PBXGroup;
+			children = (
+				8346A8C027DDB59E00D99BD7 /* RegisterManager.h */,
+				8346A8C127DDB59E00D99BD7 /* RegisterManager.m */,
+			);
+			path = RegisterModel;
 			sourceTree = "<group>";
 		};
 		837B712E279A5BF700DBD856 /* NewsView */ = {
@@ -1085,6 +1098,7 @@
 				CC5ABFF627C4D19700D548CB /* SettingCell.m in Sources */,
 				CC89C27D27C2513C0096C12D /* MyCollectStadiumController.m in Sources */,
 				83C798C92789C100000F68C1 /* TrainView.m in Sources */,
+				8346A8C227DDB59E00D99BD7 /* RegisterManager.m in Sources */,
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
 				8344FC9627BE208C00C534D5 /* ForgetViewController.m in Sources */,
