@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SetPasswordViewController : UIViewController
 
 @property (nonatomic, strong) SetPasswordView *setPasswordView;
+@property (nonatomic, retain) UIAlertController* sendAlertView;  //提示框
+@property (nonatomic, strong) NSTimer *backTimer;  //返回计时器
 
 @end
 

@@ -40,7 +40,27 @@
 
 //确认按钮
 - (void)pressSure:(UIButton *)button {
+    if ([self.setPasswordView.passwordTextField.text isEqualToString:@""] || [self.setPasswordView.againTextField.text isEqualToString:@""]) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入新密码！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else if (![self.setPasswordView.passwordTextField.text isEqualToString:self.setPasswordView.againTextField.text]) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码不一致请重新输入！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"密码修改成功！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        self.backTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startBackTimer:) userInfo:@"ZhangGeGe" repeats:YES];
+    }
+}
+
+//定时器函数
+- (void)startBackTimer:(NSTimer *)timer {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.backTimer invalidate];
+    self.backTimer = nil;
 }
 
 //回收键盘

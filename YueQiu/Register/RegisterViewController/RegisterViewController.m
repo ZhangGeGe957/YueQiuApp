@@ -32,7 +32,37 @@
     [self.registerView.agreementButton addTarget:self action:@selector(pressAgreement:) forControlEvents:UIControlEventTouchUpInside];
     [self.registerView.haveButton addTarget:self action:@selector(pressHave:) forControlEvents:UIControlEventTouchUpInside];
     [self.registerView.sendButton addTarget:self action:@selector(pressSend:) forControlEvents:UIControlEventTouchUpInside];
+    [self.registerView.sureButton addTarget:self action:@selector(pressSure:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.registerView];
+}
+
+//确认按钮
+- (void)pressSure:(UIButton *)button {
+    if ([self.registerView.phoneTextField.text isEqualToString:@""] || [self.registerView.codeTextField.text isEqualToString:@""]) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入手机号和验证码！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else if ([self.registerView.passwordTextField.text isEqualToString:@""] || [self.registerView.againTextField.text isEqualToString:@""]) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入密码！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else if (![self.registerView.passwordTextField.text isEqualToString:self.registerView.againTextField.text]) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码不一致请重新输入！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"密码修改成功！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
+        self.backTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startBackTimer:) userInfo:@"ZhangGeGe" repeats:YES];
+    }
+}
+
+//定时器函数
+- (void)startBackTimer:(NSTimer *)timer {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.backTimer invalidate];
+    self.backTimer = nil;
 }
 
 //验证码

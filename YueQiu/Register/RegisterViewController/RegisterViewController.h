@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) NSTimer *sendButtonTimer;
 @property NSInteger allTime;
 @property (nonatomic, retain) UIAlertController* sendAlertView;  //提示框
+@property (nonatomic, strong) NSTimer *backTimer;  //返回计时器
 
 //发送短信验证网络请求
 - (void)sendMessageCode;
