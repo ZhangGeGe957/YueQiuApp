@@ -45,12 +45,11 @@
     
     //名称
     self.nameLabel = [[UILabel alloc] init];
-    self.nameLabel.text = @"名字";
     self.nameLabel.textAlignment = NSTextAlignmentCenter;
     self.nameLabel.layer.borderWidth = 0.5;
     self.nameLabel.layer.cornerRadius = 10;
     self.nameLabel.layer.masksToBounds = YES;
-    [self.nameLabel setFont:[UIFont systemFontOfSize:24]];
+    [self.nameLabel setFont:[UIFont systemFontOfSize:16]];
     [self addSubview:self.nameLabel];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleLabel).offset(50);
@@ -59,31 +58,42 @@
         make.width.equalTo(@150);
     }];
     
-    //球馆照片
-    self.stadiumImageView = [[UIImageView alloc] init];
-    self.stadiumImageView.image = [UIImage imageNamed:@"2-1.png"];
-    [self addSubview:self.stadiumImageView];
-    [self.stadiumImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [MAMapView updatePrivacyShow:AMapPrivacyShowStatusDidShow privacyInfo:AMapPrivacyInfoStatusDidContain];
+    [MAMapView updatePrivacyAgree:AMapPrivacyAgreeStatusDidAgree];
+    
+    _mapView = [[MAMapView alloc] init];
+    _mapView.delegate = self;
+    [self addSubview:_mapView];
+    [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom).offset(20);
         make.left.equalTo(self).offset(30);
         make.right.equalTo(self).offset(-30);
         make.height.equalTo(@180);
     }];
+    _mapView.showsUserLocation = YES;
+    _mapView.userTrackingMode = MAUserTrackingModeFollow;
+    MAUserLocationRepresentation *r = [[MAUserLocationRepresentation alloc] init];
+    r.showsHeadingIndicator = YES;
+    r.image = [UIImage imageNamed:@"daohang.png"];
+    [self.mapView updateUserLocationRepresentation:r];
+    _pointAnnotation = [[MAPointAnnotation alloc] init];
+    [self.mapView addAnnotation:_pointAnnotation];
+
     
     //图标
     self.locationImageView = [[UIImageView alloc] init];
     self.locationImageView.image = [UIImage imageNamed:@"weizhi.png"];
     [self addSubview:self.locationImageView];
     [self.locationImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.stadiumImageView.mas_left);
-        make.top.equalTo(self.stadiumImageView.mas_bottom).offset(20);
+        make.left.equalTo(self.mapView.mas_left);
+        make.top.equalTo(self.mapView.mas_bottom).offset(20);
         make.size.equalTo(@30);
     }];
     self.phoneImageView = [[UIImageView alloc] init];
     self.phoneImageView.image = [UIImage imageNamed:@"dianhua.png"];
     [self addSubview:self.phoneImageView];
     [self.phoneImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.stadiumImageView.mas_left);
+        make.left.equalTo(self.mapView.mas_left);
         make.top.equalTo(self.locationImageView.mas_bottom).offset(20);
         make.size.equalTo(@30);
     }];
@@ -91,7 +101,7 @@
     self.moneyImageView.image = [UIImage imageNamed:@"qian.png"];
     [self addSubview:self.moneyImageView];
     [self.moneyImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.stadiumImageView.mas_left);
+        make.left.equalTo(self.mapView.mas_left);
         make.top.equalTo(self.phoneImageView.mas_bottom).offset(20);
         make.size.equalTo(@30);
     }];
@@ -106,12 +116,11 @@
     
     //label
     self.locationLabel = [[UILabel alloc] init];
-    self.locationLabel.text = @"pangguanzhenluxicun";
     self.locationLabel.layer.borderWidth = 0.5;
     self.locationLabel.layer.cornerRadius = 10;
     self.locationLabel.layer.masksToBounds = YES;
     self.locationLabel.textAlignment = NSTextAlignmentCenter;
-    [self.locationLabel setFont:[UIFont systemFontOfSize:20]];
+    [self.locationLabel setFont:[UIFont systemFontOfSize:15]];
     [self addSubview:self.locationLabel];
     [self.locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.locationImageView.mas_right).offset(10);
@@ -119,6 +128,7 @@
         make.height.equalTo(@30);
         make.width.equalTo(@300);
     }];
+    
     self.phoneLabel = [[UILabel alloc] init];
     self.phoneLabel.text = @"xxxxxxxxxxx";
     self.phoneLabel.layer.borderWidth = 0.5;
@@ -271,12 +281,6 @@
     }];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
 
 @end

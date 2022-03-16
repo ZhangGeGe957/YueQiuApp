@@ -17,7 +17,7 @@ NSString *const identityHomePageControllerNotice = @"homePage";
 
 @interface HomePageViewController ()
 
-@property (nonatomic, strong) ReserveViewController *reserveView;
+@property (nonatomic, strong) ReserveViewController *reserveViewController;
 
 @end
 
@@ -86,9 +86,11 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homePageNoticeEvent:) name:identityHomePageControllerNotice object:nil];
 }
 - (void)homePageNoticeEvent:(NSNotification *)sender {
-    self.reserveView = [[ReserveViewController alloc] init];
-    self.reserveView.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:self.reserveView animated:YES completion:nil];
+    self.reserveViewController = [[ReserveViewController alloc] init];
+    self.reserveViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    self.reserveViewController.stadiumLocation = [NSString stringWithFormat:@"%@", sender.userInfo[@"place"]];
+    self.reserveViewController.stadiumName = [NSString stringWithFormat:@"%@", sender.userInfo[@"name"]];
+    [self presentViewController:self.reserveViewController animated:YES completion:nil];
 }
 
 //一个获取位置信息函数
