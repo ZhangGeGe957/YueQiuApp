@@ -54,8 +54,8 @@
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleLabel).offset(50);
         make.left.equalTo(self).offset(30);
+        make.right.equalTo(self).offset(-30);
         make.height.equalTo(@30);
-        make.width.equalTo(@150);
     }];
     
     [MAMapView updatePrivacyShow:AMapPrivacyShowStatusDidShow privacyInfo:AMapPrivacyInfoStatusDidContain];

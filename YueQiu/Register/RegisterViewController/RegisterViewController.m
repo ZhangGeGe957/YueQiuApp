@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tipString = [[NSString alloc] init];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self p_initUI];
 }
@@ -51,10 +54,18 @@
         [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:self.sendAlertView animated:true completion:nil];
     } else {
-        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"密码修改成功！" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [self presentViewController:self.sendAlertView animated:true completion:nil];
-        [self dismissViewControllerAnimated:YES completion:nil];
-        self.backTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startBackTimer:) userInfo:@"ZhangGeGe" repeats:YES];
+        //发送账号信息给后台
+        [self p_confirmAccount];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //弹窗提示
+            self.sendAlertView = [UIAlertController alertControllerWithTitle:self.tipString message:nil preferredStyle:UIAlertControllerStyleAlert];
+            [self presentViewController:self.sendAlertView animated:true completion:nil];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            if ([self.tipString isEqualToString:@"账号注册成功！"]) {
+                self.backTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startBackTimer:) userInfo:@"ZhangGeGe" repeats:YES];
+            }
+        });
     }
 }
 
@@ -77,7 +88,7 @@
         self.allTime = 60;
         
         //发送短信验证网络请求
-        [self sendMessageCode];
+        [self p_sendMessageCode];
     }
 }
 - (void)countDown:(NSTimer *)timer {
@@ -128,14 +139,39 @@
 }
 
 //发送短信验证网络请求
-- (void)sendMessageCode {
+- (void)p_sendMessageCode {
     
     SendMessageManager *manager = [SendMessageManager shareManager];
     manager.userNumber = [self.registerView.phoneTextField.text copy];
     
     [[SendMessageManager shareManager] SendMessageWithData:^(SendMessageJSONModel * _Nullable sendMessageModel) {
         NSLog(@"%@ %ld", sendMessageModel.msg, sendMessageModel.code);
-        NSLog(@"获取成功");
+    } andError:^(NSError * _Nullable error) {
+        NSLog(@"短信发送失败！");
+    }];
+}
+
+//发送账号信息给后台
+- (void)p_confirmAccount {
+    SendMessageManager *manager = [SendMessageManager shareManager];
+    manager.userNumber = [self.registerView.phoneTextField.text copy];
+    manager.passwordNumber = [self.registerView.passwordTextField.text copy];
+    NSLog(@"%@", self.registerView.passwordTextField.text);
+    manager.codeNumber = [self.registerView.codeTextField.text copy];
+    
+    [[SendMessageManager shareManager] ConfirmAccountWithData:^(SendMessageJSONModel * _Nullable sendMessageModel) {
+        NSLog(@"%@ %ld", sendMessageModel.msg, sendMessageModel.code);
+        if (sendMessageModel.code == 200) {
+            self.tipString = @"账号注册成功！";
+        } else if (sendMessageModel.code == 400) {
+            self.tipString = @"验证码错误！";
+        } else if (sendMessageModel.code == 403) {
+            self.tipString = @"用户已经被注册！";
+        } else if (sendMessageModel.code == 410) {
+            self.tipString = @"验证码过期！";
+        } else {
+            self.tipString = @"服务器内部错误！";
+        }
     } andError:^(NSError * _Nullable error) {
         NSLog(@"请求失败");
     }];

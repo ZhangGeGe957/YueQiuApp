@@ -158,7 +158,7 @@
     
     //确认按钮
     self.sureButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [self.sureButton setTitle:@"登陆" forState:UIControlStateNormal];
+    [self.sureButton setTitle:@"注册" forState:UIControlStateNormal];
     self.sureButton.tintColor = [UIColor whiteColor];
     self.sureButton.backgroundColor = [UIColor orangeColor];
     self.sureButton.layer.masksToBounds = YES;
