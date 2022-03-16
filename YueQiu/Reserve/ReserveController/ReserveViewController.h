@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ReserveViewController : UIViewController
 
 @property (nonatomic, strong) ReserveView *reserveView;
-
+@property (nonatomic, strong) NSString* stadiumLocation;
+@property (nonatomic, strong) NSString* stadiumName;
 @end
 
 NS_ASSUME_NONNULL_END

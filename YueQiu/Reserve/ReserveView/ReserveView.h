@@ -6,18 +6,22 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MAMapKit/MAMapKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ReserveView : UIView
+<MAMapViewDelegate>
 
+@property (nonatomic, strong) MAMapView *mapView;
+@property (nonatomic, strong) MAPointAnnotation* pointAnnotation;
 @property (nonatomic, strong) UIButton *backButton;  //返回按钮
 @property (nonatomic, strong) UILabel *titleLabel;  //标题
 @property CGRect rectStatus;  //记录状态栏高度
 
 @property (nonatomic, strong) UILabel *nameLabel;  //名称
 
-@property (nonatomic, strong) UIImageView *stadiumImageView; //球馆照片
+//@property (nonatomic, strong) UIImageView *stadiumImageView; //球馆照片
 @property (nonatomic, strong) UIImageView *locationImageView;  //位置图标
 @property (nonatomic, strong) UIImageView *phoneImageView;  //电话图标
 @property (nonatomic, strong) UIImageView *moneyImageView;  //价格图标

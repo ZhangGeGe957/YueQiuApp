@@ -36,9 +36,6 @@
         r.showsHeadingIndicator = YES;
         r.image = [UIImage imageNamed:@"daohang.png"];
         [self.mapView updateUserLocationRepresentation:r];
-        
-        
-        
         return self;
     } else {
         self.nameLabel = [[UILabel alloc] init];

@@ -7,7 +7,7 @@
 
 #import "ReserveViewController.h"
 #import "Masonry.h"
-
+#import <MapKit/MKMapItem.h>
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
@@ -28,6 +28,19 @@
 - (void)initAllReserveUI {
     self.reserveView = [[ReserveView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight)];
     [self.reserveView.backButton addTarget:self action:@selector(p_ReserveBack:) forControlEvents:UIControlEventTouchUpInside];
+    self.reserveView.locationLabel.text = self.stadiumLocation;
+    self.reserveView.nameLabel.text = self.stadiumName;
+    self.reserveView.pointAnnotation.title = self.stadiumName;
+    
+    CLGeocoder* geocoder = [[CLGeocoder alloc] init];
+    NSString* placeString = [NSString stringWithFormat:@"%@",self.stadiumLocation];
+    [geocoder geocodeAddressString:placeString completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        for (CLPlacemark *placemark in placemarks){
+            //坐标（经纬度)
+            CLLocationCoordinate2D coordinate = placemark.location.coordinate;
+            self.reserveView.pointAnnotation.coordinate = coordinate;
+            self.reserveView.mapView.centerCoordinate = coordinate;
+        }}];
     [self.view addSubview:self.reserveView];
 }
 
@@ -35,6 +48,8 @@
 - (void)p_ReserveBack:(UIButton *)button {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 /*
 #pragma mark - Navigation
