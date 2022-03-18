@@ -73,6 +73,10 @@
 		83FB1A5627CA294B005D6292 /* ReleaseGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5527CA294B005D6292 /* ReleaseGameView.m */; };
 		83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */; };
 		CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */; };
+		CC43FD1427E35BDF00CB1AE0 /* ForgetJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC43FD1327E35BDF00CB1AE0 /* ForgetJsonModel.m */; };
+		CC43FD1727E35C1700CB1AE0 /* ForgetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC43FD1627E35C1700CB1AE0 /* ForgetManager.m */; };
+		CC43FD1B27E366AB00CB1AE0 /* SetPasswordJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC43FD1A27E366AB00CB1AE0 /* SetPasswordJsonModel.m */; };
+		CC43FD1E27E366CB00CB1AE0 /* SetPasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC43FD1D27E366CB00CB1AE0 /* SetPasswordManager.m */; };
 		CC5ABFE927C4D15F00D548CB /* shanchu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE127C4D15F00D548CB /* shanchu.png */; };
 		CC5ABFEA27C4D15F00D548CB /* yinsi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE227C4D15F00D548CB /* yinsi.png */; };
 		CC5ABFEB27C4D15F00D548CB /* yejianmoshi.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5ABFE327C4D15F00D548CB /* yejianmoshi.png */; };
@@ -223,6 +227,14 @@
 		83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseGameViewController.m; sourceTree = "<group>"; };
 		CC1A7B2B2789C86C0040B39D /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		CC43FD1227E35BDF00CB1AE0 /* ForgetJsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetJsonModel.h; sourceTree = "<group>"; };
+		CC43FD1327E35BDF00CB1AE0 /* ForgetJsonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetJsonModel.m; sourceTree = "<group>"; };
+		CC43FD1527E35C1700CB1AE0 /* ForgetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetManager.h; sourceTree = "<group>"; };
+		CC43FD1627E35C1700CB1AE0 /* ForgetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetManager.m; sourceTree = "<group>"; };
+		CC43FD1927E366AB00CB1AE0 /* SetPasswordJsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordJsonModel.h; sourceTree = "<group>"; };
+		CC43FD1A27E366AB00CB1AE0 /* SetPasswordJsonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordJsonModel.m; sourceTree = "<group>"; };
+		CC43FD1C27E366CB00CB1AE0 /* SetPasswordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordManager.h; sourceTree = "<group>"; };
+		CC43FD1D27E366CB00CB1AE0 /* SetPasswordManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordManager.m; sourceTree = "<group>"; };
 		CC5ABFE127C4D15F00D548CB /* shanchu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shanchu.png; sourceTree = "<group>"; };
 		CC5ABFE227C4D15F00D548CB /* yinsi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yinsi.png; sourceTree = "<group>"; };
 		CC5ABFE327C4D15F00D548CB /* yejianmoshi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yejianmoshi.png; sourceTree = "<group>"; };
@@ -400,6 +412,7 @@
 		83370A8C27BF8DFF00A1889D /* SetPassword */ = {
 			isa = PBXGroup;
 			children = (
+				CC43FD1827E3668200CB1AE0 /* SetPasswordModel */,
 				83370A8E27BF8E1A00A1889D /* SetPasswordView */,
 				83370A8D27BF8E1000A1889D /* SetPasswordViewController */,
 			);
@@ -455,6 +468,7 @@
 		8344FC8E27BE203C00C534D5 /* Forget */ = {
 			isa = PBXGroup;
 			children = (
+				CC43FD1127E33EEC00CB1AE0 /* ForgetModel */,
 				8344FC9027BE206100C534D5 /* ForgetView */,
 				8344FC8F27BE205500C534D5 /* ForgetViewController */,
 			);
@@ -797,6 +811,28 @@
 			path = ReleaseGameController;
 			sourceTree = "<group>";
 		};
+		CC43FD1127E33EEC00CB1AE0 /* ForgetModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC43FD1227E35BDF00CB1AE0 /* ForgetJsonModel.h */,
+				CC43FD1327E35BDF00CB1AE0 /* ForgetJsonModel.m */,
+				CC43FD1527E35C1700CB1AE0 /* ForgetManager.h */,
+				CC43FD1627E35C1700CB1AE0 /* ForgetManager.m */,
+			);
+			path = ForgetModel;
+			sourceTree = "<group>";
+		};
+		CC43FD1827E3668200CB1AE0 /* SetPasswordModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC43FD1927E366AB00CB1AE0 /* SetPasswordJsonModel.h */,
+				CC43FD1A27E366AB00CB1AE0 /* SetPasswordJsonModel.m */,
+				CC43FD1C27E366CB00CB1AE0 /* SetPasswordManager.h */,
+				CC43FD1D27E366CB00CB1AE0 /* SetPasswordManager.m */,
+			);
+			path = SetPasswordModel;
+			sourceTree = "<group>";
+		};
 		CC5ABFE027C4D10600D548CB /* SettingPhotos */ = {
 			isa = PBXGroup;
 			children = (
@@ -1085,6 +1121,7 @@
 				CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */,
 				83255A4C27DC9D7400A37C5F /* UUIDStrengthen.m in Sources */,
 				CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */,
+				CC43FD1427E35BDF00CB1AE0 /* ForgetJsonModel.m in Sources */,
 				8346A8CB27DDB9E500D99BD7 /* SendMessageManager.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
 				837B713F279AAAAB00DBD856 /* BoutiqueView.m in Sources */,
@@ -1101,8 +1138,10 @@
 				83C798772789BE00000F68C1 /* main.m in Sources */,
 				CC5ABFF327C4D17E00D548CB /* SettingView.m in Sources */,
 				83C798C02789C0D9000F68C1 /* NewsViewController.m in Sources */,
+				CC43FD1727E35C1700CB1AE0 /* ForgetManager.m in Sources */,
 				CC5ABFF627C4D19700D548CB /* SettingCell.m in Sources */,
 				CC89C27D27C2513C0096C12D /* MyCollectStadiumController.m in Sources */,
+				CC43FD1E27E366CB00CB1AE0 /* SetPasswordManager.m in Sources */,
 				83C798C92789C100000F68C1 /* TrainView.m in Sources */,
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
@@ -1116,6 +1155,7 @@
 				8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
 				83370A9127BF8E3200A1889D /* SetPasswordView.m in Sources */,
+				CC43FD1B27E366AB00CB1AE0 /* SetPasswordJsonModel.m in Sources */,
 				83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */,
 				CCFA4BA427ABB9EF00F2BB18 /* MyTableViewCell.m in Sources */,
 				83C798B72789C0A9000F68C1 /* HomePageMModel.m in Sources */,
@@ -1295,7 +1335,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
@@ -1327,7 +1367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";

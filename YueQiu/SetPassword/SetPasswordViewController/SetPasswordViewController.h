@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) SetPasswordView *setPasswordView;
 @property (nonatomic, retain) UIAlertController* sendAlertView;  //提示框
 @property (nonatomic, strong) NSTimer *backTimer;  //返回计时器
-
+@property (nonatomic, strong) NSString* phoneNumber;
+@property NSInteger msgCode;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -92,6 +92,7 @@ NSString *const identityAuthentication = @"ZhangGeGe";
 - (void)p_backMassage:(NSNotification *)sender {
     self.setPasswordView = [[SetPasswordViewController alloc] init];
     self.setPasswordView.modalPresentationStyle = UIModalPresentationFullScreen;
+    self.setPasswordView.phoneNumber = [NSString stringWithFormat:@"%@", sender.userInfo[@"content"]];
     [self presentViewController:self.setPasswordView animated:YES completion:nil];
 }
 
