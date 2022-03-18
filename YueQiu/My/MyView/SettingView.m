@@ -82,6 +82,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = self.array[0];
         cell.imageView.image = [UIImage imageNamed:@"zhanghaoyuanquan.png"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if (indexPath.section == 1) {
         SettingCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"1"];
@@ -100,6 +101,7 @@
             cell.imageView.image = [UIImage imageNamed:@"shanchu.png"];
 
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else if (indexPath.section == 2) {
         SettingCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"1"];
@@ -109,6 +111,7 @@
         } else {
             cell.imageView.image = [UIImage imageNamed:@"yinsi.png"];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     } else {
         SettingCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"1"];
@@ -118,6 +121,7 @@
         } else {
             cell.imageView.image = [UIImage imageNamed:@"tuichudenglu.png"];
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
     

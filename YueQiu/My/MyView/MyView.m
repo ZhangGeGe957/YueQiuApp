@@ -54,9 +54,11 @@
 
   if (indexPath.row == 0) {
       MyTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"background"];
+      
       return cell;
   } else if (indexPath.row == 1) {
       MyTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"MyMessage"];
+      cell.selectionStyle = UITableViewCellSelectionStyleNone;
       return cell;
   } else {
       MyTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"menu"];

@@ -6,7 +6,7 @@
 //
 
 #import "ForgetViewController.h"
-#import "SendMessageManager.h"
+#import "ForgetManager.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -38,12 +38,38 @@ NSString *const backMassage = @"backMassage";
 
 //确认按钮事件
 - (void)pressSure:(UIButton *)button{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    ForgetManager* forgetManager = [ForgetManager sharedManager];
+    forgetManager.codeNumber = [self.forgetView.codeTextField.text copy];
+    forgetManager.userNumber = [self.forgetView.phoneTextField.text copy];
+    [[ForgetManager sharedManager] verifyCodeNumberWithData:^(ForgetJsonModel * _Nonnull forgetModel) {
+        self.msgCode = forgetModel.code;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self judgeNext];
+        });
+    } andError:^(NSError * _Nonnull error) {
+        NSLog(@"请求失败");
+    }];
     
-    //发送推出新视图的通知
-    [[NSNotificationCenter defaultCenter] postNotificationName:backMassage object:nil userInfo:nil];
+    
 }
 
+- (void)judgeNext{
+    if(self.msgCode == 200) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        //发送推出新视图的通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:backMassage object:nil userInfo:@{@"content":self.forgetView.phoneTextField.text}];
+    } else if (self.msgCode == 400) {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"验证码错误" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+    } else if(self.msgCode == 410) {
+            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"验证码已过期" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+    }
+}
 //验证码
 - (void)pressSend:(UIButton *)button {
     if (self.forgetView.phoneTextField.text.length != 11) {
@@ -91,24 +117,15 @@ NSString *const backMassage = @"backMassage";
 //发送短信验证网络请求
 - (void)sendMessageCode {
     
-    SendMessageManager *manager = [SendMessageManager shareManager];
+    ForgetManager *manager = [ForgetManager sharedManager];
     manager.userNumber = [self.forgetView.phoneTextField.text copy];
     
-    [[SendMessageManager shareManager] SendMessageWithData:^(SendMessageJSONModel * _Nullable sendMessageModel) {
-        NSLog(@"%@ %ld", sendMessageModel.msg, sendMessageModel.code);
+    [[ForgetManager sharedManager] SendMessageWithData:^(ForgetJsonModel * _Nonnull forgetModel) {
+        NSLog(@"%@ %ld", forgetModel.msg, forgetModel.code);
         NSLog(@"获取成功");
-    } andError:^(NSError * _Nullable error) {
+    } andError:^(NSError * _Nonnull error) {
         NSLog(@"请求失败");
     }];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

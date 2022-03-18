@@ -6,7 +6,7 @@
 //
 
 #import "SetPasswordViewController.h"
-
+#include "SetPasswordManager.h"
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
@@ -30,6 +30,7 @@
     self.setPasswordView = [[SetPasswordView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight)];
     [self.setPasswordView.backButton addTarget:self action:@selector(pressBack:) forControlEvents:UIControlEventTouchUpInside];
     [self.setPasswordView.sureButton addTarget:self action:@selector(pressSure:) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.view addSubview:self.setPasswordView];
 }
 
@@ -49,10 +50,33 @@
         [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:self.sendAlertView animated:true completion:nil];
     } else {
+        [[SetPasswordManager sharedManager] ChangePasswordWithData:^(SetPasswordJsonModel * _Nonnull setPasswordModel) {
+            self.msgCode = setPasswordModel.code;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self judgeNext];
+            });
+        } andError:^(NSError * _Nonnull error) {
+            NSLog(@"上传出错");
+        }];
+        
+    }
+}
+
+- (void)judgeNext {
+    if(self.msgCode == 200) {
         self.sendAlertView = [UIAlertController alertControllerWithTitle:@"密码修改成功！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            self.backTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startBackTimer:) userInfo:@"ZhangGeGe" repeats:YES];
+        }];
+        [self.sendAlertView addAction:action];
         [self presentViewController:self.sendAlertView animated:true completion:nil];
-        [self dismissViewControllerAnimated:YES completion:nil];
-        self.backTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startBackTimer:) userInfo:@"ZhangGeGe" repeats:YES];
+    } else if(self.msgCode == 500) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"服务器异常" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+        [self.sendAlertView addAction:action];
+        [self presentViewController:self.sendAlertView animated:YES completion:nil];
+        
     }
 }
 
