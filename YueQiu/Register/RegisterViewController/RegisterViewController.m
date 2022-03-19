@@ -57,6 +57,7 @@
         //发送账号信息给后台
         [self p_confirmAccount];
         
+        //回到主线程
         dispatch_async(dispatch_get_main_queue(), ^{
             //弹窗提示
             self.sendAlertView = [UIAlertController alertControllerWithTitle:self.tipString message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -156,7 +157,6 @@
     SendMessageManager *manager = [SendMessageManager shareManager];
     manager.userNumber = [self.registerView.phoneTextField.text copy];
     manager.passwordNumber = [self.registerView.passwordTextField.text copy];
-    NSLog(@"%@", self.registerView.passwordTextField.text);
     manager.codeNumber = [self.registerView.codeTextField.text copy];
     
     [[SendMessageManager shareManager] ConfirmAccountWithData:^(SendMessageJSONModel * _Nullable sendMessageModel) {

@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSTimer *startShowImageViewTimer;
 @property (nonatomic, strong) LandView *landView;
 @property (nonatomic, strong) NSString *identificationString;  //设备的唯一标识
+@property (nonatomic, retain) UIAlertController* sendAlertView;  //提示框
 
 @end
 

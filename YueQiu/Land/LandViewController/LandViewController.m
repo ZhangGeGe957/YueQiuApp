@@ -13,6 +13,7 @@
 #import "RegisterViewController.h"
 #import "ForgetViewController.h"
 #import "SetPasswordViewController.h"
+#import "LandModel.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -38,6 +39,8 @@ NSString *const identityAuthentication = @"ZhangGeGe";
 @property (nonatomic, copy) NSArray *viewArray;
 //分栏控制器
 @property (nonatomic, strong) UITabBarController *tabBarController;
+//登陆状态
+@property NSInteger landCode;
 
 @end
 
@@ -77,7 +80,7 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     
     //初始化view
     self.landView = [[LandView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight)];
-    [self.landView.landButton addTarget:self action:@selector(p_presentMainView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.landView.landButton addTarget:self action:@selector(landMainView:) forControlEvents:UIControlEventTouchUpInside];
     [self.landView.registerButton addTarget:self action:@selector(p_presentRegisterView:) forControlEvents:UIControlEventTouchUpInside];
     [self.landView.forgetButton addTarget:self action:@selector(p_presentForgetView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.landView];
@@ -110,8 +113,52 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     [self presentViewController:self.forgetView animated:YES completion:nil];
 }
 
+//登陆按钮
+- (void)landMainView:(UIButton *)button {
+    if ([self.landView.accountTextField.text isEqualToString:@""] || [self.landView.passwordTextField.text isEqualToString:@""]) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入手机号和密码！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else if (self.landView.accountTextField.text.length != 11) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确的手机号！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else {
+        //登陆请求
+        [self landNetRequest];
+    }
+}
+
+//发送登陆网络请求
+- (void)landNetRequest {
+    LandModel *landNetWork = [LandModel shareManager];
+    landNetWork.userNumber = [self.landView.accountTextField.text copy];
+    landNetWork.passwordNumber = [self.landView.passwordTextField.text copy];
+    landNetWork.tokenNumber = [self.identificationString copy];
+    
+    [[LandModel shareManager] LandAccountWithData:^(LandJSONModel * _Nullable LandAccountModel) {
+        NSLog(@"%@   %@   %ld", LandAccountModel.data, LandAccountModel.msg, LandAccountModel.code);
+        self.landCode = LandAccountModel.code;
+        if (LandAccountModel.code == 400) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //弹窗提示
+                self.sendAlertView = [UIAlertController alertControllerWithTitle:@"检查你的账号是否注册并输入正确的账号和密码！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:self.sendAlertView animated:true completion:nil];
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //推出主界面
+                [self p_presentMainView];
+            });
+        }
+    } andError:^(NSError * _Nullable error) {
+        NSLog(@"获取失败！");
+    }];
+}
+
 //推出主界面
-- (void)p_presentMainView:(UIButton *)button {
+- (void)p_presentMainView {
     //初始化视图
     self.homePageView = [[HomePageViewController alloc] init];
     self.trainView = [[TrainViewController alloc] init];

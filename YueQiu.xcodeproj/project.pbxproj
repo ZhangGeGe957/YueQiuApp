@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F706DC9AB39106428BE3804 /* libPods-YueQiu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */; };
 		8315BF11279BFE24007CBAD8 /* huifu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8315BF10279BFE24007CBAD8 /* huifu.png */; };
+		83252C4A27E573AF00BAEAAB /* LandJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83252C4927E573AF00BAEAAB /* LandJSONModel.m */; };
+		83252C4D27E573C300BAEAAB /* LandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83252C4C27E573C300BAEAAB /* LandModel.m */; };
 		83255A4527DC2C7400A37C5F /* daohang.png in Resources */ = {isa = PBXBuildFile; fileRef = 83255A4427DC2C7400A37C5F /* daohang.png */; };
 		83255A4C27DC9D7400A37C5F /* UUIDStrengthen.m in Sources */ = {isa = PBXBuildFile; fileRef = 83255A4B27DC9D7400A37C5F /* UUIDStrengthen.m */; };
 		8325A65E2796572A0060E916 /* LandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8325A65D2796572A0060E916 /* LandViewController.m */; };
@@ -127,6 +129,10 @@
 		345100254D96E374567F3D9D /* Pods-YueQiu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.release.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.release.xcconfig"; sourceTree = "<group>"; };
 		5EC636371D8C5092569DC7A8 /* Pods-YueQiu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.debug.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.debug.xcconfig"; sourceTree = "<group>"; };
 		8315BF10279BFE24007CBAD8 /* huifu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huifu.png; sourceTree = "<group>"; };
+		83252C4827E573AF00BAEAAB /* LandJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandJSONModel.h; sourceTree = "<group>"; };
+		83252C4927E573AF00BAEAAB /* LandJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandJSONModel.m; sourceTree = "<group>"; };
+		83252C4B27E573C300BAEAAB /* LandModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandModel.h; sourceTree = "<group>"; };
+		83252C4C27E573C300BAEAAB /* LandModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandModel.m; sourceTree = "<group>"; };
 		83255A4427DC2C7400A37C5F /* daohang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daohang.png; sourceTree = "<group>"; };
 		83255A4A27DC9D7400A37C5F /* UUIDStrengthen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UUIDStrengthen.h; sourceTree = "<group>"; };
 		83255A4B27DC9D7400A37C5F /* UUIDStrengthen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UUIDStrengthen.m; sourceTree = "<group>"; };
@@ -323,6 +329,10 @@
 			children = (
 				83255A4A27DC9D7400A37C5F /* UUIDStrengthen.h */,
 				83255A4B27DC9D7400A37C5F /* UUIDStrengthen.m */,
+				83252C4827E573AF00BAEAAB /* LandJSONModel.h */,
+				83252C4927E573AF00BAEAAB /* LandJSONModel.m */,
+				83252C4B27E573C300BAEAAB /* LandModel.h */,
+				83252C4C27E573C300BAEAAB /* LandModel.m */,
 			);
 			path = LandModel;
 			sourceTree = "<group>";
@@ -1121,6 +1131,7 @@
 				CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */,
 				83255A4C27DC9D7400A37C5F /* UUIDStrengthen.m in Sources */,
 				CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */,
+				83252C4A27E573AF00BAEAAB /* LandJSONModel.m in Sources */,
 				CC43FD1427E35BDF00CB1AE0 /* ForgetJsonModel.m in Sources */,
 				8346A8CB27DDB9E500D99BD7 /* SendMessageManager.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
@@ -1159,6 +1170,7 @@
 				83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */,
 				CCFA4BA427ABB9EF00F2BB18 /* MyTableViewCell.m in Sources */,
 				83C798B72789C0A9000F68C1 /* HomePageMModel.m in Sources */,
+				83252C4D27E573C300BAEAAB /* LandModel.m in Sources */,
 				8384B4AA2792C34D00282E66 /* CourseDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1335,7 +1347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
@@ -1367,7 +1379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
