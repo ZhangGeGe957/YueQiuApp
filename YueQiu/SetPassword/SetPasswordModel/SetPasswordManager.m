@@ -22,9 +22,10 @@ static SetPasswordManager* setPasswordManager = nil;
     NSString* string = [NSString stringWithFormat:@"http://47.116.14.251:8888/login/forget/%@/%@",self.userNumber, self.passwordNumber];
     string = [string stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet] ];
     NSURL* url = [NSURL URLWithString:string];
-    NSURLRequest* request = [NSURLRequest requestWithURL:url];
+    NSMutableURLRequest *netWorkDataRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+    [netWorkDataRequest setHTTPMethod:@"POST"];
     NSURLSession* session = [NSURLSession sharedSession];
-    NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:netWorkDataRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if(error == nil) {
             SetPasswordJsonModel* setPasswordModel = [[SetPasswordJsonModel alloc] initWithData:data error:nil];
             sendChangedPasswordBlock(setPasswordModel);

@@ -47,7 +47,8 @@ static SendMessageManager* manager = nil;
     NSString *json = [[NSString alloc] initWithFormat:@"http://47.116.14.251:8888/login/register/%@/%@/%@", self.userNumber, self.passwordNumber, self.codeNumber];
     json = [json stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSURL *netWorkDataURL = [NSURL URLWithString:json];
-    NSURLRequest *netWorkDataRequest = [NSURLRequest requestWithURL:netWorkDataURL];
+    NSMutableURLRequest *netWorkDataRequest = [NSMutableURLRequest requestWithURL:netWorkDataURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10];
+    [netWorkDataRequest setHTTPMethod:@"POST"];
     NSURLSession *netWorkDataSession = [NSURLSession sharedSession];
     NSURLSessionDataTask *netWorkDataTask = [netWorkDataSession dataTaskWithRequest:netWorkDataRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {
