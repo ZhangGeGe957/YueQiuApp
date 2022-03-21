@@ -18,10 +18,10 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
-
     if ([reuseIdentifier isEqualToString:@"background"]) {
-        self.backImageView = [[UIImageView alloc] init];
-        [self.backImageView sd_setImageWithURL:[NSURL URLWithString:@"https://lijiaxuan.oss-cn-shanghai.aliyuncs.com/default/background.jpg"] placeholderImage:[UIImage imageNamed:@"beijing.jpeg"]];
+        self.backImageView = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.backImageView.tag = 111;
+        [self.backImageView sd_setBackgroundImageWithURL:[NSURL URLWithString:@"https://lijiaxuan.oss-cn-shanghai.aliyuncs.com/default/background.jpg"] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"beijing.jpeg"]];
         [self.contentView addSubview:self.backImageView];
         [self.backImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(0);
@@ -31,6 +31,7 @@
         }];
     } else if([reuseIdentifier isEqualToString:@"MyMessage"]) {
         self.buttonHead = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.buttonHead.tag = 1111;
         [self.buttonHead sd_setBackgroundImageWithURL:[NSURL URLWithString:@"https://lijiaxuan.oss-cn-shanghai.aliyuncs.com/default/head_portrait.jpg"] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"head.jpeg"]];
         [self.contentView addSubview:self.buttonHead];
         [self.buttonHead mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -40,7 +41,6 @@
         }];
         self.buttonHead.layer.cornerRadius = 50;
         self.buttonHead.layer.masksToBounds = YES;
-//        [self.buttonHead addTarget:self action:@selector(touchToChangeHead:) forControlEvents:UIControlEventTouchUpInside];
         
         self.labelName = [[UILabel alloc] init];
         [self.contentView addSubview:self.labelName];

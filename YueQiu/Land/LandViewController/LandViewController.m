@@ -115,18 +115,21 @@ NSString *const identityAuthentication = @"ZhangGeGe";
 
 //登陆按钮
 - (void)landMainView:(UIButton *)button {
-    if ([self.landView.accountTextField.text isEqualToString:@""] || [self.landView.passwordTextField.text isEqualToString:@""]) {
-        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入手机号和密码！" preferredStyle:UIAlertControllerStyleAlert];
-        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:self.sendAlertView animated:true completion:nil];
-    } else if (self.landView.accountTextField.text.length != 11) {
-        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确的手机号！" preferredStyle:UIAlertControllerStyleAlert];
-        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-        [self presentViewController:self.sendAlertView animated:true completion:nil];
-    } else {
-        //登陆请求
-        [self landNetRequest];
-    }
+//    if ([self.landView.accountTextField.text isEqualToString:@""] || [self.landView.passwordTextField.text isEqualToString:@""]) {
+//        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入手机号和密码！" preferredStyle:UIAlertControllerStyleAlert];
+//        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+//        [self presentViewController:self.sendAlertView animated:true completion:nil];
+//    } else if (self.landView.accountTextField.text.length != 11) {
+//        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确的手机号！" preferredStyle:UIAlertControllerStyleAlert];
+//        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+//        [self presentViewController:self.sendAlertView animated:true completion:nil];
+//    } else {
+//        //登陆请求
+//        [self landNetRequest];
+//    }
+    
+    //推出主界面
+    [self p_presentMainView];
 }
 
 //发送登陆网络请求

@@ -6,11 +6,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyView.h"
+#import "MyTableViewCell.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyViewController : UIViewController
-@property (nonatomic, strong) MyView* myView;
+@interface MyViewController : UIViewController<UITableViewDelegate,
+UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (nonatomic, strong) UITableView* tableView;
+@property (nonatomic, strong) MyTableViewCell *myCell;
+@property (nonatomic, strong) NSArray* menuArray;
+@property (nonatomic, strong) UIViewController* controller;
+
 @end
 
 NS_ASSUME_NONNULL_END

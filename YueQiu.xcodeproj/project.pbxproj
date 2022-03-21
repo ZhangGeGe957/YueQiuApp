@@ -99,7 +99,6 @@
 		CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */; };
 		CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */; };
 		CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */; };
-		CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4BA027ABB98100F2BB18 /* MyView.m */; };
 		CCFA4BA427ABB9EF00F2BB18 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */; };
 		CCFA4BA927AE5C5B00F2BB18 /* beijing.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4BA827AE5C5B00F2BB18 /* beijing.jpeg */; };
 		CCFA4BAB27AE664200F2BB18 /* head.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4BAA27AE664200F2BB18 /* head.jpeg */; };
@@ -271,8 +270,6 @@
 		CCFA4B9527AAF49700F2BB18 /* HQBSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchViewController.h; sourceTree = "<group>"; };
 		CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQBSearchViewController.m; sourceTree = "<group>"; };
 		CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sousuo.png; sourceTree = "<group>"; };
-		CCFA4B9F27ABB98100F2BB18 /* MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
-		CCFA4BA027ABB98100F2BB18 /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		CCFA4BA227ABB9EF00F2BB18 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
 		CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		CCFA4BA827AE5C5B00F2BB18 /* beijing.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beijing.jpeg; sourceTree = "<group>"; };
@@ -871,8 +868,6 @@
 		CCFA4B9D27AB8F5600F2BB18 /* MyView */ = {
 			isa = PBXGroup;
 			children = (
-				CCFA4B9F27ABB98100F2BB18 /* MyView.h */,
-				CCFA4BA027ABB98100F2BB18 /* MyView.m */,
 				CCFA4BA227ABB9EF00F2BB18 /* MyTableViewCell.h */,
 				CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */,
 				CC89C28127C251770096C12D /* MyCourseView.h */,
@@ -1130,7 +1125,6 @@
 				83C798662789BDFE000F68C1 /* AppDelegate.m in Sources */,
 				CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */,
 				83255A4C27DC9D7400A37C5F /* UUIDStrengthen.m in Sources */,
-				CCFA4BA127ABB98100F2BB18 /* MyView.m in Sources */,
 				83252C4A27E573AF00BAEAAB /* LandJSONModel.m in Sources */,
 				CC43FD1427E35BDF00CB1AE0 /* ForgetJsonModel.m in Sources */,
 				8346A8CB27DDB9E500D99BD7 /* SendMessageManager.m in Sources */,
@@ -1364,7 +1358,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = w.111;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.YueQiu-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1396,7 +1390,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = w.111;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.YueQiu-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

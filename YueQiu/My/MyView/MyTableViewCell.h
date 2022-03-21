@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel* labelName;
 @property (nonatomic, strong) UILabel* labelUID;
 @property (nonatomic, strong) UILabel* labelPersonalSignature;
-@property (nonatomic, strong) UIImageView *backImageView;
+@property (nonatomic, strong) UIButton *backImageView;
 
 @end
 
