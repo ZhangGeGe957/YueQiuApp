@@ -16,7 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [AMapServices sharedServices].apiKey = @"a819de9ff296d9a8546c42a9b5867f22";
+    [AMapServices sharedServices].apiKey = @"e387b90817bff9784ba465c51846baca";
     return YES;
 }
 

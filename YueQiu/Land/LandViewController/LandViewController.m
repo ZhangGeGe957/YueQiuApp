@@ -41,6 +41,8 @@ NSString *const identityAuthentication = @"ZhangGeGe";
 @property (nonatomic, strong) UITabBarController *tabBarController;
 //登陆状态
 @property NSInteger landCode;
+//唯一的uid
+@property (nonatomic, strong) NSString *onlyUid;
 
 @end
 
@@ -115,21 +117,21 @@ NSString *const identityAuthentication = @"ZhangGeGe";
 
 //登陆按钮
 - (void)landMainView:(UIButton *)button {
-//    if ([self.landView.accountTextField.text isEqualToString:@""] || [self.landView.passwordTextField.text isEqualToString:@""]) {
-//        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入手机号和密码！" preferredStyle:UIAlertControllerStyleAlert];
-//        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-//        [self presentViewController:self.sendAlertView animated:true completion:nil];
-//    } else if (self.landView.accountTextField.text.length != 11) {
-//        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确的手机号！" preferredStyle:UIAlertControllerStyleAlert];
-//        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-//        [self presentViewController:self.sendAlertView animated:true completion:nil];
-//    } else {
-//        //登陆请求
-//        [self landNetRequest];
-//    }
+    if ([self.landView.accountTextField.text isEqualToString:@""] || [self.landView.passwordTextField.text isEqualToString:@""]) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入手机号和密码！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else if (self.landView.accountTextField.text.length != 11) {
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入正确的手机号！" preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else {
+        //登陆请求
+        [self landNetRequest];
+    }
     
     //推出主界面
-    [self p_presentMainView];
+    //[self p_presentMainView];
 }
 
 //发送登陆网络请求
@@ -142,6 +144,7 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     [[LandModel shareManager] LandAccountWithData:^(LandJSONModel * _Nullable LandAccountModel) {
         NSLog(@"%@   %@   %ld", LandAccountModel.data, LandAccountModel.msg, LandAccountModel.code);
         self.landCode = LandAccountModel.code;
+        self.onlyUid = LandAccountModel.data;
         if (LandAccountModel.code == 400) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 //弹窗提示
@@ -171,6 +174,9 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     self.trainView.title = @"训练";
     self.newsView.title = @"球局";
     self.myView.title = @"我的";
+    
+    //传输uid
+    self.myView.onlyUid = self.onlyUid;
     
     //初始化导航控制器
     self.homePageNavigationController = [[UINavigationController alloc] initWithRootViewController:self.homePageView];

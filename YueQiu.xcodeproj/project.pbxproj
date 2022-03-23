@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F706DC9AB39106428BE3804 /* libPods-YueQiu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */; };
+		8314715327EAA74800954C69 /* SendPhotosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8314715227EAA74800954C69 /* SendPhotosModel.m */; };
+		8314715627EAA7D400954C69 /* SendPhotosJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8314715527EAA7D400954C69 /* SendPhotosJSONModel.m */; };
 		8315BF11279BFE24007CBAD8 /* huifu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8315BF10279BFE24007CBAD8 /* huifu.png */; };
 		83252C4A27E573AF00BAEAAB /* LandJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83252C4927E573AF00BAEAAB /* LandJSONModel.m */; };
 		83252C4D27E573C300BAEAAB /* LandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83252C4C27E573C300BAEAAB /* LandModel.m */; };
@@ -133,6 +135,10 @@
 		00023D1DA489CE6D13147DAC /* libPods-YueQiu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YueQiu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		345100254D96E374567F3D9D /* Pods-YueQiu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.release.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.release.xcconfig"; sourceTree = "<group>"; };
 		5EC636371D8C5092569DC7A8 /* Pods-YueQiu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YueQiu.debug.xcconfig"; path = "Target Support Files/Pods-YueQiu/Pods-YueQiu.debug.xcconfig"; sourceTree = "<group>"; };
+		8314715127EAA74800954C69 /* SendPhotosModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SendPhotosModel.h; path = YueQiu/Land/LandModel/SendPhotosModel.h; sourceTree = SOURCE_ROOT; };
+		8314715227EAA74800954C69 /* SendPhotosModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SendPhotosModel.m; path = YueQiu/Land/LandModel/SendPhotosModel.m; sourceTree = SOURCE_ROOT; };
+		8314715427EAA7D400954C69 /* SendPhotosJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SendPhotosJSONModel.h; path = YueQiu/Land/LandModel/SendPhotosJSONModel.h; sourceTree = SOURCE_ROOT; };
+		8314715527EAA7D400954C69 /* SendPhotosJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SendPhotosJSONModel.m; path = YueQiu/Land/LandModel/SendPhotosJSONModel.m; sourceTree = SOURCE_ROOT; };
 		8315BF10279BFE24007CBAD8 /* huifu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huifu.png; sourceTree = "<group>"; };
 		83252C4827E573AF00BAEAAB /* LandJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandJSONModel.h; sourceTree = "<group>"; };
 		83252C4927E573AF00BAEAAB /* LandJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandJSONModel.m; sourceTree = "<group>"; };
@@ -337,6 +343,72 @@
 				345100254D96E374567F3D9D /* Pods-YueQiu.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8314714B27EAA63900954C69 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CC5ABFF127C4D17E00D548CB /* SettingView.h */,
+				CC5ABFF227C4D17E00D548CB /* SettingView.m */,
+				CC5ABFF427C4D19700D548CB /* SettingCell.h */,
+				CC5ABFF527C4D19700D548CB /* SettingCell.m */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		8314714C27EAA64F00954C69 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				CC36E6F327EA21CF00E0821F /* HQBPickerView.h */,
+				CC36E6F427EA21CF00E0821F /* HQBPickerView.m */,
+				CC36E6F627EA21F400E0821F /* HQBDatePickerView.h */,
+				CC36E6F727EA21F400E0821F /* HQBDatePickerView.m */,
+				CC36E6ED27EA215E00E0821F /* EditMessageView.h */,
+				CC36E6EE27EA215E00E0821F /* EditMessageView.m */,
+				CC36E6F027EA218300E0821F /* EditMessageCell.h */,
+				CC36E6F127EA218300E0821F /* EditMessageCell.m */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		8314714D27EAA66C00954C69 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */,
+				CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */,
+				CC89C28127C251770096C12D /* MyCourseView.h */,
+				CC89C28227C251770096C12D /* MyCourseView.m */,
+			);
+			name = Course;
+			sourceTree = "<group>";
+		};
+		8314714E27EAA6D200954C69 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CC5ABFF727C4D1E000D548CB /* SettingController.h */,
+				CC5ABFF827C4D1E000D548CB /* SettingController.m */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		8314714F27EAA6E100954C69 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				CC36E6F927EA230B00E0821F /* EditMessageController.h */,
+				CC36E6FA27EA230B00E0821F /* EditMessageController.m */,
+				CC36E6FC27EA237700E0821F /* EditController.h */,
+				CC36E6FD27EA237700E0821F /* EditController.m */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		8314715027EAA6F100954C69 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				CC89C27E27C2515D0096C12D /* MyCourseViewController.h */,
+				CC89C27F27C2515D0096C12D /* MyCourseViewController.m */,
+			);
+			path = Course;
 			sourceTree = "<group>";
 		};
 		83255A4927DC9B6800A37C5F /* LandModel */ = {
@@ -723,18 +795,13 @@
 		83C798A22789BFBB000F68C1 /* MyController */ = {
 			isa = PBXGroup;
 			children = (
+				8314715027EAA6F100954C69 /* Course */,
+				8314714F27EAA6E100954C69 /* Edit */,
+				8314714E27EAA6D200954C69 /* Setting */,
 				83C798BC2789C0CB000F68C1 /* MyViewController.h */,
 				83C798BB2789C0CB000F68C1 /* MyViewController.m */,
 				CC89C27B27C2513C0096C12D /* MyCollectStadiumController.h */,
 				CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */,
-				CC89C27E27C2515D0096C12D /* MyCourseViewController.h */,
-				CC89C27F27C2515D0096C12D /* MyCourseViewController.m */,
-				CC5ABFF727C4D1E000D548CB /* SettingController.h */,
-				CC5ABFF827C4D1E000D548CB /* SettingController.m */,
-				CC36E6F927EA230B00E0821F /* EditMessageController.h */,
-				CC36E6FA27EA230B00E0821F /* EditMessageController.m */,
-				CC36E6FC27EA237700E0821F /* EditController.h */,
-				CC36E6FD27EA237700E0821F /* EditController.m */,
 			);
 			path = MyController;
 			sourceTree = "<group>";
@@ -890,26 +957,13 @@
 		CCFA4B9D27AB8F5600F2BB18 /* MyView */ = {
 			isa = PBXGroup;
 			children = (
+				8314714D27EAA66C00954C69 /* Course */,
+				8314714C27EAA64F00954C69 /* Edit */,
+				8314714B27EAA63900954C69 /* Setting */,
 				CCFA4BA227ABB9EF00F2BB18 /* MyTableViewCell.h */,
 				CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */,
-				CC89C28127C251770096C12D /* MyCourseView.h */,
-				CC89C28227C251770096C12D /* MyCourseView.m */,
 				CC89C28427C2518C0096C12D /* MyCollectStadiumView.h */,
 				CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */,
-				CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */,
-				CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */,
-				CC5ABFF127C4D17E00D548CB /* SettingView.h */,
-				CC5ABFF227C4D17E00D548CB /* SettingView.m */,
-				CC5ABFF427C4D19700D548CB /* SettingCell.h */,
-				CC5ABFF527C4D19700D548CB /* SettingCell.m */,
-				CC36E6ED27EA215E00E0821F /* EditMessageView.h */,
-				CC36E6EE27EA215E00E0821F /* EditMessageView.m */,
-				CC36E6F027EA218300E0821F /* EditMessageCell.h */,
-				CC36E6F127EA218300E0821F /* EditMessageCell.m */,
-				CC36E6F327EA21CF00E0821F /* HQBPickerView.h */,
-				CC36E6F427EA21CF00E0821F /* HQBPickerView.m */,
-				CC36E6F627EA21F400E0821F /* HQBDatePickerView.h */,
-				CC36E6F727EA21F400E0821F /* HQBDatePickerView.m */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -917,6 +971,10 @@
 		CCFA4B9E27AB8F6700F2BB18 /* MyModel */ = {
 			isa = PBXGroup;
 			children = (
+				8314715127EAA74800954C69 /* SendPhotosModel.h */,
+				8314715227EAA74800954C69 /* SendPhotosModel.m */,
+				8314715427EAA7D400954C69 /* SendPhotosJSONModel.h */,
+				8314715527EAA7D400954C69 /* SendPhotosJSONModel.m */,
 			);
 			path = MyModel;
 			sourceTree = "<group>";
@@ -1170,8 +1228,10 @@
 				CC36E6FE27EA237700E0821F /* EditController.m in Sources */,
 				CC89C28327C251770096C12D /* MyCourseView.m in Sources */,
 				8333B12427C3244200858A48 /* ReserveView.m in Sources */,
+				8314715627EAA7D400954C69 /* SendPhotosJSONModel.m in Sources */,
 				CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */,
 				83C798B42789C094000F68C1 /* HomePageViewController.m in Sources */,
+				8314715327EAA74800954C69 /* SendPhotosModel.m in Sources */,
 				8347BCBB278C2FD300466606 /* CourseTableViewCell.m in Sources */,
 				83C798772789BE00000F68C1 /* main.m in Sources */,
 				CC5ABFF327C4D17E00D548CB /* SettingView.m in Sources */,
@@ -1377,7 +1437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1397,7 +1457,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = w.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1412,7 +1472,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1432,7 +1492,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = w.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

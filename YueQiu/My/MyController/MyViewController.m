@@ -11,6 +11,8 @@
 #import "MyCourseViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "EditMessageController.h"
+#import "SendPhotosModel.h"
+
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
 
@@ -18,6 +20,8 @@
 
 @property (nonatomic, strong) UIImage *getImage;  //获取到的照片
 @property (nonatomic, strong) UIButton *tempButton;  //指针，指向选择的按钮
+@property (nonatomic, retain) UIAlertController* sendAlertView;  //提示框
+@property (nonatomic, strong) NSString *transString;  //传输图片的类型
 
 @end
 
@@ -140,12 +144,14 @@
 //改变背景图
 - (void)changeBackImage:(UIButton *)button {
     self.tempButton = button;
+    self.transString = @"updateback";
     [self p_getPhotos];
 }
 
 //改头像
 - (void)changeHeadBack:(UIButton *)button {
     self.tempButton = button;
+    self.transString = @"updatehead";
     [self p_getPhotos];
 }
 
@@ -203,6 +209,9 @@
         UIImageWriteToSavedPhotosAlbum(self.getImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     }
     
+    //发送数据给后台
+    [self p_sendPhotos];
+    
     //设置新的图片给按钮
     [self.tempButton setImage:self.getImage forState:UIControlStateNormal];
 
@@ -217,6 +226,38 @@
         NSLog(@"%@", error);
         NSLog(@"保存照片过程中发生错误，错误信息:%@", error.localizedDescription);
     }
+}
+
+//类方法  图片 转换为二进制
++ (NSData *)Image_TransForm_Data:(UIImage *)image {
+    NSData *imageData = UIImageJPEGRepresentation(image , 0.5);
+    //几乎是按0.5图片大小就降到原来的一半 比如这里 24KB 降到11KB
+    return imageData;
+}
+
+//发送数据给后台
+- (void)p_sendPhotos {
+    SendPhotosModel *sendPhotos = [SendPhotosModel shareManager];
+    sendPhotos.onlyUid = self.onlyUid;
+    sendPhotos.transString = self.transString;
+    sendPhotos.sendPhotosFile = [MyViewController Image_TransForm_Data:self.getImage];
+    
+    [[SendPhotosModel shareManager] SendPhotosWithData:^(SendPhotosJSONModel * _Nullable sendPhotosModel) {
+        NSLog(@"%@   %@   %ld", sendPhotosModel.data, sendPhotosModel.msg, (long)sendPhotosModel.code);
+        
+        if (sendPhotosModel.code == 200) {
+            NSLog(@"更换成功！");
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //弹窗提示
+                self.sendAlertView = [UIAlertController alertControllerWithTitle:@"更换失败！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+                [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+                [self presentViewController:self.sendAlertView animated:true completion:nil];
+            });
+        }
+    } andError:^(NSError * _Nullable error) {
+        NSLog(@"获取失败！");
+    }];
 }
 
 @end

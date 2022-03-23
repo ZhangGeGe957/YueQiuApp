@@ -16,6 +16,10 @@ UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDe
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) MyTableViewCell *myCell;
 @property (nonatomic, strong) NSArray* menuArray;
+@property (nonatomic, strong) NSString *onlyUid;  //唯一的uid
+
+//类方法  图片 转换为二进制
++ (NSData *)Image_TransForm_Data:(UIImage *)image;
 
 @end
 
