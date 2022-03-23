@@ -228,19 +228,26 @@
     }
 }
 
-//类方法  图片 转换为二进制
-+ (NSData *)Image_TransForm_Data:(UIImage *)image {
-    NSData *imageData = UIImageJPEGRepresentation(image , 0.5);
-    //几乎是按0.5图片大小就降到原来的一半 比如这里 24KB 降到11KB
-    return imageData;
+//保存图片返回路径
+- (NSString *)savePhotosBackPath:(UIImage *)image {
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+        
+    NSString *savedImagePath = [documentsDirectory stringByAppendingPathComponent:@"headSculpture.png"];
+        
+    [imageData writeToFile:savedImagePath atomically:YES];
+    
+    return savedImagePath;
 }
 
 //发送数据给后台
 - (void)p_sendPhotos {
     SendPhotosModel *sendPhotos = [SendPhotosModel shareManager];
     sendPhotos.onlyUid = self.onlyUid;
-    sendPhotos.transString = self.transString;
-    sendPhotos.sendPhotosFile = [MyViewController Image_TransForm_Data:self.getImage];
+    sendPhotos.transPhotosType = self.transString;
+    sendPhotos.savedImagePath = [self savePhotosBackPath:self.getImage];
+    sendPhotos.sendPhotosFile = UIImagePNGRepresentation(self.getImage);
     
     [[SendPhotosModel shareManager] SendPhotosWithData:^(SendPhotosJSONModel * _Nullable sendPhotosModel) {
         NSLog(@"%@   %@   %ld", sendPhotosModel.data, sendPhotosModel.msg, (long)sendPhotosModel.code);

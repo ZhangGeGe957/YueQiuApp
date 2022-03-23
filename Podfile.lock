@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
   - AMap3DMap (8.1.0):
     - AMapFoundation (~> 1.6.9)
   - AMapFoundation (1.6.9)
@@ -13,6 +28,7 @@ PODS:
   - SDWebImage/Core (5.12.3)
 
 DEPENDENCIES:
+  - AFNetworking
   - AMap3DMap
   - AMapLocation
   - AMapSearch
@@ -22,6 +38,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AFNetworking
     - AMap3DMap
     - AMapFoundation
     - AMapLocation
@@ -31,6 +48,7 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   AMap3DMap: 135eaaf64a29aeb2f0bca07670db26fbf3271245
   AMapFoundation: 8d8ecbb0b2e9ce5487995360d26c885d94642bfd
   AMapLocation: 5ef44a1117be7dc541cb7a7d43d03c5ee91e4387
@@ -39,6 +57,6 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
 
-PODFILE CHECKSUM: 70a668c3fcf534688d3c05f3be3703c7aa50d0bb
+PODFILE CHECKSUM: 5bf44edef8aaf492131cc5f100a700b809de6c31
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.0.rc.1

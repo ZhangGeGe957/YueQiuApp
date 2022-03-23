@@ -6,4 +6,5 @@ pod 'AMapLocation'
 pod 'AMapSearch'
 pod 'SDWebImage'
 pod 'JSONModel'
+pod 'AFNetworking'
 end
