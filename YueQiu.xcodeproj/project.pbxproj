@@ -75,6 +75,12 @@
 		83FB1A5627CA294B005D6292 /* ReleaseGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5527CA294B005D6292 /* ReleaseGameView.m */; };
 		83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */; };
 		CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */; };
+		CC36E6EF27EA215E00E0821F /* EditMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6EE27EA215E00E0821F /* EditMessageView.m */; };
+		CC36E6F227EA218300E0821F /* EditMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6F127EA218300E0821F /* EditMessageCell.m */; };
+		CC36E6F527EA21CF00E0821F /* HQBPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6F427EA21CF00E0821F /* HQBPickerView.m */; };
+		CC36E6F827EA21F400E0821F /* HQBDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6F727EA21F400E0821F /* HQBDatePickerView.m */; };
+		CC36E6FB27EA230B00E0821F /* EditMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6FA27EA230B00E0821F /* EditMessageController.m */; };
+		CC36E6FE27EA237700E0821F /* EditController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6FD27EA237700E0821F /* EditController.m */; };
 		CC43FD1427E35BDF00CB1AE0 /* ForgetJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC43FD1327E35BDF00CB1AE0 /* ForgetJsonModel.m */; };
 		CC43FD1727E35C1700CB1AE0 /* ForgetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC43FD1627E35C1700CB1AE0 /* ForgetManager.m */; };
 		CC43FD1B27E366AB00CB1AE0 /* SetPasswordJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC43FD1A27E366AB00CB1AE0 /* SetPasswordJsonModel.m */; };
@@ -232,6 +238,18 @@
 		83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseGameViewController.m; sourceTree = "<group>"; };
 		CC1A7B2B2789C86C0040B39D /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		CC36E6ED27EA215E00E0821F /* EditMessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditMessageView.h; sourceTree = "<group>"; };
+		CC36E6EE27EA215E00E0821F /* EditMessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditMessageView.m; sourceTree = "<group>"; };
+		CC36E6F027EA218300E0821F /* EditMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditMessageCell.h; sourceTree = "<group>"; };
+		CC36E6F127EA218300E0821F /* EditMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditMessageCell.m; sourceTree = "<group>"; };
+		CC36E6F327EA21CF00E0821F /* HQBPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBPickerView.h; sourceTree = "<group>"; };
+		CC36E6F427EA21CF00E0821F /* HQBPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQBPickerView.m; sourceTree = "<group>"; };
+		CC36E6F627EA21F400E0821F /* HQBDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBDatePickerView.h; sourceTree = "<group>"; };
+		CC36E6F727EA21F400E0821F /* HQBDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQBDatePickerView.m; sourceTree = "<group>"; };
+		CC36E6F927EA230B00E0821F /* EditMessageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditMessageController.h; sourceTree = "<group>"; };
+		CC36E6FA27EA230B00E0821F /* EditMessageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditMessageController.m; sourceTree = "<group>"; };
+		CC36E6FC27EA237700E0821F /* EditController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditController.h; sourceTree = "<group>"; };
+		CC36E6FD27EA237700E0821F /* EditController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditController.m; sourceTree = "<group>"; };
 		CC43FD1227E35BDF00CB1AE0 /* ForgetJsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetJsonModel.h; sourceTree = "<group>"; };
 		CC43FD1327E35BDF00CB1AE0 /* ForgetJsonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetJsonModel.m; sourceTree = "<group>"; };
 		CC43FD1527E35C1700CB1AE0 /* ForgetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetManager.h; sourceTree = "<group>"; };
@@ -713,6 +731,10 @@
 				CC89C27F27C2515D0096C12D /* MyCourseViewController.m */,
 				CC5ABFF727C4D1E000D548CB /* SettingController.h */,
 				CC5ABFF827C4D1E000D548CB /* SettingController.m */,
+				CC36E6F927EA230B00E0821F /* EditMessageController.h */,
+				CC36E6FA27EA230B00E0821F /* EditMessageController.m */,
+				CC36E6FC27EA237700E0821F /* EditController.h */,
+				CC36E6FD27EA237700E0821F /* EditController.m */,
 			);
 			path = MyController;
 			sourceTree = "<group>";
@@ -880,6 +902,14 @@
 				CC5ABFF227C4D17E00D548CB /* SettingView.m */,
 				CC5ABFF427C4D19700D548CB /* SettingCell.h */,
 				CC5ABFF527C4D19700D548CB /* SettingCell.m */,
+				CC36E6ED27EA215E00E0821F /* EditMessageView.h */,
+				CC36E6EE27EA215E00E0821F /* EditMessageView.m */,
+				CC36E6F027EA218300E0821F /* EditMessageCell.h */,
+				CC36E6F127EA218300E0821F /* EditMessageCell.m */,
+				CC36E6F327EA21CF00E0821F /* HQBPickerView.h */,
+				CC36E6F427EA21CF00E0821F /* HQBPickerView.m */,
+				CC36E6F627EA21F400E0821F /* HQBDatePickerView.h */,
+				CC36E6F727EA21F400E0821F /* HQBDatePickerView.m */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -1119,6 +1149,8 @@
 				8325A6612796573C0060E916 /* LandView.m in Sources */,
 				83C7986C2789BDFE000F68C1 /* ViewController.m in Sources */,
 				CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */,
+				CC36E6F227EA218300E0821F /* EditMessageCell.m in Sources */,
+				CC36E6EF27EA215E00E0821F /* EditMessageView.m in Sources */,
 				83C798BA2789C0B1000F68C1 /* HomePageUIView.m in Sources */,
 				8333B12727C3245300858A48 /* ReserveViewController.m in Sources */,
 				83C798BD2789C0CC000F68C1 /* MyViewController.m in Sources */,
@@ -1135,6 +1167,7 @@
 				CC89C28027C2515D0096C12D /* MyCourseViewController.m in Sources */,
 				8344FC8D27BE1DE900C534D5 /* RegisterViewController.m in Sources */,
 				8344FC8A27BE1DD000C534D5 /* RegisterView.m in Sources */,
+				CC36E6FE27EA237700E0821F /* EditController.m in Sources */,
 				CC89C28327C251770096C12D /* MyCourseView.m in Sources */,
 				8333B12427C3244200858A48 /* ReserveView.m in Sources */,
 				CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */,
@@ -1151,8 +1184,11 @@
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
 				8344FC9627BE208C00C534D5 /* ForgetViewController.m in Sources */,
+				CC36E6FB27EA230B00E0821F /* EditMessageController.m in Sources */,
 				83370A9827BF8E6300A1889D /* SetPasswordViewController.m in Sources */,
+				CC36E6F527EA21CF00E0821F /* HQBPickerView.m in Sources */,
 				83C798C62789C0F9000F68C1 /* ShowProjectTableViewCell.m in Sources */,
+				CC36E6F827EA21F400E0821F /* HQBDatePickerView.m in Sources */,
 				8346A8C827DDB9B600D99BD7 /* SendMessageJSONModel.m in Sources */,
 				CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */,
 				CC5ABFF927C4D1E000D548CB /* SettingController.m in Sources */,
@@ -1341,12 +1377,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "请允许APP保存图片到相册";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "请允许APP访问您的相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1358,7 +1397,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.YueQiu-";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1373,12 +1412,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "请允许APP保存图片到相册";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "请允许APP访问您的相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1390,7 +1432,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.YueQiu-";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

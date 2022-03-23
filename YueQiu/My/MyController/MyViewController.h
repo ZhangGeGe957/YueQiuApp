@@ -16,7 +16,6 @@ UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDe
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) MyTableViewCell *myCell;
 @property (nonatomic, strong) NSArray* menuArray;
-@property (nonatomic, strong) UIViewController* controller;
 
 @end
 
