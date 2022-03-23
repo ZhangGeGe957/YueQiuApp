@@ -10,7 +10,7 @@
 #import "MyCollectStadiumController.h"
 #import "MyCourseViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-
+#import "EditMessageController.h"
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
 
@@ -33,7 +33,7 @@
     self.navigationItem.rightBarButtonItem = rightButton;
     
     //tableview
-    self.menuArray = [NSArray arrayWithObjects:@"我的课程列表", @"我收藏的球馆", @"退出",nil];
+    self.menuArray = [NSArray arrayWithObjects:@"编辑资料",@"我的课程列表", @"我收藏的球馆", @"退出",nil];
 
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, W, H) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -55,7 +55,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -79,19 +79,25 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-      self.controller = [self viewController];
-      if (indexPath.row == 2) {
-          self.controller.hidesBottomBarWhenPushed = YES;
+      
+    if (indexPath.row == 2) {
+        self.hidesBottomBarWhenPushed = YES;
+        EditMessageController* editMessageController = [[EditMessageController alloc] init];
+        [self.navigationController pushViewController:editMessageController animated:YES];
+        
+        self.hidesBottomBarWhenPushed = NO;
+    } else if (indexPath.row == 3) {
+          self.hidesBottomBarWhenPushed = YES;
           MyCourseViewController* myCourseController = [[MyCourseViewController alloc] init];
-          [self.controller.navigationController pushViewController:myCourseController animated:YES];
-          self.controller.hidesBottomBarWhenPushed = NO;
+          [self.navigationController pushViewController:myCourseController animated:YES];
+          self.hidesBottomBarWhenPushed = NO;
 
-      } else if (indexPath.row == 3) {
-          self.controller.hidesBottomBarWhenPushed = YES;
-          MyCollectStadiumController* collectStadiumController = [[MyCollectStadiumController alloc] init];
-          [self.controller.navigationController pushViewController:collectStadiumController animated:YES];
-          self.controller.hidesBottomBarWhenPushed = NO;
       } else if (indexPath.row == 4) {
+          self.hidesBottomBarWhenPushed = YES;
+          MyCollectStadiumController* collectStadiumController = [[MyCollectStadiumController alloc] init];
+          [self.navigationController pushViewController:collectStadiumController animated:YES];
+          self.hidesBottomBarWhenPushed = NO;
+      } else if (indexPath.row == 5) {
           UIAlertController *alertSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
           UIAlertAction *exitLogin = [UIAlertAction actionWithTitle:@"退出登陆" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
               NSLog(@"退出登陆");
@@ -103,18 +109,10 @@
           [alertSheet addAction:exitLogin];
           [alertSheet addAction:exitApp];
           [alertSheet addAction:cancel];
-          [self.controller presentViewController:alertSheet animated:YES completion:nil];
+          [self presentViewController:alertSheet animated:YES completion:nil];
       }
 }
-- (UIViewController *)viewController {
-  for (UIView* next = [self.view superview]; next; next = next.superview) {
-      UIResponder *nextResponder = [next nextResponder];
-      if ([nextResponder isKindOfClass:[UIViewController class]]) {
-          return (UIViewController *)nextResponder;
-      }
-  }
-  return nil;
-}
+
 
 
 - (float)hGetStatusbarHeight {
