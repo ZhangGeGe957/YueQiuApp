@@ -76,6 +76,12 @@
     } else {
         EditMessageCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"3"];
         cell.textLabel.text = self.menuArray[4 + indexPath.row];
+        if (indexPath.row == 0) {
+            cell.valueLabel.text = self.signatureString;
+        } else {
+            cell.valueLabel.text = self.labelString;
+        }
+        
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
@@ -181,7 +187,7 @@
         self.nameString = sender.userInfo[@"content"];
     } else if ([sender.userInfo[@"flag"] isEqualToString:@"修改我的邮箱"]) {
         self.emaileString = sender.userInfo[@"content"];
-    } else if ([sender.userInfo[@"flag"] isEqualToString:@"修改个性标签"]) {
+    } else if ([sender.userInfo[@"flag"] isEqualToString:@"修改个性签名"]) {
         self.signatureString = sender.userInfo[@"content"];
     } else {
         self.labelString = sender.userInfo[@"content"];

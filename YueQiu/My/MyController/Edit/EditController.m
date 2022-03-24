@@ -78,18 +78,6 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES%@",emailCheck];
     return [emailTest evaluateWithObject:Email];
 }
-- (float)hGetStatusbarHeight {
-    NSSet *set = [[UIApplication sharedApplication] connectedScenes];
-    UIWindowScene *windowScene = [set anyObject];
-    UIStatusBarManager *hStatusBarManager =  windowScene.statusBarManager;
-    return hStatusBarManager.statusBarFrame.size.height;
-}
-
-//获取导航栏高度
-- (float)hGetNavigationbarHeight {
-    return self.navigationController.navigationBar.frame.size.height;
-}
-
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
