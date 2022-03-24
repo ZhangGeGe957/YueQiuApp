@@ -15,6 +15,7 @@
 #import "SetPasswordViewController.h"
 #import "LandModel.h"
 
+
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
@@ -197,7 +198,10 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     //推出视图
     self.tabBarController.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:self.tabBarController animated:YES completion:nil];
+    
+    
 }
+
 
 //回收键盘
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

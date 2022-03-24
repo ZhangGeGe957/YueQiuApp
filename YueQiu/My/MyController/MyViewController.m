@@ -12,7 +12,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "EditMessageController.h"
 #import "SendPhotosModel.h"
-
+#import "GetMessageManager.h"
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
 
@@ -27,6 +27,10 @@
 
 @implementation MyViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self p_getPersonInfo];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -35,6 +39,9 @@
     UIBarButtonItem* rightButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"more.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchMore)];
     rightButton.tintColor = [UIColor blackColor];
     self.navigationItem.rightBarButtonItem = rightButton;
+    
+    [self p_getPersonInfo];
+    
     
     //tableview
     self.menuArray = [NSArray arrayWithObjects:@"编辑资料",@"我的课程列表", @"我收藏的球馆", @"退出",nil];
@@ -87,6 +94,13 @@
     if (indexPath.row == 2) {
         self.hidesBottomBarWhenPushed = YES;
         EditMessageController* editMessageController = [[EditMessageController alloc] init];
+        editMessageController.uid = self.onlyUid;
+        editMessageController.nameString = [NSString stringWithString:self.username];
+        editMessageController.birthString = [NSString stringWithString:self.birthday];
+        editMessageController.sex = self.sex;
+        editMessageController.emaileString = [NSString stringWithString:self.email];
+        editMessageController.signatureString = [NSString stringWithString:self.signature];
+        editMessageController.labelString = [NSString stringWithString:self.label];
         [self.navigationController pushViewController:editMessageController animated:YES];
         
         self.hidesBottomBarWhenPushed = NO;
@@ -265,6 +279,30 @@
     } andError:^(NSError * _Nullable error) {
         NSLog(@"获取失败！");
     }];
+}
+
+- (void)p_getPersonInfo {
+    GetMessageManager* manager = [GetMessageManager shareManager];
+    manager.uid = self.onlyUid;
+    [[GetMessageManager shareManager] getMessageWithData:^(GetMessageModel * _Nullable getMessageModel) {
+        if (getMessageModel.code == 200) {
+            self.username = getMessageModel.data.username;
+            self.phone_numbers = getMessageModel.data.phone_numbers;
+            self.birthday = getMessageModel.data.birthday;
+            self.sex = getMessageModel.data.sex;
+            self.email = getMessageModel.data.email;
+            self.signature = getMessageModel.data.signature;
+            self.label = getMessageModel.data.label;
+            self.background = getMessageModel.data.background;
+            self.head_sculpture = getMessageModel.data.head_sculpture;
+        } else {
+            NSLog(@"---------------------------------------");
+            NSLog(@"获取个人信息错误！");
+            NSLog(@"---------------------------------------");
+        }
+        } andError:^(NSError * _Nullable error) {
+            NSLog(@"获取个人信息失败");
+        }];
 }
 
 @end
