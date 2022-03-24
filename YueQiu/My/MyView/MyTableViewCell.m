@@ -44,7 +44,6 @@
         
         self.labelName = [[UILabel alloc] init];
         [self.contentView addSubview:self.labelName];
-        self.labelName.text = @"Fahaxiki";
         [self.labelName mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.buttonHead.mas_top).offset(10);
             make.left.equalTo(self.buttonHead.mas_right).offset(20);
@@ -52,16 +51,6 @@
         }];
         self.labelName.textAlignment = NSTextAlignmentLeft;
         self.labelName.font = [UIFont systemFontOfSize:23];
-        
-        self.labelUID = [[UILabel alloc] init];
-        [self.contentView addSubview:_labelUID];
-        [_labelUID mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(_labelName.mas_top).offset(0);
-            make.left.equalTo(_labelName.mas_right).offset(10);
-            make.size.mas_equalTo(CGSizeMake(W / 3, 30));
-        }];
-        _labelUID.text = @"UID:000001";
-        _labelUID.textAlignment = NSTextAlignmentLeft;
         
         self.labelPersonalSignature = [[UILabel alloc] init];
         [self.contentView addSubview:self.labelPersonalSignature];
@@ -71,7 +60,6 @@
             make.size.mas_equalTo(CGSizeMake(W * 2 / 3, 30));
         }];
         self.labelPersonalSignature.numberOfLines = 1;
-        self.labelPersonalSignature.text = @"年龄永远不是衡量一个人的刻度,只有责任的叠加才会让人逐渐成长。";
         self.labelPersonalSignature.font = [UIFont systemFontOfSize:15];
     } else {
         

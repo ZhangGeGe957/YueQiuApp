@@ -23,18 +23,17 @@ static SendPersonInfoManager *manager = nil;
     NSURL* urlString = [NSURL URLWithString:string];
     NSMutableURLRequest* mutableRequest = [[NSMutableURLRequest alloc] initWithURL:urlString];
     [mutableRequest setHTTPMethod:@"POST"];
-    NSNumber *codeTest = [NSNumber numberWithInteger:self.sex];
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict setValue:[self.uidString copy] forKey:@"uid"];
-    [dict setValue:self.nameString forKey:@"username"];
-    [dict setValue:self.signatureString forKey:@"signature"];
-    [dict setValue:codeTest forKey:@"sex"];
-    [dict setValue:self.emaileString forKey:@"email"];
     [dict setValue:self.birthString forKey:@"birthday"];
+    [dict setValue:self.emaileString forKey:@"email"];
+    [dict setValue:@(self.sex) forKey:@"sex"];
+    [dict setValue:self.signatureString forKey:@"signature"];
+    [dict setValue:self.nameString forKey:@"username"];
+    [dict setValue:[self.uidString copy] forKey:@"uid"];
     NSData *dictPhoneData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
     NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:dictPhoneData options:0 error:nil]);
     [mutableRequest setHTTPBody:dictPhoneData];
-//    [mutableRequest addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [mutableRequest addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
     
     NSURLSession* session = [NSURLSession sharedSession];
     NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:mutableRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -58,7 +57,7 @@ static SendPersonInfoManager *manager = nil;
     [dict setValue:self.labelString forKey:@"label"];
     NSData *dictPhoneData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
     [mutableRequest setHTTPBody:dictPhoneData];
-//    [mutableRequest addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [mutableRequest addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
     
     NSURLSession* session = [NSURLSession sharedSession];
     NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:mutableRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

@@ -232,7 +232,7 @@
 }
 
 - (void)pickerDateView:(HQBPickerView *)pickerDateView selectYear:(NSInteger)year selectMonth:(NSInteger)month selectDay:(NSInteger)day {
-    self.birthString = [NSString stringWithFormat:@"%ld年%ld月%ld日",year,month,day];
+    self.birthString = [NSString stringWithFormat:@"%ld-%ld-%ld",year,month,day];
     [self.tableView reloadData];
 }
 

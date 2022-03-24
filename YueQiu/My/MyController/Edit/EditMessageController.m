@@ -25,7 +25,7 @@
     self.editMessageView.birthString = self.birthString;
     self.editMessageView.signatureString = self.signatureString;
     self.editMessageView.emaileString = self.emaileString;
-    self.labelString = self.labelString;
+    self.editMessageView.labelString = self.labelString;
     [self.view addSubview:self.editMessageView];
 }
 
@@ -58,8 +58,6 @@
                 NSLog(@"上传修改后的个人资料出错！");
                 dispatch_group_leave(netWorkGroup);
             }];
-        
-        
     });
     dispatch_group_enter(netWorkGroup);
     dispatch_group_async(netWorkGroup, queue, ^{

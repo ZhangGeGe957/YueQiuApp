@@ -75,14 +75,21 @@
 
   if (indexPath.row == 0) {
       self.myCell = [self.tableView dequeueReusableCellWithIdentifier:@"background"];
-      [self.myCell.backImageView sd_setBackgroundImageWithURL:[NSURL URLWithString:self.background] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"beijing.jpeg"]];
+      [self.myCell.backImageView sd_setBackgroundImageWithURL:[NSURL URLWithString:self.background] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"background.jpg"]];
       [self.myCell.backImageView addTarget:self action:@selector(changeBackImage:) forControlEvents:UIControlEventTouchUpInside];
       return self.myCell;
   } else if (indexPath.row == 1) {
       self.myCell = [self.tableView dequeueReusableCellWithIdentifier:@"MyMessage"];
       self.myCell.selectionStyle = UITableViewCellSelectionStyleNone;
-      [self.myCell.buttonHead sd_setBackgroundImageWithURL:[NSURL URLWithString:self.head_sculpture] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"beijing.jpeg"]];
+      [self.myCell.buttonHead sd_setBackgroundImageWithURL:[NSURL URLWithString:self.head_sculpture] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"head_portrait.jpg"]];
       [self.myCell.buttonHead addTarget:self action:@selector(changeHeadBack:) forControlEvents:UIControlEventTouchUpInside];
+      if (self.username) {
+          self.myCell.labelName.text = self.username;
+          self.myCell.labelPersonalSignature.text = self.signature;
+      } else {
+          self.myCell.labelName.text = @"神秘用户";
+          self.myCell.labelPersonalSignature.text = NULL;
+      }
       return self.myCell;
   } else {
       self.myCell = [self.tableView dequeueReusableCellWithIdentifier:@"menu"];
