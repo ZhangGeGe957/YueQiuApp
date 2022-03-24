@@ -13,6 +13,8 @@
 #import "EditMessageController.h"
 #import "SendPhotosModel.h"
 #import "GetMessageManager.h"
+#import <SDWebImage/UIButton+WebCache.h>
+
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
 
@@ -73,11 +75,13 @@
 
   if (indexPath.row == 0) {
       self.myCell = [self.tableView dequeueReusableCellWithIdentifier:@"background"];
+      [self.myCell.backImageView sd_setBackgroundImageWithURL:[NSURL URLWithString:self.background] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"beijing.jpeg"]];
       [self.myCell.backImageView addTarget:self action:@selector(changeBackImage:) forControlEvents:UIControlEventTouchUpInside];
       return self.myCell;
   } else if (indexPath.row == 1) {
       self.myCell = [self.tableView dequeueReusableCellWithIdentifier:@"MyMessage"];
       self.myCell.selectionStyle = UITableViewCellSelectionStyleNone;
+      [self.myCell.buttonHead sd_setBackgroundImageWithURL:[NSURL URLWithString:self.head_sculpture] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"beijing.jpeg"]];
       [self.myCell.buttonHead addTarget:self action:@selector(changeHeadBack:) forControlEvents:UIControlEventTouchUpInside];
       return self.myCell;
   } else {
@@ -95,12 +99,12 @@
         self.hidesBottomBarWhenPushed = YES;
         EditMessageController* editMessageController = [[EditMessageController alloc] init];
         editMessageController.uid = self.onlyUid;
-        editMessageController.nameString = [NSString stringWithString:self.username];
-        editMessageController.birthString = [NSString stringWithString:self.birthday];
+        editMessageController.nameString = [NSString stringWithFormat:@"%@", self.username];
+        editMessageController.birthString = [NSString stringWithFormat:@"%@", self.birthday];
         editMessageController.sex = self.sex;
-        editMessageController.emaileString = [NSString stringWithString:self.email];
-        editMessageController.signatureString = [NSString stringWithString:self.signature];
-        editMessageController.labelString = [NSString stringWithString:self.label];
+        editMessageController.emaileString = [NSString stringWithFormat:@"%@", self.email];
+        editMessageController.signatureString = [NSString stringWithFormat:@"%@", self.signature];
+        editMessageController.labelString = [NSString stringWithFormat:@"%@", self.label];
         [self.navigationController pushViewController:editMessageController animated:YES];
         
         self.hidesBottomBarWhenPushed = NO;
@@ -295,14 +299,17 @@
             self.label = getMessageModel.data.label;
             self.background = getMessageModel.data.background;
             self.head_sculpture = getMessageModel.data.head_sculpture;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
         } else {
             NSLog(@"---------------------------------------");
             NSLog(@"获取个人信息错误！");
             NSLog(@"---------------------------------------");
         }
-        } andError:^(NSError * _Nullable error) {
-            NSLog(@"获取个人信息失败");
-        }];
+    } andError:^(NSError * _Nullable error) {
+        NSLog(@"获取个人信息失败");
+    }];
 }
 
 @end
