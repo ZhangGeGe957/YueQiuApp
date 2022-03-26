@@ -233,9 +233,12 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     
     //初始化导航控制器
     self.homePageNavigationController = [[UINavigationController alloc] initWithRootViewController:self.homePageView];
+    self.homePageNavigationController.tabBarItem.image = [UIImage imageNamed:@"xiazai45.png"];
     self.trainNavigationController = [[UINavigationController alloc] initWithRootViewController:self.trainView];
     self.newsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.newsView];
+    self.newsNavigationController.tabBarItem.image = [UIImage imageNamed:@"lanqiu-copy-2.png"];
     self.myNavigationController = [[UINavigationController alloc] initWithRootViewController:self.myView];
+    self.myNavigationController.tabBarItem.image = [UIImage imageNamed:@"geren-copy.png"];
     
     //存储导航控制器的数组
     self.viewArray = [[NSArray alloc] initWithObjects:self.homePageNavigationController,self.trainNavigationController, self.newsNavigationController, self.myNavigationController, nil];

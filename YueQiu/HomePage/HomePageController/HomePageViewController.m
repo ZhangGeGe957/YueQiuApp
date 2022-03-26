@@ -32,9 +32,9 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     
     self.navigationController.navigationBarHidden = NO;
     
-//    UIBarButtonItem* search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sousuo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSearch)];
-//    search.tintColor = [UIColor blackColor];
-//    self.navigationItem.rightBarButtonItem = search;
+    UIBarButtonItem* search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sousuo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSearch)];
+    search.tintColor = [UIColor blackColor];
+    self.navigationItem.rightBarButtonItem = search;
 
     //注册通知
     [self registrationNotice];

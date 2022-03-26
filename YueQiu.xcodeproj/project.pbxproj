@@ -15,6 +15,9 @@
 		8322FA2627EEEA6F003A3C76 /* ShowArticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8322FA2527EEEA6F003A3C76 /* ShowArticleView.m */; };
 		8322FA2C27EEFA53003A3C76 /* AddArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8322FA2B27EEFA53003A3C76 /* AddArticleModel.m */; };
 		8322FA2F27EEFA6E003A3C76 /* AddArticleJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8322FA2E27EEFA6E003A3C76 /* AddArticleJSONModel.m */; };
+		8322FA3927EF2EF9003A3C76 /* xiazai45.png in Resources */ = {isa = PBXBuildFile; fileRef = 8322FA3627EF2EF8003A3C76 /* xiazai45.png */; };
+		8322FA3A27EF2EF9003A3C76 /* lanqiu-copy-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8322FA3727EF2EF8003A3C76 /* lanqiu-copy-2.png */; };
+		8322FA3B27EF2EF9003A3C76 /* geren-copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 8322FA3827EF2EF9003A3C76 /* geren-copy.png */; };
 		83252C4A27E573AF00BAEAAB /* LandJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83252C4927E573AF00BAEAAB /* LandJSONModel.m */; };
 		83252C4D27E573C300BAEAAB /* LandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83252C4C27E573C300BAEAAB /* LandModel.m */; };
 		83255A4527DC2C7400A37C5F /* daohang.png in Resources */ = {isa = PBXBuildFile; fileRef = 83255A4427DC2C7400A37C5F /* daohang.png */; };
@@ -159,6 +162,9 @@
 		8322FA2B27EEFA53003A3C76 /* AddArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddArticleModel.m; sourceTree = "<group>"; };
 		8322FA2D27EEFA6E003A3C76 /* AddArticleJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddArticleJSONModel.h; sourceTree = "<group>"; };
 		8322FA2E27EEFA6E003A3C76 /* AddArticleJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddArticleJSONModel.m; sourceTree = "<group>"; };
+		8322FA3627EF2EF8003A3C76 /* xiazai45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiazai45.png; sourceTree = "<group>"; };
+		8322FA3727EF2EF8003A3C76 /* lanqiu-copy-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanqiu-copy-2.png"; sourceTree = "<group>"; };
+		8322FA3827EF2EF9003A3C76 /* geren-copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "geren-copy.png"; sourceTree = "<group>"; };
 		83252C4827E573AF00BAEAAB /* LandJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandJSONModel.h; sourceTree = "<group>"; };
 		83252C4927E573AF00BAEAAB /* LandJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandJSONModel.m; sourceTree = "<group>"; };
 		83252C4B27E573C300BAEAAB /* LandModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandModel.h; sourceTree = "<group>"; };
@@ -527,6 +533,9 @@
 		8325A6622796C2D50060E916 /* LandPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				8322FA3827EF2EF9003A3C76 /* geren-copy.png */,
+				8322FA3727EF2EF8003A3C76 /* lanqiu-copy-2.png */,
+				8322FA3627EF2EF8003A3C76 /* xiazai45.png */,
 				8325A6652796C6C50060E916 /* startUP.png */,
 				8325A6632796C2F50060E916 /* lanqiu-copy.png */,
 			);
@@ -1215,6 +1224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83370A8727BF726D00A1889D /* tubiao202.png in Resources */,
+				8322FA3A27EF2EF9003A3C76 /* lanqiu-copy-2.png in Resources */,
 				8344FC9C27BE269D00C534D5 /* fanhui2.png in Resources */,
 				8325A6662796C6C50060E916 /* startUP.png in Resources */,
 				83370A8627BF726D00A1889D /* yuechi.png in Resources */,
@@ -1228,6 +1238,7 @@
 				8374A39127EC2537007688C3 /* head_portrait.jpg in Resources */,
 				837B7148279AB3E500DBD856 /* gengduo.png in Resources */,
 				83C798742789BE00000F68C1 /* LaunchScreen.storyboard in Resources */,
+				8322FA3927EF2EF9003A3C76 /* xiazai45.png in Resources */,
 				837B713B279A66BB00DBD856 /* yonghu.png in Resources */,
 				837B713A279A66BB00DBD856 /* naozhong-copy.png in Resources */,
 				83C798712789BE00000F68C1 /* Assets.xcassets in Resources */,
@@ -1240,6 +1251,7 @@
 				8325A6642796C2F50060E916 /* lanqiu-copy.png in Resources */,
 				83EA825F27CCB3C800B19CF3 /* kongbai.png in Resources */,
 				833639CF27C4B76A0020D864 /* dianhua.png in Resources */,
+				8322FA3B27EF2EF9003A3C76 /* geren-copy.png in Resources */,
 				CC5ABFEA27C4D15F00D548CB /* yinsi.png in Resources */,
 				837B713C279A66BB00DBD856 /* didian.png in Resources */,
 				83255A4527DC2C7400A37C5F /* daohang.png in Resources */,
@@ -1567,7 +1579,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1587,7 +1599,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = w.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1602,7 +1614,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1622,7 +1634,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = w.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -78,7 +78,7 @@
         [alert addAction:qqMap];
     }
     
-    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:cancel];
     
     [self presentViewController:alert animated:YES completion:nil];
@@ -87,7 +87,7 @@
 - (void)jumpAppleMap {
     MKMapItem *currentLocation = [MKMapItem mapItemForCurrentLocation];
            
-           //地理编码器
+    //地理编码器
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     
     [geocoder geocodeAddressString:self.stadiumLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error){

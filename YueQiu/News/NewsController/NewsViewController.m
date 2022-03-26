@@ -70,7 +70,7 @@
     
     //ScrollView初始化
     self.differentScrollView = [[UIScrollView alloc] init];
-    self.differentScrollView.contentSize = CGSizeMake(myWidth * 2, myHeight / 1.23);
+    self.differentScrollView.contentSize = CGSizeMake(myWidth * 2, myHeight / 1.18);
     self.differentScrollView.pagingEnabled = NO;
     self.differentScrollView.scrollEnabled = NO;
     self.differentScrollView.showsHorizontalScrollIndicator = NO;
@@ -80,7 +80,7 @@
         make.top.equalTo(self.view).offset(self.navHeight);
         make.left.equalTo(self.view).offset(0);
         make.width.equalTo(@(myWidth));
-        make.height.equalTo(@(myHeight / 1.23));
+        make.height.equalTo(@(myHeight / 1.18));
     }];
     
     //分栏控制器初始化
@@ -105,9 +105,9 @@
     }];
     
     //初始化视图精选
-    self.boutuqueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.1)];
+    self.boutuqueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.18)];
     [self.differentScrollView addSubview:self.boutuqueView];
-    self.showBoutiqueTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight) style:UITableViewStylePlain];
+    self.showBoutiqueTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.18) style:UITableViewStylePlain];
     self.showBoutiqueTableView.delegate = self;
     self.showBoutiqueTableView.dataSource = self;
     self.showBoutiqueTableView.tag = 111;
@@ -116,9 +116,9 @@
     [self.showBoutiqueTableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:@"show"];
     
     //初始化视图关注
-    self.followView = [[UIView alloc] initWithFrame:CGRectMake(myWidth, 0, myWidth, myHeight / 1.1)];
+    self.followView = [[UIView alloc] initWithFrame:CGRectMake(myWidth, 0, myWidth, myHeight / 1.18)];
     [self.differentScrollView addSubview:self.followView];
-    self.showFollowTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight) style:UITableViewStylePlain];
+    self.showFollowTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.18) style:UITableViewStylePlain];
     self.showFollowTableView.delegate = self;
     self.showFollowTableView.dataSource = self;
     self.showFollowTableView.tag = 222;
