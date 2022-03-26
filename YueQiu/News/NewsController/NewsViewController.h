@@ -6,8 +6,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BoutiqueView.h"
-#import "FollowView.h"
 #import "Masonry.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,8 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *falseView; //一个自己的假导航栏
 @property (nonatomic, strong) UISegmentedControl *selectControl;  //分栏控制器
 @property (nonatomic, strong) UIScrollView *differentScrollView;  //滚动视图
-@property (nonatomic, strong) BoutiqueView *boutuqueView;
-@property (nonatomic, strong) FollowView *followView;
+@property (nonatomic, strong) NSString* uid;  //唯一uid
+
+//精选界面
+@property (nonatomic, strong) UIView *boutuqueView;
+@property (nonatomic, strong) UITableView *showBoutiqueTableView;
+
+//关注界面
+@property (nonatomic, strong) UIView *followView;
+@property (nonatomic, strong) UITableView *showFollowTableView;
+
+@property (nonatomic, strong) NSArray *getAllData;  //所有数据
 
 @end
 

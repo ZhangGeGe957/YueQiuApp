@@ -7,6 +7,8 @@
 
 #import "NewsViewController.h"
 #import "ReleaseGameViewController.h"
+#import "NewsTableViewCell.h"
+#import "ArticleModel.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -19,11 +21,15 @@
 
 @implementation NewsViewController
 
+
+
 //使用动画的方式隐藏导航栏
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
+    //获取数据
+    [self p_getModel];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -95,12 +101,62 @@
     }];
     
     //初始化视图精选
-    self.boutuqueView = [[BoutiqueView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.23)];
+    self.boutuqueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.23)];
     [self.differentScrollView addSubview:self.boutuqueView];
+    self.showBoutiqueTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.23) style:UITableViewStylePlain];
+    self.showBoutiqueTableView.delegate = self;
+    self.showBoutiqueTableView.dataSource = self;
+    self.showBoutiqueTableView.tag = 111;
+    self.showBoutiqueTableView.backgroundColor = [UIColor whiteColor];
+    [self.boutuqueView addSubview:self.showBoutiqueTableView];
+    [self.showBoutiqueTableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:@"show"];
     
     //初始化视图关注
-    self.followView = [[FollowView alloc] initWithFrame:CGRectMake(myWidth, 0, myWidth, myHeight / 1.23)];
+    self.followView = [[UIView alloc] initWithFrame:CGRectMake(myWidth, 0, myWidth, myHeight / 1.23)];
     [self.differentScrollView addSubview:self.followView];
+    self.showFollowTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.23) style:UITableViewStylePlain];
+    self.showFollowTableView.delegate = self;
+    self.showFollowTableView.dataSource = self;
+    self.showFollowTableView.tag = 222;
+    self.showFollowTableView.backgroundColor = [UIColor whiteColor];
+    [self.followView addSubview:self.showFollowTableView];
+    [self.showFollowTableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:@"show"];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NewsTableViewCell *cell = [self.showFollowTableView dequeueReusableCellWithIdentifier:@"show"];
+    if (tableView.tag == 111) {
+        [cell.headButton setImage:[UIImage imageNamed:@"3.jpg"] forState:UIControlStateNormal];
+        cell.titleNameLabel.text = @"NBA分部";
+        cell.locationLabel.text = @"西安邮电大学体育场";
+        cell.timeLabel.text = @"1月20日 9:00";
+        cell.contentLabel.text = @"5V5交流切磋赛，欢迎切磋！欢迎大家来被我们打爆";
+        cell.VIPImageView.hidden = YES;
+    } else {
+        [cell.headButton setImage:[UIImage imageNamed:@"3.jpg"] forState:UIControlStateNormal];
+        cell.titleNameLabel.text = @"513分部";
+        cell.locationLabel.text = @"西安邮电大学体育场";
+        cell.timeLabel.text = @"1月22日 9:00";
+        cell.contentLabel.text = @"5V5交流切磋赛，欢迎切磋！欢迎大家来被我们打爆";
+        cell.VIPImageView.hidden = YES;
+    }
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (tableView.tag == 111) {
+        return 3;
+    } else {
+        return 2;
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 300;
 }
 
 //分栏控制器事件
@@ -112,6 +168,18 @@
 - (void)pushView:(UIButton *)button {
     self.releaseView = [[ReleaseGameViewController alloc] init];
     [self.navigationController pushViewController:self.releaseView animated:YES];
+}
+
+//获取数据
+- (void)p_getModel {
+    ArticleModel *manager = [ArticleModel shareManager];
+    manager.uid = self.uid;
+    
+    [[ArticleModel shareManager] getMessageWithData:^(ArticleJSONModel * _Nullable articleModel) {
+        NSLog(@"%@   %ld   %@", articleModel.data, (long)articleModel.code, articleModel.msg);
+    } andError:^(NSError * _Nullable error) {
+        NSLog(@"获取失败！");
+    }];
 }
 /*
 #pragma mark - Navigation

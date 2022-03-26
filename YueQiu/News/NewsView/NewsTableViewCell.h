@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *moreButton;  //更多按钮
 @property (nonatomic, strong) UIImageView *locationImageView;  //地点图像
 @property (nonatomic, strong) UIImageView *timeImageView;  //时间图像
-@property (nonatomic, strong) UIImageView *teamImageView;  //团队图像
 @property (nonatomic, strong) UIImageView *contentImageView;  //内容图像
 @property (nonatomic, strong) UIButton *replyButton;  //回复按钮
 @property (nonatomic, strong) UIButton *reserveButton;  //预约按钮
@@ -28,7 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *titleNameLabel;  //名称
 @property (nonatomic, strong) UILabel *locationLabel;  //地点
 @property (nonatomic, strong) UILabel *timeLabel;  //时间
-@property (nonatomic, strong) UILabel *teamLabel;  //团队
 @property (nonatomic, strong) UILabel *contentLabel;  //内容
 
 @end

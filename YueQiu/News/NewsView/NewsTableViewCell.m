@@ -36,9 +36,6 @@
         self.timeImageView = [[UIImageView alloc] init];
         self.timeImageView.image = [UIImage imageNamed:@"naozhong-copy.png"];
         [self.contentView addSubview:self.timeImageView];
-        self.teamImageView = [[UIImageView alloc] init];
-        self.teamImageView.image = [UIImage imageNamed:@"yonghu.png"];
-        [self.contentView addSubview:self.teamImageView];
         self.contentImageView = [[UIImageView alloc] init];
         self.contentImageView.image = [UIImage imageNamed:@"neirong.png"];
         [self.contentView addSubview:self.contentImageView];
@@ -52,10 +49,6 @@
         self.timeLabel.textColor = [UIColor blackColor];
         [self.timeLabel setFont:[UIFont systemFontOfSize:18]];
         [self.contentView addSubview:self.timeLabel];
-        self.teamLabel = [[UILabel alloc] init];
-        self.teamLabel.textColor = [UIColor blackColor];
-        [self.teamLabel setFont:[UIFont systemFontOfSize:18]];
-        [self.contentView addSubview:self.teamLabel];
         self.contentLabel = [[UILabel alloc] init];
         self.contentLabel.textColor = [UIColor blackColor];
         [self.contentLabel setFont:[UIFont systemFontOfSize:18]];
@@ -124,13 +117,8 @@
             make.left.equalTo(self.headButton.mas_left);
             make.size.equalTo(@30);
         }];
-        [self.teamImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.timeImageView.mas_bottom).offset(10);
-            make.left.equalTo(self.headButton.mas_left);
-            make.size.equalTo(@30);
-        }];
         [self.contentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.teamImageView.mas_bottom).offset(10);
+            make.top.equalTo(self.timeImageView.mas_bottom).offset(10);
             make.left.equalTo(self.headButton.mas_left);
             make.size.equalTo(@30);
         }];
@@ -160,12 +148,6 @@
         [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.timeImageView.mas_top);
             make.left.equalTo(self.timeImageView.mas_right).offset(10);
-            make.right.equalTo(self.moreButton.mas_left).offset(10);
-            make.height.equalTo(@30);
-        }];
-        [self.teamLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.teamImageView.mas_top);
-            make.left.equalTo(self.teamImageView.mas_right).offset(10);
             make.right.equalTo(self.moreButton.mas_left).offset(10);
             make.height.equalTo(@30);
         }];

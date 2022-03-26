@@ -178,6 +178,7 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     
     //传输uid
     self.myView.onlyUid = self.onlyUid;
+    self.newsView.uid = self.onlyUid;
     
     //初始化导航控制器
     self.homePageNavigationController = [[UINavigationController alloc] initWithRootViewController:self.homePageView];
