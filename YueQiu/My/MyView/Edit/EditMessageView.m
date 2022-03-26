@@ -90,6 +90,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dealData:) name:@"EditToEdit" object: nil];
     self.viewController = [self viewController];
+    
     self.viewController.hidesBottomBarWhenPushed = YES;
     EditController* editController = [[EditController alloc] init];
     if(indexPath.section == 0) {

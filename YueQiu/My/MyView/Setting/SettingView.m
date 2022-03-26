@@ -8,7 +8,7 @@
 
 #import "SettingView.h"
 #import "SettingCell.h"
-
+#import "LogoffManager.h"
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
 @implementation SettingView
@@ -127,5 +127,39 @@
     
     
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.controller = [self viewController];
+    if (indexPath.section == 3 && indexPath.row == 1) {
+        [self.controller.tabBarController dismissViewControllerAnimated:YES completion:^{
+            NSString* token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+            LogoffManager* manager = [LogoffManager shareManager];
+            manager.token = token;
+            [[LogoffManager shareManager] LogoffWithData:^(LogoffModel * _Nullable logoffModel) {
+                            if(logoffModel.code == 200) {
+                                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"token"];
+                                [[NSUserDefaults standardUserDefaults] synchronize];
+                            } else {
+                                NSLog(@"%@", logoffModel.msg);
+                            }
+                        } andError:^(NSError * _Nullable errorBlock) {
+                            NSLog(@"退出登录失败！");
+                        }];
+            
+        }];
+    }
+}
+
+- (UIViewController *)viewController {
+  for (UIView* next = [self superview]; next; next = next.superview) {
+      UIResponder *nextResponder = [next nextResponder];
+      if ([nextResponder isKindOfClass:[UIViewController class]]) {
+          return (UIViewController *)nextResponder;
+      }
+  }
+  return nil;
+}
+
+
+
 
 @end

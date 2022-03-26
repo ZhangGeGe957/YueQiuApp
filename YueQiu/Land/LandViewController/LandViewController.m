@@ -53,12 +53,20 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //设备唯一标识
-    self.identificationString = [[UUIDStrengthen alloc] getDeviceIDInKeychain];
-    NSLog(@"--------------------------");
-    NSLog(@"%@", self.identificationString);
-    NSLog(@"--------------------------");
+    self.isDectectLogin = NO;
     
+    
+    
+    
+    if([self getToken]) {
+        self.identificationString = [self getToken];
+    } else {
+        //设备唯一标识
+        self.identificationString = [[UUIDStrengthen alloc] getDeviceIDInKeychain];
+        NSLog(@"--------------------------");
+        NSLog(@"%@", self.identificationString);
+        NSLog(@"--------------------------");
+    }
     //启动页
     self.startUpImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight)];
     self.startUpImageView.image = [UIImage imageNamed:@"startUP.png"];
@@ -67,17 +75,20 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     self.startShowImageViewTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timeEnd:) userInfo:identityAuthentication repeats:YES];
 }
 
-//定时器函数
-- (void)timeEnd:(NSTimer *)timer {
-    //移除启动页
-    for (UIView *view in [self.view subviews]) {
-        [view removeFromSuperview];
+- (void)judgeLogin {
+    if(self.isDectectLogin) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self p_presentMainView];
+        });
+        
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self p_presentLogin];
+        });
+        
     }
-    
-    //注销定时器
-    [self.startShowImageViewTimer invalidate];
-    self.startShowImageViewTimer = nil;
-    
+}
+- (void)p_presentLogin {
     //注册通知
     [self p_addNotification];
     
@@ -87,6 +98,21 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     [self.landView.registerButton addTarget:self action:@selector(p_presentRegisterView:) forControlEvents:UIControlEventTouchUpInside];
     [self.landView.forgetButton addTarget:self action:@selector(p_presentForgetView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.landView];
+}
+
+//定时器函数
+- (void)timeEnd:(NSTimer *)timer {
+    
+    //移除启动页
+    for (UIView *view in [self.view subviews]) {
+        [view removeFromSuperview];
+    }
+    
+    
+    //注销定时器
+    [self.startShowImageViewTimer invalidate];
+    self.startShowImageViewTimer = nil;
+    [self p_dectectLogin];
 }
 
 //注册通知
@@ -154,6 +180,8 @@ NSString *const identityAuthentication = @"ZhangGeGe";
                 [self presentViewController:self.sendAlertView animated:true completion:nil];
             });
         } else {
+            
+            [self p_dealWithToken];
             dispatch_async(dispatch_get_main_queue(), ^{
                 //推出主界面
                 [self p_presentMainView];
@@ -162,6 +190,35 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     } andError:^(NSError * _Nullable error) {
         NSLog(@"获取失败！");
     }];
+}
+
+//保存token在本地
+- (void)p_dealWithToken {
+    [[NSUserDefaults standardUserDefaults] setObject:self.identificationString forKey:@"token"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+//再次启动时先获取本地token
+- (NSString*)getToken {
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    return token;
+}
+
+- (void)p_dectectLogin {
+    LandModel* landModel = [LandModel shareManager];
+    landModel.tokenNumber = self.identificationString;
+    [[LandModel shareManager] detectLoginWithData:^(DetectLoginModel * _Nullable detectLoginModel) {
+            if(detectLoginModel.code == 200) {
+                self.onlyUid = detectLoginModel.data;
+                self.isDectectLogin = YES;
+            } else {
+                self.isDectectLogin = NO;
+            }
+        [self judgeLogin];
+        } andError:^(NSError * _Nullable error) {
+            NSLog(@"获取失败");
+        }];
+    
 }
 
 //推出主界面
