@@ -15,6 +15,8 @@ UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, strong) NSArray* array;
+
+@property (nonatomic, strong) UIViewController* controller;
 @end
 
 NS_ASSUME_NONNULL_END

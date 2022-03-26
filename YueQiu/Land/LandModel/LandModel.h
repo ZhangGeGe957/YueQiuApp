@@ -7,8 +7,9 @@
 
 #import <Foundation/Foundation.h>
 #import "LandJSONModel.h"
-
+#import "DetectLoginModel.h"
 typedef void (^LandAccountBlock)(LandJSONModel * _Nullable LandAccountModel);
+typedef void(^DetectLoginBlock)(DetectLoginModel * _Nullable detectLoginModel);
 typedef void (^ErrorBlock)(NSError * _Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shareManager;
 //登陆
 - (void)LandAccountWithData:(LandAccountBlock)LandModelBolck andError:(ErrorBlock)errorBlock;
+
+- (void)detectLoginWithData:(DetectLoginBlock)detectLoginBlock andError:(ErrorBlock)errorBlock;
 
 @end
 
