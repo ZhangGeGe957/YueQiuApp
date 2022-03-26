@@ -42,15 +42,15 @@
     }];
     
     //label
-    self.locationLabel = [[UILabel alloc] init];
-    self.locationLabel.text = @"pangguanzhenluxicun";
-    self.locationLabel.layer.borderWidth = 0.5;
-    self.locationLabel.layer.cornerRadius = 10;
-    self.locationLabel.layer.masksToBounds = YES;
-    self.locationLabel.textAlignment = NSTextAlignmentCenter;
-    [self.locationLabel setFont:[UIFont systemFontOfSize:20]];
-    [self addSubview:self.locationLabel];
-    [self.locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.locationTextField = [[UITextField alloc] init];
+    self.locationTextField.placeholder = @"请输入位置";
+    self.locationTextField.layer.borderWidth = 0.5;
+    self.locationTextField.layer.cornerRadius = 10;
+    self.locationTextField.layer.masksToBounds = YES;
+    self.locationTextField.textAlignment = NSTextAlignmentCenter;
+    [self.locationTextField setFont:[UIFont systemFontOfSize:20]];
+    [self addSubview:self.locationTextField];
+    [self.locationTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.locationImageView.mas_right).offset(10);
         make.top.equalTo(self.locationImageView.mas_top);
         make.right.equalTo(self).offset(-60);

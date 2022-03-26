@@ -1,21 +1,23 @@
 //
-//  ReleaseGameViewController.m
+//  ShowArticleViewController.m
 //  YueQiu
 //
-//  Created by 张佳乔 on 2022/2/26.
+//  Created by 张佳乔 on 2022/3/26.
 //
 
-#import "ReleaseGameViewController.h"
-#import "Masonry.h"
+#import "ShowArticleViewController.h"
+#import "ShowArticleView.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
-@interface ReleaseGameViewController ()
+@interface ShowArticleViewController ()
+
+@property (nonatomic, strong) ShowArticleView *showView;  //显示的文章内容
 
 @end
 
-@implementation ReleaseGameViewController
+@implementation ShowArticleViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationController.navigationBar.tintColor = [UIColor orangeColor];
@@ -28,22 +30,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"发表";
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    //初始化视图
-    [self initReleaseGameView];
+    [self p_initView];
 }
 
 //初始化视图
-- (void)initReleaseGameView {
-    self.releaseGameView = [[ReleaseGameView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight)];
-    [self.view addSubview:self.releaseGameView];
-}
-
-//回收键盘
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.releaseGameView.contentTextField resignFirstResponder];
+- (void)p_initView {
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    //获取导航栏+状态栏的高度
+    self.navHeight = self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height;
+    
+    self.title = @"球局";
+    
+    self.showView = [[ShowArticleView alloc] initWithFrame:CGRectMake(0, self.navHeight, myWidth, myHeight - self.navHeight)];
+    [self.view addSubview:self.showView];
 }
 
 /*

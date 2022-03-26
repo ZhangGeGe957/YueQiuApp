@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIImageView *locationImageView;  //位置图标
 @property (nonatomic, strong) UIImageView *timeImageView;  //时间图标
 
-@property (nonatomic, strong) UILabel *locationLabel;  //位置
+@property (nonatomic, strong) UITextField *locationTextField;  //位置
 @property (nonatomic, strong) UIDatePicker *showDatePicker;  //时间选择器
 
 @property (nonatomic, strong) UITextField *contentTextField;  //内容框

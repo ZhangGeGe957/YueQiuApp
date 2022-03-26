@@ -9,13 +9,15 @@
 #import "ReleaseGameViewController.h"
 #import "NewsTableViewCell.h"
 #import "ArticleModel.h"
+#import "ShowArticleViewController.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
 @interface NewsViewController ()
 
-@property (nonatomic, strong) ReleaseGameViewController *releaseView;
+@property (nonatomic, strong) ReleaseGameViewController *releaseView;  //发文章界面
+@property (nonatomic, strong) ShowArticleViewController *showArticleView;  //展示文章界面
 
 @end
 
@@ -33,7 +35,6 @@
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
@@ -45,6 +46,9 @@
 }
 
 - (void)p_initUI {
+    //初始化数据
+    self.getAllData = [[NSMutableArray alloc] init];
+    
     //获取导航栏+状态栏的高度
     self.navHeight = self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height;
     
@@ -101,9 +105,9 @@
     }];
     
     //初始化视图精选
-    self.boutuqueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.23)];
+    self.boutuqueView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.1)];
     [self.differentScrollView addSubview:self.boutuqueView];
-    self.showBoutiqueTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.23) style:UITableViewStylePlain];
+    self.showBoutiqueTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight) style:UITableViewStylePlain];
     self.showBoutiqueTableView.delegate = self;
     self.showBoutiqueTableView.dataSource = self;
     self.showBoutiqueTableView.tag = 111;
@@ -112,9 +116,9 @@
     [self.showBoutiqueTableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:@"show"];
     
     //初始化视图关注
-    self.followView = [[UIView alloc] initWithFrame:CGRectMake(myWidth, 0, myWidth, myHeight / 1.23)];
+    self.followView = [[UIView alloc] initWithFrame:CGRectMake(myWidth, 0, myWidth, myHeight / 1.1)];
     [self.differentScrollView addSubview:self.followView];
-    self.showFollowTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight / 1.23) style:UITableViewStylePlain];
+    self.showFollowTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, myWidth, myHeight) style:UITableViewStylePlain];
     self.showFollowTableView.delegate = self;
     self.showFollowTableView.dataSource = self;
     self.showFollowTableView.tag = 222;
@@ -132,6 +136,7 @@
         cell.timeLabel.text = @"1月20日 9:00";
         cell.contentLabel.text = @"5V5交流切磋赛，欢迎切磋！欢迎大家来被我们打爆";
         cell.VIPImageView.hidden = YES;
+        [cell.reserveButton addTarget:self action:@selector(pushShowArticle:) forControlEvents:UIControlEventTouchUpInside];
     } else {
         [cell.headButton setImage:[UIImage imageNamed:@"3.jpg"] forState:UIControlStateNormal];
         cell.titleNameLabel.text = @"513分部";
@@ -139,6 +144,7 @@
         cell.timeLabel.text = @"1月22日 9:00";
         cell.contentLabel.text = @"5V5交流切磋赛，欢迎切磋！欢迎大家来被我们打爆";
         cell.VIPImageView.hidden = YES;
+        [cell.reserveButton addTarget:self action:@selector(pushShowArticle:) forControlEvents:UIControlEventTouchUpInside];
     }
     return cell;
 }
@@ -170,6 +176,12 @@
     [self.navigationController pushViewController:self.releaseView animated:YES];
 }
 
+//推出文章界面
+- (void)pushShowArticle:(UIButton *)button {
+    self.showArticleView = [[ShowArticleViewController alloc] init];
+    [self.navigationController pushViewController:self.showArticleView animated:YES];
+}
+
 //获取数据
 - (void)p_getModel {
     ArticleModel *manager = [ArticleModel shareManager];
@@ -177,6 +189,9 @@
     
     [[ArticleModel shareManager] getMessageWithData:^(ArticleJSONModel * _Nullable articleModel) {
         NSLog(@"%@   %ld   %@", articleModel.data, (long)articleModel.code, articleModel.msg);
+        
+        NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+        
     } andError:^(NSError * _Nullable error) {
         NSLog(@"获取失败！");
     }];

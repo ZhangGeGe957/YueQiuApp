@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *followView;
 @property (nonatomic, strong) UITableView *showFollowTableView;
 
-@property (nonatomic, strong) NSArray *getAllData;  //所有数据
+@property (nonatomic, strong) NSMutableArray *getAllData;  //所有数据
 
 @end
 

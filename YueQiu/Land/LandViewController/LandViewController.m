@@ -55,9 +55,6 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     
     self.isDectectLogin = NO;
     
-    
-    
-    
     if([self getToken]) {
         self.identificationString = [self getToken];
     } else {
@@ -78,9 +75,9 @@ NSString *const identityAuthentication = @"ZhangGeGe";
 - (void)judgeLogin {
     if(self.isDectectLogin) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self p_presentLogin];
             [self p_presentMainView];
         });
-        
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self p_presentLogin];
@@ -156,9 +153,6 @@ NSString *const identityAuthentication = @"ZhangGeGe";
         //登陆请求
         [self landNetRequest];
     }
-    
-    //推出主界面
-    //[self p_presentMainView];
 }
 
 //发送登陆网络请求

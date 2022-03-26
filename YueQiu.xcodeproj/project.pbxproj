@@ -11,6 +11,10 @@
 		8314715327EAA74800954C69 /* SendPhotosModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8314715227EAA74800954C69 /* SendPhotosModel.m */; };
 		8314715627EAA7D400954C69 /* SendPhotosJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8314715527EAA7D400954C69 /* SendPhotosJSONModel.m */; };
 		8315BF11279BFE24007CBAD8 /* huifu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8315BF10279BFE24007CBAD8 /* huifu.png */; };
+		8322FA2327EEEA60003A3C76 /* ShowArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8322FA2227EEEA60003A3C76 /* ShowArticleViewController.m */; };
+		8322FA2627EEEA6F003A3C76 /* ShowArticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8322FA2527EEEA6F003A3C76 /* ShowArticleView.m */; };
+		8322FA2C27EEFA53003A3C76 /* AddArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8322FA2B27EEFA53003A3C76 /* AddArticleModel.m */; };
+		8322FA2F27EEFA6E003A3C76 /* AddArticleJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8322FA2E27EEFA6E003A3C76 /* AddArticleJSONModel.m */; };
 		83252C4A27E573AF00BAEAAB /* LandJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83252C4927E573AF00BAEAAB /* LandJSONModel.m */; };
 		83252C4D27E573C300BAEAAB /* LandModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83252C4C27E573C300BAEAAB /* LandModel.m */; };
 		83255A4527DC2C7400A37C5F /* daohang.png in Resources */ = {isa = PBXBuildFile; fileRef = 83255A4427DC2C7400A37C5F /* daohang.png */; };
@@ -147,6 +151,14 @@
 		8314715427EAA7D400954C69 /* SendPhotosJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SendPhotosJSONModel.h; path = YueQiu/My/MyModel/SendPhoto/SendPhotosJSONModel.h; sourceTree = SOURCE_ROOT; };
 		8314715527EAA7D400954C69 /* SendPhotosJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SendPhotosJSONModel.m; path = YueQiu/My/MyModel/SendPhoto/SendPhotosJSONModel.m; sourceTree = SOURCE_ROOT; };
 		8315BF10279BFE24007CBAD8 /* huifu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = huifu.png; sourceTree = "<group>"; };
+		8322FA2127EEEA60003A3C76 /* ShowArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowArticleViewController.h; sourceTree = "<group>"; };
+		8322FA2227EEEA60003A3C76 /* ShowArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowArticleViewController.m; sourceTree = "<group>"; };
+		8322FA2427EEEA6F003A3C76 /* ShowArticleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowArticleView.h; sourceTree = "<group>"; };
+		8322FA2527EEEA6F003A3C76 /* ShowArticleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowArticleView.m; sourceTree = "<group>"; };
+		8322FA2A27EEFA53003A3C76 /* AddArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddArticleModel.h; sourceTree = "<group>"; };
+		8322FA2B27EEFA53003A3C76 /* AddArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddArticleModel.m; sourceTree = "<group>"; };
+		8322FA2D27EEFA6E003A3C76 /* AddArticleJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddArticleJSONModel.h; sourceTree = "<group>"; };
+		8322FA2E27EEFA6E003A3C76 /* AddArticleJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddArticleJSONModel.m; sourceTree = "<group>"; };
 		83252C4827E573AF00BAEAAB /* LandJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandJSONModel.h; sourceTree = "<group>"; };
 		83252C4927E573AF00BAEAAB /* LandJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandJSONModel.m; sourceTree = "<group>"; };
 		83252C4B27E573C300BAEAAB /* LandModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandModel.h; sourceTree = "<group>"; };
@@ -432,6 +444,41 @@
 			path = Course;
 			sourceTree = "<group>";
 		};
+		8322FA1D27EEEA09003A3C76 /* ShowArticle */ = {
+			isa = PBXGroup;
+			children = (
+				8322FA2027EEEA47003A3C76 /* ShowArticleModel */,
+				8322FA1F27EEEA41003A3C76 /* ShowArticleView */,
+				8322FA1E27EEEA2C003A3C76 /* ShowArticleController */,
+			);
+			path = ShowArticle;
+			sourceTree = "<group>";
+		};
+		8322FA1E27EEEA2C003A3C76 /* ShowArticleController */ = {
+			isa = PBXGroup;
+			children = (
+				8322FA2127EEEA60003A3C76 /* ShowArticleViewController.h */,
+				8322FA2227EEEA60003A3C76 /* ShowArticleViewController.m */,
+			);
+			path = ShowArticleController;
+			sourceTree = "<group>";
+		};
+		8322FA1F27EEEA41003A3C76 /* ShowArticleView */ = {
+			isa = PBXGroup;
+			children = (
+				8322FA2427EEEA6F003A3C76 /* ShowArticleView.h */,
+				8322FA2527EEEA6F003A3C76 /* ShowArticleView.m */,
+			);
+			path = ShowArticleView;
+			sourceTree = "<group>";
+		};
+		8322FA2027EEEA47003A3C76 /* ShowArticleModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowArticleModel;
+			sourceTree = "<group>";
+		};
 		83255A4927DC9B6800A37C5F /* LandModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +534,10 @@
 		8327697227D114E200C59149 /* ReleaseModel */ = {
 			isa = PBXGroup;
 			children = (
+				8322FA2A27EEFA53003A3C76 /* AddArticleModel.h */,
+				8322FA2B27EEFA53003A3C76 /* AddArticleModel.m */,
+				8322FA2D27EEFA6E003A3C76 /* AddArticleJSONModel.h */,
+				8322FA2E27EEFA6E003A3C76 /* AddArticleJSONModel.m */,
 			);
 			path = ReleaseModel;
 			sourceTree = "<group>";
@@ -700,6 +751,7 @@
 		83C798632789BDFE000F68C1 /* YueQiu */ = {
 			isa = PBXGroup;
 			children = (
+				8322FA1D27EEEA09003A3C76 /* ShowArticle */,
 				83FB1A5127CA28CE005D6292 /* ReleaseGame */,
 				8333B11F27C3240900858A48 /* Reserve */,
 				83370A8C27BF8DFF00A1889D /* SetPassword */,
@@ -1271,6 +1323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8322FA2F27EEFA6E003A3C76 /* AddArticleJSONModel.m in Sources */,
 				8325A6612796573C0060E916 /* LandView.m in Sources */,
 				83C7986C2789BDFE000F68C1 /* ViewController.m in Sources */,
 				CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */,
@@ -1281,6 +1334,7 @@
 				CC61842E27EB43520080DC56 /* SendPersonInfoModel.m in Sources */,
 				83C798BD2789C0CC000F68C1 /* MyViewController.m in Sources */,
 				83C798662789BDFE000F68C1 /* AppDelegate.m in Sources */,
+				8322FA2C27EEFA53003A3C76 /* AddArticleModel.m in Sources */,
 				CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */,
 				83255A4C27DC9D7400A37C5F /* UUIDStrengthen.m in Sources */,
 				83252C4A27E573AF00BAEAAB /* LandJSONModel.m in Sources */,
@@ -1289,6 +1343,7 @@
 				8346A8CB27DDB9E500D99BD7 /* SendMessageManager.m in Sources */,
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
 				83FB1A5627CA294B005D6292 /* ReleaseGameView.m in Sources */,
+				8322FA2327EEEA60003A3C76 /* ShowArticleViewController.m in Sources */,
 				CC89C28627C2518C0096C12D /* MyCollectStadiumView.m in Sources */,
 				CC89C28027C2515D0096C12D /* MyCourseViewController.m in Sources */,
 				8344FC8D27BE1DE900C534D5 /* RegisterViewController.m in Sources */,
@@ -1324,6 +1379,7 @@
 				CC36E6F827EA21F400E0821F /* HQBDatePickerView.m in Sources */,
 				8346A8C827DDB9B600D99BD7 /* SendMessageJSONModel.m in Sources */,
 				CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */,
+				8322FA2627EEEA6F003A3C76 /* ShowArticleView.m in Sources */,
 				CC61843127EB43B90080DC56 /* SendPersonInfoManager.m in Sources */,
 				CC5ABFF927C4D1E000D548CB /* SettingController.m in Sources */,
 				CCDA8BBB27EEC1E800FE2929 /* LogoffModel.m in Sources */,
@@ -1511,7 +1567,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1531,7 +1587,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = w.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1546,7 +1602,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1566,7 +1622,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = w.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
