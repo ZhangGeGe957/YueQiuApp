@@ -17,7 +17,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
-    self.menuArray = [[NSMutableArray alloc] initWithObjects:@"昵称", @"性别", @"生日", @"邮箱", @"签名", @"标签", nil];
+    self.menuArray = [[NSMutableArray alloc] initWithObjects:@"昵称", @"性别", @"生日", @"邮箱", @"签名", nil];
     self.sexArray = [[NSMutableArray alloc] initWithObjects:@"女",@"男", nil];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStyleGrouped];
@@ -37,10 +37,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(section == 0 || section == 2) {
-        return 1;
-    } else {
+    if(section == 2) {
         return 2;
+    } else {
+        return 1;
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,13 +104,8 @@
         [self.viewController.navigationController pushViewController:editController animated:YES];
         
     } else if(indexPath.section == 3) {
-        if (indexPath.row == 0) {
-            editController.titleString = @"修改个性签名";
-            editController.valueString = self.signatureString;
-        } else {
-            editController.titleString = @"修改标签";
-            editController.valueString = self.labelString;
-        }
+        editController.titleString = @"修改个性签名";
+        editController.valueString = self.signatureString;
         [self.viewController.navigationController pushViewController:editController animated:YES];
     } else {
         if (indexPath.row == 0) {
@@ -188,10 +183,8 @@
         self.nameString = sender.userInfo[@"content"];
     } else if ([sender.userInfo[@"flag"] isEqualToString:@"修改我的邮箱"]) {
         self.emaileString = sender.userInfo[@"content"];
-    } else if ([sender.userInfo[@"flag"] isEqualToString:@"修改个性签名"]) {
-        self.signatureString = sender.userInfo[@"content"];
     } else {
-        self.labelString = sender.userInfo[@"content"];
+        self.signatureString = sender.userInfo[@"content"];
     }
     [self.tableView reloadData];
 }

@@ -129,6 +129,7 @@
         make.width.equalTo(@300);
     }];
     
+    
     self.phoneLabel = [[UILabel alloc] init];
     self.phoneLabel.text = @"xxxxxxxxxxx";
     self.phoneLabel.layer.borderWidth = 0.5;
