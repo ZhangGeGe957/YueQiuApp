@@ -407,6 +407,8 @@
 		8314714D27EAA66C00954C69 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				CC89C28427C2518C0096C12D /* MyCollectStadiumView.h */,
+				CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */,
 				CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */,
 				CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */,
 				CC89C28127C251770096C12D /* MyCourseView.h */,
@@ -753,7 +755,6 @@
 			children = (
 				8322FA1D27EEEA09003A3C76 /* ShowArticle */,
 				83FB1A5127CA28CE005D6292 /* ReleaseGame */,
-				8333B11F27C3240900858A48 /* Reserve */,
 				83370A8C27BF8DFF00A1889D /* SetPassword */,
 				8344FC8E27BE203C00C534D5 /* Forget */,
 				8344FC8527BE1D6100C534D5 /* Register */,
@@ -761,6 +762,7 @@
 				83C7989C2789BF62000F68C1 /* Train */,
 				83C7989B2789BF5B000F68C1 /* News */,
 				83C7989A2789BF51000F68C1 /* My */,
+				8333B11F27C3240900858A48 /* Reserve */,
 				83C798992789BF45000F68C1 /* HomePage */,
 				83C798642789BDFE000F68C1 /* AppDelegate.h */,
 				83C798652789BDFE000F68C1 /* AppDelegate.m */,
@@ -1092,8 +1094,6 @@
 				8314714B27EAA63900954C69 /* Setting */,
 				CCFA4BA227ABB9EF00F2BB18 /* MyTableViewCell.h */,
 				CCFA4BA327ABB9EF00F2BB18 /* MyTableViewCell.m */,
-				CC89C28427C2518C0096C12D /* MyCollectStadiumView.h */,
-				CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */,
 			);
 			path = MyView;
 			sourceTree = "<group>";
@@ -1567,7 +1567,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1587,7 +1587,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1602,7 +1602,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1622,7 +1622,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

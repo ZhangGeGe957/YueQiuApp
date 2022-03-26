@@ -98,9 +98,9 @@
 
     //计算剩余字数   不需要的也可不写
 
-    NSString *nsTextCotent = textView.text;
+    NSString *textContent = textView.text;
 
-    NSUInteger existTextNum = [nsTextCotent length];
+    NSUInteger existTextNum = [textContent length];
 
     NSUInteger remainTextNum = 140 - existTextNum;
 

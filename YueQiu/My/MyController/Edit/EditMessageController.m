@@ -40,7 +40,7 @@
     manager.birthString = self.editMessageView.birthString;
     manager.sex = self.editMessageView.sex;
     manager.signatureString = self.editMessageView.signatureString;
-    manager.labelString = self.editMessageView.labelString;
+    
     manager.emaileString = self.editMessageView.emaileString;
     dispatch_queue_t queue =
         dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -60,6 +60,7 @@
             }];
     });
     dispatch_group_enter(netWorkGroup);
+    manager.labelString = self.editMessageView.labelString;
     dispatch_group_async(netWorkGroup, queue, ^{
         [[SendPersonInfoManager shareManager] sendLabelWithData:^(SendLabelModel * _Nullable sendLabelModel) {
             if (sendLabelModel.code == 200) {
@@ -78,9 +79,6 @@
     dispatch_group_notify(netWorkGroup, dispatch_get_main_queue(), ^{
         [self.navigationController popViewControllerAnimated:YES];
     });
-    
-    
-    
 }
 
 

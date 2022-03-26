@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ReserveView *reserveView;
 @property (nonatomic, strong) NSString* stadiumLocation;
 @property (nonatomic, strong) NSString* stadiumName;
+@property (nonatomic, strong) NSString* appName;
 @end
 
 NS_ASSUME_NONNULL_END
