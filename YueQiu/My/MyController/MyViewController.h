@@ -17,7 +17,7 @@ UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDe
 @property (nonatomic, strong) MyTableViewCell *myCell;
 @property (nonatomic, strong) NSArray* menuArray;
 @property (nonatomic, strong) NSString *onlyUid;  //唯一的uid
-
+@property (nonatomic, strong) NSString *token;
 //保存图片返回路径
 - (NSString *)savePhotosBackPath:(UIImage *)image;
 

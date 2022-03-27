@@ -229,6 +229,7 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     
     //传输uid
     self.myView.onlyUid = self.onlyUid;
+    self.myView.token = self.identificationString;
     self.newsView.uid = self.onlyUid;
     
     //初始化导航控制器

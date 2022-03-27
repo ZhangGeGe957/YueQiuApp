@@ -19,22 +19,22 @@ static SendPersonInfoManager *manager = nil;
 }
 
 - (void)sendPersonInfoWithData:(SendPersonInfoBlock)sendPersonInfoBlock andError:(ErrorBlock)errorBlock {
-    NSString* string = [NSString stringWithFormat:@"http://47.116.14.251:8888/info/updateothers"];
+    NSString* string = [NSString stringWithFormat:@"http://47.116.14.251:8888/info/updateOthers"];
     NSURL* urlString = [NSURL URLWithString:string];
     NSMutableURLRequest* mutableRequest = [[NSMutableURLRequest alloc] initWithURL:urlString];
     [mutableRequest setHTTPMethod:@"POST"];
+    [mutableRequest addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [mutableRequest addValue:self.token forHTTPHeaderField:@"mobileToken"];
+    [mutableRequest addValue:self.uidString forHTTPHeaderField:@"uid"];
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setValue:self.birthString forKey:@"birthday"];
     [dict setValue:self.emaileString forKey:@"email"];
     [dict setValue:@(self.sex) forKey:@"sex"];
     [dict setValue:self.signatureString forKey:@"signature"];
     [dict setValue:self.nameString forKey:@"username"];
-    [dict setValue:[self.uidString copy] forKey:@"uid"];
     NSData *dictPhoneData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
     NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:dictPhoneData options:0 error:nil]);
     [mutableRequest setHTTPBody:dictPhoneData];
-    [mutableRequest addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
-    
     NSURLSession* session = [NSURLSession sharedSession];
     NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:mutableRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {
@@ -48,16 +48,18 @@ static SendPersonInfoManager *manager = nil;
     
 }
 - (void)sendLabelWithData:(SendLabelBlock)sendLabelBlock andError:(ErrorBlock)errorBlock  {
-    NSString* string = [NSString stringWithFormat:@"http://47.116.14.251:8888/info/updatelabel"];
+    NSString* string = [NSString stringWithFormat:@"http://47.116.14.251:8888/info/updateLabel"];
     NSURL* urlString = [NSURL URLWithString:string];
     NSMutableURLRequest* mutableRequest = [[NSMutableURLRequest alloc] initWithURL:urlString];
+    [mutableRequest addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [mutableRequest addValue:self.token forHTTPHeaderField:@"mobileToken"];
+    [mutableRequest addValue:self.uidString forHTTPHeaderField:@"uid"];
     [mutableRequest setHTTPMethod:@"POST"];
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setValue:self.uidString forKey:@"uid"];
     [dict setValue:self.labelString forKey:@"label"];
     NSData *dictPhoneData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
     [mutableRequest setHTTPBody:dictPhoneData];
-    [mutableRequest addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
     
     NSURLSession* session = [NSURLSession sharedSession];
     NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:mutableRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

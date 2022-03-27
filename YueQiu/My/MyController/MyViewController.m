@@ -46,7 +46,7 @@
     
     
     //tableview
-    self.menuArray = [NSArray arrayWithObjects:@"编辑资料",@"我的课程列表", @"我收藏的球馆", @"退出",nil];
+    self.menuArray = [NSArray arrayWithObjects:@"编辑资料",@"我的课程列表", @"我收藏的球馆",nil];
 
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, W, H) style:UITableViewStylePlain];
     self.tableView.delegate = self;
@@ -68,7 +68,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return 5;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,7 +111,8 @@
         editMessageController.sex = self.sex;
         editMessageController.emaileString = [NSString stringWithFormat:@"%@", self.email];
         editMessageController.signatureString = [NSString stringWithFormat:@"%@", self.signature];
-        editMessageController.labelString = [NSString stringWithFormat:@"%@", self.label];
+//        editMessageController.labelString = [NSString stringWithFormat:@"%@", self.label];
+        editMessageController.token = self.token;
         [self.navigationController pushViewController:editMessageController animated:YES];
         
         self.hidesBottomBarWhenPushed = NO;
@@ -126,19 +127,6 @@
           MyCollectStadiumController* collectStadiumController = [[MyCollectStadiumController alloc] init];
           [self.navigationController pushViewController:collectStadiumController animated:YES];
           self.hidesBottomBarWhenPushed = NO;
-      } else if (indexPath.row == 5) {
-          UIAlertController *alertSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-          UIAlertAction *exitLogin = [UIAlertAction actionWithTitle:@"退出登陆" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-              NSLog(@"退出登陆");
-          }];
-          UIAlertAction *exitApp = [UIAlertAction actionWithTitle:@"退出到桌面" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-              exit(0);
-          }];
-          UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-          [alertSheet addAction:exitLogin];
-          [alertSheet addAction:exitApp];
-          [alertSheet addAction:cancel];
-          [self presentViewController:alertSheet animated:YES completion:nil];
       }
 }
 
@@ -169,14 +157,14 @@
 //改变背景图
 - (void)changeBackImage:(UIButton *)button {
     self.tempButton = button;
-    self.transString = @"updateback";
+    self.transString = @"updateBack";
     [self p_getPhotos];
 }
 
 //改头像
 - (void)changeHeadBack:(UIButton *)button {
     self.tempButton = button;
-    self.transString = @"updatehead";
+    self.transString = @"updateHead";
     [self p_getPhotos];
 }
 
@@ -270,6 +258,7 @@
 - (void)p_sendPhotos {
     SendPhotosModel *sendPhotos = [SendPhotosModel shareManager];
     sendPhotos.onlyUid = self.onlyUid;
+    sendPhotos.token = self.token;
     sendPhotos.transPhotosType = self.transString;
     sendPhotos.savedImagePath = [self savePhotosBackPath:self.getImage];
     sendPhotos.sendPhotosFile = UIImagePNGRepresentation(self.getImage);
@@ -295,17 +284,19 @@
 - (void)p_getPersonInfo {
     GetMessageManager* manager = [GetMessageManager shareManager];
     manager.uid = self.onlyUid;
+    manager.token = self.token;
     [[GetMessageManager shareManager] getMessageWithData:^(GetMessageModel * _Nullable getMessageModel) {
+
         if (getMessageModel.code == 200) {
             self.username = getMessageModel.data.username;
-            self.phone_numbers = getMessageModel.data.phone_numbers;
+            self.phone_numbers = getMessageModel.data.phoneNumbers;
             self.birthday = getMessageModel.data.birthday;
             self.sex = getMessageModel.data.sex;
             self.email = getMessageModel.data.email;
             self.signature = getMessageModel.data.signature;
             self.label = getMessageModel.data.label;
             self.background = getMessageModel.data.background;
-            self.head_sculpture = getMessageModel.data.head_sculpture;
+            self.head_sculpture = getMessageModel.data.headSculpture;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
             });

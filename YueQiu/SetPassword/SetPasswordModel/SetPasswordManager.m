@@ -30,7 +30,7 @@ static SetPasswordManager* setPasswordManager = nil;
             SetPasswordJsonModel* setPasswordModel = [[SetPasswordJsonModel alloc] initWithData:data error:nil];
             sendChangedPasswordBlock(setPasswordModel);
         } else {
-            ErrorBlock(error);
+            errorBlock(error);
         }
     }];
     [dataTask resume];

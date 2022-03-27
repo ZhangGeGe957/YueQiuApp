@@ -21,12 +21,16 @@ static GetMessageManager* manager = nil;
 
 
 - (void)getMessageWithData:(GetMessageBlock)getMessageBlock andError:(ErrorBlock)errorBlock {
-    NSString* string = [NSString stringWithFormat:@"http://47.116.14.251:8888/info/getinfo/%@", self.uid];
+    NSString* string = [NSString stringWithFormat:@"http://47.116.14.251:8888/info/getInfo"];
     
     NSURL* urlString = [NSURL URLWithString:string];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlString];
-    request.HTTPMethod = @"POST";
+    [request setHTTPMethod:@"GET"];
+    
+    [request addValue:self.token forHTTPHeaderField:@"mobileToken"];
+    [request addValue:self.uid forHTTPHeaderField:@"uid"];
+    
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {

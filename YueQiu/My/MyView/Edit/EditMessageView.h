@@ -23,7 +23,6 @@ PickerDateViewDelegate>
 @property (nonatomic, strong)NSString* birthString;
 @property (nonatomic, strong)NSString* emaileString;
 @property (nonatomic, strong)NSString* signatureString;
-@property (nonatomic, strong)NSString* labelString;
 @property NSInteger sex;
 
 @property (nonatomic, strong)UIViewController* viewController;
