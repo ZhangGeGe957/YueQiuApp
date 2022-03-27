@@ -37,7 +37,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if(section == 2) {
+    if(section == 1) {
         return 2;
     } else {
         return 1;
@@ -75,13 +75,8 @@
         return cell;
     } else {
         EditMessageCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"3"];
-        cell.textLabel.text = self.menuArray[4 + indexPath.row];
-        if (indexPath.row == 0) {
-            cell.valueLabel.text = self.signatureString;
-        } else {
-            cell.valueLabel.text = self.labelString;
-        }
-        
+        cell.textLabel.text = self.menuArray[4];
+        cell.valueLabel.text = self.signatureString;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }

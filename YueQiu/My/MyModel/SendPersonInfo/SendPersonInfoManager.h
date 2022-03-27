@@ -14,6 +14,7 @@ typedef void (^SendLabelBlock) (SendLabelModel * _Nullable sendLabelModel);
 typedef void (^ErrorBlock) (NSError * _Nullable error);
 @interface SendPersonInfoManager : NSObject
 
+@property (nonatomic, strong)NSString* token;
 @property (nonatomic, strong)NSString* uidString;
 @property (nonatomic, strong)NSString* nameString;
 @property (nonatomic, strong)NSString* birthString;

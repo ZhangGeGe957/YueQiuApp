@@ -24,15 +24,18 @@ static SendPhotosModel* manager = nil;
 }
 
 - (void)SendPhotosWithData:(SendPhotosBlock)sendPhotosModelBlock andError:(ErrorBlock)errorBlock {
-    NSString *tempString = [[NSString alloc] initWithFormat:@"http://47.116.14.251:8888/info/%@/%@", self.transPhotosType, self.onlyUid];
+    NSString *tempString = [[NSString alloc] initWithFormat:@"http://47.116.14.251:8888/info/%@", self.transPhotosType];
     NSMutableString *myString = [[NSMutableString alloc] init];
-    if ([self.transPhotosType isEqualToString:@"updateback"]) {
+    if ([self.transPhotosType isEqualToString:@"updateBack"]) {
         myString = [[NSMutableString alloc] initWithString:@"background"];
     } else {
         myString = [[NSMutableString alloc] initWithString:@"headSculpture"];
     }
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager POST:tempString parameters:nil headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    [dict setValue:self.token forKey:@"mobileToken"];
+    [dict setValue:self.onlyUid forKey:@"uid"];
+    [manager POST:tempString parameters:nil headers:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"yyyyMMddHHmmss";

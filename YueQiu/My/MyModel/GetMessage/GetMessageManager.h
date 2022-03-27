@@ -14,7 +14,7 @@ typedef void (^ErrorBlock) (NSError * _Nullable error);
 @interface GetMessageManager : NSObject
 
 @property (nonatomic, strong) NSString* uid;
-
+@property (nonatomic, strong) NSString* token;
 + (instancetype)shareManager;
 //登陆
 - (void)getMessageWithData:(GetMessageBlock)getMessageBlock andError:(ErrorBlock)errorBlock;

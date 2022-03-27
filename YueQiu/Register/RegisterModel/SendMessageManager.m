@@ -24,7 +24,7 @@ static SendMessageManager* manager = nil;
 
 //发送短信验证码
 - (void)SendMessageWithData:(SendMessageBlock)sendMessageModelBolck andError:(ErrorBlock)errorBlock {
-    NSString *json = [[NSString alloc] initWithFormat:@"http://47.116.14.251:8888/login/sendsms/%@", self.userNumber];
+    NSString *json = [[NSString alloc] initWithFormat:@"http://47.116.14.251:8888/common/sendsms/%@", self.userNumber];
     json = [json stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSURL *netWorkDataURL = [NSURL URLWithString:json];
     NSURLRequest *netWorkDataRequest = [NSURLRequest requestWithURL:netWorkDataURL];

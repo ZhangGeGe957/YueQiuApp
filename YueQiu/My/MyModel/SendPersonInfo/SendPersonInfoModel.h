@@ -9,9 +9,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface Data : JSONModel
+
+@end
+
 @interface SendPersonInfoModel : JSONModel
 @property (nonatomic, strong) NSString *msg;
+//@property (nonatomic, strong) Data *data;
 @property NSInteger code;
+
 @end
 @interface SendLabelModel : JSONModel
 @property (nonatomic, strong) NSString *msg;
