@@ -162,7 +162,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 300;
+    return 240;
 }
 
 //分栏控制器事件
@@ -173,6 +173,8 @@
 //推出发布球局界面
 - (void)pushView:(UIButton *)button {
     self.releaseView = [[ReleaseGameViewController alloc] init];
+    self.releaseView.uid = self.uid;
+    self.releaseView.mobileToken = self.mobileToken;
     [self.navigationController pushViewController:self.releaseView animated:YES];
 }
 
@@ -186,6 +188,7 @@
 - (void)p_getModel {
     ArticleModel *manager = [ArticleModel shareManager];
     manager.uid = self.uid;
+    manager.mobileToken = self.mobileToken;
     
     [[ArticleModel shareManager] getMessageWithData:^(ArticleJSONModel * _Nullable articleModel) {
         NSLog(@"%@   %ld   %@", articleModel.data, (long)articleModel.code, articleModel.msg);

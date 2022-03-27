@@ -26,6 +26,15 @@ static AddArticleModel *manager = nil;
     NSURL* urlString = [NSURL URLWithString:string];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlString];
     [request setHTTPMethod:@"POST"];
+    [request addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:self.mobileToken forHTTPHeaderField:@"mobileToken"];
+    [request addValue:self.uid forHTTPHeaderField:@"uid"];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:self.content forKey:@"content"];
+    [dic setValue:self.address forKey:@"address"];
+    [dic setValue:self.time forKey:@"time"];
+    NSData *dictPhoneData = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+    [request setHTTPBody:dictPhoneData];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error == nil) {

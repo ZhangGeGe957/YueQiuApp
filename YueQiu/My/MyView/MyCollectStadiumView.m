@@ -72,7 +72,7 @@
         [alert addAction:qqMap];
     }
     
-    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:cancel];
     
     [self.controller presentViewController:alert animated:YES completion:nil];

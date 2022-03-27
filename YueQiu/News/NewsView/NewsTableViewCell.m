@@ -17,12 +17,12 @@
     if ([self.reuseIdentifier isEqualToString:@"show"]) {
         self.headButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.headButton.layer.masksToBounds = YES;
-        self.headButton.layer.cornerRadius = 25;
+        self.headButton.layer.cornerRadius = 20;
         [self.contentView addSubview:self.headButton];
         
         self.titleNameLabel = [[UILabel alloc] init];
         self.titleNameLabel.textColor = [UIColor blackColor];
-        [self.titleNameLabel setFont:[UIFont systemFontOfSize:26]];
+        [self.titleNameLabel setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:22]];
         [self.contentView addSubview:self.titleNameLabel];
         
         self.moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -43,15 +43,15 @@
         //四个根据数据变的
         self.locationLabel = [[UILabel alloc] init];
         self.locationLabel.textColor = [UIColor blackColor];
-        [self.locationLabel setFont:[UIFont systemFontOfSize:18]];
+        [self.locationLabel setFont:[UIFont fontWithName:@"ArialMT" size:18]];
         [self.contentView addSubview:self.locationLabel];
         self.timeLabel = [[UILabel alloc] init];
         self.timeLabel.textColor = [UIColor blackColor];
-        [self.timeLabel setFont:[UIFont systemFontOfSize:18]];
+        [self.timeLabel setFont:[UIFont fontWithName:@"ArialMT" size:18]];
         [self.contentView addSubview:self.timeLabel];
         self.contentLabel = [[UILabel alloc] init];
         self.contentLabel.textColor = [UIColor blackColor];
-        [self.contentLabel setFont:[UIFont systemFontOfSize:18]];
+        [self.contentLabel setFont:[UIFont fontWithName:@"ArialMT" size:18]];
         [self.contentView addSubview:self.contentLabel];
         
         self.replyButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -60,8 +60,7 @@
         
         //预约按钮
         self.reserveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [self.reserveButton setTitle:@"抢" forState:UIControlStateNormal];
-        self.reserveButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-BoldOblique" size:22];
+        [self.reserveButton setImage:[UIImage imageNamed:@"qiang.png"] forState:UIControlStateNormal];
         self.reserveButton.layer.masksToBounds = YES;
         self.reserveButton.layer.cornerRadius = 15;
         self.reserveButton.backgroundColor = [UIColor orangeColor];
@@ -87,8 +86,8 @@
     if ([self.reuseIdentifier isEqualToString:@"show"]) {
         [self.headButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self).offset(10);
-            make.left.equalTo(self).offset(10);
-            make.size.equalTo(@50);
+            make.left.equalTo(self).offset(15);
+            make.size.equalTo(@40);
         }];
         [self.moreButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.headButton.mas_top).offset(15);
@@ -98,7 +97,7 @@
         [self.titleNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.headButton.mas_right).offset(10);
             make.top.equalTo(self.headButton.mas_top);
-            make.height.equalTo(@50);
+            make.height.equalTo(@40);
         }];
         [self.VIPImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.titleNameLabel.mas_right).offset(10);
@@ -141,21 +140,21 @@
         //四个可变的
         [self.locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.locationImageView.mas_top);
-            make.left.equalTo(self.locationImageView.mas_right).offset(10);
-            make.right.equalTo(self.moreButton.mas_left).offset(10);
+            make.left.equalTo(self.locationImageView.mas_right).offset(15);
+            make.right.equalTo(self.moreButton.mas_left).offset(15);
             make.height.equalTo(@30);
         }];
         [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.timeImageView.mas_top);
-            make.left.equalTo(self.timeImageView.mas_right).offset(10);
-            make.right.equalTo(self.moreButton.mas_left).offset(10);
+            make.left.equalTo(self.timeImageView.mas_right).offset(15);
+            make.right.equalTo(self.moreButton.mas_left).offset(15);
             make.height.equalTo(@30);
         }];
         [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentImageView.mas_top);
-            make.left.equalTo(self.contentImageView.mas_right).offset(10);
-            make.right.equalTo(self.moreButton.mas_left).offset(10);
-            make.bottom.equalTo(self.replyButton.mas_top).offset(-10);
+            make.left.equalTo(self.contentImageView.mas_right).offset(15);
+            make.right.equalTo(self.moreButton.mas_left).offset(15);
+            make.height.equalTo(@30);
         }];
         
         //分割线

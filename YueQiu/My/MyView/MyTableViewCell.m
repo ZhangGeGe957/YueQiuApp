@@ -50,7 +50,7 @@
             make.size.mas_equalTo(CGSizeMake(W / 3, 30));
         }];
         self.labelName.textAlignment = NSTextAlignmentLeft;
-        self.labelName.font = [UIFont systemFontOfSize:23];
+        [self.labelName setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:23]];
         
         self.labelPersonalSignature = [[UILabel alloc] init];
         [self.contentView addSubview:self.labelPersonalSignature];
@@ -60,8 +60,24 @@
             make.size.mas_equalTo(CGSizeMake(W * 2 / 3, 30));
         }];
         self.labelPersonalSignature.numberOfLines = 1;
-        self.labelPersonalSignature.font = [UIFont systemFontOfSize:15];
+        [self.labelPersonalSignature setFont:[UIFont fontWithName:@"ArialMT" size:15]];
     } else {
+        self.cellImageView = [[UIImageView alloc] init];
+        [self.contentView addSubview:self.cellImageView];
+        [self.cellImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self).offset(15);
+            make.top.equalTo(self.mas_top).offset(15);
+            make.size.equalTo(@30);
+        }];
+        
+        self.cellNameLabel = [[UILabel alloc] init];
+        [self.contentView addSubview:self.cellNameLabel];
+        [self.cellNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.cellImageView.mas_right).offset(20);
+            make.top.equalTo(self.mas_top).offset(15);
+            make.width.equalTo(@200);
+            make.height.equalTo(@30);
+        }];
         
     }
     

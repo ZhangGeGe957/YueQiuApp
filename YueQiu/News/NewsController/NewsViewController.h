@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIView *falseView; //一个自己的假导航栏
 @property (nonatomic, strong) UISegmentedControl *selectControl;  //分栏控制器
 @property (nonatomic, strong) UIScrollView *differentScrollView;  //滚动视图
-@property (nonatomic, strong) NSString* uid;  //唯一uid
+@property (nonatomic, strong) NSString *uid;  //唯一uid
+@property (nonatomic, strong) NSString *mobileToken;  //设备码
 
 //精选界面
 @property (nonatomic, strong) UIView *boutuqueView;

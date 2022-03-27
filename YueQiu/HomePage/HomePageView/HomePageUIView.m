@@ -29,9 +29,6 @@ NSString *const identityHomePageViewNotice = @"homePage";
     
     [self.tableView registerClass:[HomePageTableViewCell class] forCellReuseIdentifier:@"imageView"];
     [self.tableView registerClass:[HomePageTableViewCell class] forCellReuseIdentifier:@"stadium"];
-    
-
-    
     return self;
 }
 

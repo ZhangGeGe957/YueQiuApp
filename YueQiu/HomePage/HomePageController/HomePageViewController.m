@@ -28,8 +28,6 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     // Do any additional setup after loading the view.
     
     //初始化数据
-    
-    
     self.navigationController.navigationBarHidden = NO;
     
     UIBarButtonItem* search = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sousuo.png"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSearch)];
@@ -43,7 +41,7 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     [self getMoreInformation];
     
     //初始化界面
-    self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H - [self hGetTabHeight])];
+    self.homePageView = [[HomePageUIView alloc] initWithFrame:CGRectMake(0, 0, W, H / 1.07)];
     [self.view addSubview:self.homePageView];
     
     [self p_initAllData];
@@ -134,12 +132,10 @@ NSString *const identityHomePageControllerNotice = @"homePage";
             }
             //设置左上角定位按钮
             UIButton* leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            leftButton.frame = CGRectMake(0, 0, 20, 20);
             [leftButton setImage:[UIImage imageNamed:@"city.png"] forState:UIControlStateNormal];
             [leftButton setTitle:city forState:UIControlStateNormal];
             [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            UIBarButtonItem* leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftButton];
-
+            UIBarButtonItem* leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
             self.navigationItem.leftBarButtonItem = leftItem;
             [self searchPOI:city];
             // 位置名

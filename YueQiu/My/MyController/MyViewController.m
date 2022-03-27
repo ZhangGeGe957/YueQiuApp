@@ -24,6 +24,7 @@
 @property (nonatomic, strong) UIButton *tempButton;  //指针，指向选择的按钮
 @property (nonatomic, retain) UIAlertController* sendAlertView;  //提示框
 @property (nonatomic, strong) NSString *transString;  //传输图片的类型
+@property (nonatomic, strong) NSArray *imageViewArray;  //图片名字
 
 @end
 
@@ -46,9 +47,9 @@
     
     
     //tableview
-    self.menuArray = [NSArray arrayWithObjects:@"编辑资料",@"我的课程列表", @"我收藏的球馆",nil];
-
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, W, H) style:UITableViewStylePlain];
+    self.menuArray = [NSArray arrayWithObjects:@"编辑资料", @"我的球局", @"我收藏的球馆", nil];
+    self.imageViewArray = [NSArray arrayWithObjects:@"bianji3.png", @"lanqiu-copy-2.png", @"shoucang-4.png", nil];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, W, H / 1.07) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[MyTableViewCell class] forCellReuseIdentifier:@"background"];
@@ -93,7 +94,8 @@
       return self.myCell;
   } else {
       self.myCell = [self.tableView dequeueReusableCellWithIdentifier:@"menu"];
-      self.myCell.textLabel.text = self.menuArray[indexPath.row - 2];
+      [self.myCell.cellImageView setImage:[UIImage imageNamed:self.imageViewArray[indexPath.row - 2]]];
+      self.myCell.cellNameLabel.text = self.menuArray[indexPath.row - 2];
       self.myCell.selectionStyle = UITableViewCellSelectionStyleNone;
       return self.myCell;
   }

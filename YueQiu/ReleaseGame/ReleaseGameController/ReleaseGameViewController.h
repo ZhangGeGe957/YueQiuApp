@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ReleaseGameViewController : UIViewController
 
 @property (nonatomic, strong) ReleaseGameView *releaseGameView;
+@property (nonatomic, strong) NSString *uid;  //唯一uid
+@property (nonatomic, strong) NSString *mobileToken;  //设备码
 
 @end
 

@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ArticleModel : NSObject
 
-@property (nonatomic, strong) NSString* uid;
+@property (nonatomic, strong) NSString *mobileToken;
+@property (nonatomic, strong) NSString *uid;
 
 + (instancetype)shareManager;
 - (void)getMessageWithData:(GetModelBlock)getMessageBlock andError:(ErrorBlock)errorBlock;

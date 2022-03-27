@@ -15,10 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AddArticleModel : NSObject
 
+@property (nonatomic, strong) NSString *mobileToken;
 @property (nonatomic, strong) NSString *uid;
-@property (nonatomic, strong) NSString *article_name;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *time;
 
 + (instancetype)shareManager;
 - (void)AddArticleWithData:(AddModelBlock)getMessageBlock andError:(ErrorBlock)errorBlock;

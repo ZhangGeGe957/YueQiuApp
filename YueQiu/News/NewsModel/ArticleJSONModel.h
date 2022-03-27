@@ -16,25 +16,23 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ArticleComment: JSONModel
-@property NSInteger comment_id;
+@property NSInteger commentId;
 @property (nonatomic, strong) NSString* uid;
 @property (nonatomic, strong) NSString* username;
-@property (nonatomic, strong) NSString* head_sculpture;
-@property (nonatomic, strong) NSString* article_id;
+@property (nonatomic, strong) NSString* headSculpture;
+@property (nonatomic, strong) NSString* articleId;
 @property (nonatomic, strong) NSString* comment;
-@property (nonatomic, strong) NSDate *gmt_create;
+@property (nonatomic, strong) NSString *gmtCreate;
 @end
 
 @interface ArticleContent: JSONModel
-@property (nonatomic, strong) NSString* article_id;
+@property (nonatomic, strong) NSString* articleId;
 @property (nonatomic, strong) NSString* uid;
 @property (nonatomic, strong) NSString* username;
-@property (nonatomic, strong) NSString* head_sculpture;
-@property (nonatomic, strong) NSString* article_name;
+@property (nonatomic, strong) NSString* headSculpture;
 @property (nonatomic, strong) NSString* content;
 @property (nonatomic, strong) NSString* address;
-@property (nonatomic, strong) NSDate *gmt_create;
-@property NSInteger is_delete;
+@property (nonatomic, strong) NSString *gmtCreate;
 @property (nonatomic, strong) NSArray<ArticleComment> *comment;
 @end
 
