@@ -123,6 +123,7 @@
 		CCDA8BB727EEB2D000FE2929 /* DetectLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDA8BB627EEB2D000FE2929 /* DetectLoginModel.m */; };
 		CCDA8BBB27EEC1E800FE2929 /* LogoffModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDA8BBA27EEC1E800FE2929 /* LogoffModel.m */; };
 		CCDA8BBE27EEC20900FE2929 /* LogoffManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDA8BBD27EEC20900FE2929 /* LogoffManager.m */; };
+		CCF6136627F1BE8800AF3F3C /* ReleaseGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF6136527F1BE8800AF3F3C /* ReleaseGameCell.m */; };
 		CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */; };
 		CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */; };
 		CCFA4B9C27AAF5D500F2BB18 /* sousuo.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFA4B9B27AAF5D500F2BB18 /* sousuo.png */; };
@@ -336,6 +337,8 @@
 		CCDA8BBA27EEC1E800FE2929 /* LogoffModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoffModel.m; sourceTree = "<group>"; };
 		CCDA8BBC27EEC20900FE2929 /* LogoffManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoffManager.h; sourceTree = "<group>"; };
 		CCDA8BBD27EEC20900FE2929 /* LogoffManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoffManager.m; sourceTree = "<group>"; };
+		CCF6136427F1BE8800AF3F3C /* ReleaseGameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseGameCell.h; sourceTree = "<group>"; };
+		CCF6136527F1BE8800AF3F3C /* ReleaseGameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseGameCell.m; sourceTree = "<group>"; };
 		CCFA4B9227AAF3BB00F2BB18 /* HQBSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchView.h; sourceTree = "<group>"; };
 		CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQBSearchView.m; sourceTree = "<group>"; };
 		CCFA4B9527AAF49700F2BB18 /* HQBSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchViewController.h; sourceTree = "<group>"; };
@@ -987,6 +990,8 @@
 			children = (
 				83FB1A5427CA294B005D6292 /* ReleaseGameView.h */,
 				83FB1A5527CA294B005D6292 /* ReleaseGameView.m */,
+				CCF6136427F1BE8800AF3F3C /* ReleaseGameCell.h */,
+				CCF6136527F1BE8800AF3F3C /* ReleaseGameCell.m */,
 			);
 			path = ReleaseGameView;
 			sourceTree = "<group>";
@@ -1390,6 +1395,7 @@
 				CC43FD1E27E366CB00CB1AE0 /* SetPasswordManager.m in Sources */,
 				83C798C92789C100000F68C1 /* TrainView.m in Sources */,
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
+				CCF6136627F1BE8800AF3F3C /* ReleaseGameCell.m in Sources */,
 				CCDA8BBE27EEC20900FE2929 /* LogoffManager.m in Sources */,
 				83C798692789BDFE000F68C1 /* SceneDelegate.m in Sources */,
 				CCDA8BB727EEB2D000FE2929 /* DetectLoginModel.m in Sources */,
@@ -1591,7 +1597,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1611,7 +1617,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1626,7 +1632,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1646,7 +1652,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

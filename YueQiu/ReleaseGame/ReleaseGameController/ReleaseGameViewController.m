@@ -80,10 +80,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-//回收键盘
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.releaseGameView.contentTextField resignFirstResponder];
-}
+
 
 /*
 #pragma mark - Navigation
