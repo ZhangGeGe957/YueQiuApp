@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) ReleaseGameView *releaseGameView;
 @property (nonatomic, strong) NSString *uid;  //唯一uid
 @property (nonatomic, strong) NSString *mobileToken;  //设备码
+@property (nonatomic, retain) UIAlertController* sendAlertView;  //提示框
 
 @end
 

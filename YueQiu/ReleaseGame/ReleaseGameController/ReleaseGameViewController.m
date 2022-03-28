@@ -64,20 +64,27 @@
 
 //发送按钮事件
 - (void)pressSend:(UIButton *)button {
-    AddArticleModel *addArticle = [AddArticleModel shareManager];
-    addArticle.uid = self.uid;
-    addArticle.mobileToken = self.mobileToken;
-    addArticle.content = self.releaseGameView.contentTextField.text;
-    addArticle.address = self.releaseGameView.locationTextField.text;
-    addArticle.time = self.dateAndTime;
-    
-    [[AddArticleModel shareManager] AddArticleWithData:^(AddArticleJSONModel * _Nullable addArticleModel) {
-        NSLog(@"%@  %ld", addArticleModel.msg, addArticleModel.code);
-    } andError:^(NSError * _Nullable error) {
-        NSLog(@"获取失败!");
-    }];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    if ([self.releaseGameView.locationTextField.text isEqualToString:@""] || [self.releaseGameView.contentTextField.text isEqualToString:@""]) {
+        //弹窗提示
+        self.sendAlertView = [UIAlertController alertControllerWithTitle:@"请输入位置和内容！" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [self.sendAlertView addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:self.sendAlertView animated:true completion:nil];
+    } else {
+        AddArticleModel *addArticle = [AddArticleModel shareManager];
+        addArticle.uid = self.uid;
+        addArticle.mobileToken = self.mobileToken;
+        addArticle.content = self.releaseGameView.contentTextField.text;
+        addArticle.address = self.releaseGameView.locationTextField.text;
+        addArticle.time = self.dateAndTime;
+        
+        [[AddArticleModel shareManager] AddArticleWithData:^(AddArticleJSONModel * _Nullable addArticleModel) {
+            NSLog(@"%@  %ld", addArticleModel.msg, addArticleModel.code);
+        } andError:^(NSError * _Nullable error) {
+            NSLog(@"获取失败!");
+        }];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 

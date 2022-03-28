@@ -219,11 +219,11 @@ NSString *const identityAuthentication = @"ZhangGeGe";
 - (void)p_presentMainView {
     //初始化视图
     self.homePageView = [[HomePageViewController alloc] init];
-//    self.trainView = [[TrainViewController alloc] init];
+    self.trainView = [[TrainViewController alloc] init];
     self.newsView = [[NewsViewController alloc] init];
     self.myView = [[MyViewController alloc] init];
     self.homePageView.title = @"首页";
-    self.trainView.title = @"训练";
+    self.trainView.title = @"社区";
     self.newsView.title = @"球局";
     self.myView.title = @"我的";
     
@@ -236,14 +236,15 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     //初始化导航控制器
     self.homePageNavigationController = [[UINavigationController alloc] initWithRootViewController:self.homePageView];
     self.homePageNavigationController.tabBarItem.image = [UIImage imageNamed:@"xiazai45.png"];
-//    self.trainNavigationController = [[UINavigationController alloc] initWithRootViewController:self.trainView];
+    self.trainNavigationController = [[UINavigationController alloc] initWithRootViewController:self.trainView];
+    self.trainNavigationController.tabBarItem.image = [UIImage imageNamed:@"shequ.png"];
     self.newsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.newsView];
     self.newsNavigationController.tabBarItem.image = [UIImage imageNamed:@"lanqiu-copy-2.png"];
     self.myNavigationController = [[UINavigationController alloc] initWithRootViewController:self.myView];
     self.myNavigationController.tabBarItem.image = [UIImage imageNamed:@"geren-copy.png"];
     
     //存储导航控制器的数组
-    self.viewArray = [[NSArray alloc] initWithObjects:self.homePageNavigationController, self.newsNavigationController, self.myNavigationController, nil];
+    self.viewArray = [[NSArray alloc] initWithObjects:self.homePageNavigationController, self.newsNavigationController, self.trainNavigationController, self.myNavigationController, nil];
     
     //分栏控制器
     self.tabBarController = [[UITabBarController alloc] init];

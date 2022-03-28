@@ -6,13 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TrainView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TrainViewController : UIViewController
+@interface TrainViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) TrainView *trainView;
+@property (nonatomic, strong) UITableView *showTableView;
 
 @end
 
