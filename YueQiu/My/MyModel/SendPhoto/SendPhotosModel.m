@@ -36,7 +36,6 @@ static SendPhotosModel* manager = nil;
     [dict setValue:self.token forKey:@"mobileToken"];
     [dict setValue:self.onlyUid forKey:@"uid"];
     [manager POST:tempString parameters:nil headers:dict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"yyyyMMddHHmmss";
         NSString *str = [formatter stringFromDate:[NSDate date]];
