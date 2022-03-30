@@ -32,12 +32,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* headSculpture;
 @property (nonatomic, strong) NSString* content;
 @property (nonatomic, strong) NSString* address;
+@property (nonatomic, strong) NSString* time;
 @property (nonatomic, strong) NSString *gmtCreate;
 @property (nonatomic, strong) NSArray<ArticleComment> *comment;
 @end
 
 @interface ArticleJSONModel: JSONModel
-@property (nonatomic, strong) ArticleContent* data;
+@property (nonatomic, strong) NSArray<ArticleContent> *data;
 @property (nonatomic, strong) NSString *msg;
 @property NSInteger code;
 @end

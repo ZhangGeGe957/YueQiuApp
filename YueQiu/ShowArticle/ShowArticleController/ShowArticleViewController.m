@@ -7,6 +7,7 @@
 
 #import "ShowArticleViewController.h"
 #import "ShowArticleView.h"
+#import <SDWebImage/UIButton+WebCache.h>
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -44,6 +45,11 @@
     self.title = @"球局";
     
     self.showView = [[ShowArticleView alloc] initWithFrame:CGRectMake(0, self.navHeight, myWidth, myHeight - self.navHeight)];
+    [self.showView.userImageView sd_setBackgroundImageWithURL:[NSURL URLWithString:self.getAllData[self.location][3]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"head_portrait.jpg"]];
+    self.showView.userLabel.text = self.getAllData[self.location][2];
+    self.showView.locationLabel.text = self.getAllData[self.location][5];
+    self.showView.timeLabel.text = self.getAllData[self.location][6];
+    self.showView.contentLabel.text = self.getAllData[self.location][4];
     [self.view addSubview:self.showView];
 }
 

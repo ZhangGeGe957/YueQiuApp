@@ -25,6 +25,10 @@
 //初始化UI
 - (void)p_initUI {
     //四个固定图像
+    self.userImageView = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.userImageView.layer.masksToBounds = YES;
+    self.userImageView.layer.cornerRadius = 20;
+    [self addSubview:self.userImageView];
     self.locationImageView = [[UIImageView alloc] init];
     self.locationImageView.image = [UIImage imageNamed:@"didian.png"];
     [self addSubview:self.locationImageView];
@@ -36,9 +40,14 @@
     [self addSubview:self.contentImageView];
     
     //四个固定的图像
-    [self.locationImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self).offset(30);
         make.left.equalTo(self).offset(30);
+        make.size.equalTo(@40);
+    }];
+    [self.locationImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.userImageView.mas_bottom).offset(10);
+        make.left.equalTo(self.userImageView.mas_left);
         make.size.equalTo(@30);
     }];
     [self.timeImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -53,23 +62,31 @@
     }];
     
     //四个根据数据变的
+    self.userLabel = [[UILabel alloc] init];
+    self.userLabel.textColor = [UIColor blackColor];
+    [self.userLabel setFont:[UIFont fontWithName:@"ArialRoundedMTBold" size:22]];
+    [self addSubview:self.userLabel];
     self.locationLabel = [[UILabel alloc] init];
     self.locationLabel.textColor = [UIColor blackColor];
     [self.locationLabel setFont:[UIFont systemFontOfSize:18]];
-    self.locationLabel.text = @"dasfsfs";
     [self addSubview:self.locationLabel];
     self.timeLabel = [[UILabel alloc] init];
     self.timeLabel.textColor = [UIColor blackColor];
     [self.timeLabel setFont:[UIFont systemFontOfSize:18]];
-    self.timeLabel.text = @"dasfsfs";
     [self addSubview:self.timeLabel];
     self.contentLabel = [[UILabel alloc] init];
     self.contentLabel.textColor = [UIColor blackColor];
     [self.contentLabel setFont:[UIFont systemFontOfSize:18]];
-    self.contentLabel.text = @"dasfsfs";
+    self.contentLabel.numberOfLines = 0;
     [self addSubview:self.contentLabel];
     
     //四个可变的
+    [self.userLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.userImageView.mas_top);
+        make.left.equalTo(self.userImageView.mas_right).offset(10);
+        make.right.equalTo(self.mas_right).offset(-30);
+        make.height.equalTo(@40);
+    }];
     [self.locationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.locationImageView.mas_top);
         make.left.equalTo(self.locationImageView.mas_right).offset(10);
@@ -86,7 +103,7 @@
         make.top.equalTo(self.contentImageView.mas_top);
         make.left.equalTo(self.contentImageView.mas_right).offset(10);
         make.right.equalTo(self.mas_right).offset(-30);
-        make.height.equalTo(@30);
+        make.height.equalTo(@100);
     }];
 }
 /*

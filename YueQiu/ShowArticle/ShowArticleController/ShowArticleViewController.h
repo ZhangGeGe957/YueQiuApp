@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ShowArticleViewController : UIViewController
 
 @property CGFloat navHeight;  //获取到的导航栏高度
+@property (nonatomic, strong) NSMutableArray *getAllData;  //所有数据
+@property NSInteger location;
 
 @end
 

@@ -10,6 +10,8 @@
 #import "NewsTableViewCell.h"
 #import "ArticleModel.h"
 #import "ShowArticleViewController.h"
+#import <SDWebImage/UIButton+WebCache.h>
+#import "TrainShowTableViewCell.h""
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -46,8 +48,6 @@
 }
 
 - (void)p_initUI {
-    //初始化数据
-    self.getAllData = [[NSMutableArray alloc] init];
     
     //获取导航栏+状态栏的高度
     self.navHeight = self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height;
@@ -86,7 +86,7 @@
     //分栏控制器初始化
     self.selectControl = [[UISegmentedControl alloc] init];
     [self.selectControl insertSegmentWithTitle:@"精选" atIndex:0 animated:YES];
-    [self.selectControl insertSegmentWithTitle:@"关注" atIndex:1 animated:YES];
+    [self.selectControl insertSegmentWithTitle:@"社区" atIndex:1 animated:YES];
     [self.selectControl setTintColor:[UIColor blueColor]];
     [self.selectControl setBackgroundImage:[UIImage imageNamed:@"kongbai.png"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.selectControl setBackgroundImage:[UIImage imageNamed:@"charuhengxian-line-currency-Inserthorizontalline.png"] forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
@@ -124,34 +124,32 @@
     self.showFollowTableView.tag = 222;
     self.showFollowTableView.backgroundColor = [UIColor whiteColor];
     [self.followView addSubview:self.showFollowTableView];
-    [self.showFollowTableView registerClass:[NewsTableViewCell class] forCellReuseIdentifier:@"show"];
+    [self.showFollowTableView registerClass:[TrainShowTableViewCell class] forCellReuseIdentifier:@"show"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NewsTableViewCell *cell = [self.showFollowTableView dequeueReusableCellWithIdentifier:@"show"];
     if (tableView.tag == 111) {
-        [cell.headButton setImage:[UIImage imageNamed:@"3.jpg"] forState:UIControlStateNormal];
-        cell.titleNameLabel.text = @"NBA分部";
-        cell.locationLabel.text = @"西安邮电大学体育场";
-        cell.timeLabel.text = @"1月20日 9:00";
-        cell.contentLabel.text = @"5V5交流切磋赛，欢迎切磋！欢迎大家来被我们打爆";
+        NewsTableViewCell *cell = [self.showBoutiqueTableView dequeueReusableCellWithIdentifier:@"show"];
+        [cell.headButton sd_setBackgroundImageWithURL:[NSURL URLWithString:self.getAllData[indexPath.row][3]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"head_portrait.jpg"]];
+        cell.titleNameLabel.text = self.getAllData[indexPath.row][2];
+        cell.locationLabel.text = self.getAllData[indexPath.row][5];
+        cell.timeLabel.text = self.getAllData[indexPath.row][6];
+        cell.contentLabel.text = self.getAllData[indexPath.row][4];
         cell.VIPImageView.hidden = YES;
         [cell.reserveButton addTarget:self action:@selector(pushShowArticle:) forControlEvents:UIControlEventTouchUpInside];
+        return cell;
     } else {
-        [cell.headButton setImage:[UIImage imageNamed:@"3.jpg"] forState:UIControlStateNormal];
-        cell.titleNameLabel.text = @"513分部";
-        cell.locationLabel.text = @"西安邮电大学体育场";
-        cell.timeLabel.text = @"1月22日 9:00";
-        cell.contentLabel.text = @"5V5交流切磋赛，欢迎切磋！欢迎大家来被我们打爆";
-        cell.VIPImageView.hidden = YES;
-        [cell.reserveButton addTarget:self action:@selector(pushShowArticle:) forControlEvents:UIControlEventTouchUpInside];
+        TrainShowTableViewCell *myShowCell = [self.showFollowTableView dequeueReusableCellWithIdentifier:@"show" forIndexPath:indexPath];
+        [myShowCell.showImageView setImage:[UIImage imageNamed:@"3.jpg"]];
+        myShowCell.titleShowLabel.text = @"这是一个牛逼哄哄的标题aaugugubuvbvtuvuyv说的孤独感";
+        myShowCell.readpersonLabel.text = @"100";
+        return myShowCell;
     }
-    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (tableView.tag == 111) {
-        return 3;
+        return self.getAllData.count;
     } else {
         return 2;
     }
@@ -162,7 +160,21 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 240;
+    if (tableView.tag == 111) {
+        return 240;
+    } else {
+        return 120;
+    }
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView.tag == 111) {
+        self.showArticleView = [[ShowArticleViewController alloc] init];
+        self.showArticleView.getAllData = [[NSMutableArray alloc] initWithArray:self.getAllData];
+        self.showArticleView.location = indexPath.row;
+        [self.navigationController pushViewController:self.showArticleView animated:YES];
+    }
 }
 
 //分栏控制器事件
@@ -180,12 +192,17 @@
 
 //推出文章界面
 - (void)pushShowArticle:(UIButton *)button {
-    self.showArticleView = [[ShowArticleViewController alloc] init];
-    [self.navigationController pushViewController:self.showArticleView animated:YES];
+//    self.showArticleView = [[ShowArticleViewController alloc] init];
+//    self.showArticleView.getAllData = self.getAllData;
+//    [self.navigationController pushViewController:self.showArticleView animated:YES];
+    NSLog(@"dadadadad");
 }
 
 //获取数据
 - (void)p_getModel {
+    //初始化数据
+    self.getAllData = [[NSMutableArray alloc] init];
+    
     ArticleModel *manager = [ArticleModel shareManager];
     manager.uid = self.uid;
     manager.mobileToken = self.mobileToken;
@@ -193,7 +210,45 @@
     [[ArticleModel shareManager] getMessageWithData:^(ArticleJSONModel * _Nullable articleModel) {
         NSLog(@"%@   %ld   %@", articleModel.data, (long)articleModel.code, articleModel.msg);
         
-        NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+        NSMutableArray *tempArrayOne = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i < articleModel.data.count; i++) {
+            tempArrayOne = [[NSMutableArray alloc] init];
+
+            [tempArrayOne addObject:[articleModel.data[i] valueForKey:@"articleId"]];
+            [tempArrayOne addObject:[articleModel.data[i] valueForKey:@"uid"]];
+            [tempArrayOne addObject:[articleModel.data[i] valueForKey:@"username"]];
+            [tempArrayOne addObject:[articleModel.data[i] valueForKey:@"headSculpture"]];
+            [tempArrayOne addObject:[articleModel.data[i] valueForKey:@"content"]];
+            [tempArrayOne addObject:[articleModel.data[i] valueForKey:@"address"]];
+            [tempArrayOne addObject:[articleModel.data[i] valueForKey:@"time"]];
+            [tempArrayOne addObject:[articleModel.data[i] valueForKey:@"gmtCreate"]];
+
+            NSMutableArray *tempArrayTwo = [[NSMutableArray alloc] init];
+            if ([[articleModel.data[i] valueForKey:@"comment"] count]) {
+                for (int j = 0; j < [[articleModel.data[i] valueForKey:@"comment"] count]; j++) {
+                    tempArrayTwo = [[NSMutableArray alloc] init];
+                    [tempArrayTwo addObject:[articleModel.data[i][@"comment"][j] valueForKey:@"gmtCreate"]];
+                    [tempArrayTwo addObject:[articleModel.data[i][@"comment"][j] valueForKey:@"commentId"]];
+                    [tempArrayTwo addObject:[articleModel.data[i][@"comment"][j] valueForKey:@"uid"]];
+                    [tempArrayTwo addObject:[articleModel.data[i][@"comment"][j] valueForKey:@"username"]];
+                    [tempArrayTwo addObject:[articleModel.data[i][@"comment"][j] valueForKey:@"headSculpture"]];
+                    [tempArrayTwo addObject:[articleModel.data[i][@"comment"][j] valueForKey:@"articleId"]];
+                    [tempArrayTwo addObject:[articleModel.data[i][@"comment"][j] valueForKey:@"comment"]];
+                    [tempArrayTwo addObject:[articleModel.data[i][@"comment"][j] valueForKey:@"gmtCreate"]];
+                    [tempArrayOne addObject:tempArrayTwo];
+                }
+            } else {
+                [tempArrayOne addObject:@""];
+            }
+            [self.getAllData addObject:tempArrayOne];
+        }
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.showFollowTableView reloadData];
+            [self.showBoutiqueTableView reloadData];
+        });
+        
         
     } andError:^(NSError * _Nullable error) {
         NSLog(@"获取失败！");

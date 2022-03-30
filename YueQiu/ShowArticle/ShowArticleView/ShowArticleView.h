@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ShowArticleView : UIView
 
-@property (nonatomic, strong) UIImageView *userImageView;  //用户图片
+@property (nonatomic, strong) UIButton *userImageView;  //用户图片
 @property (nonatomic, strong) UIImageView *locationImageView;  //定位图片
 @property (nonatomic, strong) UIImageView *timeImageView;  //时间图片
 @property (nonatomic, strong) UIImageView *contentImageView;  //内容图像

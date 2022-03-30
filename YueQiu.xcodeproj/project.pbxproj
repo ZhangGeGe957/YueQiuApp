@@ -705,6 +705,8 @@
 		837B712E279A5BF700DBD856 /* NewsView */ = {
 			isa = PBXGroup;
 			children = (
+				835D71C527F1D6690019C8D3 /* TrainShowTableViewCell.h */,
+				835D71C627F1D6690019C8D3 /* TrainShowTableViewCell.m */,
 				837B7144279AAD3800DBD856 /* NewsTableViewCell.h */,
 				837B7145279AAD3800DBD856 /* NewsTableViewCell.m */,
 			);
@@ -917,8 +919,6 @@
 		83C798AA2789C021000F68C1 /* TrainView */ = {
 			isa = PBXGroup;
 			children = (
-				835D71C527F1D6690019C8D3 /* TrainShowTableViewCell.h */,
-				835D71C627F1D6690019C8D3 /* TrainShowTableViewCell.m */,
 			);
 			path = TrainView;
 			sourceTree = "<group>";
