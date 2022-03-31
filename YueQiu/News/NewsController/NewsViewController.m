@@ -11,7 +11,7 @@
 #import "ArticleModel.h"
 #import "ShowArticleViewController.h"
 #import <SDWebImage/UIButton+WebCache.h>
-#import "TrainShowTableViewCell.h""
+#import "TrainShowTableViewCell.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height

@@ -7,8 +7,10 @@
 
 #import <Foundation/Foundation.h>
 #import "ArticleJSONModel.h"
+#import "AddArticleJSONModel.h"
 
 typedef void (^GetModelBlock)(ArticleJSONModel * _Nullable articleModel);
+typedef void (^MessageModelBlock)(AddArticleJSONModel * _Nullable returnMessageModel);
 typedef void (^ErrorBlock)(NSError * _Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
@@ -17,9 +19,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *mobileToken;
 @property (nonatomic, strong) NSString *uid;
+@property (nonatomic, strong) NSString *articleId;
 
 + (instancetype)shareManager;
 - (void)getMessageWithData:(GetModelBlock)getMessageBlock andError:(ErrorBlock)errorBlock;
+- (void)delectMessageWithData:(MessageModelBlock)returnMessageBlock andError:(ErrorBlock)errorBlock;
 
 @end
 

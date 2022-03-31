@@ -42,4 +42,26 @@ static ArticleModel* manager = nil;
     [dataTask resume];
 }
 
+- (void)delectMessageWithData:(MessageModelBlock)returnMessageBlock andError:(ErrorBlock)errorBlock {
+    NSString* string = [NSString stringWithFormat:@"http://47.116.14.251:8888/article/deleteArticle/%@", self.articleId];
+    NSURL* urlString = [NSURL URLWithString:string];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:urlString];
+    [request setHTTPMethod:@"POST"];
+    [request addValue:@"application/json;UTF-8" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:self.mobileToken forHTTPHeaderField:@"mobileToken"];
+    [request addValue:self.uid forHTTPHeaderField:@"uid"];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil) {
+            AddArticleJSONModel *returnMessage = [[AddArticleJSONModel alloc] initWithData:data error:nil];
+            //使用Block传值将值传回去
+            returnMessageBlock(returnMessage);
+        } else {
+            //使用Block传值将值传回去
+            errorBlock(error);
+        }
+    }];
+    [dataTask resume];
+}
+
 @end

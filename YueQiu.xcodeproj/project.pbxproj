@@ -115,7 +115,6 @@
 		CC6C5FF627CE3A90004767FD /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6C5FF527CE3A90004767FD /* city.png */; };
 		CC89C27D27C2513C0096C12D /* MyCollectStadiumController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */; };
 		CC89C28027C2515D0096C12D /* MyCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C27F27C2515D0096C12D /* MyCourseViewController.m */; };
-		CC89C28327C251770096C12D /* MyCourseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28227C251770096C12D /* MyCourseView.m */; };
 		CC89C28627C2518C0096C12D /* MyCollectStadiumView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */; };
 		CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */; };
 		CCDA8BB727EEB2D000FE2929 /* DetectLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDA8BB627EEB2D000FE2929 /* DetectLoginModel.m */; };
@@ -319,8 +318,6 @@
 		CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectStadiumController.m; sourceTree = "<group>"; };
 		CC89C27E27C2515D0096C12D /* MyCourseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCourseViewController.h; sourceTree = "<group>"; };
 		CC89C27F27C2515D0096C12D /* MyCourseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCourseViewController.m; sourceTree = "<group>"; };
-		CC89C28127C251770096C12D /* MyCourseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCourseView.h; sourceTree = "<group>"; };
-		CC89C28227C251770096C12D /* MyCourseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCourseView.m; sourceTree = "<group>"; };
 		CC89C28427C2518C0096C12D /* MyCollectStadiumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectStadiumView.h; sourceTree = "<group>"; };
 		CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectStadiumView.m; sourceTree = "<group>"; };
 		CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseAndStadiumCell.h; sourceTree = "<group>"; };
@@ -418,12 +415,8 @@
 		8314714D27EAA66C00954C69 /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				CC89C28427C2518C0096C12D /* MyCollectStadiumView.h */,
-				CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */,
 				CC89C28727C251B20096C12D /* CourseAndStadiumCell.h */,
 				CC89C28827C251B20096C12D /* CourseAndStadiumCell.m */,
-				CC89C28127C251770096C12D /* MyCourseView.h */,
-				CC89C28227C251770096C12D /* MyCourseView.m */,
 			);
 			name = Course;
 			sourceTree = "<group>";
@@ -559,6 +552,15 @@
 				CCDE56ED27F5947C000F4FA2 /* GetLocationManager.m */,
 			);
 			path = ReleaseModel;
+			sourceTree = "<group>";
+		};
+		83329DD027F5C566008CEDF5 /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				CC89C28427C2518C0096C12D /* MyCollectStadiumView.h */,
+				CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */,
+			);
+			path = Collect;
 			sourceTree = "<group>";
 		};
 		8333B11F27C3240900858A48 /* Reserve */ = {
@@ -1103,6 +1105,7 @@
 		CCFA4B9D27AB8F5600F2BB18 /* MyView */ = {
 			isa = PBXGroup;
 			children = (
+				83329DD027F5C566008CEDF5 /* Collect */,
 				8314714D27EAA66C00954C69 /* Course */,
 				8314714C27EAA64F00954C69 /* Edit */,
 				8314714B27EAA63900954C69 /* Setting */,
@@ -1373,7 +1376,6 @@
 				835D71C727F1D6690019C8D3 /* TrainShowTableViewCell.m in Sources */,
 				8344FC8A27BE1DD000C534D5 /* RegisterView.m in Sources */,
 				CC36E6FE27EA237700E0821F /* EditController.m in Sources */,
-				CC89C28327C251770096C12D /* MyCourseView.m in Sources */,
 				8333B12427C3244200858A48 /* ReserveView.m in Sources */,
 				8314715627EAA7D400954C69 /* SendPhotosJSONModel.m in Sources */,
 				CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */,
@@ -1589,7 +1591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1624,7 +1626,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AZXU3DBFVN;
+				DEVELOPMENT_TEAM = ZBXPJ2367M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";

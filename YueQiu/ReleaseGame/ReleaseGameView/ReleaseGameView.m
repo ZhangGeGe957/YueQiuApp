@@ -151,7 +151,7 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ReleaseGameCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"1"];
-    if(self.searchArray.count != 0) {
+    if (self.searchArray.count != 0) {
         cell.nameLabel.text = self.searchArray[indexPath.row];
         cell.typeAndPlaceLabel.text = self.typeAndPlaceArray[indexPath.row];
         cell.distanceLabel.text = self.distanceArray[indexPath.row];
