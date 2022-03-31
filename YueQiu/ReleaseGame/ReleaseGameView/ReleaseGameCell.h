@@ -10,6 +10,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ReleaseGameCell : UITableViewCell
+@property (nonatomic, strong) UILabel* nameLabel;
+@property (nonatomic, strong) UILabel* typeAndPlaceLabel;
+@property (nonatomic, strong) UILabel* distanceLabel;
 
 @end
 

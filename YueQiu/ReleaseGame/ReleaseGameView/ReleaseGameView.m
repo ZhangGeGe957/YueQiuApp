@@ -18,6 +18,7 @@
     
     //初始化控件
     [self p_initReleaseUI];
+
     
     return self;
 }
@@ -25,7 +26,7 @@
 - (void)tableViewInit {
     
     if (!self.tableView) {
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, myWidth, myWidth - 70, myHeight / 2) style:UITableViewStylePlain];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, myWidth / 4 + 30, myWidth, myHeight / 2) style:UITableViewStylePlain];
     }
 }
 
@@ -57,6 +58,7 @@
     self.locationTextField.tag = 999;
     [self.locationTextField setFont:[UIFont systemFontOfSize:20]];
     self.locationTextField.delegate = self;
+    self.locationTextField.font = [UIFont systemFontOfSize:15];
     [self addSubview:self.locationTextField];
     [self.locationTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.locationImageView.mas_right).offset(10);
@@ -107,7 +109,6 @@
         make.width.equalTo(@100);
         make.height.equalTo(@40);
     }];
-    [self loadData];
 }
 //回收键盘
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -116,14 +117,7 @@
     [self.tableView removeFromSuperview];
 }
 
-//数据源...
-- (void)loadData {
-    NSArray *arr = @[@"QA", @"WS", @"ED", @"RF", @"TG", @"HY", @"UJ", @"KI", @"OL", @"P", @"ZA", @"XS", @"CD", @"VF", @"BG", @"NH", @"MJ"];
-    _orginalArray = [NSMutableArray arrayWithCapacity:200];
-    for (int i = 0; i < [arr count]; i ++) {
-        [_orginalArray addObject:arr[i]];
-    }
-}
+
 - (void)createTableView {
     [self tableViewInit];
     //搜索UITableView
@@ -133,54 +127,115 @@
     [self.tableView registerClass:[ReleaseGameCell class] forCellReuseIdentifier:@"1"];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 100;
+//}
 
 - (void)textFieldDidChangeSelection:(UITextField *)textField {
     if (textField.tag == 999) {
         [self createTableView];
         if (self.locationTextField.text != nil && self.locationTextField.text.length > 0) {
-                _searchArray = [NSMutableArray array];//这里可以说是清空tableview的旧dataSource
-                for (NSString *str in _orginalArray) {
-                    if ([str rangeOfString:self.locationTextField.text options:NSCaseInsensitiveSearch].length > 0) {
-                        [_searchArray addObject:str];
-            
-                        [self.tableView reloadData];
-                    }
-                }
-            }
-        [self.tableView reloadData];
+            self.locationArray = [[NSMutableArray alloc] init];
+            self.searchArray = [[NSMutableArray alloc] init];
+            self.typeAndPlaceArray = [[NSMutableArray alloc] init];
+            //存储距离数组
+            self.distanceArray = [[NSMutableArray alloc] init];
+            [self getMoreInformation];
+        }
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.locationTextField.text.length > 0 && self.locationTextField.text != nil) {
-        return self.searchArray.count;
-    } else {
-        return self.orginalArray.count;
-    }
+    return self.searchArray.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"1"];
-    if (self.locationTextField.text.length > 0 && self.locationTextField.text != nil) {
-        cell.textLabel.text = self.searchArray[indexPath.row];
-    } else {
-        cell.textLabel.text = self.orginalArray[indexPath.row];
+    ReleaseGameCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"1"];
+    if(self.searchArray.count != 0) {
+        cell.nameLabel.text = self.searchArray[indexPath.row];
+        cell.typeAndPlaceLabel.text = self.typeAndPlaceArray[indexPath.row];
+        cell.distanceLabel.text = self.distanceArray[indexPath.row];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.locationTextField.text.length > 0 && self.locationTextField.text != nil) {
+    if(self.locationArray.count != 0) {
         self.locationTextField.text = self.searchArray[indexPath.row];
-    } else {
-        self.locationTextField.text = self.orginalArray[indexPath.row];
     }
     [self.tableView removeFromSuperview];
 }
+- (void)searchPOI:(NSString*)keyWords {
+    self.search = [[AMapSearchAPI alloc] init];
+    self.search.delegate = self;
+    AMapPOIKeywordsSearchRequest *request = [[AMapPOIKeywordsSearchRequest alloc] init];
+    request.location = [AMapGeoPoint locationWithLatitude:_myLocation.coordinate.latitude longitude:_myLocation.coordinate.longitude];
+    request.keywords = keyWords;
+    request.types = @"体育休闲服务";
+    request.sortrule = 0;
+    request.requireExtension = YES;
+    request.cityLimit  = YES;
+    request.requireSubPOIs = YES;
+    [self.search AMapPOIKeywordsSearch:request];
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    self.myLocation = locations.lastObject;
+    [self searchPOI:self.locationTextField.text];
+}
+- (void)getMoreInformation {
+    self.getLocation = [[CLLocationManager alloc] init];
+    if ([CLLocationManager locationServicesEnabled]) {
+        self.getLocation.delegate = self;
+        //精确度获取到米
+        self.getLocation.desiredAccuracy = kCLLocationAccuracyBest;
+        //设置过滤器为无
+        self.getLocation.distanceFilter = kCLDistanceFilterNone;
+        // 取得定位权限，有两个方法，取决于你的定位使用情况
+        //一个是requestAlwaysAuthorization，一个是requestWhenInUseAuthorization
+        // 这句话ios8以上版本使用。
+        [self.getLocation requestWhenInUseAuthorization];
+        //开始获取定位
+        [self.getLocation startUpdatingLocation];
+    } else {
+        NSLog(@"error");
+    }
+}
 
+- (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response {
 
+    if (response.pois.count == 0) {
+        NSLog(@"没有查询到相关场所");
+    } else {
+        [response.pois enumerateObjectsUsingBlock:^(AMapPOI *obj, NSUInteger idx, BOOL *stop) {
+            int flag = 0;
+            for (int i = 0; i < obj.type.length; i++) {
+                if([obj.type characterAtIndex:i] == ';') {
+                    flag++;
+                }
+                if(flag == 2) {
+                    flag = i;
+                    break;
+                }
+            }
+            NSString* typeAndPlaceString = [NSString stringWithFormat:@"%@ | %@", [obj.type substringFromIndex:flag + 1], obj.address];
+            [self.typeAndPlaceArray addObject:typeAndPlaceString];
+            [self.searchArray addObject:obj.name];
+    
+            CLLocation *location = [[CLLocation alloc] initWithLatitude:obj.location.latitude longitude:obj.location.longitude];
+            [self.locationArray addObject:location];
+        }];
+        
+        //计算距离
+        for (int i = 0; i < self.locationArray.count; i++) {
+            CLLocationDistance tempDistance = [self.myLocation distanceFromLocation:self.locationArray[i]];
+            NSString *tempString = [[NSString alloc] initWithFormat:@"%dm", (int)tempDistance];
+            [self.distanceArray addObject:tempString];
+        }
+        [self.tableView reloadData];
+    }
+}
+- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error {
+    NSLog(@"Error: %@", error);
+}
 @end

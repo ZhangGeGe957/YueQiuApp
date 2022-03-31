@@ -187,7 +187,9 @@
     self.releaseView = [[ReleaseGameViewController alloc] init];
     self.releaseView.uid = self.uid;
     self.releaseView.mobileToken = self.mobileToken;
+    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:self.releaseView animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 //推出文章界面

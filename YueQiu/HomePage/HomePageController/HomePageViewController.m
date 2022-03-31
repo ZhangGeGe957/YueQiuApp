@@ -46,13 +46,6 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     
     [self p_initAllData];
     
-    self.locManager = [[CLLocationManager alloc] init];
-    self.locManager.delegate = self;
-    self.locManager.distanceFilter = 10.0f;
-    self.locManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-    [self.locManager startUpdatingLocation];
-    
-    
 }
 
 - (float)hGetStatusbarHeight {
@@ -172,7 +165,7 @@ NSString *const identityHomePageControllerNotice = @"homePage";
     self.homePageView.locationArray = [[NSMutableArray alloc] init];
     self.homePageView.nameArray = [[NSMutableArray alloc] init];
     self.homePageView.typeArray = [[NSMutableArray alloc] init];
-    self.homePageView.placeArray = [[NSMutableArray alloc] init];;
+    self.homePageView.placeArray = [[NSMutableArray alloc] init];
     self.locationArray = [[NSMutableArray alloc] init];
     //存储距离数组
     self.distanceArray = [[NSMutableArray alloc] init];
