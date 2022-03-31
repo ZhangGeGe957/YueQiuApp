@@ -121,6 +121,7 @@
 		CCDA8BB727EEB2D000FE2929 /* DetectLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDA8BB627EEB2D000FE2929 /* DetectLoginModel.m */; };
 		CCDA8BBB27EEC1E800FE2929 /* LogoffModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDA8BBA27EEC1E800FE2929 /* LogoffModel.m */; };
 		CCDA8BBE27EEC20900FE2929 /* LogoffManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDA8BBD27EEC20900FE2929 /* LogoffManager.m */; };
+		CCDE56EE27F5947C000F4FA2 /* GetLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCDE56ED27F5947C000F4FA2 /* GetLocationManager.m */; };
 		CCF6136627F1BE8800AF3F3C /* ReleaseGameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF6136527F1BE8800AF3F3C /* ReleaseGameCell.m */; };
 		CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9327AAF3BB00F2BB18 /* HQBSearchView.m */; };
 		CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFA4B9627AAF49700F2BB18 /* HQBSearchViewController.m */; };
@@ -330,6 +331,8 @@
 		CCDA8BBA27EEC1E800FE2929 /* LogoffModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoffModel.m; sourceTree = "<group>"; };
 		CCDA8BBC27EEC20900FE2929 /* LogoffManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoffManager.h; sourceTree = "<group>"; };
 		CCDA8BBD27EEC20900FE2929 /* LogoffManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoffManager.m; sourceTree = "<group>"; };
+		CCDE56EC27F5947C000F4FA2 /* GetLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetLocationManager.h; sourceTree = "<group>"; };
+		CCDE56ED27F5947C000F4FA2 /* GetLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetLocationManager.m; sourceTree = "<group>"; };
 		CCF6136427F1BE8800AF3F3C /* ReleaseGameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReleaseGameCell.h; sourceTree = "<group>"; };
 		CCF6136527F1BE8800AF3F3C /* ReleaseGameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseGameCell.m; sourceTree = "<group>"; };
 		CCFA4B9227AAF3BB00F2BB18 /* HQBSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQBSearchView.h; sourceTree = "<group>"; };
@@ -552,6 +555,8 @@
 				8322FA2B27EEFA53003A3C76 /* AddArticleModel.m */,
 				8322FA2D27EEFA6E003A3C76 /* AddArticleJSONModel.h */,
 				8322FA2E27EEFA6E003A3C76 /* AddArticleJSONModel.m */,
+				CCDE56EC27F5947C000F4FA2 /* GetLocationManager.h */,
+				CCDE56ED27F5947C000F4FA2 /* GetLocationManager.m */,
 			);
 			path = ReleaseModel;
 			sourceTree = "<group>";
@@ -1396,6 +1401,7 @@
 				CC36E6F827EA21F400E0821F /* HQBDatePickerView.m in Sources */,
 				8346A8C827DDB9B600D99BD7 /* SendMessageJSONModel.m in Sources */,
 				CCFA4B9427AAF3BB00F2BB18 /* HQBSearchView.m in Sources */,
+				CCDE56EE27F5947C000F4FA2 /* GetLocationManager.m in Sources */,
 				8322FA2627EEEA6F003A3C76 /* ShowArticleView.m in Sources */,
 				CC61843127EB43B90080DC56 /* SendPersonInfoManager.m in Sources */,
 				CC5ABFF927C4D1E000D548CB /* SettingController.m in Sources */,
@@ -1583,7 +1589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1618,7 +1624,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";

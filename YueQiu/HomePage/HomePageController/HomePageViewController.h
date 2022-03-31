@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 <CLLocationManagerDelegate,
 AMapSearchDelegate>
 
-@property (strong, nonatomic) CLLocationManager *locManager;
+
 @property (nonatomic) AMapSearchAPI* search;
 @property (nonatomic, strong) HomePageUIView* homePageView;
 @property (nonatomic, retain) CLLocationManager *getLocation;  //获取位置信息

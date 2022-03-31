@@ -9,6 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
 @interface AddArticleJSONModel : JSONModel
 
 @property (nonatomic, strong) NSString *msg;
