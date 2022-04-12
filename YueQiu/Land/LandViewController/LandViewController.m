@@ -223,7 +223,7 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     self.newsView = [[NewsViewController alloc] init];
     self.myView = [[MyViewController alloc] init];
     self.homePageView.title = @"首页";
-    self.trainView.title = @"社区";
+    self.trainView.title = @"识别";
     self.newsView.title = @"球局";
     self.myView.title = @"我的";
     
@@ -237,7 +237,7 @@ NSString *const identityAuthentication = @"ZhangGeGe";
     self.homePageNavigationController = [[UINavigationController alloc] initWithRootViewController:self.homePageView];
     self.homePageNavigationController.tabBarItem.image = [UIImage imageNamed:@"xiazai45.png"];
     self.trainNavigationController = [[UINavigationController alloc] initWithRootViewController:self.trainView];
-    self.trainNavigationController.tabBarItem.image = [UIImage imageNamed:@"shequ.png"];
+    self.trainNavigationController.tabBarItem.image = [UIImage imageNamed:@"shibie-2.png"];
     self.newsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.newsView];
     self.newsNavigationController.tabBarItem.image = [UIImage imageNamed:@"lanqiu-copy-2.png"];
     self.myNavigationController = [[UINavigationController alloc] initWithRootViewController:self.myView];

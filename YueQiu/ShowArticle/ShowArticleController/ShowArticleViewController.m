@@ -8,6 +8,7 @@
 #import "ShowArticleViewController.h"
 #import "ShowArticleView.h"
 #import <SDWebImage/UIButton+WebCache.h>
+#import "Masonry.h"
 
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
@@ -30,6 +31,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //增加监听，当键盘出现或改变时收出消息
+　　 [[NSNotificationCenter defaultCenter] addObserver:self
+                                        selector:@selector(keyboardWillShow:)
+                                        name:UIKeyboardWillShowNotification
+                                        object:nil];
+
+　　  //增加监听，当键退出时收出消息
+　　  [[NSNotificationCenter defaultCenter] addObserver:self
+                                        selector:@selector(keyboardWillHide:)
+                                        name:UIKeyboardWillHideNotification
+                                        object:nil];
     
     [self p_initView];
 }
@@ -50,7 +62,30 @@
     self.showView.locationLabel.text = self.getAllData[self.location][5];
     self.showView.timeLabel.text = self.getAllData[self.location][6];
     self.showView.contentLabel.text = self.getAllData[self.location][4];
+    self.showView.sendContentTextField.delegate = self;
     [self.view addSubview:self.showView];
+}
+
+
+- (void)keyboardWillShow:(NSNotification *)aNotification {
+    //获取键盘的高度
+    NSDictionary *userInfo = [aNotification userInfo];
+    NSValue *aValue = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [aValue CGRectValue];
+    int height = keyboardRect.size.height;
+    int width = keyboardRect.size.width;
+    NSLog(@"键盘高度是  %d",height);
+    NSLog(@"键盘宽度是  %d",width);
+}
+ 
+//当键退出时调用
+- (void)keyboardWillHide:(NSNotification *)aNotification {
+
+}
+
+//回收键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.showView.sendContentTextField resignFirstResponder];
 }
 
 /*

@@ -90,7 +90,6 @@
         } andError:^(NSError * _Nullable error) {
             NSLog(@"删除失败！");
         }];
-        
         [self p_getModel];
     }]];
     [self.myAlertContriller addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];

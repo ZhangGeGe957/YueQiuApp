@@ -9,9 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TrainViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
-
-@property (nonatomic, strong) UITableView *showTableView;
+@interface TrainViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 

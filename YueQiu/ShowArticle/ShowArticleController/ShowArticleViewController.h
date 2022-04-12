@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ShowArticleViewController : UIViewController
+@interface ShowArticleViewController : UIViewController<UITextFieldDelegate>
 
 @property CGFloat navHeight;  //获取到的导航栏高度
 @property (nonatomic, strong) NSMutableArray *getAllData;  //所有数据
