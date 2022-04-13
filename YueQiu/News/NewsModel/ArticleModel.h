@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shareManager;
 - (void)getMessageWithData:(GetModelBlock)getMessageBlock andError:(ErrorBlock)errorBlock;
 - (void)delectMessageWithData:(MessageModelBlock)returnMessageBlock andError:(ErrorBlock)errorBlock;
+- (void)getMyAllData:(GetModelBlock)getMessageBlock andError:(ErrorBlock)errorBlock;
 
 @end
 

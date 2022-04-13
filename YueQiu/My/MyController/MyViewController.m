@@ -120,11 +120,12 @@
         self.hidesBottomBarWhenPushed = NO;
     } else if (indexPath.row == 3) {
           self.hidesBottomBarWhenPushed = YES;
-          MyCourseViewController* myCourseController = [[MyCourseViewController alloc] init];
-          myCourseController.uid = self.onlyUid;
-          myCourseController.mobileToken = self.token;
-          [self.navigationController pushViewController:myCourseController animated:YES];
-          self.hidesBottomBarWhenPushed = NO;
+        MyCourseViewController* myCourseController = [[MyCourseViewController alloc] init];
+        myCourseController.uid = self.onlyUid;
+        myCourseController.mobileToken = self.token;
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:myCourseController animated:YES];
+        self.hidesBottomBarWhenPushed = NO;
 
       } else if (indexPath.row == 4) {
           self.hidesBottomBarWhenPushed = YES;

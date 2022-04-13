@@ -72,7 +72,9 @@
     self.showArticleView = [[ShowArticleViewController alloc] init];
     self.showArticleView.getAllData = [[NSMutableArray alloc] initWithArray:self.getAllData];
     self.showArticleView.location = indexPath.row;
+    self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:self.showArticleView animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 //可显示编辑状态
@@ -117,7 +119,7 @@
     manager.uid = self.uid;
     manager.mobileToken = self.mobileToken;
     
-    [[ArticleModel shareManager] getMessageWithData:^(ArticleJSONModel * _Nullable articleModel) {
+    [[ArticleModel shareManager] getMyAllData:^(ArticleJSONModel * _Nullable articleModel) {
         NSLog(@"%@   %ld   %@", articleModel.data, (long)articleModel.code, articleModel.msg);
         
         NSMutableArray *tempArrayOne = [[NSMutableArray alloc] init];
