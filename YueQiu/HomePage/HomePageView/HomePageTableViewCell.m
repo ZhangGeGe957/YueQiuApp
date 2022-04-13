@@ -22,7 +22,6 @@
         
         _mapView = [[MAMapView alloc] init];
         [self.contentView addSubview:_mapView];
-        
         [_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView.mas_top).offset(0);
             make.bottom.equalTo(self.contentView.mas_bottom).offset(0);
