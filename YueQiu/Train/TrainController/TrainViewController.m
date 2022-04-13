@@ -9,7 +9,7 @@
 #import "Masonry.h"
 #import "TrainView.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-
+#import "Manager.h"
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
@@ -106,7 +106,7 @@
         //将照片保存在相册
         UIImageWriteToSavedPhotosAlbum(self.getImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     }
-
+    [self p_send];
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -132,14 +132,23 @@
     
     return savedImagePath;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)p_send {
+    NSData *data = UIImageJPEGRepresentation(self.getImage, 1.0f);
+    NSString *encodedImageString = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    Manager* manager = [Manager shareManager];
+    manager.imageBase = encodedImageString;
+    [[Manager shareManager] sendPersonInfoWithData:^(Model * _Nullable getMessageModel) {
+        NSLog(@"%ld", getMessageModel.result_num);
+        NSString* messageString = [NSString stringWithFormat:@"图片中的物品为%@", [getMessageModel.result[0] valueForKey:@"keyword"]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:messageString preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *actionOne = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:actionOne];
+            [self presentViewController:alert animated:YES completion:nil];
+            });
+        } andError:^(NSError * _Nullable error) {
+            NSLog(@"获取失败！");
+        }];
 }
-*/
 
 @end

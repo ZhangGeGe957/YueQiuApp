@@ -117,6 +117,8 @@
 		CC61842E27EB43520080DC56 /* SendPersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61842D27EB43520080DC56 /* SendPersonInfoModel.m */; };
 		CC61843127EB43B90080DC56 /* SendPersonInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61843027EB43B90080DC56 /* SendPersonInfoManager.m */; };
 		CC6C5FF627CE3A90004767FD /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6C5FF527CE3A90004767FD /* city.png */; };
+		CC87B3732806CC7F000F1A4D /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC87B3722806CC7F000F1A4D /* Manager.m */; };
+		CC87B3792806CCC6000F1A4D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CC87B3782806CCC6000F1A4D /* Model.m */; };
 		CC89C27D27C2513C0096C12D /* MyCollectStadiumController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */; };
 		CC89C28027C2515D0096C12D /* MyCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C27F27C2515D0096C12D /* MyCourseViewController.m */; };
 		CC89C28627C2518C0096C12D /* MyCollectStadiumView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC89C28527C2518C0096C12D /* MyCollectStadiumView.m */; };
@@ -323,6 +325,10 @@
 		CC61842F27EB43B90080DC56 /* SendPersonInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendPersonInfoManager.h; sourceTree = "<group>"; };
 		CC61843027EB43B90080DC56 /* SendPersonInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendPersonInfoManager.m; sourceTree = "<group>"; };
 		CC6C5FF527CE3A90004767FD /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
+		CC87B3712806CC7F000F1A4D /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		CC87B3722806CC7F000F1A4D /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
+		CC87B3772806CCC6000F1A4D /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		CC87B3782806CCC6000F1A4D /* Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		CC89C27B27C2513C0096C12D /* MyCollectStadiumController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectStadiumController.h; sourceTree = "<group>"; };
 		CC89C27C27C2513C0096C12D /* MyCollectStadiumController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectStadiumController.m; sourceTree = "<group>"; };
 		CC89C27E27C2515D0096C12D /* MyCourseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCourseViewController.h; sourceTree = "<group>"; };
@@ -861,7 +867,7 @@
 		83C7989C2789BF62000F68C1 /* Train */ = {
 			isa = PBXGroup;
 			children = (
-				83C798AB2789C02B000F68C1 /* TrainModel */,
+				CC87B3702806CC61000F1A4D /* TrainModel */,
 				83C798AA2789C021000F68C1 /* TrainView */,
 				83C798A92789C011000F68C1 /* TrainController */,
 			);
@@ -940,13 +946,6 @@
 				83AC83A32805145300967383 /* TrainView.m */,
 			);
 			path = TrainView;
-			sourceTree = "<group>";
-		};
-		83C798AB2789C02B000F68C1 /* TrainModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TrainModel;
 			sourceTree = "<group>";
 		};
 		83C798CA2789C179000F68C1 /* 图库 */ = {
@@ -1093,6 +1092,17 @@
 				8314715527EAA7D400954C69 /* SendPhotosJSONModel.m */,
 			);
 			path = SendPhoto;
+			sourceTree = "<group>";
+		};
+		CC87B3702806CC61000F1A4D /* TrainModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC87B3712806CC7F000F1A4D /* Manager.h */,
+				CC87B3722806CC7F000F1A4D /* Manager.m */,
+				CC87B3772806CCC6000F1A4D /* Model.h */,
+				CC87B3782806CCC6000F1A4D /* Model.m */,
+			);
+			path = TrainModel;
 			sourceTree = "<group>";
 		};
 		CCDA8BB827EEC1C600FE2929 /* Logoff */ = {
@@ -1405,6 +1415,7 @@
 				CC43FD1727E35C1700CB1AE0 /* ForgetManager.m in Sources */,
 				CC61842B27EB34D90080DC56 /* GetMessageModel.m in Sources */,
 				CC5ABFF627C4D19700D548CB /* SettingCell.m in Sources */,
+				CC87B3792806CCC6000F1A4D /* Model.m in Sources */,
 				CC89C27D27C2513C0096C12D /* MyCollectStadiumController.m in Sources */,
 				CC43FD1E27E366CB00CB1AE0 /* SetPasswordManager.m in Sources */,
 				83C798C32789C0ED000F68C1 /* TrainViewController.m in Sources */,
@@ -1427,6 +1438,7 @@
 				CC5ABFF927C4D1E000D548CB /* SettingController.m in Sources */,
 				CCDA8BBB27EEC1E800FE2929 /* LogoffModel.m in Sources */,
 				8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */,
+				CC87B3732806CC7F000F1A4D /* Manager.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
 				83370A9127BF8E3200A1889D /* SetPasswordView.m in Sources */,
 				CC43FD1B27E366AB00CB1AE0 /* SetPasswordJsonModel.m in Sources */,
@@ -1609,7 +1621,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1629,7 +1641,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1644,7 +1656,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1664,7 +1676,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
