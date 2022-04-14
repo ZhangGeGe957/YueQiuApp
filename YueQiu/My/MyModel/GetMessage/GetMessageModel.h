@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Data : JSONModel
 @property (nonatomic, strong) NSString* uid;
-@property (nonatomic, strong) NSString* phoneNumbers;
+@property (nonatomic, strong) NSString* phone_numbers;
 @property (nonatomic, strong) NSString* username;
 @property (nonatomic, strong) NSString* signature;
 @property (nonatomic, strong) NSString* label;//标签/爱好
@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* birthday;//生日
 @property (nonatomic, strong) NSString* headSculpture;//头像
 @property (nonatomic, strong) NSString* background;//背景
+@property int isFollow;  //判断是否关注，未关注为0，已关注为1，用户本人为2
 @end
 
 @interface GetMessageModel : JSONModel

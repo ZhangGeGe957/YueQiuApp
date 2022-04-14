@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* address;
 @property (nonatomic, strong) NSString* time;
 @property (nonatomic, strong) NSString *gmtCreate;
+@property NSInteger state;  //是否结束
 @property (nonatomic, strong) NSArray<ArticleComment> *comment;
 @end
 
