@@ -12,7 +12,7 @@
 #import "ShowArticleViewController.h"
 #import <SDWebImage/UIButton+WebCache.h>
 #import "TrainShowTableViewCell.h"
-
+#import "FollowViewController.h"
 #define myWidth [UIScreen mainScreen].bounds.size.width
 #define myHeight [UIScreen mainScreen].bounds.size.height
 
@@ -48,7 +48,6 @@
 }
 
 - (void)p_initUI {
-    
     //获取导航栏+状态栏的高度
     self.navHeight = self.navigationController.navigationBar.frame.size.height + [[UIApplication sharedApplication] statusBarFrame].size.height;
     
@@ -125,18 +124,28 @@
     self.showFollowTableView.backgroundColor = [UIColor whiteColor];
     [self.followView addSubview:self.showFollowTableView];
     [self.showFollowTableView registerClass:[TrainShowTableViewCell class] forCellReuseIdentifier:@"show"];
+    
+    self.tabBarController.tabBar.backgroundColor = [UIColor whiteColor];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView.tag == 111) {
         NewsTableViewCell *cell = [self.showBoutiqueTableView dequeueReusableCellWithIdentifier:@"show"];
-        [cell.headButton sd_setBackgroundImageWithURL:[NSURL URLWithString:self.getAllData[indexPath.row][3]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"head_portrait.jpg"]];
-        cell.titleNameLabel.text = self.getAllData[indexPath.row][2];
-        cell.locationLabel.text = self.getAllData[indexPath.row][5];
-        cell.timeLabel.text = self.getAllData[indexPath.row][6];
-        cell.contentLabel.text = self.getAllData[indexPath.row][4];
-        cell.VIPImageView.hidden = YES;
-        [cell.reserveButton addTarget:self action:@selector(pushShowArticle:) forControlEvents:UIControlEventTouchUpInside];
+        
+        if (self.getAllData.count != 0) {
+            [cell.headButton sd_setBackgroundImageWithURL:[NSURL URLWithString:self.getAllData[indexPath.row][3]] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"head_portrait.jpg"]];
+            cell.headButton.tag = 101 + indexPath.row;
+            [cell.headButton addTarget:self action:@selector(pushFollow:) forControlEvents:UIControlEventTouchUpInside];
+            cell.titleNameLabel.text = self.getAllData[indexPath.row][2];
+            cell.locationLabel.text = self.getAllData[indexPath.row][5];
+            cell.timeLabel.text = self.getAllData[indexPath.row][6];
+            cell.contentLabel.text = self.getAllData[indexPath.row][4];
+            cell.VIPImageView.hidden = YES;
+            [cell.reserveButton addTarget:self action:@selector(pushShowArticle:) forControlEvents:UIControlEventTouchUpInside];
+        } else {
+            [self p_getModel];
+        }
+        
         return cell;
     } else {
         TrainShowTableViewCell *myShowCell = [self.showFollowTableView dequeueReusableCellWithIdentifier:@"show" forIndexPath:indexPath];
@@ -145,6 +154,7 @@
         myShowCell.readpersonLabel.text = @"100";
         return myShowCell;
     }
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -258,14 +268,14 @@
         NSLog(@"获取失败！");
     }];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)pushFollow:(UIButton*)button {
+    self.hidesBottomBarWhenPushed = YES;
+    FollowViewController* followController = [[FollowViewController alloc] init];
+    followController.idString = self.getAllData[button.tag - 101][1];
+    followController.myIDString = self.uid;
+    followController.token = [NSString stringWithFormat:@"%@",self.mobileToken];
+    [self.navigationController pushViewController:followController animated:YES];
+    self.hidesBottomBarWhenPushed = NO;
 }
-*/
 
 @end
