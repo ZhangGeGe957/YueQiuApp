@@ -91,6 +91,11 @@
 		83FB1A5627CA294B005D6292 /* ReleaseGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5527CA294B005D6292 /* ReleaseGameView.m */; };
 		83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */; };
 		CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */; };
+		CC330A64280AA62F004940B4 /* FollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC330A63280AA62F004940B4 /* FollowViewController.m */; };
+		CC330A67280AA6AE004940B4 /* FollowView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC330A66280AA6AE004940B4 /* FollowView.m */; };
+		CC330A8F280AF37A004940B4 /* FollowerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC330A8E280AF37A004940B4 /* FollowerModel.m */; };
+		CC330A92280AF38F004940B4 /* FollowerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC330A91280AF38F004940B4 /* FollowerManager.m */; };
+		CC330A96280AFC99004940B4 /* FollowerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC330A95280AFC99004940B4 /* FollowerTableViewCell.m */; };
 		CC36E6EF27EA215E00E0821F /* EditMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6EE27EA215E00E0821F /* EditMessageView.m */; };
 		CC36E6F227EA218300E0821F /* EditMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6F127EA218300E0821F /* EditMessageCell.m */; };
 		CC36E6F527EA21CF00E0821F /* HQBPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC36E6F427EA21CF00E0821F /* HQBPickerView.m */; };
@@ -116,6 +121,17 @@
 		CC61842B27EB34D90080DC56 /* GetMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61842A27EB34D90080DC56 /* GetMessageModel.m */; };
 		CC61842E27EB43520080DC56 /* SendPersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61842D27EB43520080DC56 /* SendPersonInfoModel.m */; };
 		CC61843127EB43B90080DC56 /* SendPersonInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC61843027EB43B90080DC56 /* SendPersonInfoManager.m */; };
+		CC6BB054280C247F005AA1C2 /* AddAndCancelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6BB053280C247F005AA1C2 /* AddAndCancelModel.m */; };
+		CC6BB055280D27B5005AA1C2 /* gexingqianming-2.png in Resources */ = {isa = PBXBuildFile; fileRef = CC330A86280AD9EE004940B4 /* gexingqianming-2.png */; };
+		CC6BB056280D27B5005AA1C2 /* nannan.png in Resources */ = {isa = PBXBuildFile; fileRef = CC330A85280AD9EE004940B4 /* nannan.png */; };
+		CC6BB057280D27B5005AA1C2 /* nv.png in Resources */ = {isa = PBXBuildFile; fileRef = CC330A87280AD9EE004940B4 /* nv.png */; };
+		CC6BB05B280D29D5005AA1C2 /* MyFollowerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6BB05A280D29D5005AA1C2 /* MyFollowerView.m */; };
+		CC6BB05E280D29EF005AA1C2 /* MyFollowerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6BB05D280D29EF005AA1C2 /* MyFollowerCell.m */; };
+		CC6BB063280D2A6C005AA1C2 /* MyFollowerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6BB062280D2A6C005AA1C2 /* MyFollowerController.m */; };
+		CC6BB066280D2BD8005AA1C2 /* MyFollowerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6BB065280D2BD8005AA1C2 /* MyFollowerManager.m */; };
+		CC6BB06A280D2C02005AA1C2 /* MyFollowerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6BB069280D2C02005AA1C2 /* MyFollowerModel.m */; };
+		CC6BB06D280D605C005AA1C2 /* CancelFollowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6BB06C280D605C005AA1C2 /* CancelFollowModel.m */; };
+		CC6BB071280D653D005AA1C2 /* wodeguanzhu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6BB070280D6527005AA1C2 /* wodeguanzhu.png */; };
 		CC6C5FF627CE3A90004767FD /* city.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6C5FF527CE3A90004767FD /* city.png */; };
 		CC87B3732806CC7F000F1A4D /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC87B3722806CC7F000F1A4D /* Manager.m */; };
 		CC87B3792806CCC6000F1A4D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CC87B3782806CCC6000F1A4D /* Model.m */; };
@@ -282,6 +298,19 @@
 		83FB1A5827CA2959005D6292 /* ReleaseGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReleaseGameViewController.m; sourceTree = "<group>"; };
 		CC1A7B2B2789C86C0040B39D /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
 		CC1A7B2C2789C86C0040B39D /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		CC330A62280AA62F004940B4 /* FollowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowViewController.h; sourceTree = "<group>"; };
+		CC330A63280AA62F004940B4 /* FollowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowViewController.m; sourceTree = "<group>"; };
+		CC330A65280AA6AE004940B4 /* FollowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowView.h; sourceTree = "<group>"; };
+		CC330A66280AA6AE004940B4 /* FollowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowView.m; sourceTree = "<group>"; };
+		CC330A85280AD9EE004940B4 /* nannan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nannan.png; sourceTree = "<group>"; };
+		CC330A86280AD9EE004940B4 /* gexingqianming-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gexingqianming-2.png"; sourceTree = "<group>"; };
+		CC330A87280AD9EE004940B4 /* nv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nv.png; sourceTree = "<group>"; };
+		CC330A8D280AF37A004940B4 /* FollowerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowerModel.h; sourceTree = "<group>"; };
+		CC330A8E280AF37A004940B4 /* FollowerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowerModel.m; sourceTree = "<group>"; };
+		CC330A90280AF38F004940B4 /* FollowerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowerManager.h; sourceTree = "<group>"; };
+		CC330A91280AF38F004940B4 /* FollowerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowerManager.m; sourceTree = "<group>"; };
+		CC330A94280AFC99004940B4 /* FollowerTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowerTableViewCell.h; sourceTree = "<group>"; };
+		CC330A95280AFC99004940B4 /* FollowerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowerTableViewCell.m; sourceTree = "<group>"; };
 		CC36E6ED27EA215E00E0821F /* EditMessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditMessageView.h; sourceTree = "<group>"; };
 		CC36E6EE27EA215E00E0821F /* EditMessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditMessageView.m; sourceTree = "<group>"; };
 		CC36E6F027EA218300E0821F /* EditMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditMessageCell.h; sourceTree = "<group>"; };
@@ -324,6 +353,21 @@
 		CC61842D27EB43520080DC56 /* SendPersonInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendPersonInfoModel.m; sourceTree = "<group>"; };
 		CC61842F27EB43B90080DC56 /* SendPersonInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendPersonInfoManager.h; sourceTree = "<group>"; };
 		CC61843027EB43B90080DC56 /* SendPersonInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendPersonInfoManager.m; sourceTree = "<group>"; };
+		CC6BB052280C247F005AA1C2 /* AddAndCancelModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAndCancelModel.h; sourceTree = "<group>"; };
+		CC6BB053280C247F005AA1C2 /* AddAndCancelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAndCancelModel.m; sourceTree = "<group>"; };
+		CC6BB059280D29D5005AA1C2 /* MyFollowerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFollowerView.h; sourceTree = "<group>"; };
+		CC6BB05A280D29D5005AA1C2 /* MyFollowerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFollowerView.m; sourceTree = "<group>"; };
+		CC6BB05C280D29EF005AA1C2 /* MyFollowerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFollowerCell.h; sourceTree = "<group>"; };
+		CC6BB05D280D29EF005AA1C2 /* MyFollowerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFollowerCell.m; sourceTree = "<group>"; };
+		CC6BB061280D2A6C005AA1C2 /* MyFollowerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFollowerController.h; sourceTree = "<group>"; };
+		CC6BB062280D2A6C005AA1C2 /* MyFollowerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFollowerController.m; sourceTree = "<group>"; };
+		CC6BB064280D2BD8005AA1C2 /* MyFollowerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFollowerManager.h; sourceTree = "<group>"; };
+		CC6BB065280D2BD8005AA1C2 /* MyFollowerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFollowerManager.m; sourceTree = "<group>"; };
+		CC6BB068280D2C02005AA1C2 /* MyFollowerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyFollowerModel.h; sourceTree = "<group>"; };
+		CC6BB069280D2C02005AA1C2 /* MyFollowerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyFollowerModel.m; sourceTree = "<group>"; };
+		CC6BB06B280D605C005AA1C2 /* CancelFollowModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CancelFollowModel.h; sourceTree = "<group>"; };
+		CC6BB06C280D605C005AA1C2 /* CancelFollowModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CancelFollowModel.m; sourceTree = "<group>"; };
+		CC6BB070280D6527005AA1C2 /* wodeguanzhu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wodeguanzhu.png; sourceTree = "<group>"; };
 		CC6C5FF527CE3A90004767FD /* city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = city.png; sourceTree = "<group>"; };
 		CC87B3712806CC7F000F1A4D /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
 		CC87B3722806CC7F000F1A4D /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
@@ -791,6 +835,7 @@
 		83C798632789BDFE000F68C1 /* YueQiu */ = {
 			isa = PBXGroup;
 			children = (
+				CC330A5E280AA572004940B4 /* Follow */,
 				8322FA1D27EEEA09003A3C76 /* ShowArticle */,
 				83FB1A5127CA28CE005D6292 /* ReleaseGame */,
 				83370A8C27BF8DFF00A1889D /* SetPassword */,
@@ -910,6 +955,7 @@
 		83C798A22789BFBB000F68C1 /* MyController */ = {
 			isa = PBXGroup;
 			children = (
+				CC6BB060280D2A3A005AA1C2 /* MyFollower */,
 				8314715027EAA6F100954C69 /* Course */,
 				8314714F27EAA6E100954C69 /* Edit */,
 				8314714E27EAA6D200954C69 /* Setting */,
@@ -951,6 +997,7 @@
 		83C798CA2789C179000F68C1 /* 图库 */ = {
 			isa = PBXGroup;
 			children = (
+				CC330A84280AD9D4004940B4 /* FollowPhotos */,
 				83EA826027CCB98500B19CF3 /* ReleaseGamePhotos */,
 				CC5ABFE027C4D10600D548CB /* SettingPhotos */,
 				833639C727C4B74C0020D864 /* ReservePhotos */,
@@ -1013,6 +1060,60 @@
 			path = ReleaseGameController;
 			sourceTree = "<group>";
 		};
+		CC330A5E280AA572004940B4 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				CC330A5F280AA5BE004940B4 /* FollowModel */,
+				CC330A60280AA5CA004940B4 /* FollowView */,
+				CC330A61280AA5D4004940B4 /* FollowController */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		CC330A5F280AA5BE004940B4 /* FollowModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC330A8D280AF37A004940B4 /* FollowerModel.h */,
+				CC330A8E280AF37A004940B4 /* FollowerModel.m */,
+				CC330A90280AF38F004940B4 /* FollowerManager.h */,
+				CC330A91280AF38F004940B4 /* FollowerManager.m */,
+				CC6BB052280C247F005AA1C2 /* AddAndCancelModel.h */,
+				CC6BB053280C247F005AA1C2 /* AddAndCancelModel.m */,
+			);
+			path = FollowModel;
+			sourceTree = "<group>";
+		};
+		CC330A60280AA5CA004940B4 /* FollowView */ = {
+			isa = PBXGroup;
+			children = (
+				CC330A65280AA6AE004940B4 /* FollowView.h */,
+				CC330A66280AA6AE004940B4 /* FollowView.m */,
+				CC330A94280AFC99004940B4 /* FollowerTableViewCell.h */,
+				CC330A95280AFC99004940B4 /* FollowerTableViewCell.m */,
+			);
+			path = FollowView;
+			sourceTree = "<group>";
+		};
+		CC330A61280AA5D4004940B4 /* FollowController */ = {
+			isa = PBXGroup;
+			children = (
+				CC330A62280AA62F004940B4 /* FollowViewController.h */,
+				CC330A63280AA62F004940B4 /* FollowViewController.m */,
+			);
+			path = FollowController;
+			sourceTree = "<group>";
+		};
+		CC330A84280AD9D4004940B4 /* FollowPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				CC6BB070280D6527005AA1C2 /* wodeguanzhu.png */,
+				CC330A86280AD9EE004940B4 /* gexingqianming-2.png */,
+				CC330A85280AD9EE004940B4 /* nannan.png */,
+				CC330A87280AD9EE004940B4 /* nv.png */,
+			);
+			path = FollowPhotos;
+			sourceTree = "<group>";
+		};
 		CC43FD1127E33EEC00CB1AE0 /* ForgetModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1053,6 +1154,7 @@
 		CC61842527EB34810080DC56 /* MyModel */ = {
 			isa = PBXGroup;
 			children = (
+				CC6BB067280D2BDE005AA1C2 /* MyFollower */,
 				CCDA8BB827EEC1C600FE2929 /* Logoff */,
 				CC61843427EB43E50080DC56 /* SendPhoto */,
 				CC61843327EB43C50080DC56 /* SendPersonInfo */,
@@ -1094,6 +1196,39 @@
 			path = SendPhoto;
 			sourceTree = "<group>";
 		};
+		CC6BB058280D2997005AA1C2 /* MyFollower */ = {
+			isa = PBXGroup;
+			children = (
+				CC6BB059280D29D5005AA1C2 /* MyFollowerView.h */,
+				CC6BB05A280D29D5005AA1C2 /* MyFollowerView.m */,
+				CC6BB05C280D29EF005AA1C2 /* MyFollowerCell.h */,
+				CC6BB05D280D29EF005AA1C2 /* MyFollowerCell.m */,
+			);
+			path = MyFollower;
+			sourceTree = "<group>";
+		};
+		CC6BB060280D2A3A005AA1C2 /* MyFollower */ = {
+			isa = PBXGroup;
+			children = (
+				CC6BB061280D2A6C005AA1C2 /* MyFollowerController.h */,
+				CC6BB062280D2A6C005AA1C2 /* MyFollowerController.m */,
+			);
+			path = MyFollower;
+			sourceTree = "<group>";
+		};
+		CC6BB067280D2BDE005AA1C2 /* MyFollower */ = {
+			isa = PBXGroup;
+			children = (
+				CC6BB064280D2BD8005AA1C2 /* MyFollowerManager.h */,
+				CC6BB065280D2BD8005AA1C2 /* MyFollowerManager.m */,
+				CC6BB068280D2C02005AA1C2 /* MyFollowerModel.h */,
+				CC6BB069280D2C02005AA1C2 /* MyFollowerModel.m */,
+				CC6BB06B280D605C005AA1C2 /* CancelFollowModel.h */,
+				CC6BB06C280D605C005AA1C2 /* CancelFollowModel.m */,
+			);
+			path = MyFollower;
+			sourceTree = "<group>";
+		};
 		CC87B3702806CC61000F1A4D /* TrainModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1129,6 +1264,7 @@
 		CCFA4B9D27AB8F5600F2BB18 /* MyView */ = {
 			isa = PBXGroup;
 			children = (
+				CC6BB058280D2997005AA1C2 /* MyFollower */,
 				83329DD027F5C566008CEDF5 /* Collect */,
 				8314714D27EAA66C00954C69 /* Course */,
 				8314714C27EAA64F00954C69 /* Edit */,
@@ -1257,6 +1393,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC6BB071280D653D005AA1C2 /* wodeguanzhu.png in Resources */,
+				CC6BB055280D27B5005AA1C2 /* gexingqianming-2.png in Resources */,
+				CC6BB056280D27B5005AA1C2 /* nannan.png in Resources */,
+				CC6BB057280D27B5005AA1C2 /* nv.png in Resources */,
 				835D71C427F1D4940019C8D3 /* shequ.png in Resources */,
 				83370A8727BF726D00A1889D /* tubiao202.png in Resources */,
 				8322FA3A27EF2EF9003A3C76 /* lanqiu-copy-2.png in Resources */,
@@ -1381,6 +1521,8 @@
 				83C7986C2789BDFE000F68C1 /* ViewController.m in Sources */,
 				CC1A7B2D2789C86C0040B39D /* HomePageTableViewCell.m in Sources */,
 				CC36E6F227EA218300E0821F /* EditMessageCell.m in Sources */,
+				CC6BB05E280D29EF005AA1C2 /* MyFollowerCell.m in Sources */,
+				CC6BB06D280D605C005AA1C2 /* CancelFollowModel.m in Sources */,
 				CC36E6EF27EA215E00E0821F /* EditMessageView.m in Sources */,
 				83C798BA2789C0B1000F68C1 /* HomePageUIView.m in Sources */,
 				8333B12727C3245300858A48 /* ReserveViewController.m in Sources */,
@@ -1388,6 +1530,7 @@
 				83C798BD2789C0CC000F68C1 /* MyViewController.m in Sources */,
 				83C798662789BDFE000F68C1 /* AppDelegate.m in Sources */,
 				8322FA2C27EEFA53003A3C76 /* AddArticleModel.m in Sources */,
+				CC6BB05B280D29D5005AA1C2 /* MyFollowerView.m in Sources */,
 				CC89C28927C251B20096C12D /* CourseAndStadiumCell.m in Sources */,
 				83255A4C27DC9D7400A37C5F /* UUIDStrengthen.m in Sources */,
 				83252C4A27E573AF00BAEAAB /* LandJSONModel.m in Sources */,
@@ -1397,6 +1540,8 @@
 				837B7146279AAD3800DBD856 /* NewsTableViewCell.m in Sources */,
 				83FB1A5627CA294B005D6292 /* ReleaseGameView.m in Sources */,
 				8322FA2327EEEA60003A3C76 /* ShowArticleViewController.m in Sources */,
+				CC6BB063280D2A6C005AA1C2 /* MyFollowerController.m in Sources */,
+				CC330A67280AA6AE004940B4 /* FollowView.m in Sources */,
 				CC89C28627C2518C0096C12D /* MyCollectStadiumView.m in Sources */,
 				CC89C28027C2515D0096C12D /* MyCourseViewController.m in Sources */,
 				8344FC8D27BE1DE900C534D5 /* RegisterViewController.m in Sources */,
@@ -1408,6 +1553,7 @@
 				CCFA4B9727AAF49700F2BB18 /* HQBSearchViewController.m in Sources */,
 				83C798B42789C094000F68C1 /* HomePageViewController.m in Sources */,
 				83AC83A42805145300967383 /* TrainView.m in Sources */,
+				CC6BB054280C247F005AA1C2 /* AddAndCancelModel.m in Sources */,
 				8314715327EAA74800954C69 /* SendPhotosModel.m in Sources */,
 				83C798772789BE00000F68C1 /* main.m in Sources */,
 				CC5ABFF327C4D17E00D548CB /* SettingView.m in Sources */,
@@ -1426,7 +1572,10 @@
 				8344FC9627BE208C00C534D5 /* ForgetViewController.m in Sources */,
 				832A5B3527EDC2E500409CFE /* ArticleModel.m in Sources */,
 				832A5B3227EDBF7C00409CFE /* ArticleJSONModel.m in Sources */,
+				CC330A8F280AF37A004940B4 /* FollowerModel.m in Sources */,
 				CC36E6FB27EA230B00E0821F /* EditMessageController.m in Sources */,
+				CC6BB06A280D2C02005AA1C2 /* MyFollowerModel.m in Sources */,
+				CC6BB066280D2BD8005AA1C2 /* MyFollowerManager.m in Sources */,
 				83370A9827BF8E6300A1889D /* SetPasswordViewController.m in Sources */,
 				CC36E6F527EA21CF00E0821F /* HQBPickerView.m in Sources */,
 				CC36E6F827EA21F400E0821F /* HQBDatePickerView.m in Sources */,
@@ -1435,11 +1584,14 @@
 				CCDE56EE27F5947C000F4FA2 /* GetLocationManager.m in Sources */,
 				8322FA2627EEEA6F003A3C76 /* ShowArticleView.m in Sources */,
 				CC61843127EB43B90080DC56 /* SendPersonInfoManager.m in Sources */,
+				CC330A64280AA62F004940B4 /* FollowViewController.m in Sources */,
 				CC5ABFF927C4D1E000D548CB /* SettingController.m in Sources */,
 				CCDA8BBB27EEC1E800FE2929 /* LogoffModel.m in Sources */,
 				8344FC9327BE207E00C534D5 /* ForgetView.m in Sources */,
 				CC87B3732806CC7F000F1A4D /* Manager.m in Sources */,
 				8325A65E2796572A0060E916 /* LandViewController.m in Sources */,
+				CC330A92280AF38F004940B4 /* FollowerManager.m in Sources */,
+				CC330A96280AFC99004940B4 /* FollowerTableViewCell.m in Sources */,
 				83370A9127BF8E3200A1889D /* SetPasswordView.m in Sources */,
 				CC43FD1B27E366AB00CB1AE0 /* SetPasswordJsonModel.m in Sources */,
 				83FB1A5927CA2959005D6292 /* ReleaseGameViewController.m in Sources */,
@@ -1621,7 +1773,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1635,13 +1787,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1656,7 +1808,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZBXPJ2367M;
+				DEVELOPMENT_TEAM = AZXU3DBFVN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YueQiu/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "请允许APP访问您的相机";
@@ -1670,13 +1822,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.myprogram.----";
+				PRODUCT_BUNDLE_IDENTIFIER = w.11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

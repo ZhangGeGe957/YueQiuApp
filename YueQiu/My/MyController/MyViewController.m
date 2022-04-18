@@ -14,6 +14,7 @@
 #import "SendPhotosModel.h"
 #import "GetMessageManager.h"
 #import <SDWebImage/UIButton+WebCache.h>
+#import "MyFollowerController.h"
 
 #define W [UIScreen mainScreen].bounds.size.width
 #define H [UIScreen mainScreen].bounds.size.height
@@ -47,8 +48,8 @@
     
     
     //tableview
-    self.menuArray = [NSArray arrayWithObjects:@"编辑资料", @"我的球局", @"我收藏的球馆", nil];
-    self.imageViewArray = [NSArray arrayWithObjects:@"bianji3.png", @"lanqiu-copy-2.png", @"shoucang-4.png", nil];
+    self.menuArray = [NSArray arrayWithObjects:@"编辑资料", @"我的球局", @"我收藏的球馆", @"我的关注", nil];
+    self.imageViewArray = [NSArray arrayWithObjects:@"bianji3.png", @"lanqiu-copy-2.png", @"shoucang-4.png", @"wodeguanzhu.png", nil];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, W, H / 1.07) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -69,7 +70,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 6;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -119,7 +120,7 @@
         
         self.hidesBottomBarWhenPushed = NO;
     } else if (indexPath.row == 3) {
-          self.hidesBottomBarWhenPushed = YES;
+        self.hidesBottomBarWhenPushed = YES;
         MyCourseViewController* myCourseController = [[MyCourseViewController alloc] init];
         myCourseController.uid = self.onlyUid;
         myCourseController.mobileToken = self.token;
@@ -131,6 +132,13 @@
           self.hidesBottomBarWhenPushed = YES;
           MyCollectStadiumController* collectStadiumController = [[MyCollectStadiumController alloc] init];
           [self.navigationController pushViewController:collectStadiumController animated:YES];
+          self.hidesBottomBarWhenPushed = NO;
+      } else if (indexPath.row == 5) {
+          self.hidesBottomBarWhenPushed = YES;
+          MyFollowerController* myFollower = [[MyFollowerController alloc] init];
+          myFollower.mobileToken = self.token;
+          myFollower.uid = self.onlyUid;
+          [self.navigationController pushViewController:myFollower animated:YES];
           self.hidesBottomBarWhenPushed = NO;
       }
 }
@@ -294,7 +302,7 @@
 
         if (getMessageModel.code == 200) {
             self.username = getMessageModel.data.username;
-            self.phone_numbers = getMessageModel.data.phoneNumbers;
+            self.phone_numbers = getMessageModel.data.phone_numbers;
             self.birthday = getMessageModel.data.birthday;
             self.sex = getMessageModel.data.sex;
             self.email = getMessageModel.data.email;
