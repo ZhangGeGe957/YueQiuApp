@@ -16,7 +16,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ArticleComment: JSONModel
-@property NSInteger commentId;
+@property (nonatomic, strong) NSNumber *commentId;
 @property (nonatomic, strong) NSString* uid;
 @property (nonatomic, strong) NSString* username;
 @property (nonatomic, strong) NSString* headSculpture;

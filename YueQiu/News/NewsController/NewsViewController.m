@@ -183,6 +183,8 @@
         self.showArticleView = [[ShowArticleViewController alloc] init];
         self.showArticleView.getAllData = [[NSMutableArray alloc] initWithArray:self.getAllData];
         self.showArticleView.location = indexPath.row;
+        self.showArticleView.uid = self.uid;
+        self.showArticleView.mobileToken = self.mobileToken;
         self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:self.showArticleView animated:YES];
         self.hidesBottomBarWhenPushed = NO;

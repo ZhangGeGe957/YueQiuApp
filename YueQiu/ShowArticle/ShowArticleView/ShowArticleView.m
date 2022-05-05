@@ -103,36 +103,36 @@
         make.top.equalTo(self.contentImageView.mas_top);
         make.left.equalTo(self.contentImageView.mas_right).offset(10);
         make.right.equalTo(self.mas_right).offset(-30);
-        make.height.equalTo(@100);
+        make.height.equalTo(@50);
     }];
     
     //发送评论
-    self.sendContentView = [[UIView alloc] init];
-    self.sendContentView.backgroundColor = [UIColor systemGray6Color];
-    [self addSubview:self.sendContentView];
-    [self.sendContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.mas_width);
-        make.bottom.equalTo(self.mas_bottom);
-        make.left.equalTo(self);
-        make.height.equalTo(@50);
+    self.sendContentTextField = [[UITextField alloc] init];
+    self.sendContentTextField.borderStyle = UITextBorderStyleRoundedRect;
+    self.sendContentTextField.layer.cornerRadius = 15;
+    self.sendContentTextField.layer.masksToBounds = YES;
+    self.sendContentTextField.layer.borderWidth = 0.5;
+    self.sendContentTextField.placeholder = @"请输入你要发表的内容";
+    [self addSubview:self.sendContentTextField];
+    [self.sendContentTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentLabel.mas_bottom).offset(10);
+        make.right.equalTo(self).offset(-30);
+        make.left.equalTo(self).offset(30);
+        make.height.equalTo(@40);
     }];
     self.sendContentButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.sendContentButton setTitle:@"发送" forState:UIControlStateNormal];
-    [self.sendContentView addSubview:self.sendContentButton];
+    self.sendContentButton.layer.cornerRadius = 15;
+    self.sendContentButton.layer.masksToBounds = YES;
+    self.sendContentButton.layer.borderWidth = 0.5;
+    self.sendContentButton.backgroundColor = [UIColor orangeColor];
+    self.sendContentButton.tintColor = [UIColor whiteColor];
+    [self addSubview:self.sendContentButton];
     [self.sendContentButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.sendContentView.mas_top).offset(5);
-        make.width.equalTo(@50);
-        make.right.equalTo(self.sendContentView.mas_right).offset(-10);
+        make.top.equalTo(self.sendContentTextField.mas_bottom).offset(10);
+        make.centerX.equalTo(self);
         make.height.equalTo(@40);
-    }];
-    self.sendContentTextField = [[UITextField alloc] init];
-    self.sendContentTextField.borderStyle = UITextBorderStyleRoundedRect;
-    [self.sendContentView addSubview:self.sendContentTextField];
-    [self.sendContentTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.sendContentView.mas_top).offset(5);
-        make.right.equalTo(self.sendContentButton.mas_left).offset(-10);
-        make.left.equalTo(self.sendContentView.mas_left).offset(10);
-        make.height.equalTo(@40);
+        make.width.equalTo(@80);
     }];
 }
 /*

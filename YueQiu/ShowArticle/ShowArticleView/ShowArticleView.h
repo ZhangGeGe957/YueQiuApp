@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *contentLabel;  //内容文字
 
 //发送评论
-@property (nonatomic, strong) UIView *sendContentView;
 @property (nonatomic, strong) UITextField *sendContentTextField;
 @property (nonatomic, strong) UIButton *sendContentButton;
 
